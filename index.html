@@ -538,6 +538,30 @@
         }
 
         /* Modal QR Code */
+                /* Modal chi tiết prompt — bản to rộng */
+        #promptDetailModal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.85);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .modal-content {
+            background: #121017;
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            width: 100%;
+            max-width: 800px;
+            padding: 35px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.8);
+            position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
         .modal-overlay {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -884,8 +908,9 @@
                 return;
             }
 
-            grid.innerHTML = filtered.map(item => `
-                <div class="card" onclick="openPromptDetail('${item.title}', '${item.desc}', '${item.subCat}', ${item.type === 'Free'})">
+            currentList = filtered;
+            grid.innerHTML = filtered.map((item, index) => `
+                <div class="card" onclick="openPromptDetailIdx(${index})">
                     <div>
                         <div class="card-top">
                             <span class="${item.type === 'Free' ? 'tag-free' : 'tag-vip'}">${item.type}</span>
@@ -894,8 +919,8 @@
                         <h3>${item.title}</h3>
                         <p>${item.desc}</p>
                     </div>
-                    <div class="card-footer-info" style="display: flex; justify-content: flex-end; align-items: center; border-top: 1px solid var(--border-color); padding-top: 10px; margin-top: 10px;">
-                        <button class="btn-pink" style="padding: 5px 14px; font-size: 11px; ${item.type === 'VIP' ? 'background: linear-gradient(135deg, #f5af19, #f27121);' : ''}">Xem ngay →</button>
+                    <div style="display: flex; justify-content: flex-end; align-items: center; border-top: 1px solid var(--border-color); padding-top: 12px; margin-top: 12px;">
+                        <span style="font-size: 12px; font-weight: 700; color: var(--primary-pink);">Xem & copy →</span>
                     </div>
                 </div>
             `).join('');
@@ -1471,32 +1496,65 @@
                 document.getElementById('adminPinInput').value = '';
             }
         }
+        // Template gốc — nạp từ nội dung thật của prompt mỗi lần mở modal
+        let promptTemplate = '';
+        let activePromptText = '';
+        let currentList = [];
+
+        // Gõ biến tới đâu, câu lệnh tự nhảy theo tới đó
+        function fillPromptVars() {
+            const subj = document.getElementById('varSubject').value.trim();
+            const env = document.getElementById('varEnvironment').value.trim();
+            const out = promptTemplate.replaceAll('[SUBJECT]', subj || '[SUBJECT]').replaceAll('[ENVIRONMENT]', env || '[ENVIRONMENT]');
+            document.getElementById('modalContentBox').innerText = out;
+            activePromptText = out;
+        }
+
+        // Hiển thị modal chi tiết (bản to rộng)
+        function showPromptModal(title, desc, subCat, type, content) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalDesc').innerText = desc;
+            document.getElementById('modalSubCat').innerText = subCat;
+            const tag = document.getElementById('modalTagType');
+            tag.innerText = type;
+            tag.className = type === 'Free' ? 'tag-free' : 'tag-vip';
+            promptTemplate = content;
+            document.getElementById('varSubject').value = '';
+            document.getElementById('varEnvironment').value = '';
+            document.getElementById('modalContentBox').innerText = content;
+            activePromptText = content;
+            document.getElementById('promptDetailModal').style.display = 'flex';
+        }
+
+        // Thẻ tĩnh (giữ nguyên cách gọi cũ) — tự tìm nội dung thật theo tên prompt
         function openPromptDetail(title, desc, category, isFree) {
             if (!isFree) {
-                // Nếu là hàng VIP mà chưa mua: Chặn lại, không cho xem prompt, bật ngay Bảng giá VIP!
                 openVipPricingModal();
                 return;
             }
-
-            // Nếu là hàng Free: Cho phép xem chi tiết và copy bình thường
-            document.getElementById('modalPromptTitle').innerText = title;
-            document.getElementById('modalPromptDesc').innerText = desc;
-            document.getElementById('modalPromptCategory').innerText = category;
-
-            const tagEl = document.getElementById('modalPromptTag');
-            tagEl.innerText = 'Free';
-            tagEl.className = 'tag-free';
-
-            document.getElementById('promptDetailModal').classList.add('active');
+            const found = promptsData.find(p => p.title === title);
+            const content = found ? found.content : 'Cinematic camera movement of [SUBJECT] walking through [ENVIRONMENT] with soft natural lighting.';
+            showPromptModal(title, desc, category, 'Free', content);
         }
 
-        function closePromptModal() {
-            document.getElementById('promptDetailModal').classList.remove('active');
+        // Grid động — mở theo index trong danh sách đang lọc
+        function openPromptDetailIdx(idx) {
+            const item = currentList[idx];
+            if (!item) return;
+            if (item.type !== 'Free') {
+                openVipPricingModal();
+                return;
+            }
+            showPromptModal(item.title, item.desc, item.subCat, item.type, item.content);
         }
 
-        // Copy prompt 1 chạm — nút tự báo "Đã Copy Thành Công!", không alert rườm rà
-        function copyPromptText(e) {
-            const textToCopy = document.getElementById('modalPromptContent').innerText;
+        function closeModal() {
+            document.getElementById('promptDetailModal').style.display = 'none';
+        }
+
+        // Copy prompt 1 chạm — nút tự báo "Đã Copy Thành Công!", copy đúng bản đã điền biến
+        function copyPromptContent(e) {
+            const textToCopy = activePromptText;
             const ev = e || window.event;
             const done = () => {
                 const btn = (ev && ev.target) ? ev.target.closest('button') : null;
@@ -1522,6 +1580,7 @@
                 fallbackCopy();
             }
         }
+
         // ===== DỮ LIỆU PROMPT (Admin sửa qua bảng quản trị, xuất file để lưu) =====
         // PROMPTS-DATA-START
         const PROMPTS_DEFAULT = [
@@ -1636,58 +1695,59 @@
         function closeVipPricingModal() { document.getElementById('vipPricingModal').classList.remove('active'); }
     </script>
     <!-- MODAL XEM CHI TIẾT VÀ COPY PROMPT (GIỐNG HỆT ẢNH MẪU) -->
-    <div class="modal-overlay" id="promptDetailModal">
-        <div class="modal-box" style="width: 600px; max-width: 95%; text-align: left; padding: 30px;">
-            <button class="close-btn" onclick="closePromptModal()">&times;</button>
+    <div id="promptDetailModal">
+        <div class="modal-content">
+            <button onclick="closeModal()" style="position: absolute; top: 20px; right: 20px; background: none; border: none; color: var(--text-muted); font-size: 22px; cursor: pointer;"><i class="fa-solid fa-xmark"></i></button>
 
-            <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 10px;">
-                <span class="tag-free" id="modalPromptTag">Free</span>
-                <span style="font-size: 12px; color: var(--text-muted);" id="modalPromptCategory">Flow / Veo 3</span>
+            <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 12px;">
+                <span id="modalTagType" class="tag-free">Free</span>
+                <span id="modalSubCat" style="font-size: 12px; color: var(--text-muted);">Video</span>
             </div>
 
-            <h2 id="modalPromptTitle" style="color: white; font-size: 20px; margin-bottom: 6px;">Master Flow Cinematic Video</h2>
-            <p id="modalPromptDesc" style="color: var(--text-muted); font-size: 13px; margin-bottom: 20px;">Tạo chuyển động video mượt mà chuẩn cinematic.</p>
+            <h2 id="modalTitle" style="font-size: 22px; font-weight: 800; color: white; margin-bottom: 8px;">Tiêu đề prompt</h2>
+            <p id="modalDesc" style="font-size: 13px; color: var(--text-muted); margin-bottom: 20px;">Mô tả chi tiết...</p>
 
-            <!-- Khung Demo Ảnh/Video thực tế -->
-            <div style="width: 100%; height: 160px; background: #1a1a22; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 12px; border: 1px dashed var(--border-color); margin-bottom: 20px;" id="modalPromptMedia">
-                [ Khung Demo Ảnh / Video thực tế ]
+            <!-- Khung Demo Ảnh/Video lớn -->
+            <div style="width: 100%; height: 260px; background: #0b0b0e; border: 1px dashed var(--border-color); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 13px; margin-bottom: 25px;">
+                [ Khung Demo Ảnh / Video Thực Tế ]
             </div>
 
-            <!-- 3 ô thông tin nhanh -->
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 20px;">
-                <div style="background: #181820; padding: 12px; border-radius: 10px; border: 1px solid var(--border-color);">
-                    <span style="font-size: 11px; color: #ff6584; font-weight: 700;"><i class="fa-solid fa-bullseye"></i> Dùng để làm gì?</span>
-                    <p style="font-size: 11px; color: var(--text-muted); margin-top: 4px;">Tối ưu output chất lượng cao cho ngách Flow / Veo 3.</p>
+            <!-- 3 Ô Hướng Dẫn Chi Tiết -->
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 25px;">
+                <div style="background: #1c1a24; border: 1px solid var(--border-color); padding: 15px; border-radius: 14px;">
+                    <div style="color: var(--primary-pink); font-size: 13px; font-weight: 700; margin-bottom: 6px;"><i class="fa-solid fa-bullseye"></i> Dùng để làm gì?</div>
+                    <div style="font-size: 12px; color: var(--text-muted); line-height: 1.4;">Tối ưu hóa chất lượng output cao cho ngách sáng tạo nội dung.</div>
                 </div>
-                <div style="background: #181820; padding: 12px; border-radius: 10px; border: 1px solid var(--border-color);">
-                    <span style="font-size: 11px; color: #a066ff; font-weight: 700;"><i class="fa-solid fa-user-check"></i> Phù hợp cho ai?</span>
-                    <p style="font-size: 11px; color: var(--text-muted); margin-top: 4px;">Dân MMO và Content Creator.</p>
+                <div style="background: #1c1a24; border: 1px solid var(--border-color); padding: 15px; border-radius: 14px;">
+                    <div style="color: var(--primary-pink); font-size: 13px; font-weight: 700; margin-bottom: 6px;"><i class="fa-solid fa-users"></i> Phù hợp cho ai?</div>
+                    <div style="font-size: 12px; color: var(--text-muted); line-height: 1.4;">Dân MMO, Designer và Content Creator chuyên nghiệp.</div>
                 </div>
-                <div style="background: #181820; padding: 12px; border-radius: 10px; border: 1px solid var(--border-color);">
-                    <span style="font-size: 11px; color: #ffd166; font-weight: 700;"><i class="fa-solid fa-bolt"></i> Cách dùng nhanh</span>
-                    <p style="font-size: 11px; color: var(--text-muted); margin-top: 4px;">Copy và dán vào AI tool tương ứng.</p>
-                </div>
-            </div>
-
-            <!-- Biến cần thay -->
-            <div style="margin-bottom: 15px;">
-                <span style="font-size: 12px; color: var(--text-muted); display: block; margin-bottom: 6px;"><i class="fa-solid fa-code"></i> Biến cần thay:</span>
-                <div style="display: flex; gap: 8px;">
-                    <span style="background: rgba(255,209,102,0.15); color: #ffd166; padding: 4px 10px; border-radius: 6px; font-size: 11px; font-family: monospace; border: 1px solid rgba(255,209,102,0.3);">[SUBJECT]</span>
-                    <span style="background: rgba(255,209,102,0.15); color: #ffd166; padding: 4px 10px; border-radius: 6px; font-size: 11px; font-family: monospace; border: 1px solid rgba(255,209,102,0.3);">[ENVIRONMENT]</span>
+                <div style="background: #1c1a24; border: 1px solid var(--border-color); padding: 15px; border-radius: 14px;">
+                    <div style="color: var(--primary-pink); font-size: 13px; font-weight: 700; margin-bottom: 6px;"><i class="fa-solid fa-bolt"></i> Cách dùng nhanh</div>
+                    <div style="font-size: 12px; color: var(--text-muted); line-height: 1.4;">Copy và dán trực tiếp vào AI tool tương ứng.</div>
                 </div>
             </div>
 
-            <!-- Ô Câu Lệnh -->
+            <!-- Biến cần thay: gõ tới đâu, câu lệnh tự nhảy theo tới đó -->
             <div style="margin-bottom: 20px;">
-                <span style="font-size: 12px; color: var(--text-muted); display: block; margin-bottom: 6px;">Câu Lệnh:</span>
-                <div style="background: #0b0b0e; padding: 15px; border-radius: 10px; border: 1px solid var(--border-color); color: #00f2fe; font-family: monospace; font-size: 12px; line-height: 1.5;" id="modalPromptContent">
-                    Cinematic camera movement of [SUBJECT] walking through [ENVIRONMENT] with soft natural lighting.
+                <div style="font-size: 13px; font-weight: 700; color: white; margin-bottom: 8px;"><i class="fa-solid fa-code"></i> Biến cần thay:</div>
+                <div style="display: flex; gap: 10px;">
+                    <input id="varSubject" placeholder="Nhập [SUBJECT]..." oninput="fillPromptVars()" style="flex: 1; padding: 10px 14px; background: #0b0b0e; border: 1px solid var(--border-color); border-radius: 10px; color: #ffd166; font-size: 13px; font-family: monospace; outline: none;">
+                    <input id="varEnvironment" placeholder="Nhập [ENVIRONMENT]..." oninput="fillPromptVars()" style="flex: 1; padding: 10px 14px; background: #0b0b0e; border: 1px solid var(--border-color); border-radius: 10px; color: #ffd166; font-size: 13px; font-family: monospace; outline: none;">
                 </div>
             </div>
 
-            <!-- Nút Copy 1 Chạm -->
-            <button onclick="copyPromptText(event)" class="btn-pink" style="width: 100%; justify-content: center; padding: 12px; font-size: 14px;"><i class="fa-solid fa-copy"></i> Copy Prompt 1 Chạm</button>
+            <!-- Ô Câu Lệnh Gốc -->
+            <div style="margin-bottom: 20px;">
+                <div style="font-size: 13px; font-weight: 700; color: white; margin-bottom: 8px;">Câu Lệnh Gốc:</div>
+                <div id="modalContentBox" style="background: #0b0b0e; border: 1px solid var(--border-color); padding: 15px; border-radius: 12px; font-family: monospace; font-size: 13px; color: #00f2fe; line-height: 1.5; word-break: break-all;">
+                    Nội dung câu lệnh gốc...
+                </div>
+            </div>
+
+            <button onclick="copyPromptContent(event)" class="btn-pink" style="width: 100%; padding: 14px; font-size: 14px; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                <i class="fa-solid fa-copy"></i> Copy Prompt 1 Chạm
+            </button>
         </div>
     </div>
     <!-- BẢNG QUẢN TRỊ PROMPT -->
