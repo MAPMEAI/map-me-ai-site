@@ -808,56 +808,21 @@
 
     <script>
         // DỮ LIỆU KHO PROMPT (Admin sau này chỉ cần thêm prompt vào danh sách này là web tự động cập nhật số lượng và hiển thị)
-        const promptsData = [
-            {
-                title: "Master Flow Cinematic Video",
-                desc: "Tạo chuyển động video mượt mà chuẩn cinematic.",
-                category: "Video",
-                type: "Free",
-                subCat: "Video",
-                content: "Cinematic camera movement of [SUBJECT] walking through [ENVIRONMENT] with soft natural lighting."
-            },
-            {
-                title: "Banapro High-End Lookbook",
-                desc: "Tạo ảnh thời trang lookbook sắc nét, chi tiết cao.",
-                category: "Ảnh",
-                type: "VIP",
-                subCat: "Fashion",
-                content: "High-end fashion lookbook photo of [SUBJECT], studio lighting, ultra detailed fabric texture."
-            },
-            {
-                title: "ChatGPT JSON Character Structure",
-                desc: "Cấu trúc JSON quản lý nhân vật chính xác qua nhiều cảnh.",
-                category: "Text",
-                type: "VIP",
-                subCat: "Marketing",
-                content: "JSON schema for maintaining consistent character traits across multi-scene generation."
-            },
-            {
-                title: "E-Commerce Product 3D Mockup",
-                desc: "Tạo dựng hình ảnh sản phẩm thương mại điện tử không gian 3D cực bén.",
-                category: "Ảnh",
-                type: "Free",
-                subCat: "Product",
-                content: "Product photography of [PRODUCT] on minimalist podium, soft studio rim lighting, 8k."
-            },
-            {
-                title: "Cyberpunk Anime Character Generator",
-                desc: "Tạo nhân vật phong cách anime cyberpunk cực ngầu.",
-                category: "Ảnh",
-                type: "Free",
-                subCat: "Anime",
-                content: "Cyberpunk aesthetic anime character portrait, neon glow, detailed linework."
-            },
-            {
-                title: "SaaS Landing Page UI Wireframe",
-                desc: "Tạo giao diện UI layout trang web SaaS hiện đại bằng prompt.",
-                category: "Ảnh",
-                type: "VIP",
-                subCat: "UI & Graphic",
-                content: "Modern dark mode SaaS landing page UI design, clean typography, glowing gradients."
+        let promptsData = [];
+
+        // ===== TẢI DỮ LIỆU PROMPT TỪ FILE JSON RIÊNG =====
+        // Thêm prompt mới: chỉ cần sửa file prompts.json rồi upload đè, không cần up lại index.html
+        async function loadPromptsFromJson() {
+            try {
+                const res = await fetch('prompts.json');
+                if (!res.ok) throw new Error('HTTP ' + res.status);
+                promptsData = await res.json();
+                renderPrompts();
+            } catch (err) {
+                const grid = document.getElementById('promptGridContainer');
+                if (grid) grid.innerHTML = '<p style="color: var(--text-muted); grid-column: span 3; text-align: center; padding: 30px;">Không tải được dữ liệu prompt, kiểm tra file prompts.json đã upload chưa nhé!</p>';
             }
-        ];
+        };
 
         let currentFormat = 'all';
         let currentType = 'all';
@@ -1043,7 +1008,7 @@
 
         // Chạy render khi tải trang
         document.addEventListener("DOMContentLoaded", function() {
-            renderPrompts();
+            loadPromptsFromJson();
         });
     </script>
 
