@@ -636,8 +636,8 @@
         <nav>
             <ul>
                 <li><a href="#hero" class="tab-home" data-en="Home" data-vi="TRANG CHỦ">TRANG CHỦ</a></li>
-                <li><a href="#gear" class="tab-prompt" data-en="Gear Tray" data-vi="MÂM ĐỒ NGHỀ">MÂM ĐỒ NGHỀ</a></li>
-                <li><a href="#prompts" class="tab-tools" data-en="Courses" data-vi="KHÓA HỌC">KHÓA HỌC</a></li>
+                <li><a href="#prompts" class="tab-prompt" data-en="Gear Tray" data-vi="MÂM ĐỒ NGHỀ">MÂM ĐỒ NGHỀ</a></li>
+                <li><a href="#courses" class="tab-tools" data-en="Courses" data-vi="KHÓA HỌC">KHÓA HỌC</a></li>
                 <li><a href="#master" class="tab-master" data-en="Master Prompt" data-vi="MASTER PROMPT">MASTER PROMPT</a></li>
                 <li><a href="#kitchen" class="tab-kitchen" data-en="AI Kitchen" data-vi="BẾP AI">BẾP AI</a></li>
                 <li><a href="#tools" class="tab-voice" data-en="AI Dubbing" data-vi="LỒNG TIẾNG AI">LỒNG TIẾNG AI</a></li>
@@ -721,9 +721,10 @@
                     <h3 style="margin-top: 8px;">Tool Auto Click & Reg Via</h3>
                     <p>Công cụ tự động hóa thao tác tài khoản và nuôi via chuyên nghiệp cho anh em làm hệ thống.</p>
                 </div>
-                <div class="card-footer-info" style="margin-top: 10px;">
-                    <span style="color: var(--primary-pink); font-weight: 700;">Tải Về →</span>
-                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color); padding-top: 12px; margin-top: 12px;">
+                        <span style="font-weight: 600; font-size: 13px; color: var(--text-muted);">Free Tool</span>
+                        <button class="btn-pink" style="padding: 6px 16px; font-size: 12px;">Tải Về →</button>
+                    </div>
             </div>
             <div class="card" onclick="openPromptDetail('Extension Support Prompt Copy', 'Tiện ích trình duyệt giúp copy prompt và quản lý câu lệnh nhanh 1 chạm.', 'Tools', true)">
                 <div>
@@ -731,9 +732,10 @@
                     <h3 style="margin-top: 8px;">Extension Quản Lý Prompt</h3>
                     <p>Tiện ích trình duyệt giúp copy prompt và quản lý kho câu lệnh nhanh 1 chạm.</p>
                 </div>
-                <div class="card-footer-info" style="margin-top: 10px;">
-                    <span style="color: var(--primary-pink); font-weight: 700;">Cài Đặt →</span>
-                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color); padding-top: 12px; margin-top: 12px;">
+                        <span style="font-weight: 600; font-size: 13px; color: var(--text-muted);">Free Extension</span>
+                        <button class="btn-pink" style="padding: 6px 16px; font-size: 12px;">Cài Đặt →</button>
+                    </div>
             </div>
         </div>
     </div>
@@ -854,39 +856,7 @@
                 type: "VIP",
                 subCat: "UI & Graphic",
                 content: "Modern dark mode SaaS landing page UI design, clean typography, glowing gradients."
-            },
-            {
-                title: "Quảng Cáo Chai Nước Cam Ép",
-                desc: "Ảnh quảng cáo chai nước cam động, ánh sáng studio điện ảnh.",
-                category: "Ảnh",
-                type: "Free",
-                subCat: "Product",
-                content: "\"A fast-paced, highly dynamic commercial product shot of a 100% Orange Juice plastic bottle with a green cap. The camera performs swift, energetic movements, zooming in and panning rapidly around the product. In the background, fresh orange slices and green leaves fly in slow motion alongside dynamic splashes of vibrant orange juice and refreshing water droplets. Bright, cinematic studio lighting highlighting the condensation on the bottle, hyper-realistic, 4k resolution, high contrast, vibrant colors, energetic and refreshing vibe.\""
-            },
-            {
-                title: "Poster Quảng Cáo Sản Phẩm Cao Cấp",
-                desc: "Mẫu poster đẳng cấp Cannes cho bất kỳ sản phẩm nào.",
-                category: "Ảnh",
-                type: "Free",
-                subCat: "Poster",
-                content: "use gpt image 2.5 sunburst high 4:5 2k to make the image:\nCreate an ultra-premium commercial poster for a brand/subject called {PRODUCT_NAME} — a {PRODUCT_CATEGORY} — designed as a Cannes-level advertising key visual with one hyper-realistic {PRODUCT_CATEGORY} as the absolute hero subject, and a bold upward explosion of layered dimensional shapes behind it representing its core essence/energy. The composition must be a tall vertical poster with the hero subject rising from the lower center, while a large radiant burst of sculpted abstract forms (color, material, and shape chosen to match the identity of {PRODUCT_NAME}) expands upward and outward from the subject like a stylized \"essence detonation.\" The overall image must feel premium, bold, graphic, highly controlled, and instantly memorable, combining hyper-real subject realism with premium dimensional paper-sculpture aesthetics.\nCore composition:\nUse a strong centered composition. Place one realistic rendering of {PRODUCT_NAME} in the lower-center foreground, upright and slightly monumental, occupying the lower third of the poster. From the top or core of the subject, a compact burst of energy/material rises directly upward and transitions into a large layered \"universe\" of shapes filling the upper two-thirds of the frame. This universe must feel like a series of overlapping abstract forms tied to the product's nature (liquid splash for beverages, light/circuit bursts for electronics, motion streaks for vehicles, architectural fragments for buildings, cultural/landscape motifs for a country, etc.), radiating outward in a clean symmetrical-organic arrangement. The hero subject is the clear visual anchor; the burst is its brand energy halo.\nSubject design:\nDesign {PRODUCT_NAME} as a globally market-ready, premium, world-class version of a {PRODUCT_CATEGORY}. The subject must feel extremely real: accurate materials, crisp highlights, believable surface textures, precise engineering/craft details, and tactile realism appropriate to its category (glass/liquid for drinks, metal/glass for electronics, paint/chrome for vehicles, stone/glass for architecture, iconic natural/cultural elements for a country, etc.). Include a refined logo, nameplate, or identifying mark using a cohesive color system appropriate to the brand tone. The subject should feel collectible, sharp, aspirational, and premium — instantly desirable in its category.\nEnergy/burst shape system:\nThe explosion behind the hero subject must be built from layered three-dimensional silhouettes rendered in a tonal palette that fits {PRODUCT_NAME}'s identity. These forms should look like sculpted paper-cut shapes or premium molded graphic forms, not random messy splatter. The burst must begin tighter near the subject and grow broader and more dramatic as it rises upward. Keep edges rounded, clean, dimensional, and premium. The overall burst must feel powerful and purposeful, like the product's core essence physically blooming into space.\nSupporting elements:\nScatter art-directed supporting elements around the burst composition that reflect the product's category and world (citrus wedges for a drink, circuit/light particles for electronics, road/speed elements for a car, architectural fragments or greenery for a building, cultural icons/landmarks/nature motifs for a country, etc.). These elements must feel carefully placed, more designed than chaotic, orbiting the central burst with rhythm and balance. They should look premium, slightly stylized, and dimensional, matching the crafted poster world while keeping believable texture.\nBackground:\nUse a rich saturated background color drawn from {PRODUCT_NAME}'s brand palette, with subtle material texture, like luxury matte paper or premium embossed poster stock. The background must include softly layered tonal variation and a few recessed silhouettes echoing the burst shapes, so the entire frame feels immersive and designed, but not cluttered. Keep the atmosphere bold, premium, and true to the mood of {PRODUCT_NAME}.\nTypography and layout:\nAdd original art-directed English headline typography only. Place a bold custom headline in the lower-left to lower-middle zone, integrated with the subject and burst structure — an original tagline capturing the essence of {PRODUCT_NAME}, fully original and not copied from any existing ad. Add a smaller elegant support line beneath describing {PRODUCT_NAME} in one phrase. Include the {PRODUCT_NAME} name/logo small and refined on the subject and optionally once in the poster layout. Typography must feel premium, sculptural, and campaign-ready, never generic, never a plain font block.\nLighting:\nUse soft premium commercial lighting with crisp edge definition and highly controlled color separation. The hero subject must have studio-quality reflections and strong material clarity. The burst forms should cast gentle dimensional shadows onto one another, enhancing the paper-sculpture depth. Supporting elements should catch clean highlights and soft shadows. The overall lighting must feel premium, cinematic, and world-class.\nCreative direction:\nThe poster must balance hyper-real product/subject photography with bold graphic sculpture and high-end brand storytelling. It should feel like a world-class global campaign where the subject's core identity becomes an exploding visual expression. The image must be extremely clean, vivid, premium, and globally ad-ready, with zero cheapness and zero clutter.\nMood and keywords:\npremium, radiant, bold energy, sculptural, collectible, subject-first, dimensional burst art, clean graphic advertising, world-class impact, {PRODUCT_NAME} identity\nRendering style:\nultra-premium advertising poster, centered hyper-real hero subject, layered dimensional burst explosion, paper-sculpture aesthetic, floating category-appropriate supporting elements, saturated brand-color background, refined editorial typography, 8k, world-class commercial advertising quality\nNegative prompt:\ncopied existing branding, copied headline text, messy burst, weak subject presence, generic layout, cheap clipart elements, flat lighting, fake-looking materials, muddy colors, random composition, low-resolution details, cluttered poster, childish design, generic typography, low-end mockup quality"
-            },
-            {
-                title: "Cá Mập Megalodon Chui Ra Khỏi Màn Hình",
-                desc: "Video 10s viral: cá mập khổng lồ lao ra khỏi màn hình rạp phim.",
-                category: "Video",
-                type: "Free",
-                subCat: "Video",
-                content: "CÁ MẬP 3D - THE SHARK JUST SWAM OUT OF THE SCREEN\nGOOGLE FLOW — GENERATED AI VIDEO\n10 seconds | 9:16 | Photorealistic viral 4D cinema experience\nCreate a 10-second continuous viral phone recording from the perspective of a rear-row audience member inside a huge premium cinema. The camera is handheld vertically on a mobile phone, naturally shaky and reactive — never a professional camera.\n0–3s: Show multiple rows of audience members, deep red theater seats, black armrests, cup holders, aisle lights and a huge curved cinema screen. On the screen: a dark, photorealistic deep-ocean world. A gigantic Megalodon suddenly appears in the distance and rapidly accelerates directly toward the screen. Audience members begin reacting and raising phones.\n3–5s: The Megalodon reaches the screen at terrifying speed. Instead of simply appearing in front of it, the ocean itself physically pushes through the screen, creating the illusion that the screen has become a deep underwater opening. Water spray, bubbles and small fish burst into the theater while the audience ducks and screams.\n5–7.5s: The enormous Megalodon actually swims out from the screen and passes above the front rows, its full body extending deep into the physical theater. Its massive body, fins and tail move with realistic underwater physics. Water droplets and bubbles sweep toward the rear audience.\n7.5–10s: The shark makes a powerful turn directly toward the rear camera. Its enormous head rapidly approaches and partially fills the frame. The camera operator instinctively steps backward and lowers the phone as the Megalodon's eye and teeth pass extremely close. The entire theater is illuminated by moving underwater caustic light, bubbles and mist.\nCRITICAL REALISM: The transition must look physically convincing — the screen remains visibly attached to the theater while the ocean appears to gain impossible depth beyond its surface. Maintain correct perspective, scale, reflections, water physics, audience reactions and continuous spatial continuity.\nSTYLE: Photorealistic blockbuster 4D cinema footage, authentic smartphone recording, realistic handheld motion, premium theater environment, cinematic lighting, physically believable water, terrifying gigantic scale, natural human reactions.\nNEGATIVE: professional camera, drone, third-person view, cuts, teleportation, shark flying, shark walking, miniature shark, cartoon, CGI-looking creature, plastic texture, distorted shark anatomy, duplicate shark, extra fins, fake water, weightless movement, audience injuries, gore, text, subtitles, logos, watermark, UI."
-            },
-            {
-                title: "Sinh Vật Biển Điện Ảnh",
-                desc: "Video 8-10s phong cách phim tài liệu thiên nhiên về sinh vật biển.",
-                category: "Video",
-                type: "Free",
-                subCat: "Video",
-                content: "MASTER PROMPT\nCreate an ultra-realistic, cinematic wildlife documentary video featuring a majestic [OCEAN ANIMAL] moving through a vast, mysterious ocean environment.\nFORMAT: Vertical 9:16, 4K, 24fps, 8–10 seconds, photorealistic, premium cinematic nature-documentary quality, realistic physics and natural animal behavior.\nENVIRONMENT\nBegin deep beneath the ocean surface in an enormous blue abyss. Crystal-clear seawater is filled with microscopic particles, plankton, tiny bubbles, and subtle underwater debris.\nThe environment feels vast, deep, mysterious, and completely natural.\nSoft schools of small fish move through the background while occasional marine organisms pass through the foreground.\nFar in the darkness, the silhouette of the [OCEAN ANIMAL] gradually becomes visible.\n[OCEAN ANIMAL] — MAIN SUBJECT\nThe [OCEAN ANIMAL] must be anatomically accurate, biologically realistic, and highly detailed.\nShow realistic skin, scales, fins, eyes, natural markings, subtle imperfections, and species-specific physical characteristics.\nThe animal moves according to its real-world swimming behavior, with natural acceleration, turning, body movement, and interaction with surrounding water.\nDo not give the animal characteristics belonging to another species.\nCAMERA\nStart with an extremely wide underwater establishing shot showing the enormous scale of the ocean.\nThe camera slowly moves toward the [OCEAN ANIMAL] while maintaining cinematic depth and realistic underwater motion.\nTransition into a smooth side-tracking shot following the animal.\nThen move into a dramatic low-angle shot looking upward toward the animal and the bright ocean surface.\nUse:\nSmooth cinematic camera movement\nNatural underwater camera drag\nRealistic parallax\nSubtle depth-of-field\nNatural motion blur\nLarge-format wildlife-documentary cinematography\nNo artificial camera shake\nLIGHTING\nPowerful golden sunlight penetrates the surface above, creating realistic volumetric light rays through the deep blue water.\nUse physically accurate underwater light scattering, caustics, reflections, refraction, and atmospheric haze.\nThe [OCEAN ANIMAL] should receive natural highlights and soft shadows from the underwater sunlight.\nNear the surface, introduce warm golden-hour sunset colors contrasting beautifully with the deep blue ocean.\nANIMAL INTERACTION\nAs the [OCEAN ANIMAL] moves through the water, nearby fish naturally react to its presence.\nSmall bubbles and suspended particles move realistically around its body.\nWater displacement must be physically accurate.\nThe animal should never appear weightless, robotic, or artificially animated.\nCLIMAX\nThe [OCEAN ANIMAL] gradually approaches the ocean surface.\nThe camera follows from below, creating a powerful silhouette against the glowing sunset.\nAs the animal reaches the surface, realistic waves, reflections, splashes, and atmospheric mist appear according to the natural behavior of the selected species.\nCapture a spectacular final cinematic moment where the [OCEAN ANIMAL] dominates the frame against the enormous glowing ocean horizon.\nVISUAL STYLE\nUltra-photorealistic.\nPremium National Geographic / BBC-style wildlife cinematography.\nIMAX-scale visual composition.\nNatural cinematic color grading.\nHDR.\nExtremely detailed water simulation.\nRealistic marine biology.\nRealistic animal anatomy.\nNatural ocean physics.\nImmersive depth.\nEpic sense of scale.\nNo fantasy appearance.\nAUDIO\nNatural underwater ambience.\nDeep ocean rumble.\nSubtle bubbles and water movement.\nDistant marine sounds.\nSpecies-appropriate [OCEAN ANIMAL] vocalizations or natural sounds where applicable.\nAs the animal approaches the surface, increase the sound of moving water and waves.\nFinish with a powerful, immersive ocean ambience fading naturally."
-            },
+            }
         ];
 
         let currentFormat = 'all';
@@ -1157,9 +1127,10 @@
                     <h3>ChatGPT Master Assistant</h3>
                     <p>Trợ lý ảo toàn năng hỗ trợ viết lách, code, phân tích dữ liệu và lập kế hoạch chiến lược.</p>
                 </div>
-                <div class="card-footer-info" style="margin-top: 10px;">
-                    <span style="color: var(--primary-pink); font-weight: 700;">Mở Trực Tiếp →</span>
-                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color); padding-top: 12px; margin-top: 12px;">
+                        <span style="font-weight: 600; font-size: 13px; color: var(--text-muted);">OpenAI</span>
+                        <button class="btn-pink" style="padding: 6px 16px; font-size: 12px;">Mở Trực Tiếp →</button>
+                    </div>
             </div>
 
             <!-- Tool 2: Claude AI -->
@@ -1172,24 +1143,26 @@
                     <h3>Claude 3.5 Sonnet</h3>
                     <p>Siêu AI phân tích văn bản, soạn thảo kịch bản và lập trình tư duy sâu sắc hàng đầu hiện nay.</p>
                 </div>
-                <div class="card-footer-info" style="margin-top: 10px;">
-                    <span style="color: var(--primary-pink); font-weight: 700;">Mở Trực Tiếp →</span>
-                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color); padding-top: 12px; margin-top: 12px;">
+                        <span style="font-weight: 600; font-size: 13px; color: var(--text-muted);">Anthropic</span>
+                        <button class="btn-pink" style="padding: 6px 16px; font-size: 12px;">Mở Trực Tiếp →</button>
+                    </div>
             </div>
 
             <!-- Tool 3: Midjourney / Gen Ảnh -->
-            <div class="card" onclick="openModal('Khu Vực Gen Ảnh Midjourney / Banapro', 'GEN ANH', 'vip')">
+            <div class="card" onclick="window.open('https://www.midjourney.com', '_blank')">
                 <div>
                     <div class="card-top">
-                        <span class="tag-vip">VIP Tool</span>
+                        <span class="tag-free">Miễn Phí</span>
                         <span style="font-size:11px; color:var(--text-muted);">Image Gen</span>
                     </div>
                     <h3>Midjourney & Banapro Studio</h3>
                     <p>Kho công cụ và hướng dẫn thiết kế hình ảnh, lookbook, poster cực xịn cho dân sáng tạo.</p>
                 </div>
-                <div class="card-footer-info" style="margin-top: 10px;">
-                    <span style="color: var(--dark-pink); font-weight: 700;">Mở Khóa VIP →</span>
-                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color); padding-top: 12px; margin-top: 12px;">
+                        <span style="font-weight: 600; font-size: 13px; color: var(--text-muted);">Image Gen</span>
+                        <button class="btn-pink" style="padding: 6px 16px; font-size: 12px;">Mở Trực Tiếp →</button>
+                    </div>
             </div>
         </div>
     </div>
