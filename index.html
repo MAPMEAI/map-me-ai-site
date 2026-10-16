@@ -629,23 +629,23 @@
     <!-- Navbar hoàn chỉnh -->
     <!-- Navbar hoàn chỉnh, đã liên kết chuẩn 100% các nút -->
     <header id="hero">
-        <a href="#hero" class="logo-container">
+        <a href="#hero" onclick="closeDetailIfOpen()" class="logo-container">
             <div class="logo-avatar"></div>
             <span class="brand-name">MẬP MÊ AI</span>
         </a>
         <nav>
             <ul>
-                <li><a href="#hero" class="tab-home" data-en="Home" data-vi="TRANG CHỦ">TRANG CHỦ</a></li>
-                <li><a href="#prompts" class="tab-prompt" data-en="Gear Tray" data-vi="MÂM ĐỒ NGHỀ">MÂM ĐỒ NGHỀ</a></li>
-                <li><a href="#courses" class="tab-tools" data-en="Courses" data-vi="KHÓA HỌC">KHÓA HỌC</a></li>
-                <li><a href="#master" class="tab-master" data-en="Master Prompt" data-vi="MASTER PROMPT">MASTER PROMPT</a></li>
-                <li><a href="#kitchen" class="tab-kitchen" data-en="AI Kitchen" data-vi="BẾP AI">BẾP AI</a></li>
-                <li><a href="#tools" class="tab-voice" data-en="AI Dubbing" data-vi="LỒNG TIẾNG AI">LỒNG TIẾNG AI</a></li>
+                <li><a href="#hero" onclick="closeDetailIfOpen()" class="tab-home" data-en="Home" data-vi="TRANG CHỦ">TRANG CHỦ</a></li>
+                <li><a href="#prompts" onclick="closeDetailIfOpen()" class="tab-prompt" data-en="Gear Tray" data-vi="MÂM ĐỒ NGHỀ">MÂM ĐỒ NGHỀ</a></li>
+                <li><a href="#courses" onclick="closeDetailIfOpen()" class="tab-tools" data-en="Courses" data-vi="KHÓA HỌC">KHÓA HỌC</a></li>
+                <li><a href="#master" onclick="closeDetailIfOpen()" class="tab-master" data-en="Master Prompt" data-vi="MASTER PROMPT">MASTER PROMPT</a></li>
+                <li><a href="#kitchen" onclick="closeDetailIfOpen()" class="tab-kitchen" data-en="AI Kitchen" data-vi="BẾP AI">BẾP AI</a></li>
+                <li><a href="#tools" onclick="closeDetailIfOpen()" class="tab-voice" data-en="AI Dubbing" data-vi="LỒNG TIẾNG AI">LỒNG TIẾNG AI</a></li>
             </ul>
         </nav>
         <div class="nav-buttons">
-            <button onclick="openVipPricingModal()" class="btn btn-vip"><i class="fa-solid fa-crown"></i> VIP</button>
-            <button onclick="openLoginModal()" class="btn btn-login"><i class="fa-solid fa-user"></i> Login</button>
+            <button onclick="openVipPricingModal()" class="btn btn-vip"><i class="fa-solid fa-crown"></i> VIP</button><span id="vipActiveBadge" style="display: none; background: linear-gradient(135deg, #f5af19, #f27121); color: white; font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 20px; margin-left: 8px;">VIP</span>
+            <button onclick="openLoginModal()" class="btn btn-login" style="display: none;"><i class="fa-solid fa-user"></i> Login</button>
             <button class="lang-switch" onclick="toggleLanguage()" id="langBtn">EN 🌐</button>
             <button onclick="openAdminPinModal()" class="btn btn-admin-nav"><i class="fa-solid fa-shield-halved"></i> Admin</button>
         </div>
@@ -864,15 +864,21 @@
         function openDetailPage(idx) {
             const item = currentList[idx];
             if (!item) return;
-            if (item.type !== 'Free') { openVipPricingModal(); return; }
+            if (item.type !== 'Free' && !isVipActive()) { openVipPricingModal(); return; }
             showDetailView(item.title, item.desc, item.subCat, item.type, item.content);
         }
 
         function openPromptDetail(title, desc, category, isFree) {
-            if (!isFree) { openVipPricingModal(); return; }
+            if (!isFree && !isVipActive()) { openVipPricingModal(); return; }
             const found = promptsData.find(p => p.title === title);
             const content = found ? found.content : 'Cinematic camera movement of [SUBJECT] walking through [ENVIRONMENT] with soft natural lighting.';
             showDetailView(title, desc, category, 'Free', content);
+        }
+
+        
+        function closeDetailIfOpen() {
+            var dv = document.getElementById('detailView');
+            if (dv && dv.style.display !== 'none') { dv.style.display = 'none'; }
         }
 
         function goBackHome() {
@@ -1009,6 +1015,7 @@
         // Chạy render khi tải trang
         document.addEventListener("DOMContentLoaded", function() {
             loadPromptsFromJson();
+            updateVipBadge();
         });
     </script>
 
@@ -1633,7 +1640,51 @@
 
         // Modal bảng giá VIP
         function openLoginModal() {
-            alert('Khu vực đăng nhập thành viên VIP vĩnh viễn.');
+            if (typeof openVipPricingModal === 'function') { openVipPricingModal(); }
+        }
+
+        
+        // ===== HỆ THỐNG MÃ VIP =====
+        const VIP_SALT = 'mapmeai-vip-2026';
+        const VIP_CHARS = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+        function vipChecksum(r6) {
+            let h = 0; const s = VIP_SALT + r6;
+            for (let i = 0; i < s.length; i++) { h = (h * 31 + s.charCodeAt(i)) % 1296; }
+            return VIP_CHARS[Math.floor(h / 36)] + VIP_CHARS[h % 36];
+        }
+        function validateVipCode(code) {
+            code = (code || '').trim().toUpperCase().replace(/[^A-Z0-9]/g, '');
+            if (!/^(VV|T1)[A-Z2-9]{8}$/.test(code)) return null;
+            const type = code.slice(0, 2), random = code.slice(2, 8), check = code.slice(8, 10);
+            if (vipChecksum(random) !== check) return null;
+            return type === 'VV' ? 'lifetime' : 'monthly';
+        }
+        function activateVip(type) {
+            localStorage.setItem('mapmeai_vip', JSON.stringify({ type: type, activatedAt: Date.now() }));
+            updateVipBadge();
+        }
+        function isVipActive() {
+            try {
+                const d = JSON.parse(localStorage.getItem('mapmeai_vip'));
+                if (!d) return false;
+                if (d.type === 'lifetime') return true;
+                if (d.type === 'monthly') return (Date.now() - d.activatedAt) < 30*24*60*60*1000;
+            } catch(e) {}
+            return false;
+        }
+        function updateVipBadge() {
+            const b = document.getElementById('vipActiveBadge');
+            if (b) b.style.display = isVipActive() ? 'inline-block' : 'none';
+        }
+        function submitVipCode() {
+            const inp = document.getElementById('vipCodeInput');
+            const msg = document.getElementById('vipCodeMsg');
+            const t = validateVipCode(inp.value);
+            if (!t) { msg.innerText = 'Mã không đúng, kiểm tra lại nhé!'; msg.style.color = '#ff3b3b'; return; }
+            activateVip(t);
+            msg.innerText = t === 'lifetime' ? 'Kích hoạt VIP Vĩnh Viễn thành công!' : 'Kích hoạt VIP 1 Tháng thành công!';
+            msg.style.color = '#2ecc71';
+            setTimeout(function(){ if (typeof closeVipPricingModal === 'function') closeVipPricingModal(); }, 1200);
         }
 
         function openVipPricingModal() { document.getElementById('vipPricingModal').classList.add('active'); }
@@ -1673,7 +1724,16 @@
     <!-- MODAL BẢNG GIÁ VIP HOÀN CHỈNH -->
     <div class="modal-overlay" id="vipPricingModal">
         <div class="modal-box" style="width: 800px; max-width: 95%; background: #141419; border: 2px solid #ffd166; padding: 40px; text-align: left; max-height: 90vh; overflow-y: auto;">
-            <button class="close-btn" onclick="closeVipPricingModal()">&times;</button>
+            <button class="close-btn" 
+                <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border-color); text-align: center;">
+                    <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 10px;">Đã có mã VIP? Nhập mã để kích hoạt:</p>
+                    <div style="display: flex; gap: 8px; justify-content: center;">
+                        <input id="vipCodeInput" placeholder="Nhập mã VIP..." style="padding: 10px 14px; border-radius: 10px; border: 1px solid var(--border-color); background: #0b0b0e; color: white; font-size: 14px; width: 200px; text-transform: uppercase;">
+                        <button onclick="submitVipCode()" class="btn-pink" style="padding: 10px 20px;">Kích hoạt</button>
+                    </div>
+                    <p id="vipCodeMsg" style="font-size: 13px; margin-top: 8px; min-height: 18px;"></p>
+                </div>
+onclick="closeVipPricingModal()">&times;</button>
 
             <div style="text-align: center; margin-bottom: 25px;">
                 <span style="color: #ff3b3b; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Bảng giá VIP</span>
