@@ -74,6 +74,7 @@
         header {
             position: sticky;
             top: 0;
+            z-index: 9500;
             left: 0;
             width: 100%;
             background: var(--navbar-bg);
@@ -629,18 +630,18 @@
     <!-- Navbar hoàn chỉnh -->
     <!-- Navbar hoàn chỉnh, đã liên kết chuẩn 100% các nút -->
     <header id="hero">
-        <a href="#hero" onclick="closeDetailIfOpen()" class="logo-container">
+        <a href="javascript:void(0)" onclick="goHomeTab()" class="logo-container">
             <div class="logo-avatar"></div>
             <span class="brand-name">MẬP MÊ AI</span>
         </a>
         <nav>
             <ul>
-                <li><a href="#hero" onclick="closeDetailIfOpen()" class="tab-home" data-en="Home" data-vi="TRANG CHỦ">TRANG CHỦ</a></li>
-                <li><a href="#prompts" onclick="closeDetailIfOpen()" class="tab-prompt" data-en="Gear Tray" data-vi="MÂM ĐỒ NGHỀ">MÂM ĐỒ NGHỀ</a></li>
-                <li><a href="#courses" onclick="closeDetailIfOpen()" class="tab-tools" data-en="Courses" data-vi="KHÓA HỌC">KHÓA HỌC</a></li>
-                <li><a href="#master" onclick="closeDetailIfOpen()" class="tab-master" data-en="Master Prompt" data-vi="MASTER PROMPT">MASTER PROMPT</a></li>
-                <li><a href="#kitchen" onclick="closeDetailIfOpen()" class="tab-kitchen" data-en="AI Kitchen" data-vi="BẾP AI">BẾP AI</a></li>
-                <li><a href="#tools" onclick="closeDetailIfOpen()" class="tab-voice" data-en="AI Dubbing" data-vi="LỒNG TIẾNG AI">LỒNG TIẾNG AI</a></li>
+                <li><a href="javascript:void(0)" onclick="goHomeTab()" class="tab-home" data-en="Home" data-vi="TRANG CHỦ">TRANG CHỦ</a></li>
+                <li><a href="javascript:void(0)" onclick="goSection('prompts')" onclick="closeDetailIfOpen()" class="tab-prompt" data-en="Gear Tray" data-vi="MÂM ĐỒ NGHỀ">MÂM ĐỒ NGHỀ</a></li>
+                <li><a href="javascript:void(0)" onclick="goSection('courses')" onclick="closeDetailIfOpen()" class="tab-tools" data-en="Courses" data-vi="KHÓA HỌC">KHÓA HỌC</a></li>
+                <li><a href="javascript:void(0)" onclick="goSection('master')" onclick="closeDetailIfOpen()" class="tab-master" data-en="Master Prompt" data-vi="MASTER PROMPT">MASTER PROMPT</a></li>
+                <li><a href="javascript:void(0)" onclick="goSection('kitchen')" onclick="closeDetailIfOpen()" class="tab-kitchen" data-en="AI Kitchen" data-vi="BẾP AI">BẾP AI</a></li>
+                <li><a href="javascript:void(0)" onclick="goSection('tools')" onclick="closeDetailIfOpen()" class="tab-voice" data-en="AI Dubbing" data-vi="LỒNG TIẾNG AI">LỒNG TIẾNG AI</a></li>
             </ul>
         </nav>
         <div class="nav-buttons">
@@ -889,6 +890,19 @@
         function closeDetailIfOpen() {
             var dv = document.getElementById('detailView');
             if (dv && dv.style.display !== 'none') { dv.style.display = 'none'; }
+        }
+
+        function goHomeTab() {
+            closeDetailIfOpen();
+            window.scrollTo({top: 0, behavior: 'smooth'});
+            if (history.replaceState) { history.replaceState(null, '', '#hero'); }
+        }
+
+        function goSection(id) {
+            closeDetailIfOpen();
+            var el = document.getElementById(id);
+            if (el) { el.scrollIntoView({behavior: 'smooth'}); }
+            if (history.replaceState) { history.replaceState(null, '', '#' + id); }
         }
 
         function goBackHome() {
@@ -1819,7 +1833,7 @@
                             <h4 style="color: white; font-size: 16px; margin-bottom: 6px;">AI - dễ như ăn kẹo — Giá siêu ưu đãi</h4>
                             <p style="color: var(--text-muted); font-size: 12px; margin-bottom: 15px;">Mở khoá mức giá nội bộ riêng cho VIP — sở hữu tool rẻ hơn hẳn giá công khai, dùng ngay trong tháng VIP.</p>
                         </div>
-                        <a href="#tools" onclick="closeVipPricingModal()" style="color: #ff3b3b; font-size: 12px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 5px;">Xem tool & giá ưu đãi →</a>
+                        <a href="javascript:void(0)" onclick="goSection('tools')" onclick="closeVipPricingModal()" style="color: #ff3b3b; font-size: 12px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 5px;">Xem tool & giá ưu đãi →</a>
                     </div>
 
                     <!-- Tool 2 -->
@@ -1832,7 +1846,7 @@
                             <h4 style="color: white; font-size: 16px; margin-bottom: 6px;">AI - dễ như ăn kẹo — MIỄN PHÍ</h4>
                             <p style="color: var(--text-muted); font-size: 12px; margin-bottom: 15px;">Tặng kèm quyền dùng tool AI - dễ như ăn kẹo và mọi bản cập nhật trong thời gian tool còn được phát triển. Không tốn thêm một đồng.</p>
                         </div>
-                        <a href="#tools" onclick="closeVipPricingModal()" style="color: #ff3b3b; font-size: 12px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 5px;">Nhận tool miễn phí →</a>
+                        <a href="javascript:void(0)" onclick="goSection('tools')" onclick="closeVipPricingModal()" style="color: #ff3b3b; font-size: 12px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 5px;">Nhận tool miễn phí →</a>
                     </div>
 
                 </div>
