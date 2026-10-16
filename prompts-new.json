@@ -1,0 +1,92 @@
+[
+  {
+    "title": "Master Flow Cinematic Video",
+    "desc": "Tạo chuyển động video mượt mà chuẩn cinematic.",
+    "category": "Video",
+    "type": "Free",
+    "subCat": "Video",
+    "content": "Cinematic camera movement of [SUBJECT] walking through [ENVIRONMENT] with soft natural lighting.",
+    "demo": "demo-images/demo-01-master-flow.webp"
+  },
+  {
+    "title": "Banapro High-End Lookbook",
+    "desc": "Tạo ảnh thời trang lookbook sắc nét, chi tiết cao.",
+    "category": "Ảnh",
+    "type": "VIP",
+    "subCat": "Fashion",
+    "content": "High-end fashion lookbook photo of [SUBJECT], studio lighting, ultra detailed fabric texture.",
+    "demo": "demo-images/demo-02-banapro-lookbook.webp"
+  },
+  {
+    "title": "ChatGPT JSON Character Structure",
+    "desc": "Cấu trúc JSON quản lý nhân vật chính xác qua nhiều cảnh.",
+    "category": "Text",
+    "type": "VIP",
+    "subCat": "Marketing",
+    "content": "JSON schema for maintaining consistent character traits across multi-scene generation.",
+    "demo": "demo-images/demo-03-character-json.webp"
+  },
+  {
+    "title": "E-Commerce Product 3D Mockup",
+    "desc": "Tạo dựng hình ảnh sản phẩm thương mại điện tử không gian 3D cực bén.",
+    "category": "Ảnh",
+    "type": "Free",
+    "subCat": "Product",
+    "content": "Product photography of [PRODUCT] on minimalist podium, soft studio rim lighting, 8k.",
+    "demo": "demo-images/demo-04-product-mockup.webp"
+  },
+  {
+    "title": "Cyberpunk Anime Character Generator",
+    "desc": "Tạo nhân vật phong cách anime cyberpunk cực ngầu.",
+    "category": "Ảnh",
+    "type": "Free",
+    "subCat": "Anime",
+    "content": "Cyberpunk aesthetic anime character portrait, neon glow, detailed linework.",
+    "demo": "demo-images/demo-05-cyberpunk-anime.webp"
+  },
+  {
+    "title": "SaaS Landing Page UI Wireframe",
+    "desc": "Tạo giao diện UI layout trang web SaaS hiện đại bằng prompt.",
+    "category": "Ảnh",
+    "type": "VIP",
+    "subCat": "UI & Graphic",
+    "content": "Modern dark mode SaaS landing page UI design, clean typography, glowing gradients.",
+    "demo": "demo-images/demo-06-saas-ui.webp"
+  },
+  {
+    "title": "Quảng Cáo Chai Nước Cam Ép",
+    "desc": "Chụp quảng cáo chai nước cam ép động, ánh sáng studio điện ảnh.",
+    "category": "Ảnh",
+    "type": "Free",
+    "subCat": "Product",
+    "content": "A fast-paced, highly dynamic commercial product shot of a 100% Orange Juice plastic bottle with a green cap. The camera performs swift, energetic movements, zooming in and panning rapidly around the product. In the background, fresh orange slices and green leaves fly in slow motion alongside dynamic splashes of vibrant orange juice and refreshing water droplets. Bright, cinematic studio lighting highlighting the condensation on the bottle, hyper-realistic, 4k resolution, high contrast, vibrant colors, energetic and refreshing vibe.",
+    "demo": "demo-images/demo-07-chai-nuoc-cam.webp"
+  },
+  {
+    "title": "Poster Quảng Cáo Sản Phẩm Cao Cấp",
+    "desc": "Poster quảng cáo cao cấp đẳng cấp Cannes cho mọi sản phẩm.",
+    "category": "Ảnh",
+    "type": "Free",
+    "subCat": "Marketing",
+    "content": "use gpt image 2.5 sunburst high 4:5 2k to make the image:\n\nCreate an ultra-premium commercial poster for a brand/subject called {PRODUCT_NAME} — a {PRODUCT_CATEGORY} — designed as a Cannes-level advertising key visual with one hyper-realistic {PRODUCT_CATEGORY} as the absolute hero subject, and a bold upward explosion of layered dimensional shapes behind it representing its core essence/energy. The composition must be a tall vertical poster with the hero subject rising from the lower center, while a large radiant burst of sculpted abstract forms (color, material, and shape chosen to match the identity of {PRODUCT_NAME}) expands upward and outward from the subject like a stylized \"essence detonation.\" The overall image must feel premium, bold, graphic, highly controlled, and instantly memorable, combining hyper-real subject realism with premium dimensional paper-sculpture aesthetics.\n\nCore composition:\n\nUse a strong centered composition. Place one realistic rendering of {PRODUCT_NAME} in the lower-center foreground, upright and slightly monumental, occupying the lower third of the poster. From the top or core of the subject, a compact burst of energy/material rises directly upward and transitions into a large layered \"universe\" of shapes filling the upper two-thirds of the frame. This universe must feel like a series of overlapping abstract forms tied to the product's nature (liquid splash for beverages, light/circuit bursts for electronics, motion streaks for vehicles, architectural fragments for buildings, cultural/landscape motifs for a country, etc.), radiating outward in a clean symmetrical-organic arrangement. The hero subject is the clear visual anchor; the burst is its brand energy halo.\n\nSubject design:\n\nDesign {PRODUCT_NAME} as a globally market-ready, premium, world-class version of a {PRODUCT_CATEGORY}. The subject must feel extremely real: accurate materials, crisp highlights, believable surface textures, precise engineering/craft details, and tactile realism appropriate to its category (glass/liquid for drinks, metal/glass for electronics, paint/chrome for vehicles, stone/glass for architecture, iconic natural/cultural elements for a country, etc.). Include a refined logo, nameplate, or identifying mark using a cohesive color system appropriate to the brand tone. The subject should feel collectible, sharp, aspirational, and premium — instantly desirable in its category.\n\nEnergy/burst shape system:\n\nThe explosion behind the hero subject must be built from layered three-dimensional silhouettes rendered in a tonal palette that fits {PRODUCT_NAME}'s identity. These forms should look like sculpted paper-cut shapes or premium molded graphic forms, not random messy splatter. The burst must begin tighter near the subject and grow broader and more dramatic as it rises upward. Keep edges rounded, clean, dimensional, and premium. The overall burst must feel powerful and purposeful, like the product's core essence physically blooming into space.\n\nSupporting elements:\n\nScatter art-directed supporting elements around the burst composition that reflect the product's category and world (citrus wedges for a drink, circuit/light particles for electronics, road/speed elements for a car, architectural fragments or greenery for a building, cultural icons/landmarks/nature motifs for a country, etc.). These elements must feel carefully placed, more designed than chaotic, orbiting the central burst with rhythm and balance. They should look premium, slightly stylized, and dimensional, matching the crafted poster world while keeping believable texture.\n\nBackground:\n\nUse a rich saturated background color drawn from {PRODUCT_NAME}'s brand palette, with subtle material texture, like luxury matte paper or premium embossed poster stock. The background must include softly layered tonal variation and a few recessed silhouettes echoing the burst shapes, so the entire frame feels immersive and designed, but not cluttered. Keep the atmosphere bold, premium, and true to the mood of {PRODUCT_NAME}.\n\nTypography and layout:\n\nAdd original art-directed English headline typography only. Place a bold custom headline in the lower-left to lower-middle zone, integrated with the subject and burst structure — an original tagline capturing the essence of {PRODUCT_NAME}, fully original and not copied from any existing ad. Add a smaller elegant support line beneath describing {PRODUCT_NAME} in one phrase. Include the {PRODUCT_NAME} name/logo small and refined on the subject and optionally once in the poster layout. Typography must feel premium, sculptural, and campaign-ready, never generic, never a plain font block.\n\nLighting:\n\nUse soft premium commercial lighting with crisp edge definition and highly controlled color separation. The hero subject must have studio-quality reflections and strong material clarity. The burst forms should cast gentle dimensional shadows onto one another, enhancing the paper-sculpture depth. Supporting elements should catch clean highlights and soft shadows. The overall lighting must feel premium, cinematic, and world-class.\n\nCreative direction:\n\nThe poster must balance hyper-real product/subject photography with bold graphic sculpture and high-end brand storytelling. It should feel like a world-class global campaign where the subject's core identity becomes an exploding visual expression. The image must be extremely clean, vivid, premium, and globally ad-ready, with zero cheapness and zero clutter.\n\nMood and keywords:\n\npremium, radiant, bold energy, sculptural, collectible, subject-first, dimensional burst art, clean graphic advertising, world-class impact, {PRODUCT_NAME} identity\n\nRendering style:\n\nultra-premium advertising poster, centered hyper-real hero subject, layered dimensional burst explosion, paper-sculpture aesthetic, floating category-appropriate supporting elements, saturated brand-color background, refined editorial typography, 8k, world-class commercial advertising quality\n\nNegative prompt:\n\ncopied existing branding, copied headline text, messy burst, weak subject presence, generic layout, cheap clipart elements, flat lighting, fake-looking materials, muddy colors, random composition, low-resolution details, cluttered poster, childish design, generic typography, low-end mockup quality",
+    "demo": "demo-images/demo-08-luxury-poster.webp"
+  },
+  {
+    "title": "Cá Mập Megalodon Chui Ra Khỏi Màn Hình",
+    "desc": "Video viral cá mập Megalodon chui ra khỏi màn hình rạp chiếu phim.",
+    "category": "Video",
+    "type": "Free",
+    "subCat": "Video",
+    "content": "CÁ MẬP 3D - THE SHARK JUST SWAM OUT OF THE SCREEN\n\nGOOGLE FLOW — GENERATED AI VIDEO\n\n10 seconds | 9:16 | Photorealistic viral 4D cinema experience\n\nCreate a 10-second continuous viral phone recording from the perspective of a rear-row audience member inside a huge premium cinema. The camera is handheld vertically on a mobile phone, naturally shaky and reactive — never a professional camera.\n\n0–3s: Show multiple rows of audience members, deep red theater seats, black armrests, cup holders, aisle lights and a huge curved cinema screen. On the screen: a dark, photorealistic deep-ocean world. A gigantic Megalodon suddenly appears in the distance and rapidly accelerates directly toward the screen. Audience members begin reacting and raising phones.\n\n3–5s: The Megalodon reaches the screen at terrifying speed. Instead of simply appearing in front of it, the ocean itself physically pushes through the screen, creating the illusion that the screen has become a deep underwater opening. Water spray, bubbles and small fish burst into the theater while the audience ducks and screams.\n\n5–7.5s: The enormous Megalodon actually swims out from the screen and passes above the front rows, its full body extending deep into the physical theater. Its massive body, fins and tail move with realistic underwater physics. Water droplets and bubbles sweep toward the rear audience.\n\n7.5–10s: The shark makes a powerful turn directly toward the rear camera. Its enormous head rapidly approaches and partially fills the frame. The camera operator instinctively steps backward and lowers the phone as the Megalodon's eye and teeth pass extremely close. The entire theater is illuminated by moving underwater caustic light, bubbles and mist.\n\nCRITICAL REALISM: The transition must look physically convincing — the screen remains visibly attached to the theater while the ocean appears to gain impossible depth beyond its surface. Maintain correct perspective, scale, reflections, water physics, audience reactions and continuous spatial continuity.\n\nSTYLE: Photorealistic blockbuster 4D cinema footage, authentic smartphone recording, realistic handheld motion, premium theater environment, cinematic lighting, physically believable water, terrifying gigantic scale, natural human reactions.\n\nNEGATIVE: professional camera, drone, third-person view, cuts, teleportation, shark flying, shark walking, miniature shark, cartoon, CGI-looking creature, plastic texture, distorted shark anatomy, duplicate shark, extra fins, fake water, weightless movement, audience injuries, gore, text, subtitles, logos, watermark, UI.",
+    "demo": "demo-images/demo-09-megalodon.webp"
+  },
+  {
+    "title": "Sinh Vật Biển Điện Ảnh",
+    "desc": "Video tài liệu thiên nhiên điện ảnh về sinh vật biển.",
+    "category": "Video",
+    "type": "Free",
+    "subCat": "Video",
+    "content": "MASTER PROMPT\n\nCreate an ultra-realistic, cinematic wildlife documentary video featuring a majestic [OCEAN ANIMAL] moving through a vast, mysterious ocean environment.\n\nFORMAT: Vertical 9:16, 4K, 24fps, 8–10 seconds, photorealistic, premium cinematic nature-documentary quality, realistic physics and natural animal behavior.\n\nENVIRONMENT\n\nBegin deep beneath the ocean surface in an enormous blue abyss. Crystal-clear seawater is filled with microscopic particles, plankton, tiny bubbles, and subtle underwater debris.\n\nThe environment feels vast, deep, mysterious, and completely natural.\n\nSoft schools of small fish move through the background while occasional marine organisms pass through the foreground.\n\nFar in the darkness, the silhouette of the [OCEAN ANIMAL] gradually becomes visible.\n\n[OCEAN ANIMAL] — MAIN SUBJECT\n\nThe [OCEAN ANIMAL] must be anatomically accurate, biologically realistic, and highly detailed.\n\nShow realistic skin, scales, fins, eyes, natural markings, subtle imperfections, and species-specific physical characteristics.\n\nThe animal moves according to its real-world swimming behavior, with natural acceleration, turning, body movement, and interaction with surrounding water.\n\nDo not give the animal characteristics belonging to another species.\n\nCAMERA\n\nStart with an extremely wide underwater establishing shot showing the enormous scale of the ocean.\n\nThe camera slowly moves toward the [OCEAN ANIMAL] while maintaining cinematic depth and realistic underwater motion.\n\nTransition into a smooth side-tracking shot following the animal.\n\nThen move into a dramatic low-angle shot looking upward toward the animal and the bright ocean surface.\n\nUse:\n\nSmooth cinematic camera movement\n\nNatural underwater camera drag\n\nRealistic parallax\n\nSubtle depth-of-field\n\nNatural motion blur\n\nLarge-format wildlife-documentary cinematography\n\nNo artificial camera shake\n\nLIGHTING\n\nPowerful golden sunlight penetrates the surface above, creating realistic volumetric light rays through the deep blue water.\n\nUse physically accurate underwater light scattering, caustics, reflections, refraction, and atmospheric haze.\n\nThe [OCEAN ANIMAL] should receive natural highlights and soft shadows from the underwater sunlight.\n\nNear the surface, introduce warm golden-hour sunset colors contrasting beautifully with the deep blue ocean.\n\nANIMAL INTERACTION\n\nAs the [OCEAN ANIMAL] moves through the water, nearby fish naturally react to its presence.\n\nSmall bubbles and suspended particles move realistically around its body.\n\nWater displacement must be physically accurate.\n\nThe animal should never appear weightless, robotic, or artificially animated.\n\nCLIMAX\n\nThe [OCEAN ANIMAL] gradually approaches the ocean surface.\n\nThe camera follows from below, creating a powerful silhouette against the glowing sunset.\n\nAs the animal reaches the surface, realistic waves, reflections, splashes, and atmospheric mist appear according to the natural behavior of the selected species.\n\nCapture a spectacular final cinematic moment where the [OCEAN ANIMAL] dominates the frame against the enormous glowing ocean horizon.\n\nVISUAL STYLE\n\nUltra-photorealistic.\n\nPremium National Geographic / BBC-style wildlife cinematography.\n\nIMAX-scale visual composition.\n\nNatural cinematic color grading.\n\nHDR.\n\nExtremely detailed water simulation.\n\nRealistic marine biology.\n\nRealistic animal anatomy.\n\nNatural ocean physics.\n\nImmersive depth.\n\nEpic sense of scale.\n\nNo fantasy appearance.\n\nAUDIO\n\nNatural underwater ambience.\n\nDeep ocean rumble.\n\nSubtle bubbles and water movement.\n\nDistant marine sounds.\n\nSpecies-appropriate [OCEAN ANIMAL] vocalizations or natural sounds where applicable.\n\nAs the animal approaches the surface, increase the sound of moving water and waves.\n\nFinish with a powerful, immersive ocean ambience fading naturally.",
+    "demo": "demo-images/demo-10-sea-creature.webp"
+  }
+]

@@ -841,7 +841,7 @@
             activePromptText = out;
         }
 
-        function showDetailView(title, desc, subCat, type, content) {
+        function showDetailView(title, desc, subCat, type, content, demo) {
             document.getElementById('detailTitle').innerText = title;
             document.getElementById('detailDesc').innerText = desc;
             document.getElementById('detailSubCat').innerText = subCat;
@@ -857,6 +857,12 @@
             document.getElementById('varEnvironment').value = '';
             document.getElementById('detailContentBox').innerText = content;
             activePromptText = content;
+            const frame = document.getElementById('detailDemoFrame');
+            if (demo) {
+                frame.innerHTML = '<img src="' + demo + '" style="width:100%;height:100%;object-fit:cover;" alt="">';
+            } else {
+                frame.innerHTML = '[ Khung Video / Ảnh Demo Thực Tế Của Prompt ]';
+            }
             document.getElementById('detailView').style.display = 'block';
             window.scrollTo(0, 0);
         }
@@ -865,14 +871,15 @@
             const item = currentList[idx];
             if (!item) return;
             if (item.type !== 'Free' && !isVipActive()) { openVipPricingModal(); return; }
-            showDetailView(item.title, item.desc, item.subCat, item.type, item.content);
+            showDetailView(item.title, item.desc, item.subCat, item.type, item.content, item.demo);
         }
 
         function openPromptDetail(title, desc, category, isFree) {
             if (!isFree && !isVipActive()) { openVipPricingModal(); return; }
             const found = promptsData.find(p => p.title === title);
             const content = found ? found.content : 'Cinematic camera movement of [SUBJECT] walking through [ENVIRONMENT] with soft natural lighting.';
-            showDetailView(title, desc, category, 'Free', content);
+            const demo = found ? found.demo : '';
+            showDetailView(title, desc, category, 'Free', content, demo);
         }
 
         
@@ -1846,7 +1853,7 @@ onclick="closeVipPricingModal()">&times;</button>
                     </div>
                     <h1 id="detailTitle" style="font-size: 28px; font-weight: 800; color: white; margin-bottom: 10px;">Tiêu đề prompt</h1>
                     <p id="detailDesc" style="font-size: 14px; color: var(--text-muted); margin-bottom: 25px; line-height: 1.6;">Mô tả chi tiết...</p>
-                    <div style="width: 100%; height: 380px; background: #14121a; border: 1px solid var(--border-color); border-radius: 20px; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 14px; margin-bottom: 30px;">
+                    <div id="detailDemoFrame" style="width: 100%; height: 380px; background: #14121a; border: 1px solid var(--border-color); border-radius: 20px; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 14px; margin-bottom: 30px; overflow: hidden;">
                         [ Khung Video / Ảnh Demo Thực Tế Của Prompt ]
                     </div>
                     <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 30px;">
