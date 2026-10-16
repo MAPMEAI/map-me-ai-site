@@ -841,7 +841,7 @@
             activePromptText = out;
         }
 
-        function showDetailView(title, desc, subCat, type, content, demo) {
+        function showDetailView(title, desc, subCat, type, content, demo, demoVideo) {
             document.getElementById('detailTitle').innerText = title;
             document.getElementById('detailDesc').innerText = desc;
             document.getElementById('detailSubCat').innerText = subCat;
@@ -858,7 +858,9 @@
             document.getElementById('detailContentBox').innerText = content;
             activePromptText = content;
             const frame = document.getElementById('detailDemoFrame');
-            if (demo) {
+            if (demoVideo) {
+                frame.innerHTML = '<video src="' + demoVideo + '" style="width:100%;height:100%;object-fit:cover;" controls autoplay loop muted playsinline></video>';
+            } else if (demo) {
                 frame.innerHTML = '<img src="' + demo + '" style="width:100%;height:100%;object-fit:cover;" alt="">';
             } else {
                 frame.innerHTML = '[ Khung Video / Ảnh Demo Thực Tế Của Prompt ]';
@@ -871,7 +873,7 @@
             const item = currentList[idx];
             if (!item) return;
             if (item.type !== 'Free' && !isVipActive()) { openVipPricingModal(); return; }
-            showDetailView(item.title, item.desc, item.subCat, item.type, item.content, item.demo);
+            showDetailView(item.title, item.desc, item.subCat, item.type, item.content, item.demo, item.demoVideo);
         }
 
         function openPromptDetail(title, desc, category, isFree) {
@@ -879,7 +881,8 @@
             const found = promptsData.find(p => p.title === title);
             const content = found ? found.content : 'Cinematic camera movement of [SUBJECT] walking through [ENVIRONMENT] with soft natural lighting.';
             const demo = found ? found.demo : '';
-            showDetailView(title, desc, category, 'Free', content, demo);
+            const demoVideo = found ? found.demoVideo : '';
+            showDetailView(title, desc, category, 'Free', content, demo, demoVideo);
         }
 
         
