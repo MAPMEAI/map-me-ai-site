@@ -620,7 +620,16 @@
             margin-top: 40px;
         }
         footer p { margin-bottom: 3px; font-weight: 600; color: white; }
-    </style>
+    
+        /* ===== Responsive bổ sung ===== */
+        @media (max-width: 900px) {
+            header { flex-wrap: wrap; gap: 10px; height: auto; padding: 10px 14px; }
+            header nav { order: 3; width: 100%; overflow-x: auto; }
+            header nav ul { display: flex; gap: 14px; white-space: nowrap; padding-bottom: 4px; }
+            .grid-cards { grid-template-columns: 1fr !important; }
+            #detailView .detail-grid { grid-template-columns: 1fr !important; }
+        }
+</style>
 </head>
 <body>
 
@@ -637,11 +646,11 @@
         <nav>
             <ul>
                 <li><a href="javascript:void(0)" onclick="goHomeTab()" class="tab-home" data-en="Home" data-vi="TRANG CHỦ">TRANG CHỦ</a></li>
-                <li><a href="javascript:void(0)" onclick="goSection('prompts')" onclick="closeDetailIfOpen()" class="tab-prompt" data-en="Gear Tray" data-vi="MÂM ĐỒ NGHỀ">MÂM ĐỒ NGHỀ</a></li>
-                <li><a href="javascript:void(0)" onclick="goSection('courses')" onclick="closeDetailIfOpen()" class="tab-tools" data-en="Courses" data-vi="KHÓA HỌC">KHÓA HỌC</a></li>
-                <li><a href="javascript:void(0)" onclick="goSection('master')" onclick="closeDetailIfOpen()" class="tab-master" data-en="Master Prompt" data-vi="MASTER PROMPT">MASTER PROMPT</a></li>
-                <li><a href="javascript:void(0)" onclick="goSection('kitchen')" onclick="closeDetailIfOpen()" class="tab-kitchen" data-en="AI Kitchen" data-vi="BẾP AI">BẾP AI</a></li>
-                <li><a href="javascript:void(0)" onclick="goSection('tools')" onclick="closeDetailIfOpen()" class="tab-voice" data-en="AI Dubbing" data-vi="LỒNG TIẾNG AI">LỒNG TIẾNG AI</a></li>
+                <li><a href="javascript:void(0)" onclick="goSection('prompts')" class="tab-prompt" data-en="Gear Tray" data-vi="MÂM ĐỒ NGHỀ">MÂM ĐỒ NGHỀ</a></li>
+                <li><a href="javascript:void(0)" onclick="goSection('courses')" class="tab-tools" data-en="Courses" data-vi="KHÓA HỌC">KHÓA HỌC</a></li>
+                <li><a href="javascript:void(0)" onclick="goSection('master')" class="tab-master" data-en="Master Prompt" data-vi="MASTER PROMPT">MASTER PROMPT</a></li>
+                <li><a href="javascript:void(0)" onclick="goSection('kitchen')" class="tab-kitchen" data-en="AI Kitchen" data-vi="BẾP AI">BẾP AI</a></li>
+                <li><a href="javascript:void(0)" onclick="goSection('voice')" class="tab-voice" data-en="AI Dubbing" data-vi="LỒNG TIẾNG AI">LỒNG TIẾNG AI</a></li>
             </ul>
         </nav>
         <div class="nav-buttons">
@@ -674,7 +683,7 @@
         <div class="stats-container">
 
             <!-- Khung 1: Bấm vào trượt xuống Kho Prompt -->
-            <div class="stat-card" onclick="location.href='#prompts'" style="cursor: pointer;" title="Bấm để xem kho prompt">
+            <div class="stat-card" onclick="goSection('prompts')" style="cursor: pointer;" title="Bấm để xem kho prompt">
                 <div>
                     <h4 data-en="TOTAL PROMPT REPO" data-vi="TỔNG KHO PROMPT">TỔNG KHO PROMPT</h4>
                     <div class="stat-number">4+</div>
@@ -684,7 +693,7 @@
             </div>
 
             <!-- Khung 2: Bấm vào trượt xuống Tool AI / Mâm Đồ Nghề -->
-            <div class="stat-card" onclick="location.href='#tools'" style="cursor: pointer;" title="Bấm để xem mâm đồ nghề">
+            <div class="stat-card" onclick="goSection('gear')" style="cursor: pointer;" title="Bấm để xem mâm đồ nghề">
                 <div>
                     <h4 data-en="TOOLS ON HAND" data-vi="ĐỒ NGHỀ TRÊN MÂM">ĐỒ NGHỀ TRÊN MÂM</h4>
                     <div class="stat-number">3+</div>
@@ -754,14 +763,14 @@
             <!-- Hàng 1: Định dạng -->
             <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
                 <div style="display: flex; gap: 8px; flex-wrap: wrap;" id="formatFilter">
-                    <button class="filter-btn active-filter" onclick="filterPrompts('format', 'all')" style="background: #ffffff; color: #0b0b0e; border: none; padding: 7px 16px; border-radius: 20px; font-size: 12px; font-weight: 700; cursor: pointer;">Tất cả định dạng</button>
-                    <button class="filter-btn" onclick="filterPrompts('format', 'Ảnh')" style="background: #1c1a24; color: var(--text-muted); border: 1px solid var(--border-color); padding: 7px 16px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">Prompt Ảnh</button>
-                    <button class="filter-btn" onclick="filterPrompts('format', 'Video')" style="background: #1c1a24; color: var(--text-muted); border: 1px solid var(--border-color); padding: 7px 16px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">Prompt Video</button>
+                    <button class="filter-btn active-filter" onclick="filterPrompts('format', 'all', event)" style="background: #ffffff; color: #0b0b0e; border: none; padding: 7px 16px; border-radius: 20px; font-size: 12px; font-weight: 700; cursor: pointer;">Tất cả định dạng</button>
+                    <button class="filter-btn" onclick="filterPrompts('format', 'Ảnh', event)" style="background: #1c1a24; color: var(--text-muted); border: 1px solid var(--border-color); padding: 7px 16px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">Prompt Ảnh</button>
+                    <button class="filter-btn" onclick="filterPrompts('format', 'Video', event)" style="background: #1c1a24; color: var(--text-muted); border: 1px solid var(--border-color); padding: 7px 16px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">Prompt Video</button>
                 </div>
                 <!-- Nút Sắp Xếp có Dropdown Menu -->
                 <div style="position: relative; display: inline-block;">
                     <button onclick="toggleSortMenu(event)" style="background: #1c1a24; color: white; border: 1px solid var(--border-color); padding: 7px 16px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px;">
-                        <i class="fa-solid fa-arrow-down-up-acn" style="font-size: 11px;"></i> <span id="currentSortLabel">Mới nhất</span> <i class="fa-solid fa-chevron-down" style="font-size: 10px;"></i>
+                        <i class="fa-solid fa-arrow-down-wide-short" style="font-size: 11px;"></i> <span id="currentSortLabel">Mới nhất</span> <i class="fa-solid fa-chevron-down" style="font-size: 10px;"></i>
                     </button>
                     <!-- Menu thả xuống -->
                     <div id="sortDropdownMenu" style="display: none; position: absolute; right: 0; top: 110%; background: #1c1a24; border: 1px solid var(--border-color); border-radius: 12px; width: 160px; box-shadow: 0 10px 25px rgba(0,0,0,0.4); z-index: 100; overflow: hidden;">
@@ -774,19 +783,19 @@
 
             <!-- Hàng 2: Free / VIP -->
             <div style="display: flex; gap: 8px; flex-wrap: wrap;" id="typeFilter">
-                <button class="type-btn active-type" onclick="filterPrompts('type', 'all')" style="background: #ffffff; color: #0b0b0e; border: none; padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 700; cursor: pointer;">Free và VIP</button>
-                <button class="type-btn" onclick="filterPrompts('type', 'Free')" style="background: #1c1a24; color: var(--text-muted); border: 1px solid var(--border-color); padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">Miễn phí</button>
-                <button class="type-btn" onclick="filterPrompts('type', 'VIP')" style="background: #1c1a24; color: var(--text-muted); border: 1px solid var(--border-color); padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">VIP</button>
+                <button class="type-btn active-type" onclick="filterPrompts('type', 'all', event)" style="background: #ffffff; color: #0b0b0e; border: none; padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 700; cursor: pointer;">Free và VIP</button>
+                <button class="type-btn" onclick="filterPrompts('type', 'Free', event)" style="background: #1c1a24; color: var(--text-muted); border: 1px solid var(--border-color); padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">Miễn phí</button>
+                <button class="type-btn" onclick="filterPrompts('type', 'VIP', event)" style="background: #1c1a24; color: var(--text-muted); border: 1px solid var(--border-color); padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">VIP</button>
             </div>
 
             <!-- Hàng 3: Danh mục thể loại (Được auto đếm số lượng) -->
             <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;" id="categoryFilter">
-                <button class="cat-btn active-cat" onclick="filterPrompts('cat', 'Tất Cả')" style="background: #ffffff; color: #0b0b0e; border: none; padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 700; cursor: pointer;">Tất Cả</button>
-                <button class="cat-btn" onclick="filterPrompts('cat', 'Marketing')" style="background: #1c1a24; color: var(--text-muted); border: 1px solid var(--border-color); padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">Marketing (<span id="count-Marketing">0</span>)</button>
-                <button class="cat-btn" onclick="filterPrompts('cat', 'Product')" style="background: #1c1a24; color: var(--text-muted); border: 1px solid var(--border-color); padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">Product (<span id="count-Product">0</span>)</button>
-                <button class="cat-btn" onclick="filterPrompts('cat', 'Fashion')" style="background: #1c1a24; color: var(--text-muted); border: 1px solid var(--border-color); padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">Fashion (<span id="count-Fashion">0</span>)</button>
-                <button class="cat-btn" onclick="filterPrompts('cat', 'Anime')" style="background: #1c1a24; color: var(--text-muted); border: 1px solid var(--border-color); padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">Anime (<span id="count-Anime">0</span>)</button>
-                <button class="cat-btn" onclick="filterPrompts('cat', 'UI & Graphic')" style="background: #1c1a24; color: var(--text-muted); border: 1px solid var(--border-color); padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">UI & Graphic (<span id="count-UI">0</span>)</button>
+                <button class="cat-btn active-cat" onclick="filterPrompts('cat', 'Tất Cả', event)" style="background: #ffffff; color: #0b0b0e; border: none; padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 700; cursor: pointer;">Tất Cả</button>
+                <button class="cat-btn" onclick="filterPrompts('cat', 'Marketing', event)" style="background: #1c1a24; color: var(--text-muted); border: 1px solid var(--border-color); padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">Marketing (<span id="count-Marketing">0</span>)</button>
+                <button class="cat-btn" onclick="filterPrompts('cat', 'Product', event)" style="background: #1c1a24; color: var(--text-muted); border: 1px solid var(--border-color); padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">Product (<span id="count-Product">0</span>)</button>
+                <button class="cat-btn" onclick="filterPrompts('cat', 'Fashion', event)" style="background: #1c1a24; color: var(--text-muted); border: 1px solid var(--border-color); padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">Fashion (<span id="count-Fashion">0</span>)</button>
+                <button class="cat-btn" onclick="filterPrompts('cat', 'Anime', event)" style="background: #1c1a24; color: var(--text-muted); border: 1px solid var(--border-color); padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">Anime (<span id="count-Anime">0</span>)</button>
+                <button class="cat-btn" onclick="filterPrompts('cat', 'UI & Graphic', event)" style="background: #1c1a24; color: var(--text-muted); border: 1px solid var(--border-color); padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">UI & Graphic (<span id="count-UI">0</span>)</button>
             </div>
 
             <!-- Ô Tìm Kiếm -->
@@ -810,6 +819,7 @@
     <script>
         // DỮ LIỆU KHO PROMPT (Admin sau này chỉ cần thêm prompt vào danh sách này là web tự động cập nhật số lượng và hiển thị)
         let promptsData = [];
+        let promptsOriginal = [];
 
         // ===== TẢI DỮ LIỆU PROMPT TỪ FILE JSON RIÊNG =====
         // Thêm prompt mới: chỉ cần sửa file prompts.json rồi upload đè, không cần up lại index.html
@@ -818,6 +828,7 @@
                 const res = await fetch('prompts.json');
                 if (!res.ok) throw new Error('HTTP ' + res.status);
                 promptsData = await res.json();
+                promptsOriginal = promptsData.slice();
                 renderPrompts();
             } catch (err) {
                 const grid = document.getElementById('promptGridContainer');
@@ -936,6 +947,8 @@
             } else { fallbackCopy(); }
         }
 
+        function escHtml(v) { return String(v == null ? '' : v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
         function renderPrompts() {
             const grid = document.getElementById('promptGridContainer');
             const searchVal = document.getElementById('searchInput').value.toLowerCase();
@@ -967,30 +980,31 @@
                 <div class="card" onclick="openDetailPage(${index})">
                     <div>
                         <div class="card-top">
-                            <span class="${item.type === 'Free' ? 'tag-free' : 'tag-vip'}">${item.type}</span>
-                            <span style="font-size:11px; color:var(--text-muted);">${item.subCat}</span>
+                            <span class="${item.type === 'Free' ? 'tag-free' : 'tag-vip'}">${escHtml(item.type)}</span>
+                            <span style="font-size:11px; color:var(--text-muted);">${escHtml(item.subCat)}</span>
                         </div>
-                        <h3>${item.title}</h3>
-                        <p>${item.desc}</p>
+                        <h3>${escHtml(item.title)}</h3>
+                        <p>${escHtml(item.desc)}</p>
                     </div>
                     <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color); padding-top: 12px; margin-top: 12px;">
-                        <span style="font-weight: 600; font-size: 13px; color: var(--text-muted);">${item.subCat}</span>
+                        <span style="font-weight: 600; font-size: 13px; color: var(--text-muted);">${escHtml(item.subCat)}</span>
                         <button class="btn-pink" style="padding: 6px 16px; font-size: 12px; ${item.type === 'VIP' ? 'background: linear-gradient(135deg, #f5af19, #f27121);' : ''}">Xem ngay →</button>
                     </div>
                 </div>
             `).join('');
         }
 
-        function filterPrompts(type, val) {
+        function filterPrompts(type, val, evt) {
+            const btnEl = (evt || window.event || {}).currentTarget || (evt || window.event || {}).target;
             if (type === 'format') {
                 currentFormat = val;
-                updateActiveUI('formatFilter', event.target);
+                updateActiveUI('formatFilter', btnEl);
             } else if (type === 'type') {
                 currentType = val;
-                updateActiveUI('typeFilter', event.target);
+                updateActiveUI('typeFilter', btnEl);
             } else if (type === 'cat') {
                 currentCat = val;
-                updateActiveUI('categoryFilter', event.target);
+                updateActiveUI('categoryFilter', btnEl);
             }
             renderPrompts();
         }
@@ -1003,6 +1017,7 @@
                 btn.style.fontWeight = '600';
                 btn.style.border = '1px solid var(--border-color)';
             });
+            if (!clickedBtn) return;
             clickedBtn.style.background = '#ffffff';
             clickedBtn.style.color = '#0b0b0e';
             clickedBtn.style.fontWeight = '700';
@@ -1021,11 +1036,15 @@
             document.getElementById('currentSortLabel').innerText = label;
             document.getElementById('sortDropdownMenu').style.display = 'none';
 
-            // Thực hiện sắp xếp mảng promptsData theo tiêu chí
-            if (type === 'newest') {
-                promptsData.sort((a, b) => b.title.localeCompare(a.title)); // Giả lập sắp xếp mới
-            } else if (type === 'popular' || type === 'downloads') {
-                promptsData.sort((a, b) => a.title.localeCompare(b.title)); // Giả lập sắp xếp phổ biến
+            // Sắp xếp theo trường trong prompts.json nếu có (date / views / downloads); nếu không có thì giữ thứ tự gốc
+            const key = { newest: 'date', popular: 'views', downloads: 'downloads' }[type];
+            promptsData = promptsOriginal.slice();
+            if (key && promptsData.some(p => p[key] !== undefined)) {
+                promptsData.sort((a, b) => {
+                    const x = a[key], y = b[key];
+                    if (key === 'date') return String(y || '').localeCompare(String(x || ''));
+                    return (Number(y) || 0) - (Number(x) || 0);
+                });
             }
             renderPrompts(); // Vẽ lại giao diện sau khi sắp xếp
         }
@@ -1431,8 +1450,7 @@
 
         function confirmPayment() {
             // Không dùng alert thô kệch, thay bằng thông báo trực quan hoặc đóng modal kèm hướng dẫn
-            const syntaxText = document.getElementById('modalSyntax').innerText;
-            alert('Đã ghi nhận yêu cầu! Sau khi quét QR chuyển khoản đúng cú pháp, Mập sẽ kiểm tra và gửi hàng cho bạn ngay qua Zalo/Telegram (SĐT: 0908 502 839). Cảm ơn tình yêu! ❤️');
+                        alert('Hãy quét QR và chuyển khoản đúng cú pháp hiển thị trong khung. Sau khi chuyển, nhắn xác nhận qua Zalo/Telegram (SĐT: 0908 502 839) kèm ảnh chuyển khoản để được gửi mã. Lưu ý: trang web này không tự ghi nhận thanh toán.');
             closeModal();
         }
 
@@ -1455,9 +1473,9 @@
             const elements = document.querySelectorAll('[data-vi]');
             elements.forEach(el => {
                 if (currentLang === 'en') {
-                    if(el.getAttribute('data-en')) el.innerText = el.getAttribute('data-en');
+                    if (el.getAttribute('data-en') && el.children.length === 0) el.textContent = el.getAttribute('data-en');
                 } else {
-                    if(el.getAttribute('data-vi')) el.innerText = el.getAttribute('data-vi');
+                    if (el.getAttribute('data-vi') && el.children.length === 0) el.textContent = el.getAttribute('data-vi');
                 }
             });
         }
@@ -1660,8 +1678,6 @@
             alert('Đã xuất file! Gửi file này cho nhóc để up lên web chính nghen. 📦');
         }
 
-        renderPrompts();
-
         // Modal bảng giá VIP
         function openLoginModal() {
             if (typeof openVipPricingModal === 'function') { openVipPricingModal(); }
@@ -1833,7 +1849,7 @@
                             <h4 style="color: white; font-size: 16px; margin-bottom: 6px;">AI - dễ như ăn kẹo — Giá siêu ưu đãi</h4>
                             <p style="color: var(--text-muted); font-size: 12px; margin-bottom: 15px;">Mở khoá mức giá nội bộ riêng cho VIP — sở hữu tool rẻ hơn hẳn giá công khai, dùng ngay trong tháng VIP.</p>
                         </div>
-                        <a href="javascript:void(0)" onclick="goSection('tools')" onclick="closeVipPricingModal()" style="color: #ff3b3b; font-size: 12px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 5px;">Xem tool & giá ưu đãi →</a>
+                        <a href="javascript:void(0)" onclick="closeVipPricingModal(); goSection('tools')" style="color: #ff3b3b; font-size: 12px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 5px;">Xem tool & giá ưu đãi →</a>
                     </div>
 
                     <!-- Tool 2 -->
@@ -1846,7 +1862,7 @@
                             <h4 style="color: white; font-size: 16px; margin-bottom: 6px;">AI - dễ như ăn kẹo — MIỄN PHÍ</h4>
                             <p style="color: var(--text-muted); font-size: 12px; margin-bottom: 15px;">Tặng kèm quyền dùng tool AI - dễ như ăn kẹo và mọi bản cập nhật trong thời gian tool còn được phát triển. Không tốn thêm một đồng.</p>
                         </div>
-                        <a href="javascript:void(0)" onclick="goSection('tools')" onclick="closeVipPricingModal()" style="color: #ff3b3b; font-size: 12px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 5px;">Nhận tool miễn phí →</a>
+                        <a href="javascript:void(0)" onclick="closeVipPricingModal(); goSection('tools')" style="color: #ff3b3b; font-size: 12px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 5px;">Nhận tool miễn phí →</a>
                     </div>
 
                 </div>
