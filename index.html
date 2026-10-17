@@ -657,7 +657,7 @@
             <button onclick="openVipPricingModal()" class="btn btn-vip"><i class="fa-solid fa-crown"></i> VIP</button><span id="vipActiveBadge" style="display: none; background: linear-gradient(135deg, #f5af19, #f27121); color: white; font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 20px; margin-left: 8px;">VIP</span>
             <button onclick="openLoginModal()" class="btn btn-login" style="display: none;"><i class="fa-solid fa-user"></i> Login</button>
             <button class="lang-switch" onclick="toggleLanguage()" id="langBtn">EN 🌐</button>
-            <button onclick="openAdminPinModal()" class="btn btn-admin-nav"><i class="fa-solid fa-shield-halved"></i> Admin</button>
+            <button onclick="openAdminPinModal()" class="btn btn-admin-nav" style="display:none" id="adminNavBtn"><i class="fa-solid fa-shield-halved"></i> Admin</button>
         </div>
     </header>
 
@@ -1479,8 +1479,15 @@
                 }
             });
         }
+        // ===== KHÓA ADMIN TẠM THỜI =====
+        // false = Admin bị khóa hoàn toàn (không mở được). Muốn dùng lại: đổi thành true và đặt PIN mới ở ADMIN_PIN.
+        const ADMIN_ENABLED = false;
+        const ADMIN_PIN = '';
+        document.addEventListener('DOMContentLoaded', function () { const b = document.getElementById('adminNavBtn'); if (b && ADMIN_ENABLED) b.style.display = ''; });
+
         // Hàm mở Modal nhập PIN
         function openAdminPinModal() {
+            if (!ADMIN_ENABLED) return;
             document.getElementById('adminPinModal').classList.add('active');
             document.getElementById('adminPinInput').value = '';
             document.getElementById('adminPinInput').focus();
@@ -1493,8 +1500,9 @@
 
         // Hàm kiểm tra mã PIN và mở ngay giao diện Quản Trị (Admin Panel)
         function verifyAdminPin() {
+            if (!ADMIN_ENABLED || !ADMIN_PIN) return;
             const pin = document.getElementById('adminPinInput').value;
-            if (pin === '8888') {
+            if (pin === ADMIN_PIN) {
                 closeAdminPinModal();
 
                 // Ẩn toàn bộ trang chính của khách đi và hiển thị giao diện Quản Trị (Admin Panel) chuyên nghiệp
@@ -1602,7 +1610,7 @@
 
 
         // ===== BẢNG QUẢN TRỊ =====
-        function openAdminPanel() { renderAdminList(); showAdminTab('list'); document.getElementById('adminPanel').classList.add('active'); }
+        function openAdminPanel() { if (!ADMIN_ENABLED) return; renderAdminList(); showAdminTab('list'); document.getElementById('adminPanel').classList.add('active'); }
         function closeAdminPanel() { document.getElementById('adminPanel').classList.remove('active'); }
         function showAdminTab(t) {
             document.getElementById('adminTabList').style.display = t === 'list' ? '' : 'none';
