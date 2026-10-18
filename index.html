@@ -871,7 +871,7 @@
             activePromptText = content;
             const frame = document.getElementById('detailDemoFrame');
             if (demoVideo) {
-                frame.innerHTML = '<video src="' + demoVideo + '" style="width:100%;height:100%;object-fit:cover;" controls autoplay loop muted playsinline></video>';
+                frame.innerHTML = '<video src="' + demoVideo + '" style="width:100%;height:100%;object-fit:contain;background:#000;" controls autoplay loop muted playsinline></video>';
             } else if (demo) {
                 frame.innerHTML = '<img src="' + demo + '" style="width:100%;height:100%;object-fit:cover;" alt="">';
             } else {
@@ -1424,7 +1424,11 @@
     <footer>
         <p>© 2026 MẬP MÊ AI. Làm bằng tất cả sự đáng yêu và trà sữa 🧋</p>
         <p style="font-size: 11px; font-weight: 400; color: var(--text-muted);" data-en="Slogan: Love AI like you love your soulmate | MAPMEAI_OS" data-vi="Slogan: Mê AI như mê người yêu | MAPMEAI_OS">Slogan: Mê AI như mê người yêu | MAPMEAI_OS</p>
-    </footer>
+    <div style="text-align:center;padding:20px;color:var(--text-muted);font-size:13px;">
+        <a href="javascript:void(0)" onclick="openTermsModal()" style="color:var(--text-muted);text-decoration:underline;margin:0 10px;">Điều khoản sử dụng</a> |
+        <a href="javascript:void(0)" onclick="openTermsModal()" style="color:var(--text-muted);text-decoration:underline;margin:0 10px;">Chính sách hoàn tiền</a>
+    </div>
+</footer>
 
     <script>
         let currentModalType = 'vip'; // 'vip' hoặc 'tea'
@@ -1953,5 +1957,35 @@
             </div>
         </div>
     </div>
+
+<!-- MODAL ĐIỀU KHOẢN & HOÀN TIỀN -->
+<div class="modal-overlay" id="termsModal" style="display:none;">
+    <div class="modal-box" style="max-width:600px;background:#141419;border:2px solid #ffd166;padding:30px;position:relative;max-height:85vh;overflow-y:auto;">
+        <button onclick="closeTermsModal()" style="position:absolute;top:10px;right:15px;background:none;border:none;color:#fff;font-size:26px;cursor:pointer;">&times;</button>
+        <h2 style="color:#ffd166;margin-bottom:15px;">Điều khoản sử dụng & Chính sách hoàn tiền</h2>
+        <div style="color:#ddd;font-size:14px;line-height:1.7;">
+            <h3 style="color:#fff;margin:15px 0 8px;">1. Gói VIP</h3>
+            <p>- Gói 1 tháng (199.000đ): sử dụng trong 30 ngày kể từ ngày kích hoạt.<br>
+            - Gói vĩnh viễn (2.999.000đ): sử dụng không giới hạn thời gian.<br>
+            - Mỗi mã VIP chỉ dùng cho 1 người. Không chia sẻ mã cho người khác.</p>
+            <h3 style="color:#fff;margin:15px 0 8px;">2. Thanh toán</h3>
+            <p>- Thanh toán qua chuyển khoản ngân hàng theo QR hiển thị.<br>
+            - Sau khi chuyển khoản, nhắn Zalo để nhận mã kích hoạt.<br>
+            - Nội dung chuyển khoản ghi đúng cú pháp hiển thị.</p>
+            <h3 style="color:#fff;margin:15px 0 8px;">3. Hoàn tiền</h3>
+            <p>- Hoàn tiền trong 3 ngày đầu nếu dịch vụ lỗi không khắc phục được.<br>
+            - Không hoàn tiền nếu đã sử dụng mã VIP quá 3 ngày.<br>
+            - Liên hệ Zalo để được hỗ trợ hoàn tiền.</p>
+            <h3 style="color:#fff;margin:15px 0 8px;">4. Bản quyền nội dung</h3>
+            <p>- Prompt trên web thuộc bản quyền Mập Mê AI.<br>
+            - Không sao chép, phát tán lại nội dung VIP khi chưa được phép.</p>
+        </div>
+    </div>
+</div>
+<script>
+function openTermsModal(){document.getElementById('termsModal').style.display='flex';}
+function closeTermsModal(){document.getElementById('termsModal').style.display='none';}
+document.getElementById('termsModal').addEventListener('click',function(e){if(e.target===this)closeTermsModal();});
+</script>
 </body>
 </html>
