@@ -763,9 +763,9 @@
             <!-- Hàng 1: Định dạng -->
             <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
                 <div style="display: flex; gap: 8px; flex-wrap: wrap;" id="formatFilter">
-                    <button class="filter-btn active-filter" onclick="filterPrompts('format', 'all', event)" style="background: #ffffff; color: #0b0b0e; border: none; padding: 7px 16px; border-radius: 20px; font-size: 12px; font-weight: 700; cursor: pointer;">Tất cả định dạng</button>
-                    <button class="filter-btn" onclick="filterPrompts('format', 'Ảnh', event)" style="background: #1c1a24; color: var(--text-muted); border: 1px solid var(--border-color); padding: 7px 16px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">Prompt Ảnh</button>
-                    <button class="filter-btn" onclick="filterPrompts('format', 'Video', event)" style="background: #1c1a24; color: var(--text-muted); border: 1px solid var(--border-color); padding: 7px 16px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">Prompt Video</button>
+                    <button class="filter-btn active-filter" onclick="filterPrompts('format', 'all', event)" style="background: #ffffff; color: #0b0b0e; border: none; padding: 7px 16px; border-radius: 20px; font-size: 12px; font-weight: 700; cursor: pointer;">Tất cả định dạng (<span id="countFormatAll">0</span>)</button>
+                    <button class="filter-btn" onclick="filterPrompts('format', 'Ảnh', event)" style="background: #1c1a24; color: var(--text-muted); border: 1px solid var(--border-color); padding: 7px 16px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">Prompt Ảnh (<span id="countFormatAnh">0</span>)</button>
+                    <button class="filter-btn" onclick="filterPrompts('format', 'Video', event)" style="background: #1c1a24; color: var(--text-muted); border: 1px solid var(--border-color); padding: 7px 16px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">Prompt Video (<span id="countFormatVideo">0</span>)</button>
                 </div>
                 <!-- Nút Sắp Xếp có Dropdown Menu -->
                 <div style="position: relative; display: inline-block;">
@@ -783,9 +783,9 @@
 
             <!-- Hàng 2: Free / VIP -->
             <div style="display: flex; gap: 8px; flex-wrap: wrap;" id="typeFilter">
-                <button class="type-btn active-type" onclick="filterPrompts('type', 'all', event)" style="background: #ffffff; color: #0b0b0e; border: none; padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 700; cursor: pointer;">Free và VIP</button>
-                <button class="type-btn" onclick="filterPrompts('type', 'Free', event)" style="background: #1c1a24; color: var(--text-muted); border: 1px solid var(--border-color); padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">Miễn phí</button>
-                <button class="type-btn" onclick="filterPrompts('type', 'VIP', event)" style="background: #1c1a24; color: var(--text-muted); border: 1px solid var(--border-color); padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">VIP</button>
+                <button class="type-btn active-type" onclick="filterPrompts('type', 'all', event)" style="background: #ffffff; color: #0b0b0e; border: none; padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 700; cursor: pointer;">Free và VIP (<span id="countTypeAll">0</span>)</button>
+                <button class="type-btn" onclick="filterPrompts('type', 'Free', event)" style="background: #1c1a24; color: var(--text-muted); border: 1px solid var(--border-color); padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">Miễn phí (<span id="countTypeFree">0</span>)</button>
+                <button class="type-btn" onclick="filterPrompts('type', 'VIP', event)" style="background: #1c1a24; color: var(--text-muted); border: 1px solid var(--border-color); padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">VIP (<span id="countTypeVip">0</span>)</button>
             </div>
 
             <!-- Hàng 3: Danh mục thể loại (Được auto đếm số lượng) -->
@@ -830,6 +830,7 @@
                 promptsData = await res.json();
                 promptsOriginal = promptsData.slice();
                 renderPrompts();
+                updateFilterCounts();
             } catch (err) {
                 const grid = document.getElementById('promptGridContainer');
                 if (grid) grid.innerHTML = '<p style="color: var(--text-muted); grid-column: span 3; text-align: center; padding: 30px;">Không tải được dữ liệu prompt, kiểm tra file prompts.json đã upload chưa nhé!</p>';
@@ -853,6 +854,7 @@
             activePromptText = out;
         }
 
+        function escapeHtml(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
         function showDetailView(title, desc, subCat, type, content, demo, demoVideo) {
             document.getElementById('detailTitle').innerText = title;
             document.getElementById('detailDesc').innerText = desc;
@@ -867,8 +869,26 @@
             detailTemplate = content;
             document.getElementById('varSubject').value = '';
             document.getElementById('varEnvironment').value = '';
-            document.getElementById('detailContentBox').innerText = content;
-            activePromptText = content;
+            // LOGIC PREVIEW CHO KHÁCH VÃNG LAI: VIP prompt chỉ hiện 250 ký tự + blur
+            const isLocked = (type !== 'Free' && !isVipActive());
+            const contentBox = document.getElementById('detailContentBox');
+            // xóa CTA cũ nếu có
+            const oldCta = document.getElementById('vipUnlockCta');
+            if (oldCta) oldCta.remove();
+            if (isLocked && content.length > 250) {
+                const preview = content.substring(0, 250);
+                const rest = content.substring(250);
+                contentBox.innerHTML = '<span>' + escapeHtml(preview) + '</span>'
+                    + '<span style="filter:blur(6px);user-select:none;pointer-events:none;">' + escapeHtml(rest) + '</span>'
+                    + '<div id="vipUnlockCta" style="margin-top:20px;text-align:center;padding:20px;background:rgba(255,209,102,0.08);border:1px solid #ffd166;border-radius:12px;">'
+                    + '<p style="color:#ffd166;font-weight:700;margin-bottom:12px;">🔒 Nội dung đầy đủ dành cho học viên VIP</p>'
+                    + '<button onclick="openVipPricingModal()" style="background:linear-gradient(135deg,#ffd166,#f5af19);color:#000;font-weight:700;padding:12px 28px;border:none;border-radius:25px;cursor:pointer;font-size:15px;">Đăng ký Khóa Học / Tài khoản VIP để mở khóa toàn bộ cấu trúc Prompt này</button>'
+                    + '</div>';
+                activePromptText = preview;
+            } else {
+                contentBox.innerText = content;
+                activePromptText = content;
+            }
             const frame = document.getElementById('detailDemoFrame');
             if (demoVideo) {
                 frame.innerHTML = '<video src="' + demoVideo + '" style="width:100%;height:100%;object-fit:contain;background:#000;" controls autoplay loop muted playsinline></video>';
@@ -884,12 +904,11 @@
         function openDetailPage(idx) {
             const item = currentList[idx];
             if (!item) return;
-            if (item.type !== 'Free' && !isVipActive()) { openVipPricingModal(); return; }
             showDetailView(item.title, item.desc, item.subCat, item.type, item.content, item.demo, item.demoVideo);
         }
 
         function openPromptDetail(title, desc, category, isFree) {
-            if (!isFree && !isVipActive()) { openVipPricingModal(); return; }
+
             const found = promptsData.find(p => p.title === title);
             const content = found ? found.content : 'Cinematic camera movement of [SUBJECT] walking through [ENVIRONMENT] with soft natural lighting.';
             const demo = found ? found.demo : '';
@@ -948,6 +967,23 @@
         }
 
         function escHtml(v) { return String(v == null ? '' : v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+        
+        // ===== CẬP NHẬT SỐ ĐẾM TRÊN CÁC NÚT LỌC =====
+        function updateFilterCounts() {
+            const total = promptsData.length;
+            const anh = promptsData.filter(p => p.category === 'Ảnh').length;
+            const video = promptsData.filter(p => p.category === 'Video').length;
+            const free = promptsData.filter(p => p.type === 'Free').length;
+            const vip = promptsData.filter(p => p.type === 'VIP').length;
+            const set = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
+            set('countFormatAll', total);
+            set('countFormatAnh', anh);
+            set('countFormatVideo', video);
+            set('countTypeAll', total);
+            set('countTypeFree', free);
+            set('countTypeVip', vip);
+        }
 
         function renderPrompts() {
             const grid = document.getElementById('promptGridContainer');
