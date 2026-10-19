@@ -561,22 +561,13 @@
   "demoVideo": "videos/girl-convertible-peonies.mp4"
  },
  {
-  "title": "Adorable Chubby Baby Boy (3x3 Grid)",
-  "desc": "Collage 3x3 em bé mũm mĩm 9 biểu cảm, chữ MapMeAI",
-  "category": "Ảnh",
-  "type": "Free",
-  "subCat": "Ảnh",
-  "content": "adorable chubby baby boy\nA 3x3 grid collage of the same adorable chubby baby boy peeking through torn holes in white paper, each hole with rough, ripped, fibrous paper edges and curled flaps. Same baby in all nine frames: short messy brown hair, big dark brown eyes, round chubby cheeks, soft rosy skin. Tiny hands grip the torn paper edges in several frames. Each frame shows a different expression and outfit:\n1. Top-left: chin resting on both hands, sweet smile, mustard yellow hoodie\n2. Top-middle: big open-mouth laugh, blue denim jacket over a white t-shirt\n3. Top-right: finger on lips, looking up thoughtfully, dark green sweatshirt\n4. Middle-left: surprised \"O\" mouth, wide eyes, navy and white striped shirt\n5. Center: playful wink with a cheeky smile, red plaid flannel shirt\n6. Middle-right: sleepy eyes, hugging a fluffy cream plush pillow, bright blue sweatshirt\n7. Bottom-left: waving one hand, happy open-mouth smile, purple hoodie\n8. Bottom-middle: grumpy pout with arms crossed, cream knit sweater with navy stripes\n9. Bottom-right: joyful laugh, bright orange sweatshirt\nBackground: clean white paper surface with a soft grey-taupe backdrop visible through each hole. Soft even studio lighting, sharp focus on faces, hyper-realistic, ultra-detailed, cute and playful mood, 3:4 vertical.\nText: only the word \"MapMeAI\" in an elegant white italic serif font, placed in the top corner of the image as a small watermark. No other text, logo or watermark anywhere in the image.",
-  "demo": "demo-24.webp"
- },
- {
   "title": "KOL Miền tây - final chỉnh 16Sep",
   "desc": "GEM GEMINI - MASTER PROMPT: TẠO KOL ẢO NGƯỜI VIỆT NAM Vai trò của bạn: Bạn là một chuyên gia biên kịch cho kênh TikTok/Reels chuyên về KOL ảo. Nhiệm v",
   "content": "GEM GEMINI - MASTER PROMPT: TẠO KOL ẢO NGƯỜI VIỆT NAM    \n \nVai trò của bạn: Bạn là một chuyên gia biên kịch cho kênh TikTok/Reels chuyên về KOL ảo. Nhiệm vụ của bạn là xây dựng hình ảnh KOL mộc mạc, chân thật và mang đậm nét đặc trưng miền Tây  Việt.    \n Các prompt luôn tạo trong box code để cho người dùng dễ copy\nBƯỚC 1: KHỞI TẠO NHÂN VẬT    \n \nBạn có thể trả lời theo mẫu sau:    \n - Khu vực: Miền Tây Nam Bộ\n - Tỉnh/Thành: (Ví dụ: Đồng Tháp, An Giang, Cần Thơ, các tỉnh đồng bằng sông cửu long Mekong, miền tây việt nam)    \n - Giới tính: Nam / Nữ    \n - Độ tuổi: (Ví dụ: 22, 24, 28...)    \n - Tính cách: (Ví dụ: Vui vẻ, mộc mạc, hiền lành, hài hước, thân thiện, chăm chỉ...)    \n Ví dụ trả lời:     \n Miền Tây - Đồng Tháp, nam, 24 tuổi, nói giọng miền Tây chính gốc.    \n \nBƯỚC 2: ĐỀ XUẤT CHỦ ĐỀ    \n Sau khi nhận thông tin, hãy đề xuất 3 nhóm chủ đề viral phù hợp với vùng miền đó:    \n \nNhóm 1: Ẩm thực dân dã    \n \nNhóm 2: Đời sống miệt vườn    \n \nNhóm 3: Cảnh đẹp & Văn hóa    \n \nKhi tôi chọn 1 chủ đề, ví dụ: \"Một ngày đi hái sen kiếm tiền ở Đồng Tháp\" thì bạn trả về chi tiết:    \n \n1. KỊCH BẢN VOICE (Dưới 600 từ, LUÔN LUÔN giọng miền tây nam bộ), tối thiểu phải 120 từ không được ít hơn   \n 2. PROMPT TẠO BỐI CẢNH (BACKGROUND IMAGE PROMPT)    \n 3. 03 PROMPT TẠO ẢNH SỬ DỤNG ẢNH NGƯỜI DÙNG UPLOAD ĐỂ GIỮ NGUYÊN KHUÔN MẶT (3 phân đoạn, 9:16, 4K, 1080)    \n \n4. 03 PROMPT TẠO VIDEO (3 phân đoạn x 10s) + lời thoại luôn luôn tiếng việt, phong cách miền tây nam bộ, theo sát hết thoại trong kịch bản. luôn luôn sử dụng ảnh nhân vật tham chiếu, cấm AI tạo nhân vật mới 🚫 Không xiên ngang thân động vật để nướng. \n🚫 Không cắt cổ, lột da, mổ xẻ trực tiếp. \n🚫 Không máu, nội tạng, vết thương hay cảnh giết/chế biến gây phản cảm. \n🚫 Không mô tả action bạo lực trong prompt. \n✅ Nếu cần sơ chế, chuyển cảnh hoặc bắt đầu từ nguyên liệu đã được làm sạch, không cho thấy hành động bạo lực. \n✅ Tập trung vào nướng, chiên, kho, hấp, xào..., khói bếp và thành phẩm. \n✅ 2 giây cuối vẫn là cảnh “ăn cực ngon”: cận món ăn, texture hấp dẫn, hơi nóng, nước sốt bóng, nhân vật thưởng thức tự nhiên. 🚫 Không dùng “Mekong Delta”.\n🚫 Tránh các cụm tiếng Anh dễ khiến Gemini tự tạo footline.\n🚫 Không để AI tự chèn caption, title, label, watermark, logo, subtitle.\n🚫 Không xuất hiện các chữ “Mekong Delta”, “Vietnam”, “Dong Thap” trong hình.\n✅ Dùng “miền quê”, “miền tây Nam Bộ Việt Nam”, “đời sống miền quê Việt Nam”.\n✅ Luôn “hiển thị sự tươi rói bằng hành động nhảy tanh tách, búng tanh tách, quẫy đuôi, nghoe nguẩy càng...” cho các sinh vật như cá, tôm, cua, tép, lươn...\n✅ Cuối prompt luôn khóa “no text, no typography, no caption, no watermark, no logo, no footline”.",
   "category": "Ảnh",
   "subCat": "KOL & Nhân vật",
   "type": "VIP",
-  "demo": "",
+  "demo": "demo-kol-mientay.webp",
   "demoVideo": ""
  },
  {
@@ -586,7 +577,7 @@
   "category": "Ảnh",
   "subCat": "Ảnh",
   "type": "Free",
-  "demo": "",
+  "demo": "demo-lenh-an-chatgpt.webp",
   "demoVideo": ""
  },
  {
@@ -596,7 +587,7 @@
   "category": "Ảnh",
   "subCat": "Ảnh",
   "type": "Free",
-  "demo": "",
+  "demo": "demo-phuc-che-anh-cu.webp",
   "demoVideo": ""
  },
  {
@@ -606,7 +597,7 @@
   "category": "Ảnh",
   "subCat": "Ảnh",
   "type": "Free",
-  "demo": "",
+  "demo": "demo-object-to-heels.webp",
   "demoVideo": ""
  },
  {
@@ -616,7 +607,7 @@
   "category": "Ảnh",
   "subCat": "Ảnh",
   "type": "Free",
-  "demo": "",
+  "demo": "demo-crystal-cutting.webp",
   "demoVideo": ""
  },
  {
@@ -626,7 +617,7 @@
   "category": "Ảnh",
   "subCat": "KOL & Nhân vật",
   "type": "VIP",
-  "demo": "",
+  "demo": "demo-kol-mientay-2.webp",
   "demoVideo": ""
  },
  {
@@ -636,7 +627,7 @@
   "category": "Ảnh",
   "subCat": "Ảnh",
   "type": "Free",
-  "demo": "",
+  "demo": "demo-poster-replicate.webp",
   "demoVideo": ""
  },
  {
@@ -646,7 +637,7 @@
   "category": "Ảnh",
   "subCat": "Ảnh",
   "type": "Free",
-  "demo": "",
+  "demo": "demo-closeup-woman.webp",
   "demoVideo": ""
  },
  {
@@ -656,7 +647,7 @@
   "category": "Ảnh",
   "subCat": "KOL & Nhân vật",
   "type": "VIP",
-  "demo": "",
+  "demo": "demo-kol-3d-anhem.webp",
   "demoVideo": ""
  },
  {
@@ -666,7 +657,7 @@
   "category": "Ảnh",
   "subCat": "KOL & Nhân vật",
   "type": "VIP",
-  "demo": "",
+  "demo": "demo-kol-kiengiang.webp",
   "demoVideo": ""
  },
  {
@@ -676,7 +667,7 @@
   "category": "Ảnh",
   "subCat": "Ảnh",
   "type": "Free",
-  "demo": "",
+  "demo": "demo-skincare-compare.webp",
   "demoVideo": ""
  },
  {
@@ -686,7 +677,7 @@
   "category": "Ảnh",
   "subCat": "Ảnh",
   "type": "Free",
-  "demo": "",
+  "demo": "demo-logo-embroidery.webp",
   "demoVideo": ""
  },
  {
@@ -696,7 +687,7 @@
   "category": "Ảnh",
   "subCat": "Ảnh",
   "type": "Free",
-  "demo": "",
+  "demo": "demo-oil-paint-woman.webp",
   "demoVideo": ""
  },
  {
@@ -706,7 +697,7 @@
   "category": "Ảnh",
   "subCat": "Ẩm thực",
   "type": "Free",
-  "demo": "",
+  "demo": "demo-coffee-wallet.webp",
   "demoVideo": ""
  },
  {
@@ -716,7 +707,7 @@
   "category": "Ảnh",
   "subCat": "Ẩm thực",
   "type": "Free",
-  "demo": "",
+  "demo": "demo-menu-coffee.webp",
   "demoVideo": ""
  },
  {
@@ -726,7 +717,7 @@
   "category": "Ảnh",
   "subCat": "Ảnh",
   "type": "Free",
-  "demo": "",
+  "demo": "demo-infographic-nana.webp",
   "demoVideo": ""
  },
  {
@@ -736,7 +727,7 @@
   "category": "Ảnh",
   "subCat": "Marketing",
   "type": "Free",
-  "demo": "",
+  "demo": "demo-travel-3d-poster.webp",
   "demoVideo": ""
  },
  {
@@ -746,7 +737,7 @@
   "category": "Ảnh",
   "subCat": "Ảnh",
   "type": "Free",
-  "demo": "",
+  "demo": "demo-couple-collage.webp",
   "demoVideo": ""
  },
  {
@@ -756,7 +747,7 @@
   "category": "Ảnh",
   "subCat": "Ảnh",
   "type": "Free",
-  "demo": "",
+  "demo": "demo-fashion-shoot.webp",
   "demoVideo": ""
  },
  {
@@ -766,7 +757,7 @@
   "category": "Ảnh",
   "subCat": "Ảnh",
   "type": "Free",
-  "demo": "",
+  "demo": "demo-eyes-closeup.webp",
   "demoVideo": ""
  },
  {
@@ -776,7 +767,7 @@
   "category": "Ảnh",
   "subCat": "Ảnh",
   "type": "Free",
-  "demo": "",
+  "demo": "demo-portrait-8k.webp",
   "demoVideo": ""
  },
  {
@@ -786,7 +777,7 @@
   "category": "Ảnh",
   "subCat": "Ảnh",
   "type": "Free",
-  "demo": "",
+  "demo": "demo-cgi-product.webp",
   "demoVideo": ""
  },
  {
@@ -796,7 +787,7 @@
   "category": "Ảnh",
   "subCat": "Ảnh",
   "type": "Free",
-  "demo": "",
+  "demo": "demo-paintbrush-flag.webp",
   "demoVideo": ""
  },
  {
@@ -806,7 +797,7 @@
   "category": "Ảnh",
   "subCat": "Ảnh",
   "type": "Free",
-  "demo": "",
+  "demo": "demo-machine-assemble.webp",
   "demoVideo": ""
  },
  {
@@ -816,7 +807,7 @@
   "category": "Ảnh",
   "subCat": "Ảnh",
   "type": "Free",
-  "demo": "",
+  "demo": "demo-pixar-portrait.webp",
   "demoVideo": ""
  },
  {
@@ -826,7 +817,7 @@
   "category": "Ảnh",
   "subCat": "Marketing",
   "type": "Free",
-  "demo": "",
+  "demo": "demo-masked-hero.webp",
   "demoVideo": ""
  },
  {
@@ -836,7 +827,7 @@
   "category": "Ảnh",
   "subCat": "Ảnh",
   "type": "Free",
-  "demo": "",
+  "demo": "demo-graffiti-logo.webp",
   "demoVideo": ""
  },
  {
@@ -846,7 +837,7 @@
   "category": "Ảnh",
   "subCat": "KOL & Nhân vật",
   "type": "Free",
-  "demo": "",
+  "demo": "demo-cute-3d-character.webp",
   "demoVideo": ""
  },
  {
@@ -856,7 +847,7 @@
   "category": "Ảnh",
   "subCat": "Marketing",
   "type": "Free",
-  "demo": "",
+  "demo": "demo-lisbon-poster.webp",
   "demoVideo": ""
  },
  {
@@ -866,7 +857,7 @@
   "category": "Ảnh",
   "subCat": "Ảnh",
   "type": "Free",
-  "demo": "",
+  "demo": "demo-man-portrait.webp",
   "demoVideo": ""
  },
  {
@@ -876,7 +867,7 @@
   "category": "Ảnh",
   "subCat": "Ẩm thực",
   "type": "Free",
-  "demo": "",
+  "demo": "demo-miniature-coffee.webp",
   "demoVideo": ""
  },
  {
@@ -886,7 +877,7 @@
   "category": "Ảnh",
   "subCat": "Marketing",
   "type": "Free",
-  "demo": "",
+  "demo": "demo-banapro-fashion.webp",
   "demoVideo": ""
  }
 ]
