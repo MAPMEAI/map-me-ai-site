@@ -245,6 +245,9 @@
         .hero-text h1{font-size:46px;line-height:1.22;font-weight:800;margin:16px 0;letter-spacing:-.5px}
         .hero-text h1 em{font-style:normal;background:linear-gradient(120deg,#22d3ee,#e879f9);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
         .hero-text p{font-size:16.5px;color:var(--text-muted);margin-bottom:26px;max-width:480px}
+        .hl-slogan{color:#ff8fb3;font-weight:800;font-size:31px;margin:0 0 18px;letter-spacing:3px;animation:ledFlicker 4.5s linear infinite}
+        @keyframes ledFlicker{0%,100%{opacity:1;text-shadow:0 0 10px rgba(255,143,179,.8),0 0 32px rgba(255,143,179,.45),0 0 64px rgba(255,80,140,.3)}3%{opacity:.5;text-shadow:none}5%{opacity:1}7%{opacity:.65;text-shadow:none}9%,53%{opacity:1;text-shadow:0 0 10px rgba(255,143,179,.8),0 0 32px rgba(255,143,179,.45),0 0 64px rgba(255,80,140,.3)}55%{opacity:.45;text-shadow:none}57%{opacity:1}}
+        .hl-slogan .ai-w{display:inline-block;background:linear-gradient(120deg,#0ea5e9,#8b5cf6,#d946ef,#0ea5e9);background-size:220% 220%;animation:ai-flow 5s ease-in-out infinite;color:#fff;-webkit-text-fill-color:#fff;padding:.08em .5em .12em;border-radius:999px;font-size:.82em;letter-spacing:3px;vertical-align:baseline;box-shadow:0 0 20px rgba(139,92,246,.65);margin:0 .1em}
         .hero-visual{position:relative;height:400px}
                 .hero-visual .hv-wrap video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
         .hv-slide{position:absolute;inset:0;transition:transform .45s ease,opacity .45s ease}
@@ -254,7 +257,8 @@
         .hero-visual .hv-wrap{position:relative;border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.12);box-shadow:0 20px 50px rgba(0,0,0,.5);background:#0e0d14}}
         .hv-tag{position:absolute;left:10px;bottom:10px;font-size:11px;font-weight:700;color:#fff;background:rgba(0,0,0,.55);padding:5px 12px;border-radius:20px;backdrop-filter:blur(4px);white-space:nowrap;max-width:90%;overflow:hidden;text-overflow:ellipsis}
         @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
-        @media(max-width:920px){.hero-grid{grid-template-columns:1fr}.hero-visual{height:320px}.hero-text h1{font-size:34px}}
+        @media(max-width:920px){.hero-grid{grid-template-columns:1fr}.hero-visual{height:320px}.hero-text h1{font-size:34px}
+        .hl-slogan{font-size:21px;letter-spacing:2px}}
         .hero-content h1 {
             font-size: 42px;
             font-weight: 800;
@@ -692,9 +696,9 @@
     <section class="hero-section hero-new">
         <div class="hero-grid">
             <div class="hero-text">
-                <div class="badge-pro" data-en="PROMPT ready-to-use — Close deals instantly." data-vi="PROMPT chuẩn tay — Ra đơn ngay.">PROMPT chuẩn tay — Ra đơn ngay.</div>
+                <p class="hl-slogan" data-en="LOVE <span class='ai-w'>AI</span> LIKE YOU LOVE YOUR SOULMATE ❤️" data-vi="MÊ <span class='ai-w'>AI</span> NHƯ MÊ NGƯỜI YÊU ❤️">MÊ <span class="ai-w">AI</span> NHƯ MÊ NGƯỜI YÊU ❤️</p>
                 <h1 data-en="Create <em>images, videos</em> & AI voiceovers <em>that sell</em> — in minutes" data-vi="Tạo <em>ảnh, video</em> & lồng tiếng AI <em>chuẩn quảng cáo</em> — trong vài phút">Tạo <em>ảnh, video</em> & lồng tiếng AI <em>chuẩn quảng cáo</em> — trong vài phút</h1>
-                <p data-en="148+ battle-tested prompts for Flow / Veo 3, Banapro & ChatGPT. Copy, paste, cash in." data-vi="148+ prompt thực chiến cho Flow / Veo 3, Banapro & ChatGPT. Copy là xài, ra đơn liền tay.">148+ prompt thực chiến cho Flow / Veo 3, Banapro & ChatGPT. Copy là xài, ra đơn liền tay.</p>
+                <p data-en="168+ battle-tested prompts for Flow / Veo 3, Banapro & ChatGPT. Copy, paste, cash in." data-vi="168+ prompt thực chiến cho Flow / Veo 3, Banapro & ChatGPT. Copy là xài, ra đơn liền tay.">168+ prompt thực chiến cho Flow / Veo 3, Banapro & ChatGPT. Copy là xài, ra đơn liền tay.</p>
                 <div class="hero-actions">
                     <button onclick="openVipPricingModal()" class="btn-pink">Bắt Đầu Ngay →</button>
                     <button class="btn-outline" onclick="openPromptDetail('Master Flow Cinematic Video (Demo Miễn Phí)', 'Tạo chuyển động video mượt mà chuẩn cinematic. Bản demo free cho anh em trải nghiệm.', 'Flow / Veo 3', true)">Xem Thử Miễn Phí</button>
@@ -752,7 +756,7 @@
     <!-- Kho Lệnh Prompt Thực Chiến - Động 100% -->
     <div class="container" id="prompts">
         <div style="margin-bottom: 25px;">
-            <h2 style="font-size: 24px; font-weight: 800; color: white; margin-bottom: 4px;">Kho Lệnh Prompt Thực Chiến</h2>
+            <h2 style="font-size: 24px; font-weight: 800; color: white; margin-bottom: 4px;">Kho Lệnh Prompt Thực Chiến <span style="background:linear-gradient(135deg,#f5af19,#f27121);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-size:30px;">168+</span></h2>
             <p style="color: var(--text-muted); font-size: 13px;">Tập trung chuyên sâu cho Flow, Midjourney, ChatGPT và Banapro.</p>
         </div>
 
