@@ -1278,17 +1278,48 @@
     <div class="container" id="kitchen">
         <div class="section-header">
             <div>
-                <h2 data-en="AI Kitchen (Short Stories)" data-vi="🍳 Bếp AI (Góc Truyện Ngắn)">🍳 Bếp AI (Góc Truyện Ngắn)</h2>
+                <h2 data-en="🍳 AI Kitchen — where Mập and AI cook up food for the soul" data-vi="🍳 Bếp AI — nơi Mập cùng AI nấu các món ăn tinh thần">🍳 Bếp AI — nơi Mập cùng AI nấu các món ăn tinh thần</h2>
                 <p data-en="Incoming AI short story workflows and prompt series." data-vi="Nơi thử nghiệm và sáng tác các kịch bản, cốt truyện AI sắp ra mắt.">Nơi thử nghiệm và sáng tác các kịch bản, cốt truyện AI sắp ra mắt.</p>
             </div>
         </div>
-        <div class="card" style="text-align: center; padding: 25px;">
-            <i class="fa-solid fa-book-open-reader" style="font-size: 32px; color: var(--primary-pink); margin-bottom: 8px;"></i>
-            <h3 style="margin-bottom: 4px; font-size: 16px;" data-en="Kitchen is preparing ingredients..." data-vi="Khu vực đang chuẩn bị nguyên liệu...">Khu vực đang chuẩn bị nguyên liệu...</h3>
-            <p data-en="Bếp đang đỏ lửa chuẩn bị các mẻ truyện ngắn AI đỉnh cao. Stay tuned!" data-vi="Bếp đang đỏ lửa để chuẩn bị các mẻ truyện ngắn AI hấp dẫn nhất. Hãy đón chờ nhé!">Bếp đang đỏ lửa để chuẩn bị các mẻ truyện ngắn AI hấp dẫn nhất. Hãy đón chờ nhé!</p>
+        <p style="color:var(--text-muted);font-size:14px;margin:-8px 0 18px;" data-en="Short stories cooked from prompts: read stories, learn the AI writing workflow, and the publishing workflow." data-vi="Góc truyện ngắn 'nấu' từ prompt: đọc truyện, học quy trình viết truyện bằng AI, và quy trình đăng truyện lên mọi nền tảng.">Góc truyện ngắn 'nấu' từ prompt: đọc truyện, học quy trình viết truyện bằng AI, và quy trình đăng truyện lên mọi nền tảng.</p>
+        <div class="kitchen-track" id="kitchenTrack">
+            <div class="kitchen-slide"><img src="covers/cover-cua-do-tinh-dich.jpeg" alt="Cưa Đổ Tình Địch" loading="lazy"><p>Cưa Đổ Tình Địch</p></div>
+            <div class="kitchen-slide"><img src="covers/cover-thap-hon-lenh.jpeg" alt="Thập Hồn Lệnh" loading="lazy"><p>Thập Hồn Lệnh</p></div>
+            <div class="kitchen-slide"><img src="covers/cover-duong-cong-mua-ha.jpeg" alt="Đường Cong Mùa Hạ" loading="lazy"><p>Đường Cong Mùa Hạ</p></div>
+            <div class="kitchen-slide"><img src="covers/cover-ke-ra-gia.jpeg" alt="Thương Vụ Trái Luật" loading="lazy"><p>Thương Vụ Trái Luật</p></div>
+        </div>
+        <div class="kitchen-dots" id="kitchenDots"><span class="on"></span><span></span><span></span><span></span></div>
+        <div class="grid-cards" style="margin-top:22px;">
+            <div class="card" style="text-align:center;padding:24px;">
+                <div style="font-size:30px;margin-bottom:8px;">📚</div>
+                <h3 style="font-size:15px;margin-bottom:6px;" data-en="Published Short Stories" data-vi="Truyện ngắn đã xuất bản">Truyện ngắn đã xuất bản</h3>
+                <p style="font-size:13px;color:var(--text-muted);" data-en="Story library — free first 5 chapters." data-vi="Thư viện truyện — đọc miễn phí 5 chương đầu.">Thư viện truyện — đọc miễn phí 5 chương đầu.</p>
+            </div>
+            <div class="card" style="text-align:center;padding:24px;">
+                <div style="font-size:30px;margin-bottom:8px;">✍️</div>
+                <h3 style="font-size:15px;margin-bottom:6px;" data-en="Short Story Writing Workflow" data-vi="Quy trình viết truyện ngắn">Quy trình viết truyện ngắn</h3>
+                <p style="font-size:13px;color:var(--text-muted);" data-en="From idea to finished manuscript with AI." data-vi="Từ ý tưởng đến bản thảo hoàn chỉnh bằng AI.">Từ ý tưởng đến bản thảo hoàn chỉnh bằng AI.</p>
+            </div>
+            <div class="card" style="text-align:center;padding:24px;">
+                <div style="font-size:30px;margin-bottom:8px;">📤</div>
+                <h3 style="font-size:15px;margin-bottom:6px;" data-en="Story Publishing Workflow" data-vi="Quy trình đăng truyện">Quy trình đăng truyện</h3>
+                <p style="font-size:13px;color:var(--text-muted);" data-en="Publish to Wattpad, dammy.cc and all platforms." data-vi="Đăng lên Wattpad, dammy.cc và mọi nền tảng.">Đăng lên Wattpad, dammy.cc và mọi nền tảng.</p>
+            </div>
         </div>
     </div>
 
+    <style>
+    .kitchen-track{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:12px 4px;scrollbar-width:none}
+    .kitchen-track::-webkit-scrollbar{display:none}
+    .kitchen-slide{flex:0 0 200px;scroll-snap-align:start;cursor:pointer;transition:transform .3s}
+    .kitchen-slide:hover{transform:translateY(-6px)}
+    .kitchen-slide img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:14px;box-shadow:0 16px 40px rgba(0,0,0,.5);border:1px solid var(--border-color)}
+    .kitchen-slide p{text-align:center;font-weight:700;font-size:13px;margin-top:10px;color:#fff}
+    .kitchen-dots{text-align:center;margin-top:6px}
+    .kitchen-dots span{display:inline-block;width:8px;height:8px;border-radius:50%;background:#444;margin:0 4px;cursor:pointer}
+    .kitchen-dots span.on{background:#ff6584}
+    </style>
     <!-- Lồng Tiếng AI -->
     <div class="container" id="voice">
         <div class="section-header">
@@ -2050,8 +2081,8 @@ document.getElementById('termsModal').addEventListener('click',function(e){if(e.
 const HERO_VIDS=[
  {src:'https://raw.githubusercontent.com/MAPMEAI/map-me-ai-site/main/4e24b54f864d200b45af76951500ed647409f542863126d4ee157ece6164b030.mp4',vi:'Tiệc Trà Tiny',en:'Tiny Tea Party'},
  {src:'https://raw.githubusercontent.com/MAPMEAI/map-me-ai-site/main/videos/tiny%20cake%202.mp4',vi:'Tiny Food',en:'Tiny Food'},
- {src:'https://raw.githubusercontent.com/MAPMEAI/map-me-ai-site/main/bb4.mp4',vi:'Tiny Baby',en:'Tiny Baby'},
- {src:'https://raw.githubusercontent.com/MAPMEAI/map-me-ai-site/main/bb5.mp4',vi:'Tiny Baby',en:'Tiny Baby'},
+ {src:'https://raw.githubusercontent.com/MAPMEAI/map-me-ai-site/main/bb4.mp4',vi:'Tiny Baby 1',en:'Tiny Baby 1',grp:'baby'},
+ {src:'https://raw.githubusercontent.com/MAPMEAI/map-me-ai-site/main/bb5.mp4',vi:'Tiny Baby 2',en:'Tiny Baby 2',grp:'baby'},
  {src:'https://raw.githubusercontent.com/MAPMEAI/map-me-ai-site/main/Preparing_miniature_cr%C3%A8me_br%C3%BBl%C3%A9e_20260918211622.mp4',vi:'Crème Brûlée Mini',en:'Mini Crème Brûlée'},
  {src:'https://raw.githubusercontent.com/MAPMEAI/map-me-ai-site/main/Miniature_lobster_thermidor_cook%E2%80%A6_20260918211621.mp4',vi:'Tôm Hùm Mini',en:'Mini Lobster'},
  {src:'https://raw.githubusercontent.com/MAPMEAI/map-me-ai-site/main/Fairytale.mp4',vi:'Sách Thần Tiên',en:'Magic Book'},
@@ -2061,7 +2092,7 @@ const HERO_VIDS=[
  {src:'https://raw.githubusercontent.com/MAPMEAI/map-me-ai-site/main/goi%20xoai%20c%C3%A1%20loc.mp4',vi:'Gỏi Xoài Cá Lóc',en:'Mango Fish Salad'},
  {src:'https://raw.githubusercontent.com/MAPMEAI/map-me-ai-site/main/chim%20quang%20cao%20bep.mp4',vi:'Vẹt Chiên Trứng',en:'Parrot Chef'}
 ];
-function heroPick(exclude){const all=HERO_VIDS.map((_,i)=>i).filter(i=>!exclude.includes(i));const arr=all.length?all:HERO_VIDS.map((_,i)=>i);return arr[Math.floor(Math.random()*arr.length)];}
+function heroPick(exclude){const grps=exclude.map(i=>(HERO_VIDS[i]||{}).grp).filter(Boolean);const noDup=HERO_VIDS.map((_,i)=>i).filter(i=>!exclude.includes(i));const noGrp=noDup.filter(i=>{const g=(HERO_VIDS[i]||{}).grp;return !g||!grps.includes(g);});const arr=noGrp.length?noGrp:(noDup.length?noDup:HERO_VIDS.map((_,i)=>i));return arr[Math.floor(Math.random()*arr.length)];}
 function heroSet(wrap,idx){
   const e=HERO_VIDS[idx],v=wrap.querySelector('video'),tag=wrap.querySelector('.hv-tag');
   wrap._hidx=idx;
@@ -2091,6 +2122,15 @@ function heroSlide(wrap,idx){
     heroSlide(w,heroPick(others));
     cur=(cur+1)%wraps.length;
   },2600);
+})();
+/* ===== BẾP AI: slide bìa tự chạy ===== */
+(function(){
+  const track=document.getElementById('kitchenTrack');if(!track)return;
+  const dots=[...document.querySelectorAll('#kitchenDots span')];
+  let ki=0;const n=4;
+  const go=i=>{ki=(i+n)%n;const s=track.children[ki];track.scrollTo({left:s.offsetLeft-track.offsetLeft,behavior:'smooth'});dots.forEach((d,j)=>d.classList.toggle('on',j===ki));};
+  dots.forEach((d,j)=>d.onclick=()=>go(j));
+  setInterval(()=>go(ki+1),4000);
 })();
 </script></script>
 </body>
