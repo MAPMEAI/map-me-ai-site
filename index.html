@@ -1290,19 +1290,20 @@
             <div class="kitchen-slide" onclick="window.open('https://www.wattpad.com/story/417639920','_blank')"><img src="covers/cover-ke-ra-gia.jpeg" alt="Thương Vụ Trái Luật" loading="lazy"><p>Thương Vụ Trái Luật</p></div>
         </div>
         <div class="kitchen-dots" id="kitchenDots"><span class="on"></span><span></span><span></span><span></span></div>
-        <div style="text-align:center;margin-top:14px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;"><a href="https://www.wattpad.com/user/ChieuQuanSuTy" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:#ff6122;color:#fff;font-weight:700;font-size:13px;padding:10px 22px;border-radius:25px;text-decoration:none;"><i class="fa-brands fa-wattpad"></i> Wattpad</a><a href="https://dammy.cc" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:#8b5cf6;color:#fff;font-weight:700;font-size:13px;padding:10px 22px;border-radius:25px;text-decoration:none;"><i class="fa-solid fa-book-open"></i> dammy.cc</a></div>
         <div class="grid-cards" style="margin-top:22px;">
-            <div class="card" style="text-align:center;padding:24px;">
+            <div class="card" style="text-align:center;padding:24px;cursor:pointer;" onclick="openKitchenModal('library')">
                 <div style="font-size:30px;margin-bottom:8px;">📚</div>
                 <h3 style="font-size:15px;margin-bottom:6px;" data-en="Published Short Stories" data-vi="Truyện ngắn đã xuất bản">Truyện ngắn đã xuất bản</h3>
                 <p style="font-size:13px;color:var(--text-muted);" data-en="Story library — free first 5 chapters." data-vi="Thư viện truyện — đọc miễn phí 5 chương đầu.">Thư viện truyện — đọc miễn phí 5 chương đầu.</p>
             </div>
-            <div class="card" style="text-align:center;padding:24px;">
+            <div class="card" style="text-align:center;padding:24px;cursor:pointer;position:relative;" onclick="openKitchenModal('writing')">
+                <span style="position:absolute;top:12px;right:12px;font-size:18px;" title="Nội dung VIP">🔒</span>
                 <div style="font-size:30px;margin-bottom:8px;">✍️</div>
                 <h3 style="font-size:15px;margin-bottom:6px;" data-en="Short Story Writing Workflow" data-vi="Quy trình viết truyện ngắn">Quy trình viết truyện ngắn</h3>
                 <p style="font-size:13px;color:var(--text-muted);" data-en="From idea to finished manuscript with AI." data-vi="Từ ý tưởng đến bản thảo hoàn chỉnh bằng AI.">Từ ý tưởng đến bản thảo hoàn chỉnh bằng AI.</p>
             </div>
-            <div class="card" style="text-align:center;padding:24px;">
+            <div class="card" style="text-align:center;padding:24px;cursor:pointer;position:relative;" onclick="openKitchenModal('publishing')">
+                <span style="position:absolute;top:12px;right:12px;font-size:18px;" title="Nội dung VIP">🔒</span>
                 <div style="font-size:30px;margin-bottom:8px;">📤</div>
                 <h3 style="font-size:15px;margin-bottom:6px;" data-en="Story Publishing Workflow" data-vi="Quy trình đăng truyện">Quy trình đăng truyện</h3>
                 <p style="font-size:13px;color:var(--text-muted);" data-en="Publish to Wattpad, dammy.cc and all platforms." data-vi="Đăng lên Wattpad, dammy.cc và mọi nền tảng.">Đăng lên Wattpad, dammy.cc và mọi nền tảng.</p>
@@ -2134,5 +2135,61 @@ function heroSlide(wrap,idx){
   setInterval(()=>go(ki+1),4000);
 })();
 </script></script>
+
+<!-- Bếp AI Modal -->
+<div id="kitchenModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.75);align-items:center;justify-content:center;padding:20px;" onclick="if(event.target===this)this.style.display='none'">
+<div style="background:#15131e;border:1px solid #2a2735;border-radius:18px;max-width:640px;width:100%;max-height:85vh;overflow-y:auto;padding:28px;position:relative;">
+<button onclick="document.getElementById('kitchenModal').style.display='none'" style="position:absolute;top:14px;right:16px;background:none;border:0;color:#8f8aa3;font-size:22px;cursor:pointer;">✕</button>
+<div id="kitchenModalBody"></div>
+</div></div>
+<script>
+function openKitchenModal(tab){
+  var body = document.getElementById('kitchenModalBody');
+  var vip = (typeof isVipActive === 'function') ? isVipActive() : false;
+  var lockHtml = '<div style="text-align:center;padding:30px 10px;">'
+    + '<div style="font-size:48px;margin-bottom:12px;">🔒</div>'
+    + '<h3 style="margin-bottom:8px;">Nội dung dành cho thành viên VIP</h3>'
+    + '<p style="color:#8f8aa3;font-size:14px;margin-bottom:18px;">Nâng cấp VIP để xem toàn bộ quy trình.</p>'
+    + '<button class="btn" style="background:linear-gradient(135deg,#ff6584,#ff8fb3);color:#fff;border:0;border-radius:12px;padding:12px 28px;font-weight:700;cursor:pointer;" onclick="document.getElementById('kitchenModal').style.display='none';openVipPricingModal()">Xem gói VIP</button></div>';
+  if(tab==='library'){
+    body.innerHTML = '<h2 style="margin-bottom:4px;">📚 Truyện ngắn đã xuất bản</h2>'
+    + '<p style="color:#8f8aa3;font-size:13px;margin-bottom:16px;">Bấm vào bìa để đọc trên Wattpad — miễn phí 5 chương đầu.</p>'
+    + '<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">'
+    + kitchenStoryCard('Cưa Đổ Tình Địch','covers/cover-cua-do-tinh-dich.jpeg','https://www.wattpad.com/story/417598065')
+    + kitchenStoryCard('Thập Hồn Lệnh','covers/cover-thap-hon-lenh.jpeg','https://www.wattpad.com/story/417450998')
+    + kitchenStoryCard('Đường Cong Mùa Hạ','covers/cover-duong-cong-mua-ha.jpeg','https://www.wattpad.com/story/417513374')
+    + kitchenStoryCard('Thương Vụ Trái Luật','covers/cover-ke-ra-gia.jpeg','https://www.wattpad.com/story/417639920')
+    + '</div>';
+  } else if(tab==='writing'){
+    body.innerHTML = vip ? KITCHEN_WRITING : lockHtml;
+  } else if(tab==='publishing'){
+    body.innerHTML = vip ? KITCHEN_PUBLISHING : lockHtml;
+  }
+  document.getElementById('kitchenModal').style.display='flex';
+}
+function kitchenStoryCard(title,img,url){
+  return '<div style="cursor:pointer;text-align:center;" onclick="window.open(\''+url+'\',\'_blank\')">'
+  + '<img src="'+img+'" alt="'+title+'" loading="lazy" style="width:100%;border-radius:12px;border:1px solid #2a2735;">'
+  + '<p style="font-size:13px;margin-top:8px;">'+title+'</p></div>';
+}
+var KITCHEN_WRITING = '<h2 style="margin-bottom:12px;">✍️ Quy trình viết truyện ngắn bằng AI</h2>'
++ '<div style="font-size:14px;line-height:1.8;color:#d8d5e5;">'
++ '<p><b>G0 — Nhận yêu cầu:</b> chốt thể loại, số chương, ngôn ngữ. Thiếu thì hỏi gộp tối đa 3 câu.</p>'
++ '<p><b>G1 — Khảo sát xu hướng:</b> tìm trope hot trên Wattpad quốc tế, trình 3–5 lựa chọn kèm bằng chứng.</p>'
++ '<p><b>G2 — Phân tích văn phong:</b> rút nhịp câu, cách mở chương, móc câu từ 2–3 truyện hot cùng đề tài.</p>'
++ '<p><b>G3 — Kịch bản:</b> đưa 2–3 hướng kết (HE/OE/BE), KHÓA 1 kết + dàn ý chi tiết từng chương. Mỗi chương: sự kiện, chuyển biến cảm xúc, móc câu.</p>'
++ '<p><b>G4 — Poster + trailer:</b> poster THẤY RÕ MẶT nhân vật chính; trailer 3 cổng duyệt (kịch bản → storyboard → prompt video).</p>'
++ '<p><b>G5 — Viết:</b> từng chương đúng dàn ý, 2000–2700 từ/chương, chương 1 mở bằng cảnh gay cấn nhất.</p>'
++ '<p><b>G6 — Tự check:</b> timeline, động cơ, văn phong, từ miền Bắc lọt, từ ngữ AI, số từ — trước khi giao.</p>'
++ '<p><b>G7 — Đăng:</b> đăng 1 lần sau khi chốt toàn truyện. Cấm QR/thanh toán trong chương.</p>'
++ '<p style="color:#8f8aa3;font-size:13px;margin-top:10px;">⚠️ Sau mỗi giai đoạn DỪNG chờ duyệt mới sang tiếp. Không viết trước rồi mới hỏi.</p></div>';
+var KITCHEN_PUBLISHING = '<h2 style="margin-bottom:12px;">📤 Quy trình đăng truyện</h2>'
++ '<div style="font-size:14px;line-height:1.8;color:#d8d5e5;">'
++ '<p><b>1. Wattpad:</b> đăng 1 lần duy nhất sau khi chốt toàn truyện — tiêu đề, blurb, tag, thể loại. <b>Cấm</b> QR/thanh toán trong nội dung chương (bị flag).</p>'
++ '<p><b>2. dammy.cc:</b> tài khoản tác giả đã duyệt; truyện mặc định ở trạng thái ẨN — nhớ nhấn <b>Hiển thị truyện</b> để công khai.</p>'
++ '<p><b>3. EPUB:</b> mỗi truyện hoàn chỉnh → 1 file EPUB (bìa + mục lục + full chương) để share cho độc giả đọc trên điện thoại.</p>'
++ '<p><b>4. Gói bản quyền:</b> truyện full + dàn ý/tóm tắt + poster + file THÔNG-TIN (story ID, link, số liệu) → zip lưu Drive.</p>'
++ '<p><b>5. Bút danh:</b> mọi nền tảng đều ghi <b>Âm Dương Song Ảnh</b>.</p></div>';
+</script>
 </body>
 </html>
