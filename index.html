@@ -714,6 +714,11 @@
         </div>
     </section>
 
+    <!-- GHIM: POSTER THƯƠNG HIỆU MẬP MÊ AI -->
+    <div style="max-width:680px;margin:0 auto;padding:24px 20px 8px">
+        <img src="poster-mapmeai-icebreaker.webp" alt="Mập Mê AI" loading="lazy" style="width:100%;border-radius:18px;border:1px solid rgba(255,255,255,.12);box-shadow:0 20px 50px rgba(0,0,0,.5)">
+    </div>
+
     <!-- ĐÃ XÓA: 3 ô thống kê (số liệu sai, trùng link navbar) -->
 
     <!-- Kho Lệnh Prompt Thực Chiến -->
@@ -1322,10 +1327,10 @@ function openCourseModal(k){
         </div>
         <p style="color:var(--text-muted);font-size:14px;margin:-8px 0 18px;" data-en="Short stories cooked from prompts: read stories, learn the AI writing workflow, and the publishing workflow." data-vi="Góc truyện ngắn 'nấu' từ prompt: đọc truyện, học quy trình viết truyện bằng AI, và quy trình đăng truyện lên mọi nền tảng.">Góc truyện ngắn 'nấu' từ prompt: đọc truyện, học quy trình viết truyện bằng AI, và quy trình đăng truyện lên mọi nền tảng.</p>
         <div class="kitchen-track" id="kitchenTrack">
-            <div class="kitchen-slide" onclick="window.open('https://www.wattpad.com/story/417598065','_blank')"><img src="covers/cover-cua-do-tinh-dich.jpeg" alt="Cưa Đổ Tình Địch" loading="lazy"><p>Cưa Đổ Tình Địch</p></div>
-            <div class="kitchen-slide" onclick="window.open('https://www.wattpad.com/story/417450998','_blank')"><img src="covers/cover-thap-hon-lenh.jpeg" alt="Thập Hồn Lệnh" loading="lazy"><p>Thập Hồn Lệnh</p></div>
-            <div class="kitchen-slide" onclick="window.open('https://www.wattpad.com/story/417513374','_blank')"><img src="covers/cover-duong-cong-mua-ha.jpeg" alt="Đường Cong Mùa Hạ" loading="lazy"><p>Đường Cong Mùa Hạ</p></div>
-            <div class="kitchen-slide" onclick="window.open('https://www.wattpad.com/story/417639920','_blank')"><img src="covers/cover-ke-ra-gia.jpeg" alt="Thương Vụ Trái Luật" loading="lazy"><p>Thương Vụ Trái Luật</p></div>
+            <div class="kitchen-slide" onclick="openAffiliateGate('https://www.wattpad.com/story/417598065','Cưa Đổ Tình Địch')"><img src="covers/cover-cua-do-tinh-dich.jpeg" alt="Cưa Đổ Tình Địch" loading="lazy"><p>Cưa Đổ Tình Địch</p></div>
+            <div class="kitchen-slide" onclick="openAffiliateGate('https://www.wattpad.com/story/417450998','Thập Hồn Lệnh')"><img src="covers/cover-thap-hon-lenh.jpeg" alt="Thập Hồn Lệnh" loading="lazy"><p>Thập Hồn Lệnh</p></div>
+            <div class="kitchen-slide" onclick="openAffiliateGate('https://www.wattpad.com/story/417513374','Đường Cong Mùa Hạ')"><img src="covers/cover-duong-cong-mua-ha.jpeg" alt="Đường Cong Mùa Hạ" loading="lazy"><p>Đường Cong Mùa Hạ</p></div>
+            <div class="kitchen-slide" onclick="openAffiliateGate('https://www.wattpad.com/story/417639920','Thương Vụ Trái Luật')"><img src="covers/cover-ke-ra-gia.jpeg" alt="Thương Vụ Trái Luật" loading="lazy"><p>Thương Vụ Trái Luật</p></div>
         </div>
         <div class="kitchen-dots" id="kitchenDots"><span class="on"></span><span></span><span></span><span></span></div>
         <div class="grid-cards" style="margin-top:22px;">
@@ -2297,5 +2302,41 @@ var KITCHEN_PUBLISHING = '<h2 style="margin-bottom:12px;">📤 Quy trình đăng
 + '<p><b>4. Gói bản quyền:</b> truyện full + dàn ý/tóm tắt + poster + file THÔNG-TIN (story ID, link, số liệu) → zip lưu Drive.</p>'
 + '<p><b>5. Bút danh:</b> mọi nền tảng đều ghi <b>Âm Dương Song Ảnh</b>.</p></div>';
 </script>
+
+    <!-- MODAL AFFILIATE GATE: xem link affiliate -> nhập mã -> mở Wattpad -->
+    <div id="affModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.8);align-items:center;justify-content:center;padding:20px">
+        <div style="background:#15131e;border:1px solid #322d45;border-radius:18px;max-width:440px;width:100%;padding:28px;text-align:center">
+            <h3 id="affTitle" style="color:#fff;margin-bottom:8px"></h3>
+            <p style="color:#a2a0b2;font-size:14px;margin-bottom:16px">👉 Bấm vào link bên dưới, lấy <b style="color:#ffd166">mã ưu đãi</b> từ nhãn hàng rồi nhập vào ô để mở truyện</p>
+            <a id="affLink" href="#" target="_blank" style="display:inline-block;background:linear-gradient(135deg,#ffd166,#ff6584);color:#000;font-weight:700;padding:12px 28px;border-radius:25px;text-decoration:none;margin-bottom:16px">Xem Ưu Đãi Ngay →</a>
+            <input id="affCode" type="text" placeholder="Nhập mã từ nhãn hàng..." style="width:100%;padding:12px 16px;border-radius:12px;border:1px solid #322d45;background:#0b0a10;color:#fff;font-size:15px;margin-bottom:12px;text-align:center">
+            <button onclick="submitAffCode()" style="width:100%;background:linear-gradient(135deg,#ff6584,#a066ff);color:#fff;font-weight:700;padding:12px;border:none;border-radius:12px;cursor:pointer;font-size:15px">Mở Truyện 📖</button>
+            <button onclick="document.getElementById('affModal').style.display='none'" style="margin-top:10px;background:none;border:none;color:#a2a0b2;cursor:pointer;font-size:13px">Đóng</button>
+            <p id="affError" style="color:#ff6584;font-size:13px;margin-top:8px;display:none">Mã chưa đúng, kiểm tra lại nhé!</p>
+        </div>
+    </div>
+    <script>
+        let affTargetUrl = '';
+        // Mã mở truyện — tỷ đổi mã này khi cần
+        const AFF_CODES = ['MAPMEAI', 'mapmeai'];
+        function openAffiliateGate(wattpadUrl, title) {
+            affTargetUrl = wattpadUrl;
+            document.getElementById('affTitle').innerText = '📖 ' + title;
+            // Link affiliate — tỷ thay link thật vào đây
+            document.getElementById('affLink').href = 'https://collshp.com/nhulienhuynh?view=storefront';
+            document.getElementById('affCode').value = '';
+            document.getElementById('affError').style.display = 'none';
+            document.getElementById('affModal').style.display = 'flex';
+        }
+        function submitAffCode() {
+            const code = document.getElementById('affCode').value.trim();
+            if (AFF_CODES.includes(code) || AFF_CODES.includes(code.toUpperCase())) {
+                document.getElementById('affModal').style.display = 'none';
+                window.open(affTargetUrl, '_blank');
+            } else {
+                document.getElementById('affError').style.display = 'block';
+            }
+        }
+    </script>
 </body>
 </html>
