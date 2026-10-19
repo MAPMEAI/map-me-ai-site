@@ -621,6 +621,13 @@
         }
         footer p { margin-bottom: 3px; font-weight: 600; color: white; }
     
+        /* ===== Thumbnail preview trên thẻ prompt ===== */
+        .card-thumb{position:relative;border-radius:12px;overflow:hidden;margin-bottom:14px;aspect-ratio:16/9;background:#0e0d14;border:1px solid var(--border-color)}
+        .card-thumb img,.card-thumb video{width:100%;height:100%;object-fit:cover;display:block}
+        .thumb-badge{position:absolute;top:10px;left:10px;font-size:11px;font-weight:800;padding:5px 12px;border-radius:20px;box-shadow:0 4px 12px rgba(0,0,0,.4)}
+        .card-visual{display:flex;align-items:center;justify-content:center}        .card-visual::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 80% 15%,rgba(255,255,255,.22),transparent 55%)}        .visual-icon{font-size:46px;color:rgba(255,255,255,.92);text-shadow:0 6px 24px rgba(0,0,0,.45);z-index:1}
+        .thumb-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:rgba(0,0,0,.55);color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;pointer-events:none;backdrop-filter:blur(4px);border:1.5px solid rgba(255,255,255,.35)}
+
         /* ===== Responsive bổ sung ===== */
         @media (max-width: 900px) {
             header { flex-wrap: wrap; gap: 10px; height: auto; padding: 10px 14px; }
@@ -1013,11 +1020,19 @@
             }
 
             currentList = filtered;
-            grid.innerHTML = filtered.map((item, index) => `
+            grid.innerHTML = filtered.map((item, index) => {
+                const badgeCls = item.type === 'VIP' ? 'tag-vip' : 'tag-free';
+                let thumb = '';
+                if (item.demoVideo) {
+                    thumb = `<div class="card-thumb"><video src="${escHtml(item.demoVideo)}" muted loop playsinline preload="metadata" onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0"></video><span class="thumb-play">▶</span><span class="thumb-badge ${badgeCls}">${escHtml(item.type)}</span></div>`;
+                } else if (item.demo) {
+                    thumb = `<div class="card-thumb"><img src="${escHtml(item.demo)}" alt="" loading="lazy" onerror="this.closest('.card-thumb').style.display='none'"><span class="thumb-badge ${badgeCls}">${escHtml(item.type)}</span></div>`;
+                }
+                return `
                 <div class="card" onclick="openDetailPage(${index})">
+                    ${thumb}
                     <div>
                         <div class="card-top">
-                            <span class="${item.type === 'Free' ? 'tag-free' : 'tag-vip'}">${escHtml(item.type)}</span>
                             <span style="font-size:11px; color:var(--text-muted);">${escHtml(item.subCat)}</span>
                         </div>
                         <h3>${escHtml(item.title)}</h3>
@@ -1028,7 +1043,7 @@
                         <button class="btn-pink" style="padding: 6px 16px; font-size: 12px; ${item.type === 'VIP' ? 'background: linear-gradient(135deg, #f5af19, #f27121);' : ''}">Xem ngay →</button>
                     </div>
                 </div>
-            `).join('');
+            `}).join('');
         }
 
         function filterPrompts(type, val, evt) {
@@ -1110,9 +1125,9 @@
         <div class="grid-cards">
             <!-- 1. Master Prompt Miễn Phí (Cho xem & copy thoải mái) -->
             <div class="card" onclick="openPromptDetail('Master Basic AI Prompting Structure', 'Khung câu lệnh nền tảng giúp định hướng tư duy cho người mới bắt đầu.', 'Master Free', true)">
+                <div class="card-thumb card-visual" style="background:linear-gradient(135deg,#1e3a8a,#7c3aed)"><span class="visual-icon"><i class="fa-solid fa-brain"></i></span><span class="thumb-badge tag-free">Miễn Phí</span></div>
                 <div>
                     <div class="card-top">
-                        <span class="tag-free">Miễn Phí</span>
                         <span style="font-size:11px; color:var(--text-muted);">Framework</span>
                     </div>
                     <h3>Master Basic AI Prompting Structure</h3>
@@ -1126,9 +1141,9 @@
 
             <!-- 2. Master Prompt VIP (Bị khóa, bấm vào hiện bảng giá VIP) -->
             <div class="card" onclick="openPromptDetail('Master AI Agent System Prompt', 'Câu lệnh hệ thống giúp định hình nhân cách và quy trình làm việc chuẩn cho Agent.', 'Master VIP', false)">
+                <div class="card-thumb card-visual" style="background:linear-gradient(135deg,#92400e,#f59e0b)"><span class="visual-icon"><i class="fa-solid fa-robot"></i></span><span class="thumb-badge tag-vip">VIP Master</span></div>
                 <div>
                     <div class="card-top">
-                        <span class="tag-vip">VIP Master</span>
                         <span style="font-size:11px; color:var(--text-muted);">System Prompt</span>
                     </div>
                     <h3>Master AI Agent System Prompt</h3>
@@ -1142,9 +1157,9 @@
 
             <!-- 3. Master Prompt VIP (Bị khóa) -->
             <div class="card" onclick="openPromptDetail('Ultimate Copywriting Framework Prompt', 'Khung câu lệnh tổng hợp 10+ trường phái copywriting tỷ lệ chuyển đổi cao.', 'Master VIP', false)">
+                <div class="card-thumb card-visual" style="background:linear-gradient(135deg,#9d174d,#d946ef)"><span class="visual-icon"><i class="fa-solid fa-pen-nib"></i></span><span class="thumb-badge tag-vip">VIP Master</span></div>
                 <div>
                     <div class="card-top">
-                        <span class="tag-vip">VIP Master</span>
                         <span style="font-size:11px; color:var(--text-muted);">Framework</span>
                     </div>
                     <h3>Ultimate Copywriting Framework</h3>
@@ -1171,9 +1186,9 @@
         <div class="grid-cards">
             <!-- Tool 1: ChatGPT -->
             <div class="card" onclick="window.open('https://chatgpt.com', '_blank')">
+                <div class="card-thumb card-visual" style="background:linear-gradient(135deg,#065f46,#10b981)"><span class="visual-icon"><i class="fa-solid fa-comments"></i></span><span class="thumb-badge tag-free">Phổ Biến</span></div>
                 <div>
                     <div class="card-top">
-                        <span class="tag-free">Phổ Biến</span>
                         <span style="font-size:11px; color:var(--text-muted);">OpenAI</span>
                     </div>
                     <h3>ChatGPT Master Assistant</h3>
@@ -1187,9 +1202,9 @@
 
             <!-- Tool 2: Claude AI -->
             <div class="card" onclick="window.open('https://claude.ai', '_blank')">
+                <div class="card-thumb card-visual" style="background:linear-gradient(135deg,#9a3412,#fb923c)"><span class="visual-icon"><i class="fa-solid fa-feather"></i></span><span class="thumb-badge tag-free">Đỉnh Cao Viết Lách</span></div>
                 <div>
                     <div class="card-top">
-                        <span class="tag-free">Đỉnh Cao Viết Lách</span>
                         <span style="font-size:11px; color:var(--text-muted);">Anthropic</span>
                     </div>
                     <h3>Claude 3.5 Sonnet</h3>
@@ -1203,9 +1218,9 @@
 
             <!-- Tool 3: Midjourney / Gen Ảnh -->
             <div class="card" onclick="window.open('https://www.midjourney.com', '_blank')">
+                <div class="card-thumb card-visual" style="background:linear-gradient(135deg,#4c1d95,#0ea5e9)"><span class="visual-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></span><span class="thumb-badge tag-free">Miễn Phí</span></div>
                 <div>
                     <div class="card-top">
-                        <span class="tag-free">Miễn Phí</span>
                         <span style="font-size:11px; color:var(--text-muted);">Image Gen</span>
                     </div>
                     <h3>Midjourney & Banapro Studio</h3>
@@ -1659,6 +1674,21 @@
             document.getElementById('tabListBtn').classList.toggle('active', t === 'list');
             document.getElementById('tabAddBtn').classList.toggle('active', t === 'add');
         }
+        // Deep-link từ landing: ?format=anh | video -> tự lọc kho prompt
+        (function(){
+            try{
+                var q = new URLSearchParams(location.search).get('format');
+                var map = {anh:'\u1ea2nh', video:'Video'};
+                var v = q && map[q.toLowerCase()];
+                if(!v) return;
+                currentFormat = v;
+                renderPrompts();
+                var box = document.getElementById('formatFilter');
+                var btn = box && box.querySelector('button[onclick*="'+v+'"]');
+                if(btn) updateActiveUI('formatFilter', btn);
+            }catch(e){}
+        })();
+
         function renderAdminList() {
             const box = document.getElementById('adminPromptList');
             if (!box) return;
