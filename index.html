@@ -108,6 +108,8 @@
             flex-shrink: 0;
         }
 
+        .brand-name .ai-badge{display:inline-block;font-weight:800;font-size:.8em;letter-spacing:2px;color:#fff;-webkit-text-fill-color:#fff;background:linear-gradient(120deg,#0ea5e9,#8b5cf6,#d946ef,#0ea5e9);background-size:220% 220%;animation:ai-flow 5s ease-in-out infinite;padding:.15em .55em .17em;border-radius:999px;box-shadow:0 4px 14px rgba(139,92,246,.45);vertical-align:middle;white-space:nowrap;margin-left:.25em}
+        @keyframes ai-flow{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         .brand-name {
             font-size: 28px;
             font-weight: 700;
@@ -235,6 +237,23 @@
             text-align: center;
         }
 
+        .hero-new{text-align:left;overflow:hidden;position:relative}
+        .hero-new::before{content:'';position:absolute;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(217,70,239,.22),transparent 65%);top:-160px;right:-120px;pointer-events:none}
+        .hero-new::after{content:'';position:absolute;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(14,165,233,.18),transparent 65%);bottom:-140px;left:-100px;pointer-events:none}
+        .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center;position:relative;z-index:1}
+        .hero-text h1{font-size:46px;line-height:1.22;font-weight:800;margin:16px 0;letter-spacing:-.5px}
+        .hero-text h1 em{font-style:normal;background:linear-gradient(120deg,#22d3ee,#e879f9);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+        .hero-text p{font-size:16.5px;color:var(--text-muted);margin-bottom:26px;max-width:480px}
+        .hero-visual{position:relative;height:400px}
+                .hero-visual .hv-wrap video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+        .hv-slide{position:absolute;inset:0;transition:transform .45s ease,opacity .45s ease}
+        .hv-slide.slide-out{transform:translateX(-80px);opacity:0}
+        .hv-slide.slide-in{transform:translateX(80px);opacity:0;transition:none}
+        .hero-visual{height:480px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:14px;align-content:center}
+        .hero-visual .hv-wrap{position:relative;border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.12);box-shadow:0 20px 50px rgba(0,0,0,.5);background:#0e0d14}}
+        .hv-tag{position:absolute;left:10px;bottom:10px;font-size:11px;font-weight:700;color:#fff;background:rgba(0,0,0,.55);padding:5px 12px;border-radius:20px;backdrop-filter:blur(4px);white-space:nowrap;max-width:90%;overflow:hidden;text-overflow:ellipsis}
+        @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+        @media(max-width:920px){.hero-grid{grid-template-columns:1fr}.hero-visual{height:320px}.hero-text h1{font-size:34px}}
         .hero-content h1 {
             font-size: 42px;
             font-weight: 800;
@@ -648,8 +667,7 @@
     <!-- Navbar hoàn chỉnh, đã liên kết chuẩn 100% các nút -->
     <header id="hero">
         <a href="javascript:void(0)" onclick="goHomeTab()" class="logo-container">
-            <div class="logo-avatar"></div>
-            <span class="brand-name">MẬP MÊ AI</span>
+            <span class="brand-name">MẬP MÊ <span class="ai-badge">✦ AI</span></span>
         </a>
         <nav>
             <ul>
@@ -669,63 +687,33 @@
         </div>
     </header>
 
-    <!-- HERO SECTION (Slogan: Mê AI như mê người yêu) -->
-    <section class="hero-section">
-        <div class="hero-content">
-            <h1 data-en="MAP ME AI" data-vi="MẬP MÊ AI">MẬP MÊ AI</h1>
-            <h2 data-en="Love AI like you love your soulmate ❤️" data-vi="Mê AI như mê người yêu ❤️">Mê AI như mê người yêu ❤️</h2>
-            <div class="badge-pro" data-en="PROMPT ready-to-use — Close deals instantly." data-vi="PROMPT chuẩn tay — Ra đơn ngay.">PROMPT chuẩn tay — Ra đơn ngay.</div>
-            <p data-en="The ultimate collection of prompts and AI tools to make work effortless and money flow smoothly into your account!" data-vi="Nơi tổng hợp các câu lệnh (Prompt) và công cụ AI thực chiến giúp bạn làm việc nhàn tênh mà tiền vẫn reo 'tin tin' vào tài khoản mỗi ngày!">Nơi tổng hợp các câu lệnh (Prompt) và công cụ AI thực chiến giúp bạn làm việc nhàn tênh mà tiền vẫn reo "tin tin" vào tài khoản mỗi ngày!</p>
-            <div class="hero-actions">
-                <!-- Nút Bắt Đầu Ngay gọi thẳng bảng giá VIP -->
-                <button onclick="openVipPricingModal()" class="btn-pink">Bắt Đầu Ngay →</button>
-
-                <!-- Nút Xem Thử Miễn Phí gọi thẳng Modal Chi Tiết Prompt Free -->
-                <button class="btn-outline" onclick="openPromptDetail('Master Flow Cinematic Video (Demo Miễn Phí)', 'Tạo chuyển động video mượt mà chuẩn cinematic. Bản demo free cho anh em trải nghiệm.', 'Flow / Veo 3', true)">Xem Thử Miễn Phí</button>
+    <!-- HERO SECTION -->
+    <section class="hero-section hero-new">
+        <div class="hero-grid">
+            <div class="hero-text">
+                <div class="badge-pro" data-en="PROMPT ready-to-use — Close deals instantly." data-vi="PROMPT chuẩn tay — Ra đơn ngay.">PROMPT chuẩn tay — Ra đơn ngay.</div>
+                <h1 data-en="Create <em>images, videos</em> & AI voiceovers <em>that sell</em> — in minutes" data-vi="Tạo <em>ảnh, video</em> & lồng tiếng AI <em>chuẩn quảng cáo</em> — trong vài phút">Tạo <em>ảnh, video</em> & lồng tiếng AI <em>chuẩn quảng cáo</em> — trong vài phút</h1>
+                <p data-en="148+ battle-tested prompts for Flow / Veo 3, Banapro & ChatGPT. Copy, paste, cash in." data-vi="148+ prompt thực chiến cho Flow / Veo 3, Banapro & ChatGPT. Copy là xài, ra đơn liền tay.">148+ prompt thực chiến cho Flow / Veo 3, Banapro & ChatGPT. Copy là xài, ra đơn liền tay.</p>
+                <div class="hero-actions">
+                    <button onclick="openVipPricingModal()" class="btn-pink">Bắt Đầu Ngay →</button>
+                    <button class="btn-outline" onclick="openPromptDetail('Master Flow Cinematic Video (Demo Miễn Phí)', 'Tạo chuyển động video mượt mà chuẩn cinematic. Bản demo free cho anh em trải nghiệm.', 'Flow / Veo 3', true)">Xem Thử Miễn Phí</button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hv-wrap hv1"><div class="hv-slide"><video muted loop playsinline preload="metadata"></video><span class="hv-tag" data-vi="" data-en=""></span></div></div>
+                <div class="hv-wrap hv2"><div class="hv-slide"><video muted loop playsinline preload="metadata"></video><span class="hv-tag" data-vi="" data-en=""></span></div></div>
+                <div class="hv-wrap hv3"><div class="hv-slide"><video muted loop playsinline preload="metadata"></video><span class="hv-tag" data-vi="" data-en=""></span></div></div>
+                <div class="hv-wrap hv4"><div class="hv-slide"><video muted loop playsinline preload="metadata"></video><span class="hv-tag" data-vi="" data-en=""></span></div></div>
             </div>
         </div>
     </section>
 
-    <!-- 3 Ô Thống Kê Nhanh (Đã gắn sự kiện bấm vào tự động trượt đến khu vực tương ứng) -->
-    <div class="container">
-        <div class="stats-container">
-
-            <!-- Khung 1: Bấm vào trượt xuống Kho Prompt -->
-            <div class="stat-card" onclick="goSection('prompts')" style="cursor: pointer;" title="Bấm để xem kho prompt">
-                <div>
-                    <h4 data-en="TOTAL PROMPT REPO" data-vi="TỔNG KHO PROMPT">TỔNG KHO PROMPT</h4>
-                    <div class="stat-number">4+</div>
-                    <p data-en="✓ Optimized for Flow & Banapro" data-vi="✓ Flow & Banapro tối ưu">✓ Flow & Banapro tối ưu</p>
-                </div>
-                <div class="stat-icon"><i class="fa-solid fa-bolt"></i></div>
-            </div>
-
-            <!-- Khung 2: Bấm vào trượt xuống Tool AI / Mâm Đồ Nghề -->
-            <div class="stat-card" onclick="goSection('gear')" style="cursor: pointer;" title="Bấm để xem mâm đồ nghề">
-                <div>
-                    <h4 data-en="TOOLS ON HAND" data-vi="ĐỒ NGHỀ TRÊN MÂM">ĐỒ NGHỀ TRÊN MÂM</h4>
-                    <div class="stat-number">3+</div>
-                    <p data-en="✓ Practical AI Tools" data-vi="✓ Tool thực chiến">✓ Tool thực chiến</p>
-                </div>
-                <div class="stat-icon"><i class="fa-solid fa-toolbox"></i></div>
-            </div>
-
-            <!-- Khung 3: Bấm vào mở hộp thoại liên hệ hỗ trợ / Zalo -->
-            <div class="stat-card" onclick="openModal('Hỗ Trợ Kỹ Thuật 24/7 🤝', 'SUPPORT MMO', 'vip')" style="cursor: pointer;" title="Bấm để liên hệ hỗ trợ">
-                <div>
-                    <h4 data-en="TECHNICAL SUPPORT" data-vi="HỖ TRỢ KỸ THUẬT">HỖ TRỢ KỸ THUẬT</h4>
-                    <div class="stat-number" style="font-size: 26px;">24/7</div>
-                    <p data-en="✓ Accompanying MMO community" data-vi="✓ Đồng hành cùng anh em MMO">✓ Đồng hành cùng anh em MMO</p>
-                </div>
-                <div class="stat-icon"><i class="fa-solid fa-handshake"></i></div>
-            </div>
-
-        </div>
-    </div>
+    <!-- ĐÃ XÓA: 3 ô thống kê (số liệu sai, trùng link navbar) -->
 
     <!-- Kho Lệnh Prompt Thực Chiến -->
     <!-- MÂM ĐỒ NGHỀ SECTION -->
-    <div class="container" id="gear">
+    <!-- ẨN TẠM: chờ tool thật -->
+    <div class="container" id="gear" style="display:none">
         <div class="section-header">
             <div>
                 <h2>🎒 Mâm Đồ Nghề AI Thực Chiến</h2>
@@ -734,8 +722,9 @@
         </div>
         <div class="grid-cards">
             <div class="card" onclick="openPromptDetail('Tool Auto Click & Reg Via', 'Công cụ tự động hóa thao tác tài khoản và nuôi via chuyên nghiệp.', 'Tools', true)">
+                <div class="card-thumb card-visual" style="background:linear-gradient(135deg,#0f766e,#22d3ee)"><span class="visual-icon"><i class="fa-solid fa-arrow-pointer"></i></span><span class="thumb-badge tag-free">Free Tool</span></div>
                 <div>
-                    <span class="tag-free">Free Tool</span>
+                    <span style="font-size:11px;color:var(--text-muted)">Tools</span>
                     <h3 style="margin-top: 8px;">Tool Auto Click & Reg Via</h3>
                     <p>Công cụ tự động hóa thao tác tài khoản và nuôi via chuyên nghiệp cho anh em làm hệ thống.</p>
                 </div>
@@ -745,8 +734,9 @@
                     </div>
             </div>
             <div class="card" onclick="openPromptDetail('Extension Support Prompt Copy', 'Tiện ích trình duyệt giúp copy prompt và quản lý câu lệnh nhanh 1 chạm.', 'Tools', true)">
+                <div class="card-thumb card-visual" style="background:linear-gradient(135deg,#7c2d12,#fb923c)"><span class="visual-icon"><i class="fa-solid fa-puzzle-piece"></i></span><span class="thumb-badge tag-free">Free Extension</span></div>
                 <div>
-                    <span class="tag-free">Free Extension</span>
+                    <span style="font-size:11px;color:var(--text-muted)">Extension</span>
                     <h3 style="margin-top: 8px;">Extension Quản Lý Prompt</h3>
                     <p>Tiện ích trình duyệt giúp copy prompt và quản lý kho câu lệnh nhanh 1 chạm.</p>
                 </div>
@@ -1528,11 +1518,8 @@
             
             const elements = document.querySelectorAll('[data-vi]');
             elements.forEach(el => {
-                if (currentLang === 'en') {
-                    if (el.getAttribute('data-en') && el.children.length === 0) el.textContent = el.getAttribute('data-en');
-                } else {
-                    if (el.getAttribute('data-vi') && el.children.length === 0) el.textContent = el.getAttribute('data-vi');
-                }
+                const v = currentLang === 'en' ? el.getAttribute('data-en') : el.getAttribute('data-vi');
+                if (v) el.innerHTML = v;
             });
         }
         // ===== KHÓA ADMIN TẠM THỜI =====
@@ -2053,6 +2040,53 @@
 function openTermsModal(){document.getElementById('termsModal').style.display='flex';}
 function closeTermsModal(){document.getElementById('termsModal').style.display='none';}
 document.getElementById('termsModal').addEventListener('click',function(e){if(e.target===this)closeTermsModal();});
-</script>
+
+/* ===== HERO: 3 khung video TRƯỢT SLIDE thay nhau, lệch nhịp ===== */
+const HERO_VIDS=[
+ {src:'https://raw.githubusercontent.com/MAPMEAI/map-me-ai-site/main/4e24b54f864d200b45af76951500ed647409f542863126d4ee157ece6164b030.mp4',vi:'Tiệc Trà Tiny',en:'Tiny Tea Party'},
+ {src:'https://raw.githubusercontent.com/MAPMEAI/map-me-ai-site/main/videos/tiny%20cake%202.mp4',vi:'Tiny Food',en:'Tiny Food'},
+ {src:'https://raw.githubusercontent.com/MAPMEAI/map-me-ai-site/main/bb4.mp4',vi:'Tiny Baby',en:'Tiny Baby'},
+ {src:'https://raw.githubusercontent.com/MAPMEAI/map-me-ai-site/main/bb5.mp4',vi:'Tiny Baby',en:'Tiny Baby'},
+ {src:'https://raw.githubusercontent.com/MAPMEAI/map-me-ai-site/main/Preparing_miniature_cr%C3%A8me_br%C3%BBl%C3%A9e_20260918211622.mp4',vi:'Crème Brûlée Mini',en:'Mini Crème Brûlée'},
+ {src:'https://raw.githubusercontent.com/MAPMEAI/map-me-ai-site/main/Miniature_lobster_thermidor_cook%E2%80%A6_20260918211621.mp4',vi:'Tôm Hùm Mini',en:'Mini Lobster'},
+ {src:'https://raw.githubusercontent.com/MAPMEAI/map-me-ai-site/main/Fairytale.mp4',vi:'Sách Thần Tiên',en:'Magic Book'},
+ {src:'https://raw.githubusercontent.com/MAPMEAI/map-me-ai-site/main/Crochet_stop_motion_cooking_sequ%E2%80%A6_202609031446.mp4',vi:'Crochet Nấu Ăn',en:'Crochet Cooking'},
+ {src:'https://raw.githubusercontent.com/MAPMEAI/map-me-ai-site/main/banh%20trang%20tron.mp4',vi:'Bánh Tráng Trộn',en:'Rice Paper Salad'},
+ {src:'https://raw.githubusercontent.com/MAPMEAI/map-me-ai-site/main/l%E1%BA%A9u%20n%E1%BA%A5m.mp4',vi:'Lẩu Nấm',en:'Mushroom Hotpot'},
+ {src:'https://raw.githubusercontent.com/MAPMEAI/map-me-ai-site/main/goi%20xoai%20c%C3%A1%20loc.mp4',vi:'Gỏi Xoài Cá Lóc',en:'Mango Fish Salad'},
+ {src:'https://raw.githubusercontent.com/MAPMEAI/map-me-ai-site/main/chim%20quang%20cao%20bep.mp4',vi:'Vẹt Chiên Trứng',en:'Parrot Chef'}
+];
+function heroPick(exclude){const all=HERO_VIDS.map((_,i)=>i).filter(i=>!exclude.includes(i));const arr=all.length?all:HERO_VIDS.map((_,i)=>i);return arr[Math.floor(Math.random()*arr.length)];}
+function heroSet(wrap,idx){
+  const e=HERO_VIDS[idx],v=wrap.querySelector('video'),tag=wrap.querySelector('.hv-tag');
+  wrap._hidx=idx;
+  tag.setAttribute('data-vi',e.vi);tag.setAttribute('data-en',e.en);
+  tag.textContent=(document.documentElement.lang==='en')?e.en:e.vi;
+  if(v.getAttribute('src')!==e.src)v.src=e.src;
+  v.play().catch(()=>{});
+}
+function heroSlide(wrap,idx){
+  const slider=wrap.querySelector('.hv-slide');
+  slider.classList.add('slide-out');
+  setTimeout(()=>{
+    heroSet(wrap,idx);
+    slider.classList.remove('slide-out');
+    slider.classList.add('slide-in');
+    requestAnimationFrame(()=>requestAnimationFrame(()=>slider.classList.remove('slide-in')));
+  },450);
+}
+(function(){
+  const wraps=[...document.querySelectorAll('.hv-wrap')];if(!wraps.length)return;
+  const used=[];
+  wraps.forEach(w=>{const i=heroPick(used);used.push(i);heroSet(w,i);});
+  let cur=0;
+  setInterval(()=>{
+    const w=wraps[cur];
+    const others=wraps.filter(x=>x!==w).map(x=>x._hidx);
+    heroSlide(w,heroPick(others));
+    cur=(cur+1)%wraps.length;
+  },2600);
+})();
+</script></script>
 </body>
 </html>
