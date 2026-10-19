@@ -681,6 +681,7 @@
                 <li><a href="javascript:void(0)" onclick="goSection('courses')" class="tab-tools" data-en="Courses" data-vi="KHÓA HỌC">KHÓA HỌC</a></li>
                 <li><a href="javascript:void(0)" onclick="goSection('master')" class="tab-master" data-en="Master Prompt" data-vi="MASTER PROMPT">MASTER PROMPT</a></li>
                 <li><a href="javascript:void(0)" onclick="goSection('kitchen')" class="tab-kitchen" data-en="AI Kitchen" data-vi="BẾP AI">BẾP AI</a></li>
+                <li><a href="javascript:void(0)" onclick="goSection('kinhnghiem')" data-en="Whispered Tips" data-vi="THÌ THẦM MẸO HAY">THÌ THẦM MẸO HAY</a></li>
                 <li><a href="javascript:void(0)" onclick="goSection('voice')" class="tab-voice" data-en="AI Dubbing" data-vi="LỒNG TIẾNG AI">LỒNG TIẾNG AI</a></li>
             </ul>
         </nav>
@@ -1362,6 +1363,29 @@ function openCourseModal(k){
     .kitchen-dots span{display:inline-block;width:8px;height:8px;border-radius:50%;background:#444;margin:0 4px;cursor:pointer}
     .kitchen-dots span.on{background:#ff6584}
     </style>
+    <!-- Kinh Nghiệm Chia Sẻ -->
+    <div class="container" id="kinhnghiem">
+        <div class="section-header">
+            <div>
+                <h2 data-en="💡 Whispered Tips" data-vi="💡 Thì Thầm Mẹo Hay">💡 Thì Thầm Mẹo Hay</h2>
+                <p class="section-sub" data-en="Practical tips and heartfelt stories from my AI journey" data-vi="Mẹo thực tế và câu chuyện từ hành trình làm AI của mình">Mẹo thực tế và câu chuyện từ hành trình làm AI của mình</p>
+            </div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:8px;">
+            <div onclick="openExpModal('gemini')" style="background:#15131e;border:1px solid #2a2735;border-radius:18px;padding:26px;cursor:pointer;transition:transform .2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
+                <div style="font-size:34px;margin-bottom:10px;">📸</div>
+                <h3 style="font-size:17px;margin-bottom:8px;color:#fff;">Tạo ảnh AI giống mình nhất bằng Gemini</h3>
+                <p style="color:#8f8aa3;font-size:14px;line-height:1.6;margin-bottom:14px;">Bí quyết chọn ảnh reference + câu prompt giữ nguyên 100% khuôn mặt.</p>
+                <button class="btn-pink" style="padding:8px 22px;font-size:13px;">Đọc mẹo →</button>
+            </div>
+            <div onclick="openExpModal('hummingbird')" style="background:#15131e;border:1px solid #2a2735;border-radius:18px;padding:26px;cursor:pointer;transition:transform .2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
+                <div style="font-size:34px;margin-bottom:10px;">💜</div>
+                <h3 style="font-size:17px;margin-bottom:8px;color:#fff;">Tâm sự: Hành trình làm video AI</h3>
+                <p style="color:#8f8aa3;font-size:14px;line-height:1.6;margin-bottom:14px;">Những đêm thức đến 1–2 giờ sáng vì một video vài chục giây…</p>
+                <button class="btn-pink" style="padding:8px 22px;font-size:13px;">Đọc tâm sự →</button>
+            </div>
+        </div>
+    </div>
     <!-- Lồng Tiếng AI -->
     <div class="container" id="voice">
         <div class="section-header">
@@ -2176,6 +2200,13 @@ function heroSlide(wrap,idx){
 })();
 </script></script>
 
+<!-- Kinh Nghiệm Modal -->
+<div id="expModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.75);align-items:center;justify-content:center;padding:20px;" onclick="if(event.target===this)this.style.display='none'">
+<div style="background:#15131e;border:1px solid #2a2735;border-radius:18px;max-width:640px;width:100%;max-height:85vh;overflow-y:auto;padding:28px;position:relative;">
+<button onclick="closeExpModal()" style="position:absolute;top:14px;right:16px;background:none;border:0;color:#8f8aa3;font-size:22px;cursor:pointer;">✕</button>
+<div id="expModalBody"></div>
+</div>
+</div>
 <!-- Bếp AI Modal -->
 <div id="kitchenModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.75);align-items:center;justify-content:center;padding:20px;" onclick="if(event.target===this)this.style.display='none'">
 <div style="background:#15131e;border:1px solid #2a2735;border-radius:18px;max-width:640px;width:100%;max-height:85vh;overflow-y:auto;padding:28px;position:relative;">
@@ -2185,6 +2216,38 @@ function heroSlide(wrap,idx){
 <script>
 function closeKitchenModal(){
   document.getElementById('kitchenModal').style.display='none';
+}
+function openExpModal(tab){
+  var body = document.getElementById('expModalBody');
+  var html = '';
+  if(tab==='gemini'){
+    html = '<h2 style="margin-bottom:14px;">📸 Tạo ảnh AI giống mình nhất bằng Gemini</h2>'
+    + '<h3 style="color:#ff6584;margin:16px 0 8px;">✅ 1. Chọn ảnh reference thật chuẩn</h3>'
+    + '<p style="color:#c9c4d8;line-height:1.8;margin-bottom:8px;">Nên dùng ảnh chân dung <b>cận mặt, chụp trực diện</b> của chính bạn — càng rõ, càng nét càng tốt.<br>📸 Cứ chụp bằng camera thường là được.<br>⚠️ Đừng chỉnh qua app quá tay! Vì đưa ảnh vào AI, Gemini còn tiếp tục xử lý. Chỉnh càng nhiều thì AI "nhận nhầm" và làm mặt khác đi càng cao.</p>'
+    + '<h3 style="color:#ff6584;margin:16px 0 8px;">✅ 2. Prompt phải nói rõ: GIỮ NGUYÊN KHUÔN MẶT</h3>'
+    + '<p style="color:#c9c4d8;line-height:1.8;margin-bottom:8px;">Thêm một trong hai câu này vào trước câu lệnh:</p>'
+    + '<div style="background:#0b0a10;border:1px solid #2a2735;border-radius:10px;padding:12px;font-size:13px;color:#f0abfc;margin-bottom:8px;">"Create a photo of myself (face based on the uploaded photo). The face must match exactly the person in the reference image. Do not change facial structure, skin tone, or hairstyle."</div>'
+    + '<div style="background:#0b0a10;border:1px solid #2a2735;border-radius:10px;padding:12px;font-size:13px;color:#f0abfc;margin-bottom:8px;">"Edit my photo (face based on the uploaded photo). The face must match exactly the person in the reference image. Do not change facial structure, skin tone, or hairstyle."</div>'
+    + '<p style="color:#c9c4d8;line-height:1.8;margin-bottom:8px;">📌 <b>Nói ngắn gọn nhất: GIỮ NGUYÊN 100% KHUÔN MẶT ẢNH UPLOAD.</b><br>👉 Điều này ép Gemini phải lấy chính khuôn mặt trong ảnh bạn upload làm reference, không tự tạo gương mặt mới.</p>'
+    + '<h3 style="color:#ff6584;margin:16px 0 8px;">💡 Bí quyết</h3>'
+    + '<p style="color:#c9c4d8;line-height:1.8;">Nếu tạo lần đầu chưa giống hoặc chưa đẹp, mình thường <b>thoát hẳn app rồi vào lại</b> và tạo lại. Có khi lần sau AI cho kết quả tốt hơn hẳn. 😆</p>';
+  } else {
+    html = '<h2 style="margin-bottom:14px;">💜 Tâm sự: Hành trình làm video AI</h2>'
+    + '<p style="color:#c9c4d8;line-height:1.9;margin-bottom:12px;">Có một chuyện ít ai biết về hành trình mình làm video AI…</p>'
+    + '<p style="color:#c9c4d8;line-height:1.9;margin-bottom:12px;">Gần như những video triệu view bắt gặp trên mạng, mình đều xem, tìm hiểu, phân tích… rồi tự hỏi: <i style="color:#f0abfc;">"Tại sao người ta làm được? Mình có thể biến nó thành một thứ gì đó của riêng mình không?"</i></p>'
+    + '<p style="color:#c9c4d8;line-height:1.9;margin-bottom:12px;">Từ poster sức khỏe, tâm linh, movie, mẹo vặt… mình gần như đã thử qua. Và trong đầu mình vẫn còn ấp ủ cả những dự án khác như: <b>phim thần thoại, vườn cây, nông trại…</b></p>'
+    + '<p style="color:#c9c4d8;line-height:1.9;margin-bottom:12px;">Có những video nhìn rất đơn giản. Nhưng phía sau chục giây đó có khi là <b>hàng giờ làm đi làm lại</b> — thử công cụ này rồi đổi sang công cụ khác, ghép từng đoạn, sửa từng chi tiết… tốn cả thời gian lẫn tiền bạc mới xuất được một video hoàn chỉnh.</p>'
+    + '<p style="color:#c9c4d8;line-height:1.9;margin-bottom:12px;">Có những đêm, mình ngồi cùng "trợ lý AI" trao đổi ý tưởng đến <b>1–2 giờ sáng</b>. Ngày trước còn đi làm thuê, mình cũng chẳng thức khuya đến vậy.</p>'
+    + '<p style="color:#c9c4d8;line-height:1.9;margin-bottom:12px;">Là cảm giác mình đã cố gắng rất nhiều… nhưng chưa biết mình có đang đúng hướng hay chưa.</p>'
+    + '<p style="color:#fff;line-height:1.9;font-weight:700;margin-bottom:12px;">Nhưng mà kệ đi — mỗi ngày mình vẫn sáng tạo thêm một video mới, thì đã thấy mình có bước tiến mới so với ngày hôm qua rồi.</p>'
+    + '<div style="background:#0b0a10;border:1px solid #2a2735;border-radius:10px;padding:14px;font-size:14px;color:#8f8aa3;line-height:1.8;">There\u2019s something few people know about my journey of creating AI videos… I\u2019ve spent countless hours researching, experimenting, and turning ideas into projects of my own. Some nights, I worked until 1 or 2 a.m., just to finish a video that was only a few seconds long.<br><br>But I\u2019m still here. Still learning. Still creating. ❤️</div>';
+  }
+  html += '<div style="text-align:center;margin-top:20px;"><button class="btn-pink" style="padding:12px 32px;font-size:14px;" onclick="closeExpModal()">Đã hiểu</button></div>';
+  body.innerHTML = html;
+  document.getElementById('expModal').style.display='flex';
+}
+function closeExpModal(){
+  document.getElementById('expModal').style.display='none';
 }
 function openKitchenModal(tab){
   var body = document.getElementById('kitchenModalBody');
