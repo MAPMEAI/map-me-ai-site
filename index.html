@@ -2183,6 +2183,9 @@ function heroSlide(wrap,idx){
 <div id="kitchenModalBody"></div>
 </div></div>
 <script>
+function closeKitchenModal(){
+  document.getElementById('kitchenModal').style.display='none';
+}
 function openKitchenModal(tab){
   var body = document.getElementById('kitchenModalBody');
   var vip = (typeof isVipActive === 'function') ? isVipActive() : false;
@@ -2190,7 +2193,7 @@ function openKitchenModal(tab){
     + '<div style="font-size:48px;margin-bottom:12px;">🔒</div>'
     + '<h3 style="margin-bottom:8px;">Nội dung dành cho thành viên VIP</h3>'
     + '<p style="color:#8f8aa3;font-size:14px;margin-bottom:18px;">Nâng cấp VIP để xem toàn bộ quy trình.</p>'
-    + '<button class="btn" style="background:linear-gradient(135deg,#ff6584,#ff8fb3);color:#fff;border:0;border-radius:12px;padding:12px 28px;font-weight:700;cursor:pointer;" onclick="document.getElementById('kitchenModal').style.display='none';openVipPricingModal()">Xem gói VIP</button></div>';
+    + '<button class="btn" style="background:linear-gradient(135deg,#ff6584,#ff8fb3);color:#fff;border:0;border-radius:12px;padding:12px 28px;font-weight:700;cursor:pointer;" onclick="closeKitchenModal();openVipPricingModal()">Xem gói VIP</button></div>';
   if(tab==='library'){
     body.innerHTML = '<h2 style="margin-bottom:4px;">📚 Truyện ngắn đã xuất bản</h2>'
     + '<p style="color:#8f8aa3;font-size:13px;margin-bottom:16px;">Bấm vào bìa để đọc trên Wattpad — miễn phí 5 chương đầu.</p>'
