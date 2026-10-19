@@ -830,5 +830,25 @@
   "type": "Free",
   "demo": "demo-banapro-fashion.webp",
   "demoVideo": ""
+ },
+ {
+  "title": "Poster Thương Hiệu Mập Mê AI",
+  "desc": "Poster quảng cáo thương hiệu cá nhân phong cách điện ảnh — khung băng vỡ, chữ nổi 3D",
+  "category": "Ảnh",
+  "subCat": "Marketing",
+  "type": "Free",
+  "content": "Create a stunning cinematic brand poster with a cracked ice frame border. In the center, large 3D ice-crystal text reading \"MẬP MÊ AI\" emerging from a frozen ocean landscape at sunrise. An icebreaker ship at the bottom breaking through ice. Dramatic lighting, ultra-detailed ice textures, photorealistic, 8K, vertical poster format.",
+  "demo": "poster-mapmeai-icebreaker.webp",
+  "demoVideo": null
+ },
+ {
+  "title": "Poster Dịch Vụ Video AI",
+  "desc": "Poster giới thiệu dịch vụ làm video AI — liệt kê 8 dịch vụ, phong cách du lịch điện ảnh",
+  "category": "Ảnh",
+  "subCat": "Marketing",
+  "type": "Free",
+  "content": "Create a professional service poster for an AI video creator brand. Top: elegant script text \"Turning Ideas into CINEMATIC VIDEOS\" with Vietnamese subtitle. Center: large bold brand name \"MẬP MÊ AI\" with golden swoosh. Background: traveler with backpack overlooking mountain lake at sunset, film strip with video thumbnails curving across. Bottom: 8 service icons in grid (Product Ads, Cooking, Food Intro, Fantasy, Farm, Garden, Home Meal, Mythological Film). Ice-cracked frame border, CTA button \"LIÊN HỆ NGAY\". Photorealistic, vibrant, vertical poster.",
+  "demo": "poster-mapmeai-hero.webp",
+  "demoVideo": null
  }
 ]
