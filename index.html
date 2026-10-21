@@ -681,6 +681,7 @@
                 <li><a href="javascript:void(0)" onclick="goSection('courses')" class="tab-tools" data-en="Courses" data-vi="KHÓA HỌC">KHÓA HỌC</a></li>
                 <li><a href="javascript:void(0)" onclick="goSection('master')" class="tab-master" data-en="Master Prompt" data-vi="MASTER PROMPT">MASTER PROMPT</a></li>
                 <li><a href="javascript:void(0)" onclick="goSection('kitchen')" class="tab-kitchen" data-en="AI Kitchen" data-vi="BẾP AI">BẾP AI</a></li>
+                <li><a href="javascript:void(0)" onclick="goSection('nhantuong')" class="tab-nhantuong" data-en="Physiognomy" data-vi="NHÂN TƯỚNG HỌC">NHÂN TƯỚNG HỌC</a></li>
                 <li><a href="javascript:void(0)" onclick="goSection('kinhnghiem')" data-en="Whispered Tips" data-vi="THÌ THẦM MẸO HAY">THÌ THẦM MẸO HAY</a></li>
                 <li><a href="javascript:void(0)" onclick="goSection('voice')" class="tab-voice" data-en="AI Dubbing" data-vi="LỒNG TIẾNG AI">LỒNG TIẾNG AI</a></li>
             </ul>
@@ -1373,7 +1374,47 @@ function openCourseModal(k){
     .kitchen-dots span{display:inline-block;width:8px;height:8px;border-radius:50%;background:#444;margin:0 4px;cursor:pointer}
     .kitchen-dots span.on{background:#ff6584}
     </style>
-    <!-- Kinh Nghiệm Chia Sẻ -->
+    
+<!-- Nhân Tướng Học -->
+    <div class="container" id="nhantuong">
+        <div class="section-header">
+            <div>
+                <h2 data-en="🔮 Physiognomy — Face Reading &amp; Numerology Profile" data-vi="🔮 Nhân Tướng Học — Hồ Sơ Tướng Mặt &amp; Thần Số Học">🔮 Nhân Tướng Học — Hồ Sơ Tướng Mặt &amp; Thần Số Học</h2>
+            </div>
+        </div>
+        <p style="color:var(--text-muted);font-size:14px;margin:-8px 0 18px;" data-en="From one portrait photo + full name + birth date, the AI builds a complete physiognomy profile poster: traditional face reading of the five features, 4 Pythagorean numerology numbers and feng-shui colors by element — every reading grounded in researched reference tables, never made up." data-vi="Chỉ cần một ảnh chân dung + họ tên + ngày sinh, AI dựng cho bạn một poster hồ sơ nhân tướng học hoàn chỉnh: luận ngũ quan theo tướng pháp truyền thống, tính 4 chỉ số thần số học Pythagoras và chọn màu hợp mệnh theo ngũ hành — mọi luận giải bám bảng tra cứu chuẩn, không phán bừa.">Chỉ cần một ảnh chân dung + họ tên + ngày sinh, AI dựng cho bạn một poster hồ sơ nhân tướng học hoàn chỉnh: luận ngũ quan theo tướng pháp truyền thống, tính 4 chỉ số thần số học Pythagoras và chọn màu hợp mệnh theo ngũ hành — mọi luận giải bám bảng tra cứu chuẩn, không phán bừa.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-bottom:22px;">
+            <figure style="margin:0;text-align:center;">
+                <img src="poster-demo-nu-pham-ngoc-lan.webp" alt="Poster hồ sơ nhân tướng học mẫu — nữ" loading="lazy" style="width:100%;border-radius:14px;box-shadow:0 16px 40px rgba(0,0,0,.5);border:1px solid var(--border-color);">
+                <figcaption style="color:var(--text-muted);font-size:13px;margin-top:8px;" data-en="Sample poster — illustrated character" data-vi="Poster mẫu — nhân vật minh họa">Poster mẫu — nhân vật minh họa</figcaption>
+            </figure>
+            <figure style="margin:0;text-align:center;">
+                <img src="poster-demo-nam-le-hoang-nam.webp" alt="Poster hồ sơ nhân tướng học mẫu — nam" loading="lazy" style="width:100%;border-radius:14px;box-shadow:0 16px 40px rgba(0,0,0,.5);border:1px solid var(--border-color);">
+                <figcaption style="color:var(--text-muted);font-size:13px;margin-top:8px;" data-en="Sample poster — illustrated character" data-vi="Poster mẫu — nhân vật minh họa">Poster mẫu — nhân vật minh họa</figcaption>
+            </figure>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-bottom:22px;">
+            <div style="background:#15131e;border:1px solid var(--border-color);border-radius:14px;padding:18px;">
+                <h3 style="margin:0 0 8px;" data-en="👁️ What the Five Features Reveal" data-vi="👁️ Ngũ Quan Xem Gì">👁️ Ngũ Quan Xem Gì</h3>
+                <p style="color:var(--text-muted);font-size:14px;margin:0;" data-en="Forehead, brows, eyes, nose, mouth and chin — each feature maps to an aspect of life: intellect, character, emotions, wealth, communication and later years. The AI reads only features clearly visible in your photo." data-vi="Trán, lông mày, đôi mắt, mũi, miệng và cằm — mỗi nét tướng ứng với một khía cạnh: trí tuệ, tính cách, cảm xúc, tài vận, giao tiếp và hậu vận. AI chỉ luận những nét nhìn thấy rõ trong ảnh của bạn.">Trán, lông mày, đôi mắt, mũi, miệng và cằm — mỗi nét tướng ứng với một khía cạnh: trí tuệ, tính cách, cảm xúc, tài vận, giao tiếp và hậu vận. AI chỉ luận những nét nhìn thấy rõ trong ảnh của bạn.</p>
+            </div>
+            <div style="background:#15131e;border:1px solid var(--border-color);border-radius:14px;padding:18px;">
+                <h3 style="margin:0 0 8px;" data-en="🔢 The 4 Numerology Numbers" data-vi="🔢 4 Chỉ Số Thần Số Học">🔢 4 Chỉ Số Thần Số Học</h3>
+                <p style="color:var(--text-muted);font-size:14px;margin:0;" data-en="Life Path (your road and life lessons), Soul Urge (inner desires), Destiny (talents and goals) and Birthday (inborn gifts) — calculated by the Pythagorean system, keeping master numbers 11 · 22 · 33." data-vi="Đường Đời (con đường &amp; bài học đời), Linh Hồn (khát vọng bên trong), Sứ Mệnh (tài năng &amp; mục tiêu) và Ngày Sinh (năng khiếu bẩm sinh) — tính theo hệ Pythagoras, giữ số bậc thầy 11 · 22 · 33.">Đường Đời (con đường &amp; bài học đời), Linh Hồn (khát vọng bên trong), Sứ Mệnh (tài năng &amp; mục tiêu) và Ngày Sinh (năng khiếu bẩm sinh) — tính theo hệ Pythagoras, giữ số bậc thầy 11 · 22 · 33.</p>
+            </div>
+            <div style="background:#15131e;border:1px solid var(--border-color);border-radius:14px;padding:18px;">
+                <h3 style="margin:0 0 8px;" data-en="🎨 Colors by Your Element" data-vi="🎨 Màu Sắc Theo Mệnh">🎨 Màu Sắc Theo Mệnh</h3>
+                <p style="color:var(--text-muted);font-size:14px;margin:0;" data-en="Your five-element sign is derived from your birth year: your own colors, supportive generating-cycle colors to use, and clashing colors to avoid — plus a total energy scale printed right on the poster." data-vi="Tra mệnh ngũ hành theo năm sinh: màu bản mệnh, màu tương sinh nên dùng và màu tương khắc nên tránh — kèm thang năng lượng tổng hợp in ngay trên poster.">Tra mệnh ngũ hành theo năm sinh: màu bản mệnh, màu tương sinh nên dùng và màu tương khắc nên tránh — kèm thang năng lượng tổng hợp in ngay trên poster.</p>
+            </div>
+        </div>
+        <div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-bottom:8px;">
+            <a href="javascript:void(0)" onclick="goSection('prompts')" class="btn-vip" style="text-decoration:none;padding:12px 22px;border-radius:10px;font-weight:700;display:inline-block;" data-en="👑 Unlock the VIP Master Prompt" data-vi="👑 Mở Khóa Master Prompt VIP">👑 Mở Khóa Master Prompt VIP</a>
+            <a href="https://zalo.me/g/krzepmsmx5m5gkhv8xku" target="_blank" rel="noopener" style="background:#0068ff;color:#fff;text-decoration:none;padding:12px 22px;border-radius:10px;font-weight:700;display:inline-block;box-shadow:0 0 12px rgba(0,104,255,.4);" data-en="💬 Join the MẬP MÊ AI Zalo Group" data-vi="💬 Vào Group Zalo MẬP MÊ AI">💬 Vào Group Zalo MẬP MÊ AI</a>
+        </div>
+        <p style="text-align:center;color:var(--text-muted);font-size:12px;margin:0;" data-en="The “Physiognomy Poster” Master Prompt lives in the Prompt Vault — a VIP membership unlocks the full text. Content is for reference, based on traditional physiognomy and numerology — not scientific prediction." data-vi="Master Prompt “Poster Nhân Tướng Học” nằm trong Mâm Đồ Nghề — mở khóa VIP mới xem và sao chép được toàn văn. Nội dung tham khảo theo nhân tướng học và thần số học truyền thống, không phải dự đoán khoa học.">Master Prompt “Poster Nhân Tướng Học” nằm trong Mâm Đồ Nghề — mở khóa VIP mới xem và sao chép được toàn văn. Nội dung tham khảo theo nhân tướng học và thần số học truyền thống, không phải dự đoán khoa học.</p>
+    </div>
+
+<!-- Kinh Nghiệm Chia Sẻ -->
     <div class="container" id="kinhnghiem">
         <div class="section-header">
             <div>
