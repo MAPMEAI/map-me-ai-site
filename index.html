@@ -153,6 +153,8 @@
         .tab-master { color: #ff6584 !important; }
         .tab-kitchen { color: #a066ff !important; }
         .tab-voice { color: #4ade80 !important; }
+.tab-nhantuong { color: #f5af19 !important; }
+.tab-kinhnghiem { color: #fb923c !important; }
         .guide { margin-top: 10px; background: var(--light-pink); border-radius: 8px; padding: 8px 10px; font-size: 11px; }
         .guide summary { cursor: pointer; font-weight: bold; color: var(--dark-pink); font-size: 12px; }
         .guide ol { margin: 6px 0 0 16px; padding: 0; color: var(--text-muted); line-height: 1.55; }
@@ -682,7 +684,7 @@
                 <li><a href="javascript:void(0)" onclick="goSection('master')" class="tab-master" data-en="Master Prompt" data-vi="MASTER PROMPT">MASTER PROMPT</a></li>
                 <li><a href="javascript:void(0)" onclick="goSection('kitchen')" class="tab-kitchen" data-en="AI Kitchen" data-vi="BẾP AI">BẾP AI</a></li>
                 <li><a href="javascript:void(0)" onclick="goSection('nhantuong')" class="tab-nhantuong" data-en="Physiognomy" data-vi="NHÂN TƯỚNG HỌC">NHÂN TƯỚNG HỌC</a></li>
-                <li><a href="javascript:void(0)" onclick="goSection('kinhnghiem')" data-en="Whispered Tips" data-vi="THÌ THẦM MẸO HAY">THÌ THẦM MẸO HAY</a></li>
+                <li><a href="javascript:void(0)" onclick="goSection('kinhnghiem')" class="tab-kinhnghiem" data-en="Whispered Tips" data-vi="THÌ THẦM MẸO HAY">THÌ THẦM MẸO HAY</a></li>
                 <li><a href="javascript:void(0)" onclick="goSection('voice')" class="tab-voice" data-en="AI Dubbing" data-vi="LỒNG TIẾNG AI">LỒNG TIẾNG AI</a></li>
             </ul>
         </nav>
@@ -2310,13 +2312,20 @@ function openKitchenModal(tab){
     + '<button class="btn" style="background:linear-gradient(135deg,#ff6584,#ff8fb3);color:#fff;border:0;border-radius:12px;padding:12px 28px;font-weight:700;cursor:pointer;" onclick="closeKitchenModal();openVipPricingModal()">Xem gói VIP</button></div>';
   if(tab==='library'){
     body.innerHTML = '<h2 style="margin-bottom:4px;">📚 Truyện ngắn đã xuất bản</h2>'
-    + '<p style="color:#8f8aa3;font-size:13px;margin-bottom:16px;">Bấm vào bìa để đọc trên Wattpad — miễn phí 5 chương đầu.</p>'
-    + '<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">'
-    + kitchenStoryCard('Cưa Đổ Tình Địch','covers/cover-cua-do-tinh-dich.jpeg','https://www.wattpad.com/story/417598065')
-    + kitchenStoryCard('Thập Hồn Lệnh','covers/cover-thap-hon-lenh.jpeg','https://www.wattpad.com/story/417450998')
-    + kitchenStoryCard('Đường Cong Mùa Hạ','covers/cover-duong-cong-mua-ha.jpeg','https://www.wattpad.com/story/417513374')
-    + kitchenStoryCard('Thương Vụ Trái Luật','covers/cover-ke-ra-gia.jpeg','https://www.wattpad.com/story/417639920')
-    + '</div>';
+    + '<p style="color:#8f8aa3;font-size:13px;margin-bottom:12px;">Bấm vào truyện để đọc trên Wattpad — miễn phí 5 chương đầu · <span id="libCount">9 truyện</span></p>'
+    + '<input id="libSearch" oninput="filterLibrary(this.value)" placeholder="🔎 Tìm truyện theo tên..." style="width:100%;box-sizing:border-box;padding:10px 12px;border-radius:10px;border:1px solid #2a2735;background:#12101c;color:#fff;font-size:14px;margin-bottom:8px;">'
+    + '<div id="libList">'
+    + kitchenStoryRow('Cưa Đổ Tình Địch','covers/cover-cua-do-tinh-dich.jpeg','https://www.wattpad.com/story/417598065')
+    + kitchenStoryRow('Thập Hồn Lệnh','covers/cover-thap-hon-lenh.jpeg','https://www.wattpad.com/story/417450998')
+    + kitchenStoryRow('Đường Cong Mùa Hạ','covers/cover-duong-cong-mua-ha.jpeg','https://www.wattpad.com/story/417513374')
+    + kitchenStoryRow('Thương Vụ Trái Luật','covers/cover-ke-ra-gia.jpeg','https://www.wattpad.com/story/417639920')
+    + kitchenStoryRow('Khế Ước Sinh Tử','covers/cover-khe-uoc-sinh-tu.jpeg','https://www.wattpad.com/story/417698800')
+    + kitchenStoryRow('Life-Death Contract (EN)','covers/cover-life-death-contract.jpeg','https://www.wattpad.com/story/417700039')
+    + kitchenStoryRow('Soul-Gathering Order (EN)','covers/cover-soul-gathering-order.jpeg','https://www.wattpad.com/story/417511418')
+    + kitchenStoryRow('Kẻ Thù Chung Giường','covers/cover-ke-thu-chung-giuong.jpeg','https://www.wattpad.com/story/417698276')
+    + kitchenStoryRow('Kẻ Phá Đám','covers/cover-ke-pha-dam.jpeg','https://www.wattpad.com/story/417701234')
+    + '</div>'
+    + '<p id="libEmpty" style="display:none;color:#8f8aa3;font-size:13px;text-align:center;padding:14px 0;">Không tìm thấy truyện nào khớp.</p>';
   } else if(tab==='writing'){
     body.innerHTML = vip ? KITCHEN_WRITING : lockHtml;
   } else if(tab==='publishing'){
@@ -2324,10 +2333,25 @@ function openKitchenModal(tab){
   }
   document.getElementById('kitchenModal').style.display='flex';
 }
-function kitchenStoryCard(title,img,url){
-  return '<div style="cursor:pointer;text-align:center;" onclick="window.open(\''+url+'\',\'_blank\')">'
-  + '<img src="'+img+'" alt="'+title+'" loading="lazy" style="width:100%;border-radius:12px;border:1px solid #2a2735;">'
-  + '<p style="font-size:13px;margin-top:8px;">'+title+'</p></div>';
+function kitchenStoryRow(title,img,url){
+  return '<div class="lib-row" data-title="'+title+'" onclick="openAffiliateGate(\''+url+'\',\''+title.replace(/'/g,"\\'")+'\')" style="display:flex;align-items:center;gap:12px;padding:8px 6px;border-bottom:1px solid #2a2735;cursor:pointer;">'
+  + '<img src="'+img+'" alt="'+title+'" loading="lazy" style="width:40px;height:56px;object-fit:cover;border-radius:6px;border:1px solid #2a2735;flex:0 0 auto;">'
+  + '<div style="flex:1;min-width:0;"><div style="font-size:14px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">'+title+'</div>'
+  + '<div style="font-size:12px;color:#8f8aa3;">Wattpad · Đọc miễn phí 5 chương đầu</div></div>'
+  + '<div style="color:#ff6584;font-size:13px;font-weight:700;flex:0 0 auto;">Đọc →</div></div>';
+}
+function libNorm(t){ return (t||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/đ/g,'d'); }
+function filterLibrary(q){
+  var nq = libNorm(q).trim();
+  var rows = document.querySelectorAll('#libList .lib-row');
+  var shown = 0;
+  rows.forEach(function(r){
+    var ok = libNorm(r.getAttribute('data-title')).indexOf(nq) > -1;
+    r.style.display = ok ? 'flex' : 'none';
+    if(ok) shown++;
+  });
+  var e = document.getElementById('libEmpty'); if(e) e.style.display = shown ? 'none' : 'block';
+  var c = document.getElementById('libCount'); if(c) c.textContent = shown + ' truyện';
 }
 var KITCHEN_WRITING = '<h2 style="margin-bottom:12px;">✍️ Quy trình viết truyện ngắn bằng AI</h2>'
 + '<div style="font-size:14px;line-height:1.8;color:#d8d5e5;">'
