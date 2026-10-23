@@ -1047,10 +1047,10 @@
                 if (item.demoVideo) {
                     thumb = `<div class="card-thumb"><video src="${escHtml(item.demoVideo)}" muted loop playsinline preload="metadata" onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0"></video><span class="thumb-play">▶</span><span class="thumb-badge ${badgeCls}">${escHtml(item.type)}</span></div>`;
                 } else if (item.demo) {
-                    thumb = `<div class="card-thumb"><img src="${escHtml(item.demo)}" alt="" loading="lazy" onerror="this.closest('.card-thumb').style.display='none'"><span class="thumb-badge ${badgeCls}">${escHtml(item.type)}</span></div>`;
+                    thumb = `<div class="card-thumb"><img src="${escHtml(item.demo)}" alt="${escHtml(item.title)}" loading="lazy" onerror="this.closest('.card-thumb').style.display='none'"><span class="thumb-badge ${badgeCls}">${escHtml(item.type)}</span></div>`;
                 }
                 return `
-                <div class="card" onclick="openDetailPage(${index})">
+                <div class="card" role="button" tabindex="0" onclick="openDetailPage(${index})" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openDetailPage(${index})}">
                     ${thumb}
                     <div>
                         <div class="card-top">
@@ -1188,66 +1188,7 @@
         </div>
     </div>
 
-    <!-- KHUNG LAUNCHER TOOL AI THỰC CHẾN (CÁCH 2) -->
-    <div class="container" id="tools" style="display:none">
-        <div class="section-header">
-            <div>
-                <h2>🤖 Tool AI "Cực Ngọt" & Tiện Ích Hàng Đầu</h2>
-                <p>Tuyển chọn các siêu ứng dụng AI xịn sò nhất, bấm vào là mở trực tiếp để chiến luôn.</p>
-            </div>
-        </div>
-
-        <!-- Grid các Tool card chuyên nghiệp -->
-        <div class="grid-cards">
-            <!-- Tool 1: ChatGPT -->
-            <div class="card" onclick="window.open('https://chatgpt.com', '_blank')">
-                <div class="card-thumb card-visual" style="background:linear-gradient(135deg,#065f46,#10b981)"><span class="visual-icon"><i class="fa-solid fa-comments"></i></span><span class="thumb-badge tag-free">Phổ Biến</span></div>
-                <div>
-                    <div class="card-top">
-                        <span style="font-size:11px; color:var(--text-muted);">OpenAI</span>
-                    </div>
-                    <h3>ChatGPT Master Assistant</h3>
-                    <p>Trợ lý ảo toàn năng hỗ trợ viết lách, code, phân tích dữ liệu và lập kế hoạch chiến lược.</p>
-                </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color); padding-top: 12px; margin-top: 12px;">
-                        <span style="font-weight: 600; font-size: 13px; color: var(--text-muted);">OpenAI</span>
-                        <button class="btn-pink" style="padding: 6px 16px; font-size: 12px;">Mở Trực Tiếp →</button>
-                    </div>
-            </div>
-
-            <!-- Tool 2: Claude AI -->
-            <div class="card" onclick="window.open('https://claude.ai', '_blank')">
-                <div class="card-thumb card-visual" style="background:linear-gradient(135deg,#9a3412,#fb923c)"><span class="visual-icon"><i class="fa-solid fa-feather"></i></span><span class="thumb-badge tag-free">Đỉnh Cao Viết Lách</span></div>
-                <div>
-                    <div class="card-top">
-                        <span style="font-size:11px; color:var(--text-muted);">Anthropic</span>
-                    </div>
-                    <h3>Claude 3.5 Sonnet</h3>
-                    <p>Siêu AI phân tích văn bản, soạn thảo kịch bản và lập trình tư duy sâu sắc hàng đầu hiện nay.</p>
-                </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color); padding-top: 12px; margin-top: 12px;">
-                        <span style="font-weight: 600; font-size: 13px; color: var(--text-muted);">Anthropic</span>
-                        <button class="btn-pink" style="padding: 6px 16px; font-size: 12px;">Mở Trực Tiếp →</button>
-                    </div>
-            </div>
-
-            <!-- Tool 3: Midjourney / Gen Ảnh -->
-            <div class="card" onclick="window.open('https://www.midjourney.com', '_blank')">
-                <div class="card-thumb card-visual" style="background:linear-gradient(135deg,#4c1d95,#0ea5e9)"><span class="visual-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></span><span class="thumb-badge tag-free">Miễn Phí</span></div>
-                <div>
-                    <div class="card-top">
-                        <span style="font-size:11px; color:var(--text-muted);">Image Gen</span>
-                    </div>
-                    <h3>Midjourney & Banapro Studio</h3>
-                    <p>Kho công cụ và hướng dẫn thiết kế hình ảnh, lookbook, poster cực xịn cho dân sáng tạo.</p>
-                </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color); padding-top: 12px; margin-top: 12px;">
-                        <span style="font-weight: 600; font-size: 13px; color: var(--text-muted);">Image Gen</span>
-                        <button class="btn-pink" style="padding: 6px 16px; font-size: 12px;">Mở Trực Tiếp →</button>
-                    </div>
-            </div>
-        </div>
-    </div>
+    
 
     <!-- Khóa Học (ADMIN cập nhật nội dung tại đây) -->
     <div class="container" id="courses">
@@ -1624,6 +1565,7 @@ function openCourseModal(k){
     <!-- Footer -->
     <footer>
         <p>© 2026 MẬP MÊ AI. Làm bằng tất cả sự đáng yêu và trà sữa 🧋</p>
+            <p style="margin-top:8px;font-size:13px"><a href="https://mapmeai.com/chinh-sach-bao-mat.html" style="color:#ff6584;text-decoration:underline">Chính sách bảo mật</a></p>
         <p style="font-size: 11px; font-weight: 400; color: var(--text-muted);" data-en="Slogan: Love AI like you love your soulmate | MAPMEAI_OS" data-vi="Slogan: Mê AI như mê người yêu | MAPMEAI_OS">Slogan: Mê AI như mê người yêu | MAPMEAI_OS</p>
     <div style="text-align:center;padding:20px;color:var(--text-muted);font-size:13px;">
         <a href="#dieu-khoan" onclick="openTermsModal();return false;" style="color:var(--text-muted);text-decoration:underline;margin:0 10px;">Điều khoản sử dụng</a> |
