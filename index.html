@@ -1016,6 +1016,7 @@
         window.addEventListener('load', function(){ setTimeout(honorHashScroll, 400); });
 
         function copyDetailPrompt(e) {
+            if (detailLocked) { openVipPricingModal(); return; }
             const textToCopy = activePromptText;
             const ev = e || window.event;
             const done = () => {
