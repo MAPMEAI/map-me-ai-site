@@ -2072,7 +2072,7 @@ function openKitchenModal(tab){
     + '<button class="btn" style="background:linear-gradient(135deg,#ff6584,#ff8fb3);color:#fff;border:0;border-radius:12px;padding:12px 28px;font-weight:700;cursor:pointer;" onclick="closeKitchenModal();openVipPricingModal()">Xem gói VIP</button></div>';
   if(tab==='library'){
     body.innerHTML = '<h2 style="margin-bottom:4px;">📚 Truyện ngắn đã xuất bản</h2>'
-    + '<p style="color:#8f8aa3;font-size:13px;margin-bottom:12px;">Bấm vào truyện để đọc trên Wattpad — miễn phí 5 chương đầu · <span id="libCount">9 truyện</span></p>'
+    + '<p style="color:#8f8aa3;font-size:13px;margin-bottom:12px;">Bấm vào truyện để bắt đầu đọc · <span id="libCount">9 truyện</span></p>'
     + '<input id="libSearch" oninput="filterLibrary(this.value)" placeholder="🔎 Tìm truyện theo tên..." style="width:100%;box-sizing:border-box;padding:10px 12px;border-radius:10px;border:1px solid #2a2735;background:#12101c;color:#fff;font-size:14px;margin-bottom:8px;">'
     + '<div id="libList">'
     + kitchenStoryRow('Cưa Đổ Tình Địch','covers/cover-cua-do-tinh-dich.jpeg','https://www.wattpad.com/story/417598065')
@@ -2098,7 +2098,7 @@ function kitchenStoryRow(title,img,url,lang){
   return '<div class="lib-row" data-title="'+title+'"'+(lang ? ' data-story-lang="'+lang+'"' : '')+' onclick="openAffiliateGate(\''+url+'\',\''+title.replace(/'/g,"\\'")+'\')" style="display:flex;align-items:center;gap:12px;padding:8px 6px;border-bottom:1px solid #2a2735;cursor:pointer;">'
   + '<img src="'+img+'" alt="'+title+'" loading="lazy" style="width:40px;height:56px;object-fit:cover;border-radius:6px;border:1px solid #2a2735;flex:0 0 auto;">'
   + '<div style="flex:1;min-width:0;"><div style="font-size:14px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">'+title+'</div>'
-  + '<div style="font-size:12px;color:#8f8aa3;">Wattpad · Đọc miễn phí 5 chương đầu</div></div>'
+  + '<div style="font-size:12px;color:#8f8aa3;">Truyện ngắn đã xuất bản</div></div>'
   + '<div style="color:#ff6584;font-size:13px;font-weight:700;flex:0 0 auto;">Đọc →</div></div>';
 }
 function libNorm(t){ return (t||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/đ/g,'d'); }
