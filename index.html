@@ -903,7 +903,7 @@
             // xóa CTA cũ nếu có
             const oldCta = document.getElementById('vipUnlockCta');
             if (oldCta) oldCta.remove();
-            if (isLocked && content.length > 250) {
+            if (isLocked) {
                 const preview = content.substring(0, 250);
                 const rest = content.substring(250);
                 contentBox.innerHTML = '<span>' + escapeHtml(preview) + '</span>'
