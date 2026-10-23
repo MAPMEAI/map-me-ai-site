@@ -1006,8 +1006,8 @@
 
         function goBackHome() {
             document.getElementById('detailView').style.display = 'none';
-            if (typeof window._detailReturnY === 'number') { window.scrollTo(0, window._detailReturnY); }
-            else { var el = document.getElementById('prompts'); if (el) el.scrollIntoView(); }
+            var el = document.getElementById('prompts');
+            if (el) { el.scrollIntoView(); if (history.replaceState) { history.replaceState(null, '', '#prompts'); } }
         }
         function honorHashScroll() {
             if (location.hash === '#prompts') { setTimeout(function(){ var el = document.getElementById('prompts'); if (el) el.scrollIntoView(); }, 80); }
