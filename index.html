@@ -737,7 +737,7 @@
         </nav>
         <div class="nav-buttons">
             <button onclick="openVipPricingModal()" class="btn btn-vip"><i class="fa-solid fa-crown"></i> VIP</button><span id="vipActiveBadge" style="display: none; background: linear-gradient(135deg, #f5af19, #f27121); color: white; font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 20px; margin-left: 8px;">VIP</span>
-            <button onclick="openLoginModal()" class="btn btn-login" style="display: none;"><i class="fa-solid fa-user"></i> Login</button>
+            <button onclick="openLoginModal()" class="btn btn-login" id="authNavBtn"><i class="fa-solid fa-user"></i> <span id="authNavLabel">Đăng nhập</span></button>
             <button class="lang-switch" onclick="toggleLanguage()" id="langBtn">EN 🌐</button>
         </div>
     </header>
@@ -847,7 +847,34 @@
 
         // ===== TẢI DỮ LIỆU PROMPT TỪ FILE JSON RIÊNG =====
         // Thêm prompt mới: chỉ cần sửa file prompts.json rồi upload đè, không cần up lại index.html
+        // ===== KẾT NỐI BACKEND (mapmeai.com): server quyết định VIP; bản tĩnh GitHub tự fallback file public =====
+        let serverUser = null;
+        let serverVip = false;
+        let apiAvailable = false;
+        async function apiFetch(url, opts) {
+            const res = await fetch(url, Object.assign({ credentials: 'same-origin' }, opts || {}));
+            let data = null;
+            try { data = await res.json(); } catch (e) {}
+            if (!res.ok || !data || data.ok !== true) { const err = new Error((data && data.error) || ('HTTP ' + res.status)); err.code = data && data.error; err.status = res.status; throw err; }
+            return data;
+        }
         async function loadPromptsFromJson() {
+            try {
+                const data = await apiFetch('/api/prompts.php');
+                if (!Array.isArray(data.prompts)) throw new Error('api format');
+                apiAvailable = true;
+                serverVip = !!data.vip;
+                promptsData = data.prompts.map(function (p) {
+                    const q = Object.assign({}, p);
+                    if (q.content == null) q.content = q.preview || '';
+                    return q;
+                });
+                promptsOriginal = promptsData.slice();
+                renderPrompts();
+                updateFilterCounts();
+                refreshAuthState();
+                honorHashScroll();
+            } catch (apiErr) {
             try {
                 const res = await fetch('prompts.public.json');
                 if (!res.ok) throw new Error('HTTP ' + res.status);
@@ -859,6 +886,7 @@
             } catch (err) {
                 const grid = document.getElementById('promptGridContainer');
                 if (grid) grid.innerHTML = '<p style="color: var(--text-muted); grid-column: span 3; text-align: center; padding: 30px;">Không tải được dữ liệu prompt, kiểm tra file prompts.json đã upload chưa nhé!</p>';
+            }
             }
         };
 
@@ -907,7 +935,7 @@
                 const preview = content.substring(0, 250);
                 const rest = content.substring(250);
                 contentBox.innerHTML = '<span>' + escapeHtml(preview) + '</span>'
-                    + '<span style="filter:blur(6px);user-select:none;pointer-events:none;">' + escapeHtml(rest) + '</span>'
+                    + (rest ? '<span style="filter:blur(6px);user-select:none;pointer-events:none;">' + escapeHtml(rest) + '</span>' : '')
                     + '<div id="vipUnlockCta" style="margin-top:20px;text-align:center;padding:20px;background:rgba(255,209,102,0.08);border:1px solid #ffd166;border-radius:12px;">'
                     + '<p style="color:#ffd166;font-weight:700;margin-bottom:12px;">🔒 Nội dung đầy đủ dành cho học viên VIP</p>'
                     + '<button onclick="openVipPricingModal()" style="background:linear-gradient(135deg,#ffd166,#f5af19);color:#000;font-weight:700;padding:12px 28px;border:none;border-radius:25px;cursor:pointer;font-size:15px;">Đăng ký Khóa Học / Tài khoản VIP để mở khóa toàn bộ cấu trúc Prompt này</button>'
@@ -1674,47 +1702,58 @@ function openCourseModal(k){
         }
 
         
-        // ===== HỆ THỐNG MÃ VIP =====
-        const VIP_SALT = 'mapmeai-vip-2026';
-        const VIP_CHARS = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
-        function vipChecksum(r6) {
-            let h = 0; const s = VIP_SALT + r6;
-            for (let i = 0; i < s.length; i++) { h = (h * 31 + s.charCodeAt(i)) % 1296; }
-            return VIP_CHARS[Math.floor(h / 36)] + VIP_CHARS[h % 36];
-        }
-        function validateVipCode(code) {
-            code = (code || '').trim().toUpperCase().replace(/[^A-Z0-9]/g, '');
-            if (!/^(VV|T1)[A-Z2-9]{8}$/.test(code)) return null;
-            const type = code.slice(0, 2), random = code.slice(2, 8), check = code.slice(8, 10);
-            if (vipChecksum(random) !== check) return null;
-            return type === 'VV' ? 'lifetime' : 'monthly';
-        }
-        function activateVip(type) {
-            localStorage.setItem('mapmeai_vip', JSON.stringify({ type: type, activatedAt: Date.now() }));
-            updateVipBadge();
-        }
-        function isVipActive() {
-            try {
-                const d = JSON.parse(localStorage.getItem('mapmeai_vip'));
-                if (!d) return false;
-                if (d.type === 'lifetime') return true;
-                if (d.type === 'monthly') return (Date.now() - d.activatedAt) < 30*24*60*60*1000;
-            } catch(e) {}
-            return false;
-        }
+        // ===== TÀI KHOẢN + VIP PHÍA SERVER (không còn mã tự kiểm tra ở client) =====
+        function isVipActive() { return serverVip; }
         function updateVipBadge() {
             const b = document.getElementById('vipActiveBadge');
             if (b) b.style.display = isVipActive() ? 'inline-block' : 'none';
+            const lbl = document.getElementById('authNavLabel');
+            if (lbl) lbl.innerText = serverUser ? (serverUser.name || serverUser.email) : 'Đăng nhập';
+            const line = document.getElementById('authUserLine');
+            if (line) {
+                if (serverUser) { line.innerHTML = 'Đang đăng nhập: <b>' + escapeHtml(serverUser.email) + '</b>' + (serverVip ? ' · <b style="color:#ffd166">VIP đang bật</b>' : ' · chưa có VIP') + ' · <a href="#" onclick="submitLogout();return false;" style="color:#ff6584">Đăng xuất</a>'; }
+                else { line.innerText = 'Chưa đăng nhập. Đăng nhập/đăng ký để nhập mã VIP được cấp cho đúng tài khoản của bạn.'; }
+            }
         }
-        function submitVipCode() {
+        async function refreshAuthState() {
+            if (!apiAvailable) { updateVipBadge(); return; }
+            try { const me = await apiFetch('/api/me.php'); serverUser = me.user || null; serverVip = !!me.vip; } catch (e) {}
+            updateVipBadge();
+        }
+        function authMsg(txt, ok) { const m = document.getElementById('authMsg'); if (m) { m.innerText = txt; m.style.color = ok ? '#2ecc71' : '#ff3b3b'; } }
+        const AUTH_ERR = { email_invalid: 'Email chưa đúng định dạng.', password_short: 'Mật khẩu tối thiểu 6 ký tự.', email_exists: 'Email này đã có tài khoản — hãy đăng nhập.', login_failed: 'Sai email hoặc mật khẩu.', login_required: 'Cần đăng nhập trước.', code_invalid: 'Mã không đúng hoặc đã bị thu hồi.', code_used: 'Mã này đã được dùng rồi.', code_empty: 'Chưa nhập mã.' };
+        async function submitAuth(mode) {
+            if (mode === 'register') { const ag = document.getElementById('authAgree'); if (ag && !ag.checked) { authMsg('Bạn cần tick ô đồng ý Điều khoản & Chính sách bảo mật để đăng ký.', false); return; } }
+            if (!apiAvailable) { authMsg('Bản web này chưa nối máy chủ — vui lòng vào web chính mapmeai.com để đăng nhập.', false); return; }
+            const email = (document.getElementById('authEmail').value || '').trim();
+            const pass = document.getElementById('authPass').value || '';
+            const name = (document.getElementById('authName').value || '').trim();
+            try {
+                const data = await apiFetch(mode === 'register' ? '/api/register.php' : '/api/login.php', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: email, password: pass, name: name }) });
+                serverUser = data.user || null; serverVip = !!data.vip;
+                authMsg(mode === 'register' ? 'Đăng ký thành công! Nhập mã VIP (nếu đã mua) ở ô bên dưới.' : 'Đăng nhập thành công!', true);
+                updateVipBadge();
+                loadPromptsFromJson();
+            } catch (e) { authMsg(AUTH_ERR[e.code] || 'Có lỗi, thử lại sau nhé.', false); }
+        }
+        async function submitLogout() {
+            try { await fetch('/api/logout.php', { method: 'POST', credentials: 'same-origin' }); } catch (e) {}
+            serverUser = null; serverVip = false; updateVipBadge(); loadPromptsFromJson();
+        }
+        async function submitVipCode() {
             const inp = document.getElementById('vipCodeInput');
             const msg = document.getElementById('vipCodeMsg');
-            const t = validateVipCode(inp.value);
-            if (!t) { msg.innerText = 'Mã không đúng, kiểm tra lại nhé!'; msg.style.color = '#ff3b3b'; return; }
-            activateVip(t);
-            msg.innerText = t === 'lifetime' ? 'Kích hoạt VIP Vĩnh Viễn thành công!' : 'Kích hoạt VIP 1 Tháng thành công!';
-            msg.style.color = '#2ecc71';
-            setTimeout(function(){ if (typeof closeVipPricingModal === 'function') closeVipPricingModal(); }, 1200);
+            const say = function (txt, ok) { msg.innerText = txt; msg.style.color = ok ? '#2ecc71' : '#ff3b3b'; };
+            if (!apiAvailable) { say('Bản web tĩnh không kích hoạt được mã — vào web chính mapmeai.com, đăng nhập rồi nhập mã nhé.', false); return; }
+            if (!serverUser) { say('Đăng nhập/đăng ký tài khoản ở phía trên trước, rồi mới nhập mã.', false); return; }
+            try {
+                const data = await apiFetch('/api/redeem.php', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ code: (inp.value || '').trim() }) });
+                serverVip = true;
+                say(data.type === 'lifetime' ? 'Kích hoạt VIP Vĩnh Viễn thành công!' : 'Kích hoạt VIP 1 Tháng thành công!', true);
+                updateVipBadge();
+                loadPromptsFromJson();
+                setTimeout(function(){ if (typeof closeVipPricingModal === 'function') closeVipPricingModal(); }, 1200);
+            } catch (e) { say(AUTH_ERR[e.code] || 'Mã chưa kích hoạt được, kiểm tra lại nhé.', false); }
         }
 
         function openVipPricingModal() { document.getElementById('vipPricingModal').classList.add('active'); }
@@ -1727,7 +1766,20 @@ function openCourseModal(k){
         <div class="modal-box" style="width: 800px; max-width: 95%; background: #141419; border: 2px solid #ffd166; padding: 40px; text-align: left; max-height: 90vh; overflow-y: auto; position: relative;">
             <button class="close-btn" onclick="closeVipPricingModal()" style="position: absolute; top: 15px; right: 20px; background: none; border: none; color: #fff; font-size: 28px; cursor: pointer;">&times;</button>
                 <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border-color); text-align: center;">
-                    <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 10px;">Đã có mã VIP? Nhập mã để kích hoạt:</p>
+                    <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 10px;">Bước 1 — Đăng nhập / đăng ký tài khoản:</p>
+                    <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-bottom: 6px;">
+                        <input id="authName" placeholder="Tên (không bắt buộc)" style="padding: 10px 14px; border-radius: 10px; border: 1px solid var(--border-color); background: #0b0b0e; color: white; font-size: 14px; width: 180px;">
+                        <input id="authEmail" placeholder="Email" style="padding: 10px 14px; border-radius: 10px; border: 1px solid var(--border-color); background: #0b0b0e; color: white; font-size: 14px; width: 200px;">
+                        <input id="authPass" type="password" placeholder="Mật khẩu (≥ 6 ký tự)" style="padding: 10px 14px; border-radius: 10px; border: 1px solid var(--border-color); background: #0b0b0e; color: white; font-size: 14px; width: 180px;">
+                    </div>
+                    <label style="display:flex;gap:8px;justify-content:center;align-items:flex-start;font-size:13px;color:var(--text-muted);margin:0 auto 10px;max-width:560px;text-align:left"><input type="checkbox" id="authAgree" style="margin-top:3px"><span>Tôi đồng ý với <a href="https://mapmeai.com/#dieu-khoan" style="color:#ff6584">Điều khoản sử dụng</a> và <a href="https://mapmeai.com/chinh-sach-bao-mat.html" style="color:#ff6584">Chính sách bảo mật</a> (chỉ bắt buộc khi đăng ký).</span></label>
+                    <div style="display: flex; gap: 8px; justify-content: center;">
+                        <button onclick="submitAuth('login')" class="btn-pink" style="padding: 10px 20px;">Đăng nhập</button>
+                        <button onclick="submitAuth('register')" class="btn-pink" style="padding: 10px 20px; background: linear-gradient(135deg, #ffd166, #f5af19); color: #000;">Đăng ký</button>
+                    </div>
+                    <p id="authMsg" style="font-size: 13px; margin-top: 8px; min-height: 18px;"></p>
+                    <p id="authUserLine" style="font-size: 13px; color: var(--text-muted); margin-top: 4px;"></p>
+                    <p style="font-size: 13px; color: var(--text-muted); margin: 16px 0 10px;">Bước 2 — Đã có mã VIP? Nhập mã để kích hoạt (mã dùng 1 lần, gắn đúng tài khoản này):</p>
                     <div style="display: flex; gap: 8px; justify-content: center;">
                         <input id="vipCodeInput" placeholder="Nhập mã VIP..." style="padding: 10px 14px; border-radius: 10px; border: 1px solid var(--border-color); background: #0b0b0e; color: white; font-size: 14px; width: 200px; text-transform: uppercase;">
                         <button onclick="submitVipCode()" class="btn-pink" style="padding: 10px 20px;">Kích hoạt</button>
@@ -2084,35 +2136,26 @@ var KITCHEN_PUBLISHING = '<h2 style="margin-bottom:12px;">📤 Quy trình đăng
     <div id="affModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.8);align-items:center;justify-content:center;padding:20px">
         <div style="background:#15131e;border:1px solid #322d45;border-radius:18px;max-width:440px;width:100%;padding:28px;text-align:center">
             <h3 id="affTitle" style="color:#fff;margin-bottom:8px"></h3>
-            <p style="color:#a2a0b2;font-size:14px;margin-bottom:16px">👉 Bấm vào link bên dưới, lấy <b style="color:#ffd166">mã ưu đãi</b> từ nhãn hàng rồi nhập vào ô để mở truyện</p>
+            <p style="color:#a2a0b2;font-size:14px;margin-bottom:16px">👉 Bấm link bên dưới xem ưu đãi từ nhãn hàng, xong quay lại bấm Mở Truyện nhé</p>
             <a id="affLink" href="#" target="_blank" style="display:inline-block;background:linear-gradient(135deg,#ffd166,#ff6584);color:#000;font-weight:700;padding:12px 28px;border-radius:25px;text-decoration:none;margin-bottom:16px">Xem Ưu Đãi Ngay →</a>
-            <input id="affCode" type="text" placeholder="Nhập mã từ nhãn hàng..." style="width:100%;padding:12px 16px;border-radius:12px;border:1px solid #322d45;background:#0b0a10;color:#fff;font-size:15px;margin-bottom:12px;text-align:center">
-            <button onclick="submitAffCode()" style="width:100%;background:linear-gradient(135deg,#ff6584,#a066ff);color:#fff;font-weight:700;padding:12px;border:none;border-radius:12px;cursor:pointer;font-size:15px">Mở Truyện 📖</button>
+            <button onclick="openAffTarget()" style="width:100%;background:linear-gradient(135deg,#ff6584,#a066ff);color:#fff;font-weight:700;padding:12px;border:none;border-radius:12px;cursor:pointer;font-size:15px">Mở Truyện 📖</button>
             <button onclick="document.getElementById('affModal').style.display='none'" style="margin-top:10px;background:none;border:none;color:#a2a0b2;cursor:pointer;font-size:13px">Đóng</button>
             <p id="affError" style="color:#ff6584;font-size:13px;margin-top:8px;display:none">Mã chưa đúng, kiểm tra lại nhé!</p>
         </div>
     </div>
     <script>
         let affTargetUrl = '';
-        // Mã mở truyện — tỷ đổi mã này khi cần
-        const AFF_CODES = ['MAPMEAI', 'mapmeai'];
         function openAffiliateGate(wattpadUrl, title) {
             affTargetUrl = wattpadUrl;
             document.getElementById('affTitle').innerText = '📖 ' + title;
             // Link affiliate — tỷ thay link thật vào đây
             document.getElementById('affLink').href = 'https://collshp.com/nhulienhuynh?view=storefront';
-            document.getElementById('affCode').value = '';
             document.getElementById('affError').style.display = 'none';
             document.getElementById('affModal').style.display = 'flex';
         }
-        function submitAffCode() {
-            const code = document.getElementById('affCode').value.trim();
-            if (AFF_CODES.includes(code) || AFF_CODES.includes(code.toUpperCase())) {
-                document.getElementById('affModal').style.display = 'none';
-                window.open(affTargetUrl, '_blank', 'noopener,noreferrer');
-            } else {
-                document.getElementById('affError').style.display = 'block';
-            }
+        function openAffTarget() {
+            document.getElementById('affModal').style.display = 'none';
+            if (affTargetUrl) window.open(affTargetUrl, '_blank', 'noopener,noreferrer');
         }
     </script>
 <script>if(location.hash==='#dieu-khoan'&&typeof openTermsModal==='function')openTermsModal();</script>
