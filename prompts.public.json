@@ -421,13 +421,13 @@
  },
  {
   "title": "Master Prompt Storyboard 8 Khung",
-  "desc": "Master prompt tạo bảng phân cảnh (Storyboard) điện ảnh 8 khung đồng nhất.",
-  "category": "Text",
+  "desc": "Master prompt tạo poster storyboard hoạt hình 3D 8 khung cho mọi chủ đề bằng ChatGPT Image 2 — chỉ cần điền {chủ đề} và {từ khóa}.",
+  "category": "Ảnh",
   "type": "VIP",
   "subCat": "Storyboard & Nhân vật",
   "demo": "2aOboR6asyrQ5iw1m57kV1d2ftRoWlLU5LxXUj7Q.jpg",
   "demoVideo": null,
-  "content": "THE CINEMATIC STORYBOARD MASTER PROMPT\nTITLE: Premium Commercial Storyboard Presentation (Cinematic Shot Grammar Edition)\nTASK: Create a premium, client-ready storyboard presentation for this video. Generate a complete cinematic storyboard tailored s",
+  "content": "Để tạo được bảng tham chiếu như dưới đây, chỉ cần làm theo 2 bước:\n👉 Bước 1: Mô tả thông tin nhân vậy bạn muốn tạo vào các mục {...} trong prompt.\n👉 Bước 2: Dán prompt vào ChatGPT và tạo ảnh -  PROMPT TẠO STORYBOARD HOẠT HÌNH 3D HOÀN CHỈNH THEO TỪNG ",
   "slug": "master-prompt-storyboard-8-khung",
   "locked": true
  },
