@@ -663,8 +663,8 @@
         footer p { margin-bottom: 3px; font-weight: 600; color: white; }
     
         /* ===== Thumbnail preview trên thẻ prompt ===== */
-        .card-thumb{position:relative;border-radius:12px;overflow:hidden;margin-bottom:14px;aspect-ratio:16/9;background:#0e0d14;border:1px solid var(--border-color)}
-        .card-thumb img,.card-thumb video{width:100%;height:100%;object-fit:cover;display:block}
+        .card-thumb{position:relative;border-radius:12px;overflow:hidden;margin-bottom:14px;aspect-ratio:4/5;background:#0e0d14;border:1px solid var(--border-color)}
+        .card-thumb img,.card-thumb video{width:100%;height:100%;object-fit:contain;display:block;background:#0b0a10}
         .thumb-badge{position:absolute;top:10px;left:10px;font-size:11px;font-weight:800;padding:5px 12px;border-radius:20px;box-shadow:0 4px 12px rgba(0,0,0,.4)}
         .card-visual{display:flex;align-items:center;justify-content:center}        .card-visual::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 80% 15%,rgba(255,255,255,.22),transparent 55%)}        .visual-icon{font-size:46px;color:rgba(255,255,255,.92);text-shadow:0 6px 24px rgba(0,0,0,.45);z-index:1}
         .thumb-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:rgba(0,0,0,.55);color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;pointer-events:none;backdrop-filter:blur(4px);border:1.5px solid rgba(255,255,255,.35)}
@@ -825,7 +825,7 @@
             <!-- Ô Tìm Kiếm -->
             <div style="position: relative; margin-top: 5px;">
                 <i class="fa-solid fa-magnifying-glass" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 13px;"></i>
-                <input type="text" id="searchInput" oninput="filterPrompts()" placeholder="Tìm prompt theo mục tiêu, tool..." style="width: 100%; padding: 10px 15px 10px 42px; background: #0b0b0e; border: 1px solid var(--border-color); border-radius: 12px; color: white; font-size: 13px; outline: none;">
+                <input type="text" id="searchInput" oninput="currentPage=1;filterPrompts()" placeholder="Tìm prompt theo mục tiêu, tool..." style="width: 100%; padding: 10px 15px 10px 42px; background: #0b0b0e; border: 1px solid var(--border-color); border-radius: 12px; color: white; font-size: 13px; outline: none;">
             </div>
 
             <!-- Số lượng prompt & Phân trang tự động -->
@@ -837,8 +837,7 @@
         <!-- KHUNG HIỂN THỊ DANH SÁCH CARD PROMPT ĐỘNG -->
         <div class="grid-cards" id="promptGridContainer">
             <!-- Dữ liệu sẽ được render tự động từ script bên dưới -->
-            <noscript><p style="color:var(--text-muted)">Bật JavaScript để xem kho prompt, hoặc <a href="prompt/" style="color:#ff6584">xem danh sách prompt dạng trang tĩnh</a>.</p></noscript>
-        </div>
+            <noscript><p style="color:var(--text-muted)">Bật JavaScript để xem kho prompt, hoặc <a href="prompt/" style="color:#ff6584">xem danh sách prompt dạng trang tĩnh</a>.</p></noscript> </div> <div id="paginationBar" style="display:flex;gap:8px;justify-content:center;align-items:center;margin:22px 0 6px;flex-wrap:wrap;"></div>
     </div>
 
     <script>
@@ -870,7 +869,7 @@
         let activePromptText = "";
         let detailTemplate = "";
         let detailLocked = false;
-        let currentList = [];
+        let currentList = []; let currentPage = 1; const PAGE_SIZE = 24;
 
         function fillDetailVars() {
             if (detailLocked) return;
@@ -1033,15 +1032,14 @@
             document.getElementById('count-Anime').innerText = promptsData.filter(i => i.subCat === 'Anime').length;
             document.getElementById('count-UI').innerText = promptsData.filter(i => i.subCat === 'UI & Graphic').length; document.getElementById('count-AmThuc').innerText = promptsData.filter(i => i.subCat === 'Ẩm thực').length; document.getElementById('count-Storyboard').innerText = promptsData.filter(i => i.subCat === 'Storyboard & Nhân vật').length;
 
-            document.getElementById('promptCountText').innerText = filtered.length + ' prompt · Trang 1/1';
+            const _tp = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE)); if (currentPage > _tp) currentPage = _tp; document.getElementById('promptCountText').innerText = filtered.length + ' prompt · Trang ' + currentPage + '/' + _tp;
 
             if (filtered.length === 0) {
                 grid.innerHTML = '<p style="color: var(--text-muted); grid-column: span 3; text-align: center; padding: 30px;">Không tìm thấy prompt phù hợp!</p>';
                 return;
             }
 
-            currentList = filtered;
-            grid.innerHTML = filtered.map((item, index) => {
+            currentList = filtered; const _start = (currentPage - 1) * PAGE_SIZE; const _pageItems = filtered.slice(_start, _start + PAGE_SIZE); grid.innerHTML = _pageItems.map((item, index) => {
                 const badgeCls = item.type === 'VIP' ? 'tag-vip' : 'tag-free';
                 let thumb = '';
                 if (item.demoVideo) {
@@ -1050,7 +1048,7 @@
                     thumb = `<div class="card-thumb"><img src="${escHtml(item.demo)}" alt="${escHtml(item.title)}" loading="lazy" onerror="this.closest('.card-thumb').style.display='none'"><span class="thumb-badge ${badgeCls}">${escHtml(item.type)}</span></div>`;
                 }
                 return `
-                <div class="card" role="button" tabindex="0" onclick="openDetailPage(${index})" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openDetailPage(${index})}">
+                <div class="card" role="button" tabindex="0" onclick="openDetailPage(${_start + index})" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openDetailPage(${_start + index})}">
                     ${thumb}
                     <div>
                         <div class="card-top">
@@ -1064,11 +1062,10 @@
                         <button class="btn-pink" style="padding: 6px 16px; font-size: 12px; ${item.type === 'VIP' ? 'background: linear-gradient(135deg, #f5af19, #f27121);' : ''}">Xem ngay →</button>
                     </div>
                 </div>
-            `}).join('');
-        }
-
-        function filterPrompts(type, val, evt) {
-            const btnEl = (evt || window.event || {}).currentTarget || (evt || window.event || {}).target;
+            `}).join(''); renderPagination(_tp); } 
+function renderPagination(tp) { const bar = document.getElementById('paginationBar'); if (!bar) return; if (!tp || tp <= 1) { bar.innerHTML = ''; return; } const mk = (n, label, dis, act) => '<button onclick="goPage(' + n + ')" ' + (dis ? 'disabled' : '') + ' style="padding:7px 13px;border-radius:10px;border:1px solid var(--border-color);background:' + (act ? '#ff4d6d' : '#1c1a24') + ';color:' + (act ? '#fff' : 'var(--text-muted)') + ';font-size:12px;font-weight:700;cursor:pointer;' + (dis ? 'opacity:.4;cursor:default;' : '') + '">' + label + '</button>'; let h = mk(currentPage - 1, '← Trước', currentPage <= 1, false); let pages = []; for (let i = 1; i <= tp; i++) { if (i === 1 || i === tp || Math.abs(i - currentPage) <= 1) pages.push(i); else if (pages[pages.length - 1] !== '…') pages.push('…'); } pages.forEach(p => { h += (p === '…') ? '<span style="color:var(--text-muted);padding:0 2px;">…</span>' : mk(p, p, false, p === currentPage); }); h += mk(currentPage + 1, 'Sau →', currentPage >= tp, false); bar.innerHTML = h; }
+function goPage(n) { currentPage = n; renderPrompts(); const g = document.getElementById('promptGridContainer'); if (g) g.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+function filterPrompts(type, val, evt) { if (type) currentPage = 1; const btnEl = (evt || window.event || {}).currentTarget || (evt || window.event || {}).target;
             if (type === 'format') {
                 currentFormat = val;
                 updateActiveUI('formatFilter', btnEl);

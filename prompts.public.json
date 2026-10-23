@@ -29,7 +29,7 @@
   "category": "Text",
   "type": "Free",
   "subCat": "Marketing",
-  "demo": "demo-03-character-json.webp",
+  "demo": null,
   "demoVideo": null,
   "content": "JSON schema for maintaining consistent character traits across multi-scene generation.",
   "slug": "chatgpt-json-character-structure",
@@ -65,7 +65,7 @@
   "category": "Ảnh",
   "type": "Free",
   "subCat": "UI & Graphic",
-  "demo": "demo-06-saas-ui.webp",
+  "demo": null,
   "demoVideo": null,
   "content": "Modern dark mode SaaS landing page UI design, clean typography, glowing gradients.",
   "slug": "saas-landing-page-ui-wireframe",
@@ -758,9 +758,9 @@
  {
   "title": "Prompt Crystal Cutting",
   "desc": "trend \"Crystal Cutting ASMR\" Prompt ảnh General: A luxurious apple sculpture completely covered in thousands of tiny red, gold and clear diamonds and ",
-  "category": "Ảnh",
+  "category": "Video",
   "type": "Free",
-  "subCat": "Ảnh",
+  "subCat": "Video",
   "demo": "demo-crystal-cutting.webp",
   "demoVideo": "",
   "content": "trend \"Crystal Cutting ASMR\" \nPrompt ảnh \nGeneral: \nA luxurious apple sculpture completely covered in thousands of tiny red, gold and clear diamonds and crystals, with a green emerald leaf and gold stem, sitting on a white marble table in a luxury mansion background, ultra realistic, macro photography, 8k, bokeh lights, studio lighting\nTạo thỏi son : A luxury lipstick sculpture completely covered in red and gold crystals and diamonds, standing on a white marble vanity table, luxury bedroom background, macro photography, ultra realistic, 8k\nKem dưỡng thể\nA luxury cosmetic cream jar completely encrusted with white pearls and clear diamonds and pink crystals, with a gold lid, on a white marble table, soft luxury lighting\nChai nước hoa\nA luxury perfume bottle sculpture covered in clear and gold crystals, diamond encrusted, on a marble table with bokeh lights background, ultra luxurious\nPrompt video trend \"Crystal Cutting ASMR\" \n\nA 10-second long, vertical video in 9:16 aspect ratio, 8K resolution, ultra photorealistic macro ASMR, continuous single take, no jump cuts. A luxury red lipstick sculpture completely encrusted with thousands of tiny red, gold and clear crystals is centered on a white marble table, luxury background with bokeh. A woman's hand with soft nude manicure holding a small golden jeweled knife. The video has a clear sequential timeline: from 0 to 3 seconds, the knife gently scrapes the crystal surface causing a few crystals to fall and scatter; from 3 to 7 seconds, the knife slowly and precisely carves a perfect U-shaped flap on the side of the lipstick, thousands of crystals raining down onto the marble; from 7 to 10 seconds, the knife lifts and peels back the U-shaped crystal flap, the flap falls over revealing the inside is hollow and overflowing with a giant sparkling red ruby in the center surrounded by clear diamonds and gold beads pouring out. Slow motion, extremely satisfying, glittering light reflections, shallow depth of field, studio softbox lighting, sharp focus, vertical 9:16 framing",
@@ -769,11 +769,11 @@
  },
  {
   "title": "Master Prompt Tạo Poster Infographic",
-  "desc": "Upload poster mẫu, AI phân tích và vẽ lại poster infographic giống y chang — giữ nguyên bố cục, màu sắc, font chữ, khung hình",
+  "desc": "Khuôn tạo poster infographic: phân tích ảnh mẫu rồi tái dựng bố cục, màu sắc, font chữ và khung hình.",
   "category": "Ảnh",
   "type": "VIP",
   "subCat": "Ảnh",
-  "demo": "demo-poster-replicate.webp",
+  "demo": null,
   "demoVideo": "",
   "content": "Analyze the uploaded reference poster and replicate its visual design with maximum fidelity.\n\nDO NOT redesign.\nDO NOT change the layout.\nDO NOT simplify the design.\n\nKeep exactly the same:\n\n• Overall composition\n• Section arrangement\n• Typography hie",
   "slug": "master-prompt-tao-poster-infographic",
@@ -793,7 +793,7 @@
  },
  {
   "title": "Prompt quảng cao so sanh sp skin",
-  "desc": "PROMPT QUẢNG CÁO SO SÁNH SP CORE CREATIVE DIRECTION Create a premium global beauty campaign combining luxury skincare advertising, high-fashion editor",
+  "desc": "Poster so sánh sản phẩm skincare kiểu quảng cáo mỹ phẩm cao cấp, bố cục đối chiếu rõ ràng, sang trọng.",
   "category": "Ảnh",
   "type": "Free",
   "subCat": "Ảnh",
@@ -817,7 +817,7 @@
  },
  {
   "title": "Chân Dung Sơn Dầu Cổ Điển",
-  "desc": "Prompt : Heavy oil-paint texture, delicate brushstrokes, vintage film style, close-up of a cold and glamorous beautiful woman, sophisticated aloof exp",
+  "desc": "Chân dung sơn dầu cổ điển: mỹ nữ quý phái, ánh sáng Rembrandt, nét cọ dày sang trọng.",
   "category": "Ảnh",
   "type": "Free",
   "subCat": "Ảnh",
@@ -829,7 +829,7 @@
  },
  {
   "title": "prompt qc wallet - coffee",
-  "desc": "Create a photorealistic cinematic luxury commercial using the reference coffee-cup image. Start with the premium white porcelain coffee cup resting on",
+  "desc": "Quảng cáo ví da bên ly cà phê sứ trắng trên bàn đá — phong cách sản phẩm tối giản, sang trọng.",
   "category": "Ảnh",
   "type": "Free",
   "subCat": "Ẩm thực",
@@ -842,7 +842,7 @@
  {
   "title": "thực don cho quán",
   "desc": "COFFEE & BEVERAGES MENU Theme: A magical bakery menu comes alive in one continuous gliding shot — the camera scrolls down the printed menu while flat ",
-  "category": "Ảnh",
+  "category": "Video",
   "type": "Free",
   "subCat": "Ẩm thực",
   "demo": "demo-menu-coffee.webp",
@@ -853,11 +853,11 @@
  },
  {
   "title": "Thiết kế infographic nanobanana",
-  "desc": "Nanobanana Pro Thiết Kế Infographic Trực Quan Kết Hợp Yếu Tố Đời Thực Create an infographic image of [OBJECT], combining a realistic photograph or pho",
+  "desc": "Thiết kế infographic kỹ thuật cho sản phẩm bằng NanoBanana: sơ đồ cấu tạo và chú thích rõ ràng.",
   "category": "Ảnh",
   "type": "Free",
   "subCat": "Ảnh",
-  "demo": "demo-infographic-nana.webp",
+  "demo": null,
   "demoVideo": "",
   "content": "Nanobanana Pro Thiết Kế Infographic Trực Quan Kết Hợp Yếu Tố Đời Thực\n\nCreate an infographic image of [OBJECT], combining a realistic photograph or photorealistic render of the object with technical annotation overlays placed directly on top. Use black ink–style line drawings and text (technical pen / architectural sketch look) on a pure white studio background. Include: •Key component labels •Internal cutaway or exploded-view outlines (where relevant) •Measurements, dimensions, and scale markers •Material callouts and quantities",
   "slug": "thiet-ke-infographic-nanobanana",
@@ -865,7 +865,7 @@
  },
  {
   "title": "Poster du lịch 3D",
-  "desc": "Poster Infographic Hướng Dẫn Du Lịch 3D Siêu Chân Thực A hyper-realistic 3D travel guide infographic poster for [COUNTRY]. The country shape is render",
+  "desc": "Poster du lịch 3D: hình khối quốc gia dựng nổi với các địa danh biểu tượng của từng nước.",
   "category": "Ảnh",
   "type": "Free",
   "subCat": "Marketing",
@@ -877,7 +877,7 @@
  },
  {
   "title": "Ảnh ghép cặp đôi",
-  "desc": "Ảnh Ghép Kỹ Thuật Số Lãng Mạn Sáng Tạo Về Cặp Đôi Trẻ A creative romantic digital photo collage featuring a young handsome woman in a peacock green fr",
+  "desc": "Ảnh ghép cặp đôi lãng mạn phong cách studio: cô gái váy xanh ngọc bên chàng trai lịch lãm.",
   "category": "Ảnh",
   "type": "Free",
   "subCat": "Ảnh",
@@ -889,7 +889,7 @@
  },
  {
   "title": "Chụp ảnh thời trang cao cấp",
-  "desc": "Buổi Chụp Ảnh Thương Mại Thời Trang Cao Cấp Rực Rỡ A vibrant, high-fashion commercial photoshoot featuring a young stylish woman posing in multiple dy",
+  "desc": "Chụp ảnh thời trang cao cấp: người mẫu trẻ tạo nhiều dáng động trong studio ánh sáng điện ảnh.",
   "category": "Ảnh",
   "type": "Free",
   "subCat": "Ảnh",
@@ -901,7 +901,7 @@
  },
  {
   "title": "Cận cảnh mắt mỹ nữ",
-  "desc": "Chụp Cận Cảnh Cực Độ Đôi Mắt Và Gương Mặt Mỹ Nữ An extreme close-up focusing on a pretty lady's face and neck. She has blue eyes, she is wearing intri",
+  "desc": "Cận cảnh đôi mắt mỹ nữ trang điểm cầu kỳ — macro siêu chi tiết, ánh nhìn hút hồn.",
   "category": "Ảnh",
   "type": "Free",
   "subCat": "Ảnh",
@@ -913,7 +913,7 @@
  },
  {
   "title": "Chân dung 8K chuyên nghiệp",
-  "desc": "Chân Dung Cận Cảnh Siêu Thực 8K Phong Cách Chuyên Nghiệp { \"style\": \"8K ultra-realistic close-up portrait\", \"subject\": { \"gender\": \"female\", \"skin_ton",
+  "desc": "Chân dung nữ 8K chuyên nghiệp theo cấu trúc JSON: da thật, ánh sáng studio, chi tiết siêu nét.",
   "category": "Ảnh",
   "type": "Free",
   "subCat": "Ảnh",
@@ -925,7 +925,7 @@
  },
  {
   "title": "Nhiếp ảnh gia sản phẩm CGI",
-  "desc": "Nhập Vai Nhiếp Ảnh Gia Sản Phẩm Cao Cấp Và Nghệ Sĩ CGI Act as a High-End Product Photographer and CGI Artist. PHASE 1: SUBJECT & LOGIC Generate a mass",
+  "desc": "Quy trình chụp sản phẩm CGI 2 giai đoạn: phân tích logic sản phẩm rồi dựng hình quảng cáo hoàn chỉnh.",
   "category": "Ảnh",
   "type": "Free",
   "subCat": "Ảnh",
@@ -937,7 +937,7 @@
  },
  {
   "title": "Cọ vẽ sơn dày",
-  "desc": "Chụp Cận Cảnh Siêu Thực Chiếc Cọ Vẽ Tạo Nét Phết Sơn Dày A hyper-realistic macro shot of a paintbrush creating a thick textured paint stroke on a clea",
+  "desc": "Vệt cọ sơn dầu dày nổi khối trên nền trong — hiệu ứng vẽ tranh 3D sống động.",
   "category": "Ảnh",
   "type": "Free",
   "subCat": "Ảnh",
@@ -949,7 +949,7 @@
  },
  {
   "title": "Lắp ráp máy móc bay",
-  "desc": "Hiệu Ứng Lắp Ráp Máy Móc Lơ Lửng Từ Các Mảnh Vỡ Giữa Không Trung 13/05/2026Midjourney [PRODUCT] assembling itself from scattered components mid-air, r",
+  "desc": "Máy móc tự lắp ráp giữa không trung từ các linh kiện rời — chuyển động cơ khí mượt mà, ấn tượng.",
   "category": "Ảnh",
   "type": "Free",
   "subCat": "Ảnh",
@@ -961,7 +961,7 @@
  },
  {
   "title": "Chân dung Pixar",
-  "desc": "Chân Dung 3D Cách Điệu Phong Cách Pixar Dành Cho Người Trẻ A stylized Pixar-style 3D portrait of a young person with smooth skin, large expressive blu",
+  "desc": "Chân dung phong cách Pixar: da mịn, mắt to biểu cảm, màu sắc tươi sáng.",
   "category": "Ảnh",
   "type": "Free",
   "subCat": "Ảnh",
@@ -973,7 +973,7 @@
  },
  {
   "title": "Poster người hùng mặt nạ",
-  "desc": "Poster Đồ Họa Dọc Điện Ảnh Người Hùng Đeo Mặt Nạ A cinematic, vertical graphic poster of a masked vigilante in a tactical carbon-fiber suit. The chara",
+  "desc": "Poster người hùng mặt nạ trong bộ giáp sợi carbon chiến thuật — khí chất điện ảnh.",
   "category": "Ảnh",
   "type": "Free",
   "subCat": "Marketing",
@@ -1009,7 +1009,7 @@
  },
  {
   "title": "Poster Lisbon",
-  "desc": "Poster Du Lịch Cổ Điển Mộng Mơ Thủ Đô Lisbon Bồ Đào Nha Dreamy vintage travel poster illustration of Lisbon, Portugal, featuring the iconic yellow tra",
+  "desc": "Poster du lịch Lisbon: tàu điện vàng biểu tượng và phố cổ Bồ Đào Nha trong nắng vàng.",
   "category": "Ảnh",
   "type": "Free",
   "subCat": "Marketing",
@@ -1021,7 +1021,7 @@
  },
  {
   "title": "Chân dung đàn ông tóc ngắn",
-  "desc": "Chân Dung Điện Ảnh Siêu Thực Của Người Đàn Ông Tóc Ngắn Nam Tính A hyper-realistic cinematic portrait of a man with short, textured hair and a well-gr",
+  "desc": "Chân dung nam tóc ngắn gọn gàng, phong cách studio nam tính, ánh sáng điện ảnh.",
   "category": "Ảnh",
   "type": "Free",
   "subCat": "Ảnh",
@@ -1033,7 +1033,7 @@
  },
  {
   "title": "Good Morning Coffee (miniature)",
-  "desc": "PHOTO PROMPT — GOOD MORNING COFFEE | MINIATURE MAN ON A RECEIPT Hyper-realistic cinematic photography featuring a cozy coffee miniature diorama, a cut",
+  "desc": "Ảnh tí hon buổi sáng: người đàn ông mini trên tờ hóa đơn cạnh ly cà phê, diorama ấm cúng siêu thực.",
   "category": "Ảnh",
   "type": "Free",
   "subCat": "Ẩm thực",
@@ -1045,7 +1045,7 @@
  },
  {
   "title": "Chân dung thời trang Banapro",
-  "desc": "Banapro A high-fashion editorial portrait of a young woman standing by a large, rustic wooden window. She is captured in a candid, over-the-shoulder g",
+  "desc": "Chân dung thời trang Banapro: chụp candid qua vai, trang phục dạ tweed, thần thái high-fashion.",
   "category": "Ảnh",
   "type": "Free",
   "subCat": "Marketing",
