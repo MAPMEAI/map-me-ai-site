@@ -1062,6 +1062,34 @@
             set('countTypeVip', vip);
         }
 
+
+        function renderMasterPrompts() {
+            const mg = document.getElementById('masterGrid');
+            if (!mg || !promptsData.length) return;
+            const masters = promptsData.filter(p => /master/i.test(p.title));
+            mg.innerHTML = masters.map(item => {
+                const badgeCls = item.type === 'VIP' ? 'tag-vip' : 'tag-free';
+                let thumb = '';
+                if (item.demoVideo) {
+                    thumb = `<div class="card-thumb"><video src="${escHtml(item.demoVideo)}" muted loop playsinline preload="metadata" onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0"></video><span class="thumb-play">▶</span><span class="thumb-badge ${badgeCls}">${escHtml(item.type)}</span></div>`;
+                } else if (item.demo) {
+                    thumb = `<div class="card-thumb"><img src="${escHtml(item.demo)}" alt="${escHtml(item.title)}" loading="lazy" onerror="this.closest('.card-thumb').style.display='none'"><span class="thumb-badge ${badgeCls}">${escHtml(item.type)}</span></div>`;
+                }
+                return `
+                <div class="card" role="button" tabindex="0" onclick="openPromptDetail('${escHtml(item.title).replace(/'/g, "\'")}', '${escHtml(item.desc).replace(/'/g, "\'")}', '${escHtml(item.category)}', false)">
+                    ${thumb}
+                    <div>
+                        <div class="card-top"><span style="font-size:11px; color:var(--text-muted);">${escHtml(item.subCat)}</span></div>
+                        <h3>${escHtml(item.title)}</h3>
+                        <p>${escHtml(item.desc)}</p>
+                    </div>
+                    <div class="card-footer-info">
+                        <span style="font-weight: 600; color: var(--text-muted);">${escHtml(item.category)}</span>
+                        <button class="btn-pink" style="padding: 5px 14px; font-size: 11px; ${item.type === 'VIP' ? 'background: linear-gradient(135deg, #f5af19, #f27121);' : ''}">Xem ngay →</button>
+                    </div>
+                </div>`;
+            }).join('');
+        }
         function renderPrompts() {
             const grid = document.getElementById('promptGridContainer');
             const searchVal = document.getElementById('searchInput').value.toLowerCase();
@@ -1111,7 +1139,7 @@
                         <button class="btn-pink" style="padding: 6px 16px; font-size: 12px; ${item.type === 'VIP' ? 'background: linear-gradient(135deg, #f5af19, #f27121);' : ''}">Xem ngay →</button>
                     </div>
                 </div>
-            `}).join(''); renderPagination(_tp); } 
+            `}).join(''); renderPagination(_tp); renderMasterPrompts(); } 
 function renderPagination(tp) { const bar = document.getElementById('paginationBar'); if (!bar) return; if (!tp || tp <= 1) { bar.innerHTML = ''; return; } const mk = (n, label, dis, act) => '<button onclick="goPage(' + n + ')" ' + (dis ? 'disabled' : '') + ' style="padding:7px 13px;border-radius:10px;border:1px solid var(--border-color);background:' + (act ? '#ff4d6d' : '#1c1a24') + ';color:' + (act ? '#fff' : 'var(--text-muted)') + ';font-size:12px;font-weight:700;cursor:pointer;' + (dis ? 'opacity:.4;cursor:default;' : '') + '">' + label + '</button>'; let h = mk(currentPage - 1, '← Trước', currentPage <= 1, false); let pages = []; for (let i = 1; i <= tp; i++) { if (i === 1 || i === tp || Math.abs(i - currentPage) <= 1) pages.push(i); else if (pages[pages.length - 1] !== '…') pages.push('…'); } pages.forEach(p => { h += (p === '…') ? '<span style="color:var(--text-muted);padding:0 2px;">…</span>' : mk(p, p, false, p === currentPage); }); h += mk(currentPage + 1, 'Sau →', currentPage >= tp, false); bar.innerHTML = h; }
 function goPage(n) { currentPage = n; renderPrompts(); const g = document.getElementById('promptGridContainer'); if (g) g.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
 function filterPrompts(type, val, evt) { if (type) currentPage = 1; const btnEl = (evt || window.event || {}).currentTarget || (evt || window.event || {}).target;
@@ -1189,49 +1217,7 @@ function filterPrompts(type, val, evt) { if (type) currentPage = 1; const btnEl 
                 <p>Bộ câu lệnh hệ thống (System Prompt) cao cấp dành riêng cho AI Agent và chuyên gia.</p>
             </div>
         </div>
-        <div class="grid-cards">
-            <!-- 1. Master Flow Cinematic Video -->
-            <div class="card" onclick="openPromptDetail('Master Flow Cinematic Video', 'Tạo chuyển động video mượt mà chuẩn cinematic.', 'Video', false)">
-                <div class="card-thumb"><img src="demo-01-master-flow.webp" alt="Master Flow Cinematic Video" loading="lazy"><span class="thumb-badge tag-vip">VIP</span></div>
-                <div>
-                    <div class="card-top"><span style="font-size:11px; color:var(--text-muted);">Video</span></div>
-                    <h3>Master Flow Cinematic Video</h3>
-                    <p>Tạo chuyển động video mượt mà chuẩn cinematic.</p>
-                </div>
-                <div class="card-footer-info">
-                    <span style="font-weight: 600; color: var(--text-muted);">Video</span>
-                    <button class="btn-pink" style="padding: 5px 14px; font-size: 11px; background: linear-gradient(135deg, #f5af19, #f27121);">Xem ngay →</button>
-                </div>
-            </div>
-
-            <!-- 2. Master Prompt - Two Souls of Eternity -->
-            <div class="card" onclick="openPromptDetail('Master Prompt - Two Souls of Eternity', 'Master prompt khóa mặt: Phù thủy mặt trăng vs Tiên nữ ánh sáng.', 'Ảnh', false)">
-                <div class="card-thumb"><img src="demo-two-souls.webp" alt="Master Prompt - Two Souls of Eternity" loading="lazy"><span class="thumb-badge tag-vip">VIP</span></div>
-                <div>
-                    <div class="card-top"><span style="font-size:11px; color:var(--text-muted);">Ảnh</span></div>
-                    <h3>Master Prompt - Two Souls of Eternity</h3>
-                    <p>Master prompt khóa mặt: Phù thủy mặt trăng vs Tiên nữ ánh sáng, bố cục chia đôi.</p>
-                </div>
-                <div class="card-footer-info">
-                    <span style="font-weight: 600; color: var(--text-muted);">Ảnh</span>
-                    <button class="btn-pink" style="padding: 5px 14px; font-size: 11px; background: linear-gradient(135deg, #f5af19, #f27121);">Xem ngay →</button>
-                </div>
-            </div>
-
-            <!-- 3. Master Prompt Storyboard 8 Khung -->
-            <div class="card" onclick="openPromptDetail('Master Prompt Storyboard 8 Khung', 'Master prompt tạo bảng phân cảnh (Storyboard) điện ảnh 8 khung đồng nhất.', 'Text', false)">
-                <div class="card-thumb"><img src="2aOboR6asyrQ5iw1m57kV1d2ftRoWlLU5LxXUj7Q.jpg" alt="Master Prompt Storyboard 8 Khung" loading="lazy"><span class="thumb-badge tag-vip">VIP</span></div>
-                <div>
-                    <div class="card-top"><span style="font-size:11px; color:var(--text-muted);">Text</span></div>
-                    <h3>Master Prompt Storyboard 8 Khung</h3>
-                    <p>Master prompt tạo bảng phân cảnh (Storyboard) điện ảnh 8 khung đồng nhất.</p>
-                </div>
-                <div class="card-footer-info">
-                    <span style="font-weight: 600; color: var(--text-muted);">Text</span>
-                    <button class="btn-pink" style="padding: 5px 14px; font-size: 11px; background: linear-gradient(135deg, #f5af19, #f27121);">Xem ngay →</button>
-                </div>
-            </div>
-        </div>
+        <div class="grid-cards" id="masterGrid"></div>
     </div>
 
     
