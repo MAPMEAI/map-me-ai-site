@@ -818,8 +818,8 @@
                 <button class="cat-btn" onclick="filterPrompts('cat', 'Fashion', event)" style="background: #1c1a24; color: var(--text-muted); border: 1px solid var(--border-color); padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">Fashion (<span id="count-Fashion">0</span>)</button>
                 <button class="cat-btn" onclick="filterPrompts('cat', 'Anime', event)" style="background: #1c1a24; color: var(--text-muted); border: 1px solid var(--border-color); padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">Anime (<span id="count-Anime">0</span>)</button>
                 <button class="cat-btn" onclick="filterPrompts('cat', 'UI & Graphic', event)" style="background: #1c1a24; color: var(--text-muted); border: 1px solid var(--border-color); padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">UI & Graphic (<span id="count-UI">0</span>)</button>
-                <button class="cat-btn" onclick="filterPrompts('cat', 'Ẩm thực', event)" style="background: #1c1a24; color: var(--text-muted); border: 1px solid var(--border-color); padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">Ẩm thực</button>
-                <button class="cat-btn" onclick="filterPrompts('cat', 'KOL & Nhân vật', event)" style="background: #1c1a24; color: var(--text-muted); border: 1px solid var(--border-color); padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">KOL &amp; Nhân vật</button>
+                <button class="cat-btn" onclick="filterPrompts('cat', 'Ẩm thực', event)" style="background: #1c1a24; color: var(--text-muted); border: 1px solid var(--border-color); padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">Ẩm thực (<span id="count-AmThuc">0</span>)</button>
+                <button class="cat-btn" onclick="filterPrompts('cat', 'Storyboard & Nhân vật', event)" style="background: #1c1a24; color: var(--text-muted); border: 1px solid var(--border-color); padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">Storyboard &amp; Nhân vật (<span id="count-Storyboard">0</span>)</button>
             </div>
 
             <!-- Ô Tìm Kiếm -->
@@ -1031,7 +1031,7 @@
             document.getElementById('count-Product').innerText = promptsData.filter(i => i.subCat === 'Product').length;
             document.getElementById('count-Fashion').innerText = promptsData.filter(i => i.subCat === 'Fashion').length;
             document.getElementById('count-Anime').innerText = promptsData.filter(i => i.subCat === 'Anime').length;
-            document.getElementById('count-UI').innerText = promptsData.filter(i => i.subCat === 'UI & Graphic').length;
+            document.getElementById('count-UI').innerText = promptsData.filter(i => i.subCat === 'UI & Graphic').length; document.getElementById('count-AmThuc').innerText = promptsData.filter(i => i.subCat === 'Ẩm thực').length; document.getElementById('count-Storyboard').innerText = promptsData.filter(i => i.subCat === 'Storyboard & Nhân vật').length;
 
             document.getElementById('promptCountText').innerText = filtered.length + ' prompt · Trang 1/1';
 
