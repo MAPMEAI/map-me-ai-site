@@ -751,7 +751,7 @@
                 <p data-en="90+ battle-tested prompts for Flow / Veo 3, Banapro & ChatGPT. Copy, paste, cash in." data-vi="90+ prompt thực chiến cho Flow / Veo 3, Banapro & ChatGPT. Copy là xài, ra đơn liền tay.">90+ prompt thực chiến cho Flow / Veo 3, Banapro & ChatGPT. Copy là xài, ra đơn liền tay.</p>
                 <div class="hero-actions">
                     <button onclick="openVipPricingModal()" class="btn-pink">Bắt Đầu Ngay →</button>
-                    <button class="btn-outline" onclick="openPromptDetail('Master Flow Cinematic Video (Demo Miễn Phí)', 'Tạo chuyển động video mượt mà chuẩn cinematic. Bản demo free cho anh em trải nghiệm.', 'Flow / Veo 3', true)">Xem Thử Miễn Phí</button>
+                    <button class="btn-outline" onclick="openPromptDetail('Master Flow Cinematic Video', 'Tạo chuyển động video mượt mà chuẩn cinematic.', 'Video', true)">Xem Thử Miễn Phí</button>
                 </div>
             </div>
             <div class="hero-visual">
@@ -982,7 +982,8 @@
             const content = found ? found.content : 'Cinematic camera movement of [SUBJECT] walking through [ENVIRONMENT] with soft natural lighting.';
             const demo = found ? found.demo : '';
             const demoVideo = found ? found.demoVideo : '';
-            showDetailView(title, desc, category, 'Free', content, demo, demoVideo);
+            const realType = found ? found.type : (isFree ? 'Free' : 'VIP');
+            showDetailView(title, desc, category, realType, content, demo, demoVideo);
         }
 
         
