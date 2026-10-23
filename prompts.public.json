@@ -1,17 +1,5 @@
 [
  {
-  "title": "Master Flow Cinematic Video",
-  "desc": "Tạo chuyển động video mượt mà chuẩn cinematic.",
-  "category": "Video",
-  "type": "Free",
-  "subCat": "Video",
-  "demo": "demo-01-master-flow.webp",
-  "demoVideo": "videos/Woman_walking_in_bamboo_forest_20261016182746.mp4",
-  "content": "Cinematic camera movement of [SUBJECT] walking through [ENVIRONMENT] with soft natural lighting.",
-  "slug": "master-flow-cinematic-video",
-  "locked": false
- },
- {
   "title": "Banapro High-End Lookbook",
   "desc": "Tạo ảnh thời trang lookbook sắc nét, chi tiết cao.",
   "category": "Ảnh",
