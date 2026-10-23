@@ -924,10 +924,17 @@
             } else {
                 frame.innerHTML = '[ Khung Video / Ảnh Demo Thực Tế Của Prompt ]';
             }
+            var _cb = document.getElementById('detailContentBox'); if (_cb) _cb.style.maxHeight = '190px'; var _tb = document.getElementById('promptToggleBtn'); if (_tb) _tb.textContent = '▼ Xem thêm — hiện toàn bộ prompt';
             document.getElementById('detailView').style.display = 'block';
             window.scrollTo(0, 0);
         }
 
+        function toggleDetailPrompt() {
+            var box = document.getElementById('detailContentBox');
+            var btn = document.getElementById('promptToggleBtn');
+            if (box.style.maxHeight === 'none') { box.style.maxHeight = '190px'; btn.textContent = '▼ Xem thêm — hiện toàn bộ prompt'; }
+            else { box.style.maxHeight = 'none'; btn.textContent = '▲ Thu gọn prompt'; }
+        }
         function openDetailPage(idx) {
             const item = currentList[idx];
             if (!item) return;
@@ -1779,10 +1786,13 @@ function openCourseModal(k){
 
     <!-- TRANG CHI TIẾT PROMPT TOÀN MÀN HÌNH (mở như chuyển tab) -->
     <div id="detailView" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; overflow-y: auto; background: var(--bg-dark); z-index: 9000;">
-        <div style="max-width: 1200px; margin: 0 auto; padding: 30px 20px;">
+        <div style="max-width: 1280px; margin: 0 auto; padding: 30px 20px;">
             <button onclick="goBackHome()" style="background: var(--card-bg); border: 1px solid var(--border-color); color: white; padding: 10px 18px; border-radius: 12px; font-weight: 700; cursor: pointer; margin-bottom: 25px; display: inline-flex; align-items: center; gap: 8px;">
                 <i class="fa-solid fa-arrow-left"></i> Quay lại kho prompt
             </button>
+            <div id="detailDemoFrame" style="width: 100%; height: min(74vh, 700px); background: #14121a; border: 1px solid var(--border-color); border-radius: 20px; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 14px; margin-bottom: 30px; overflow: hidden;">
+                        [ Khung Video / Ảnh Demo Thực Tế Của Prompt ]
+                    </div>
             <div class="detail-grid" style="display: grid; grid-template-columns: 2fr 1fr; gap: 30px; align-items: start;">
                 <div>
                     <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 12px;">
@@ -1791,9 +1801,7 @@ function openCourseModal(k){
                     </div>
                     <h2 id="detailTitle" style="font-size: 28px; font-weight: 800; color: white; margin-bottom: 10px;">Tiêu đề prompt</h2>
                     <p id="detailDesc" style="font-size: 14px; color: var(--text-muted); margin-bottom: 25px; line-height: 1.6;">Mô tả chi tiết...</p>
-                    <div id="detailDemoFrame" style="width: 100%; height: 380px; background: #14121a; border: 1px solid var(--border-color); border-radius: 20px; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 14px; margin-bottom: 30px; overflow: hidden;">
-                        [ Khung Video / Ảnh Demo Thực Tế Của Prompt ]
-                    </div>
+                    
                     <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 30px;">
                         <div style="background: var(--card-bg); border: 1px solid var(--border-color); padding: 20px; border-radius: 16px;">
                             <div style="color: var(--primary-pink); font-size: 13px; font-weight: 700; margin-bottom: 8px;"><i class="fa-solid fa-bullseye"></i> Dùng để làm gì?</div>
@@ -1817,9 +1825,10 @@ function openCourseModal(k){
                     </div>
                     <div style="margin-bottom: 25px;">
                         <div style="font-size: 15px; font-weight: 700; color: white; margin-bottom: 10px;">Câu Lệnh Gốc (Prompt):</div>
-                        <div id="detailContentBox" style="background: #14121a; border: 1px solid var(--border-color); padding: 20px; border-radius: 16px; font-family: monospace; font-size: 13px; color: #00f2fe; line-height: 1.6; word-break: break-all;">
+                        <div id="detailContentBox" style="background: #14121a; border: 1px solid var(--border-color); padding: 20px; border-radius: 16px; font-family: monospace; font-size: 13px; color: #00f2fe; line-height: 1.6; word-break: break-all; max-height: 190px; overflow: hidden;">
                             Nội dung câu lệnh gốc...
                         </div>
+                                                <button id="promptToggleBtn" onclick="toggleDetailPrompt()" style="margin-top: 10px; background: transparent; border: 1px solid var(--border-color); color: var(--primary-pink); padding: 9px 16px; border-radius: 10px; font-weight: 700; cursor: pointer; font-size: 13px;">▼ Xem thêm — hiện toàn bộ prompt</button>
                     </div>
                     <button onclick="copyDetailPrompt(event)" class="btn-pink" style="width: 100%; font-size: 15px; display: flex; align-items: center; justify-content: center; gap: 10px;">
                         <i class="fa-solid fa-copy"></i> Copy Prompt 1 Chạm
