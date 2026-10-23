@@ -855,6 +855,7 @@
                 promptsOriginal = promptsData.slice();
                 renderPrompts();
                 updateFilterCounts();
+                honorHashScroll();
             } catch (err) {
                 const grid = document.getElementById('promptGridContainer');
                 if (grid) grid.innerHTML = '<p style="color: var(--text-muted); grid-column: span 3; text-align: center; padding: 30px;">Không tải được dữ liệu prompt, kiểm tra file prompts.json đã upload chưa nhé!</p>';
@@ -925,8 +926,9 @@
                 frame.innerHTML = '[ Khung Video / Ảnh Demo Thực Tế Của Prompt ]';
             }
             var _cb = document.getElementById('detailContentBox'); if (_cb) _cb.style.maxHeight = '190px'; var _tb = document.getElementById('promptToggleBtn'); if (_tb) _tb.textContent = '▼ Xem thêm — hiện toàn bộ prompt';
+            window._detailReturnY = window.scrollY;
             document.getElementById('detailView').style.display = 'block';
-            window.scrollTo(0, 0);
+            document.getElementById('detailView').scrollTop = 0;
         }
 
         function toggleDetailPrompt() {
@@ -971,8 +973,13 @@
 
         function goBackHome() {
             document.getElementById('detailView').style.display = 'none';
-            window.scrollTo(0, 0);
+            if (typeof window._detailReturnY === 'number') { window.scrollTo(0, window._detailReturnY); }
+            else { var el = document.getElementById('prompts'); if (el) el.scrollIntoView(); }
         }
+        function honorHashScroll() {
+            if (location.hash === '#prompts') { setTimeout(function(){ var el = document.getElementById('prompts'); if (el) el.scrollIntoView(); }, 80); }
+        }
+        window.addEventListener('load', function(){ setTimeout(honorHashScroll, 400); });
 
         function copyDetailPrompt(e) {
             const textToCopy = activePromptText;
