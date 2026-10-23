@@ -2,14 +2,29 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="https://mapmeai.com/avatar-soc.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="page-title">MẬP MÊ AI - Mê AI như mê người yêu</title>
-    <meta name="description" content="MẬP MÊ AI — Kho prompt AI thực chiến: ảnh, video, lồng tiếng, master prompt. Mê AI như mê người yêu!">
+    <link rel="canonical" href="https://mapmeai.com/">
+    <meta name="robots" content="index,follow,max-image-preview:large">
+    <meta name="theme-color" content="#0b0b0e">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://mapmeai.github.io/map-me-ai-site/">
-    <meta property="og:title" content="MẬP MÊ AI - Mê AI như mê người yêu">
-    <meta property="og:description" content="Kho prompt AI thực chiến: ảnh, video, lồng tiếng, master prompt. Mê AI như mê người yêu!">
-    <meta property="og:image" content="https://mapmeai.github.io/map-me-ai-site/avatar-soc.png">
+    <meta property="og:site_name" content="MẬP MÊ AI">
+    <meta property="og:locale" content="vi_VN">
+    <meta property="og:url" content="https://mapmeai.com/">
+    <meta property="og:title" content="Kho Prompt AI Thực Chiến: Ảnh, Video, Lồng Tiếng | MẬP MÊ AI">
+    <meta property="og:description" content="Kho prompt AI thực chiến cho Flow/Veo 3, Banapro, ChatGPT: prompt tạo ảnh, video cinematic và lồng tiếng AI. Có bản miễn phí, copy là xài.">
+    <meta property="og:image" content="https://mapmeai.com/og-cover.jpg">
+    <meta property="og:image:alt" content="MẬP MÊ AI - Kho prompt AI thực chiến">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kho Prompt AI Thực Chiến: Ảnh, Video, Lồng Tiếng | MẬP MÊ AI">
+    <meta name="twitter:description" content="Kho prompt AI thực chiến cho Flow/Veo 3, Banapro, ChatGPT: prompt tạo ảnh, video cinematic và lồng tiếng AI. Có bản miễn phí, copy là xài.">
+    <meta name="twitter:image" content="https://mapmeai.com/og-cover.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <title id="page-title">Kho Prompt AI Thực Chiến: Ảnh, Video, Lồng Tiếng | MẬP MÊ AI</title>
+    <meta name="description" content="Kho prompt AI thực chiến cho Flow/Veo 3, Banapro, ChatGPT: prompt tạo ảnh, video cinematic và lồng tiếng AI. Có bản miễn phí, copy là xài.">
     <!-- Font Quicksand nhúng trực tiếp: mở ở đâu cũng mềm đẹp, không cần mạng -->
     <style>
 
@@ -664,6 +679,38 @@
         }
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://mapmeai.com/#org",
+      "name": "MẬP MÊ AI",
+      "url": "https://mapmeai.com/",
+      "logo": "https://mapmeai.com/avatar-soc.png"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://mapmeai.com/#website",
+      "url": "https://mapmeai.com/",
+      "name": "MẬP MÊ AI",
+      "inLanguage": "vi-VN",
+      "publisher": {
+        "@id": "https://mapmeai.com/#org"
+      }
+    }
+  ]
+}
+    </script>
+
+    <style>
+    /* Tôn trọng người dùng tắt hiệu ứng chuyển động */
+    @media (prefers-reduced-motion: reduce){
+      *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+    }
+    :focus-visible{outline:2px solid #ff6584;outline-offset:2px}
+    </style>
 </head>
 <body>
 
@@ -673,26 +720,25 @@
     <!-- Navbar hoàn chỉnh -->
     <!-- Navbar hoàn chỉnh, đã liên kết chuẩn 100% các nút -->
     <header id="hero">
-        <a href="javascript:void(0)" onclick="goHomeTab()" class="logo-container">
+        <a href="#hero" onclick="goHomeTab();return false;" class="logo-container">
             <img class="logo-avatar" src="https://raw.githubusercontent.com/MAPMEAI/map-me-ai-site/main/avatar-soc.png" alt="MẬP MÊ AI"><span class="brand-name">MẬP MÊ <span class="ai-badge">✦ AI</span></span>
         </a>
         <nav>
             <ul>
-                <li><a href="javascript:void(0)" onclick="goHomeTab()" class="tab-home" data-en="Home" data-vi="TRANG CHỦ">TRANG CHỦ</a></li>
-                <li><a href="javascript:void(0)" onclick="goSection('prompts')" class="tab-prompt" data-en="Gear Tray" data-vi="MÂM ĐỒ NGHỀ">MÂM ĐỒ NGHỀ</a></li>
-                <li><a href="javascript:void(0)" onclick="goSection('courses')" class="tab-tools" data-en="Courses" data-vi="KHÓA HỌC">KHÓA HỌC</a></li>
-                <li><a href="javascript:void(0)" onclick="goSection('master')" class="tab-master" data-en="Master Prompt" data-vi="MASTER PROMPT">MASTER PROMPT</a></li>
-                <li><a href="javascript:void(0)" onclick="goSection('kitchen')" class="tab-kitchen" data-en="AI Kitchen" data-vi="BẾP AI">BẾP AI</a></li>
-                <li><a href="javascript:void(0)" onclick="goSection('nhantuong')" class="tab-nhantuong" data-en="Physiognomy" data-vi="NHÂN TƯỚNG HỌC">NHÂN TƯỚNG HỌC</a></li>
-                <li><a href="javascript:void(0)" onclick="goSection('kinhnghiem')" class="tab-kinhnghiem" data-en="Whispered Tips" data-vi="THÌ THẦM MẸO HAY">THÌ THẦM MẸO HAY</a></li>
-                <li><a href="javascript:void(0)" onclick="goSection('voice')" class="tab-voice" data-en="AI Dubbing" data-vi="LỒNG TIẾNG AI">LỒNG TIẾNG AI</a></li>
+                <li><a href="#hero" onclick="goHomeTab();return false;" class="tab-home" data-en="Home" data-vi="TRANG CHỦ">TRANG CHỦ</a></li>
+                <li><a href="#prompts" onclick="goSection(\'prompts\');return false;" class="tab-prompt" data-en="Gear Tray" data-vi="MÂM ĐỒ NGHỀ">MÂM ĐỒ NGHỀ</a></li>
+                <li><a href="#courses" onclick="goSection(\'courses\');return false;" class="tab-tools" data-en="Courses" data-vi="KHÓA HỌC">KHÓA HỌC</a></li>
+                <li><a href="#master" onclick="goSection(\'master\');return false;" class="tab-master" data-en="Master Prompt" data-vi="MASTER PROMPT">MASTER PROMPT</a></li>
+                <li><a href="#kitchen" onclick="goSection(\'kitchen\');return false;" class="tab-kitchen" data-en="AI Kitchen" data-vi="BẾP AI">BẾP AI</a></li>
+                <li><a href="#nhantuong" onclick="goSection(\'nhantuong\');return false;" class="tab-nhantuong" data-en="Physiognomy" data-vi="NHÂN TƯỚNG HỌC">NHÂN TƯỚNG HỌC</a></li>
+                <li><a href="#kinhnghiem" onclick="goSection(\'kinhnghiem\');return false;" class="tab-kinhnghiem" data-en="Whispered Tips" data-vi="THÌ THẦM MẸO HAY">THÌ THẦM MẸO HAY</a></li>
+                <li><a href="#voice" onclick="goSection(\'voice\');return false;" class="tab-voice" data-en="AI Dubbing" data-vi="LỒNG TIẾNG AI">LỒNG TIẾNG AI</a></li>
             </ul>
         </nav>
         <div class="nav-buttons">
             <button onclick="openVipPricingModal()" class="btn btn-vip"><i class="fa-solid fa-crown"></i> VIP</button><span id="vipActiveBadge" style="display: none; background: linear-gradient(135deg, #f5af19, #f27121); color: white; font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 20px; margin-left: 8px;">VIP</span>
             <button onclick="openLoginModal()" class="btn btn-login" style="display: none;"><i class="fa-solid fa-user"></i> Login</button>
             <button class="lang-switch" onclick="toggleLanguage()" id="langBtn">EN 🌐</button>
-            <button onclick="openAdminPinModal()" class="btn btn-admin-nav" style="display:none" id="adminNavBtn"><i class="fa-solid fa-shield-halved"></i> Admin</button>
         </div>
     </header>
 
@@ -702,7 +748,7 @@
             <div class="hero-text">
                 <p class="hl-slogan" data-en="LOVE <span class='ai-w'>AI</span> LIKE YOU LOVE YOUR SOULMATE ❤️" data-vi="MÊ <span class='ai-w'>AI</span> NHƯ MÊ NGƯỜI YÊU ❤️">MÊ <span class="ai-w">AI</span> NHƯ MÊ NGƯỜI YÊU ❤️</p>
                 <h1 data-en="Create <em>images, videos</em> & AI voiceovers <em>that sell</em> — in minutes" data-vi="Tạo <em>ảnh, video</em> & lồng tiếng AI <em>chuẩn quảng cáo</em> — trong vài phút">Tạo <em>ảnh, video</em> & lồng tiếng AI <em>chuẩn quảng cáo</em> — trong vài phút</h1>
-                <p data-en="168+ battle-tested prompts for Flow / Veo 3, Banapro & ChatGPT. Copy, paste, cash in." data-vi="168+ prompt thực chiến cho Flow / Veo 3, Banapro & ChatGPT. Copy là xài, ra đơn liền tay.">168+ prompt thực chiến cho Flow / Veo 3, Banapro & ChatGPT. Copy là xài, ra đơn liền tay.</p>
+                <p data-en="90+ battle-tested prompts for Flow / Veo 3, Banapro & ChatGPT. Copy, paste, cash in." data-vi="90+ prompt thực chiến cho Flow / Veo 3, Banapro & ChatGPT. Copy là xài, ra đơn liền tay.">90+ prompt thực chiến cho Flow / Veo 3, Banapro & ChatGPT. Copy là xài, ra đơn liền tay.</p>
                 <div class="hero-actions">
                     <button onclick="openVipPricingModal()" class="btn-pink">Bắt Đầu Ngay →</button>
                     <button class="btn-outline" onclick="openPromptDetail('Master Flow Cinematic Video (Demo Miễn Phí)', 'Tạo chuyển động video mượt mà chuẩn cinematic. Bản demo free cho anh em trải nghiệm.', 'Flow / Veo 3', true)">Xem Thử Miễn Phí</button>
@@ -725,48 +771,11 @@
     <!-- ĐÃ XÓA: 3 ô thống kê (số liệu sai, trùng link navbar) -->
 
     <!-- Kho Lệnh Prompt Thực Chiến -->
-    <!-- MÂM ĐỒ NGHỀ SECTION -->
-    <!-- ẨN TẠM: chờ tool thật -->
-    <div class="container" id="gear" style="display:none">
-        <div class="section-header">
-            <div>
-                <h2>🎒 Mâm Đồ Nghề AI Thực Chiến</h2>
-                <p>Tổng hợp các công cụ, tiện ích mở rộng và phần mềm hỗ trợ tối ưu cho anh em MMO.</p>
-            </div>
-        </div>
-        <div class="grid-cards">
-            <div class="card" onclick="openPromptDetail('Tool Auto Click & Reg Via', 'Công cụ tự động hóa thao tác tài khoản và nuôi via chuyên nghiệp.', 'Tools', true)">
-                <div class="card-thumb card-visual" style="background:linear-gradient(135deg,#0f766e,#22d3ee)"><span class="visual-icon"><i class="fa-solid fa-arrow-pointer"></i></span><span class="thumb-badge tag-free">Free Tool</span></div>
-                <div>
-                    <span style="font-size:11px;color:var(--text-muted)">Tools</span>
-                    <h3 style="margin-top: 8px;">Tool Auto Click & Reg Via</h3>
-                    <p>Công cụ tự động hóa thao tác tài khoản và nuôi via chuyên nghiệp cho anh em làm hệ thống.</p>
-                </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color); padding-top: 12px; margin-top: 12px;">
-                        <span style="font-weight: 600; font-size: 13px; color: var(--text-muted);">Free Tool</span>
-                        <button class="btn-pink" style="padding: 6px 16px; font-size: 12px;">Tải Về →</button>
-                    </div>
-            </div>
-            <div class="card" onclick="openPromptDetail('Extension Support Prompt Copy', 'Tiện ích trình duyệt giúp copy prompt và quản lý câu lệnh nhanh 1 chạm.', 'Tools', true)">
-                <div class="card-thumb card-visual" style="background:linear-gradient(135deg,#7c2d12,#fb923c)"><span class="visual-icon"><i class="fa-solid fa-puzzle-piece"></i></span><span class="thumb-badge tag-free">Free Extension</span></div>
-                <div>
-                    <span style="font-size:11px;color:var(--text-muted)">Extension</span>
-                    <h3 style="margin-top: 8px;">Extension Quản Lý Prompt</h3>
-                    <p>Tiện ích trình duyệt giúp copy prompt và quản lý kho câu lệnh nhanh 1 chạm.</p>
-                </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color); padding-top: 12px; margin-top: 12px;">
-                        <span style="font-weight: 600; font-size: 13px; color: var(--text-muted);">Free Extension</span>
-                        <button class="btn-pink" style="padding: 6px 16px; font-size: 12px;">Cài Đặt →</button>
-                    </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Kho Lệnh Prompt Thực Chiến - Động 100% -->
     <div class="container" id="prompts">
         <div style="margin-bottom: 25px;">
-            <h2 style="font-size: 24px; font-weight: 800; color: white; margin-bottom: 4px;">Kho Lệnh Prompt Thực Chiến <span style="background:linear-gradient(135deg,#f5af19,#f27121);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-size:30px;">168+</span></h2>
-            <p style="color: var(--text-muted); font-size: 13px;">Tập trung chuyên sâu cho Flow, Midjourney, ChatGPT và Banapro.</p>
+            <h2 style="font-size: 24px; font-weight: 800; color: white; margin-bottom: 4px;">Kho Lệnh Prompt Thực Chiến <span style="background:linear-gradient(135deg,#f5af19,#f27121);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-size:30px;">90+</span></h2>
+            <p style="color: var(--text-muted); font-size: 13px;">Tập trung chuyên sâu cho Flow, Midjourney, ChatGPT và Banapro. <a href="prompt/" style="color:#ff6584;text-decoration:underline">Xem toàn bộ dạng danh sách</a></p>
         </div>
 
         <!-- Dãy bộ lọc động -->
@@ -778,6 +787,7 @@
                     <button class="filter-btn active-filter" onclick="filterPrompts('format', 'all', event)" style="background: #ffffff; color: #0b0b0e; border: none; padding: 7px 16px; border-radius: 20px; font-size: 12px; font-weight: 700; cursor: pointer;">Tất cả định dạng (<span id="countFormatAll">0</span>)</button>
                     <button class="filter-btn" onclick="filterPrompts('format', 'Ảnh', event)" style="background: #1c1a24; color: var(--text-muted); border: 1px solid var(--border-color); padding: 7px 16px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">Prompt Ảnh (<span id="countFormatAnh">0</span>)</button>
                     <button class="filter-btn" onclick="filterPrompts('format', 'Video', event)" style="background: #1c1a24; color: var(--text-muted); border: 1px solid var(--border-color); padding: 7px 16px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">Prompt Video (<span id="countFormatVideo">0</span>)</button>
+                    <button class="filter-btn" onclick="filterPrompts('format', 'Text', event)" style="background: #1c1a24; color: var(--text-muted); border: 1px solid var(--border-color); padding: 7px 16px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">Prompt Text (<span id="countFormatText">0</span>)</button>
                 </div>
                 <!-- Nút Sắp Xếp có Dropdown Menu -->
                 <div style="position: relative; display: inline-block;">
@@ -808,6 +818,8 @@
                 <button class="cat-btn" onclick="filterPrompts('cat', 'Fashion', event)" style="background: #1c1a24; color: var(--text-muted); border: 1px solid var(--border-color); padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">Fashion (<span id="count-Fashion">0</span>)</button>
                 <button class="cat-btn" onclick="filterPrompts('cat', 'Anime', event)" style="background: #1c1a24; color: var(--text-muted); border: 1px solid var(--border-color); padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">Anime (<span id="count-Anime">0</span>)</button>
                 <button class="cat-btn" onclick="filterPrompts('cat', 'UI & Graphic', event)" style="background: #1c1a24; color: var(--text-muted); border: 1px solid var(--border-color); padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">UI & Graphic (<span id="count-UI">0</span>)</button>
+                <button class="cat-btn" onclick="filterPrompts('cat', 'Ẩm thực', event)" style="background: #1c1a24; color: var(--text-muted); border: 1px solid var(--border-color); padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">Ẩm thực</button>
+                <button class="cat-btn" onclick="filterPrompts('cat', 'KOL & Nhân vật', event)" style="background: #1c1a24; color: var(--text-muted); border: 1px solid var(--border-color); padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">KOL &amp; Nhân vật</button>
             </div>
 
             <!-- Ô Tìm Kiếm -->
@@ -825,6 +837,7 @@
         <!-- KHUNG HIỂN THỊ DANH SÁCH CARD PROMPT ĐỘNG -->
         <div class="grid-cards" id="promptGridContainer">
             <!-- Dữ liệu sẽ được render tự động từ script bên dưới -->
+            <noscript><p style="color:var(--text-muted)">Bật JavaScript để xem kho prompt, hoặc <a href="prompt/" style="color:#ff6584">xem danh sách prompt dạng trang tĩnh</a>.</p></noscript>
         </div>
     </div>
 
@@ -837,7 +850,7 @@
         // Thêm prompt mới: chỉ cần sửa file prompts.json rồi upload đè, không cần up lại index.html
         async function loadPromptsFromJson() {
             try {
-                const res = await fetch('prompts.json');
+                const res = await fetch('prompts.public.json');
                 if (!res.ok) throw new Error('HTTP ' + res.status);
                 promptsData = await res.json();
                 promptsOriginal = promptsData.slice();
@@ -856,9 +869,11 @@
         // ===== TRANG CHI TIẾT PROMPT TOÀN MÀN HÌNH =====
         let activePromptText = "";
         let detailTemplate = "";
+        let detailLocked = false;
         let currentList = [];
 
         function fillDetailVars() {
+            if (detailLocked) return;
             const subj = document.getElementById('varSubject').value.trim();
             const env = document.getElementById('varEnvironment').value.trim();
             const out = detailTemplate.replaceAll('[SUBJECT]', subj || '[SUBJECT]').replaceAll('[ENVIRONMENT]', env || '[ENVIRONMENT]');
@@ -883,6 +898,7 @@
             document.getElementById('varEnvironment').value = '';
             // LOGIC PREVIEW CHO KHÁCH VÃNG LAI: VIP prompt chỉ hiện 250 ký tự + blur
             const isLocked = (type !== 'Free' && !isVipActive());
+            detailLocked = isLocked;
             const contentBox = document.getElementById('detailContentBox');
             // xóa CTA cũ nếu có
             const oldCta = document.getElementById('vipUnlockCta');
@@ -903,9 +919,9 @@
             }
             const frame = document.getElementById('detailDemoFrame');
             if (demoVideo) {
-                frame.innerHTML = '<video src="' + demoVideo + '" style="width:100%;height:100%;object-fit:contain;background:#000;" controls autoplay loop muted playsinline></video>';
+                frame.innerHTML = '<video src="' + escHtml(demoVideo) + '" style="width:100%;height:100%;object-fit:contain;background:#000;" controls autoplay loop muted playsinline></video>';
             } else if (demo) {
-                frame.innerHTML = '<img src="' + demo + '" style="width:100%;height:100%;object-fit:contain;background:#0b0a10;" alt="">';
+                frame.innerHTML = '<img src="' + escHtml(demo) + '" style="width:100%;height:100%;object-fit:contain;background:#0b0a10;" alt="">';
             } else {
                 frame.innerHTML = '[ Khung Video / Ảnh Demo Thực Tế Của Prompt ]';
             }
@@ -992,6 +1008,7 @@
             set('countFormatAll', total);
             set('countFormatAnh', anh);
             set('countFormatVideo', video);
+            set('countFormatText', promptsData.filter(p => p.category === 'Text').length);
             set('countTypeAll', total);
             set('countTypeFree', free);
             set('countTypeVip', vip);
@@ -1410,7 +1427,7 @@ function openCourseModal(k){
             </div>
         </div>
         <div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-bottom:8px;">
-            <a href="javascript:void(0)" onclick="goSection('prompts')" class="btn-vip" style="text-decoration:none;padding:12px 22px;border-radius:10px;font-weight:700;display:inline-block;" data-en="👑 Unlock the VIP Master Prompt" data-vi="👑 Mở Khóa Master Prompt VIP">👑 Mở Khóa Master Prompt VIP</a>
+            <a href="#prompts" onclick="goSection(\'prompts\');return false;" class="btn-vip" style="text-decoration:none;padding:12px 22px;border-radius:10px;font-weight:700;display:inline-block;" data-en="👑 Unlock the VIP Master Prompt" data-vi="👑 Mở Khóa Master Prompt VIP">👑 Mở Khóa Master Prompt VIP</a>
             <a href="https://zalo.me/g/krzepmsmx5m5gkhv8xku" target="_blank" rel="noopener" style="background:#0068ff;color:#fff;text-decoration:none;padding:12px 22px;border-radius:10px;font-weight:700;display:inline-block;box-shadow:0 0 12px rgba(0,104,255,.4);" data-en="💬 Join the MẬP MÊ AI Zalo Group" data-vi="💬 Vào Group Zalo MẬP MÊ AI">💬 Vào Group Zalo MẬP MÊ AI</a>
         </div>
         <p style="text-align:center;color:var(--text-muted);font-size:12px;margin:0;" data-en="The “Physiognomy Poster” Master Prompt lives in the Prompt Vault — a VIP membership unlocks the full text. Content is for reference, based on traditional physiognomy and numerology — not scientific prediction." data-vi="Master Prompt “Poster Nhân Tướng Học” nằm trong Mâm Đồ Nghề — mở khóa VIP mới xem và sao chép được toàn văn. Nội dung tham khảo theo nhân tướng học và thần số học truyền thống, không phải dự đoán khoa học.">Master Prompt “Poster Nhân Tướng Học” nằm trong Mâm Đồ Nghề — mở khóa VIP mới xem và sao chép được toàn văn. Nội dung tham khảo theo nhân tướng học và thần số học truyền thống, không phải dự đoán khoa học.</p>
@@ -1604,26 +1621,13 @@ function openCourseModal(k){
         </div>
     </div>
 
-    <!-- MODAL NHẬP MÃ PIN QUẢN TRỊ -->
-    <div class="admin-pin-overlay" id="adminPinModal">
-        <div class="admin-pin-box">
-            <button class="close-btn" onclick="closeAdminPinModal()">&times;</button>
-            <h3 style="color:white; font-size:18px; margin-bottom:5px;"><i class="fa-solid fa-lock" style="color:#a066ff;"></i> Bảo Mật Admin</h3>
-            <p style="color:var(--text-muted); font-size:12px;">Nhập mã PIN để truy cập khu vực quản trị</p>
-
-            <input type="password" id="adminPinInput" placeholder="••••" maxlength="6">
-
-            <button onclick="verifyAdminPin()" class="btn" style="width:100%; justify-content:center; background:#a066ff; color:white; padding: 10px;">Xác Nhận Truy Cập ⚡</button>
-        </div>
-    </div>
-
     <!-- Footer -->
     <footer>
         <p>© 2026 MẬP MÊ AI. Làm bằng tất cả sự đáng yêu và trà sữa 🧋</p>
         <p style="font-size: 11px; font-weight: 400; color: var(--text-muted);" data-en="Slogan: Love AI like you love your soulmate | MAPMEAI_OS" data-vi="Slogan: Mê AI như mê người yêu | MAPMEAI_OS">Slogan: Mê AI như mê người yêu | MAPMEAI_OS</p>
     <div style="text-align:center;padding:20px;color:var(--text-muted);font-size:13px;">
-        <a href="javascript:void(0)" onclick="openTermsModal()" style="color:var(--text-muted);text-decoration:underline;margin:0 10px;">Điều khoản sử dụng</a> |
-        <a href="javascript:void(0)" onclick="openTermsModal()" style="color:var(--text-muted);text-decoration:underline;margin:0 10px;">Chính sách hoàn tiền</a>
+        <a href="#dieu-khoan" onclick="openTermsModal();return false;" style="color:var(--text-muted);text-decoration:underline;margin:0 10px;">Điều khoản sử dụng</a> |
+        <a href="#dieu-khoan" onclick="openTermsModal();return false;" style="color:var(--text-muted);text-decoration:underline;margin:0 10px;">Chính sách hoàn tiền</a>
     </div>
 </footer>
 
@@ -1669,6 +1673,7 @@ function openCourseModal(k){
         let currentLang = 'vi';
         function toggleLanguage() {
             currentLang = currentLang === 'vi' ? 'en' : 'vi';
+            document.documentElement.lang = currentLang;
             document.getElementById('langBtn').innerText = currentLang === 'vi' ? 'EN 🌐' : 'VN 🌐';
             
             const elements = document.querySelectorAll('[data-vi]');
@@ -1690,146 +1695,7 @@ function openCourseModal(k){
             if (ls && typeof filterLibrary === 'function') filterLibrary(ls.value);
         }
         document.addEventListener('DOMContentLoaded', function(){ applyStoryLang(); });
-        // ===== KHÓA ADMIN TẠM THỜI =====
-        // false = Admin bị khóa hoàn toàn (không mở được). Muốn dùng lại: đổi thành true và đặt PIN mới ở ADMIN_PIN.
-        const ADMIN_ENABLED = false;
-        const ADMIN_PIN = '';
-        document.addEventListener('DOMContentLoaded', function () { const b = document.getElementById('adminNavBtn'); if (b && ADMIN_ENABLED) b.style.display = ''; });
-
-        // Hàm mở Modal nhập PIN
-        function openAdminPinModal() {
-            if (!ADMIN_ENABLED) return;
-            document.getElementById('adminPinModal').classList.add('active');
-            document.getElementById('adminPinInput').value = '';
-            document.getElementById('adminPinInput').focus();
-        }
-
-        // Hàm đóng Modal nhập PIN
-        function closeAdminPinModal() {
-            document.getElementById('adminPinModal').classList.remove('active');
-        }
-
-        // Hàm kiểm tra mã PIN và mở ngay giao diện Quản Trị (Admin Panel)
-        function verifyAdminPin() {
-            if (!ADMIN_ENABLED || !ADMIN_PIN) return;
-            const pin = document.getElementById('adminPinInput').value;
-            if (pin === ADMIN_PIN) {
-                closeAdminPinModal();
-
-                // Ẩn toàn bộ trang chính của khách đi và hiển thị giao diện Quản Trị (Admin Panel) chuyên nghiệp
-                document.body.innerHTML = `
-                    <div style="background: #0b0b0e; color: #f0f0f5; min-height: 100vh; padding: 40px; font-family: 'Quicksand', sans-serif;">
-                        <div style="max-width: 1000px; margin: 0 auto;">
-                            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #262630; padding-bottom: 20px; margin-bottom: 30px;">
-                                <div>
-                                    <h2 style="color: #ff6584; font-size: 24px; font-weight: 800;"><i class="fa-solid fa-shield-halved"></i> MẬP MÊ AI — TRẠM QUẢN TRỊ ADMIN</h2>
-                                    <p style="color: #9494a0; font-size: 13px;">Khu vực kiểm soát giá, đồng bộ Google Drive và kiểm duyệt media chống nhầm lẫn.</p>
-                                </div>
-                                <button onclick="location.reload()" style="background: #1a1a22; color: white; border: 1px solid #262630; padding: 8px 18px; border-radius: 50px; cursor: pointer; font-weight: 700;">Thoát Admin 🚪</button>
-                            </div>
-
-                            <!-- Hộp 1: Cài đặt giá hàng loạt -->
-                            <div style="background: #141419; border: 1px solid #262630; border-radius: 16px; padding: 25px; margin-bottom: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-                                <h3 style="color: white; font-size: 16px; margin-bottom: 15px;"><i class="fa-solid fa-sliders" style="color: #ffd166;"></i> 1. Cài Đặt Giá & Khuyến Mãi Hàng Loạt</h3>
-                                <div style="display: flex; gap: 15px; flex-wrap: wrap; align-items: center;">
-                                    <label style="font-size: 13px; color: #9494a0;">Chọn nhóm:</label>
-                                    <select style="padding: 8px 15px; background: #111115; border: 1px solid #262630; color: white; border-radius: 8px;">
-                                        <option>Tất cả sản phẩm</option>
-                                        <option>Kho Prompt Thần Thánh</option>
-                                        <option>Master Prompt</option>
-                                    </select>
-
-                                    <label style="font-size: 13px; color: #9494a0;">Mức giảm giá:</label>
-                                    <select style="padding: 8px 15px; background: #111115; border: 1px solid #262630; color: white; border-radius: 8px;">
-                                        <option>Giảm 95% (Cực sốc)</option>
-                                        <option>Giảm 75%</option>
-                                        <option>Giảm 55%</option>
-                                        <option>Giảm 25%</option>
-                                        <option>Miễn phí (Free)</option>
-                                        <option>VIP Độc Quyền</option>
-                                    </select>
-
-                                    <button onclick="alert('Đã cập nhật cấu hình giá hàng loạt thành công cho toàn bộ hệ thống!')" style="background: linear-gradient(135deg, #ff6584, #d94f6d); color: white; border: none; padding: 9px 20px; border-radius: 50px; font-weight: 700; cursor: pointer;">Áp Dụng Hàng Loạt ⚡</button>
-                                </div>
-                            </div>
-
-                            <!-- Hộp 2: Kiểm duyệt Good / Incorrect -->
-                            <div style="background: #141419; border: 1px solid #262630; border-radius: 16px; padding: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-                                <h3 style="color: white; font-size: 16px; margin-bottom: 15px;"><i class="fa-solid fa-clipboard-check" style="color: #28a745;"></i> 2. Kiểm Duyệt Hàng Loạt (Good / Incorrect)</h3>
-                                <table style="width: 100%; border-collapse: collapse; background: #111115; border-radius: 10px; overflow: hidden; font-size: 13px;">
-                                    <thead>
-                                        <tr style="background: #1a1a22; color: #ff6584;">
-                                            <th style="padding: 12px; text-align: left;">Tên Prompt / Sản Phẩm</th>
-                                            <th style="padding: 12px; text-align: left;">Trạng Thái</th>
-                                            <th style="padding: 12px; text-align: left;">Chi Tiết Lỗi</th>
-                                            <th style="padding: 12px; text-align: left;">Thao Tác</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr style="border-bottom: 1px solid #262630;">
-                                            <td style="padding: 12px;">Prompt Viết Content Siêu Tốc</td>
-                                            <td style="padding: 12px;"><span style="color: #28a745; background: rgba(40,167,69,0.15); padding: 3px 10px; border-radius: 12px; font-weight: 700;">Good</span></td>
-                                            <td style="padding: 12px; color: #9494a0;">—</td>
-                                            <td style="padding: 12px;"><button onclick="alert('Đã publish thành công!')" style="background: rgba(40,167,69,0.2); color: #28a745; border: none; padding: 4px 12px; border-radius: 6px; cursor: pointer; font-weight: 700;">Publish</button></td>
-                                        </tr>
-                                        <tr>
-                                            <td style="padding: 12px;">Bộ Prompt Kịch Bản Triệu View</td>
-                                            <td style="padding: 12px;"><span style="color: #ff3b3b; background: rgba(255,59,59,0.15); padding: 3px 10px; border-radius: 12px; font-weight: 700;">Incorrect</span></td>
-                                            <td style="padding: 12px; color: #ff3b3b;">Thiếu file video minh họa VIP</td>
-                                            <td style="padding: 12px;"><button onclick="alert('Đã mở hộp thoại upload bổ sung file media!')" style="background: linear-gradient(135deg, #ff6584, #d94f6d); color: white; border: none; padding: 4px 12px; border-radius: 6px; cursor: pointer; font-weight: 700;">Fix Lỗi Ngay</button></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <div style="margin-top: 20px;">
-                                    <button onclick="alert('Đã Mass Publish tất cả các mục đạt chuẩn Good lên GitHub/Web!')" style="background: linear-gradient(135deg, #ff6584, #d94f6d); color: white; border: none; padding: 10px 22px; border-radius: 50px; font-weight: 700; cursor: pointer;">Mass Publish Các Mục Good 🚀</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                `;
-            } else {
-                alert('Mã PIN không đúng! Vui lòng thử lại.');
-                document.getElementById('adminPinInput').value = '';
-            }
-        }
-
-
-        // ===== DỮ LIỆU PROMPT (Admin sửa qua bảng quản trị, xuất file để lưu) =====
-        // PROMPTS-DATA-START
-        const PROMPTS_DEFAULT = [
-            {"title": "Master Flow Cinematic Video", "desc": "Tạo chuyển động video mượt mà chuẩn cinematic.", "cat": "flow", "catLabel": "Flow / Veo 3", "free": true, "content": "Cinematic camera movement of [SUBJECT] walking through [ENVIRONMENT] with soft natural lighting."},
-            {"title": "Banapro High-End Lookbook", "desc": "Tạo ảnh thời trang lookbook sắc nét, chi tiết cao.", "cat": "banapro", "catLabel": "Banapro & GPT", "free": false, "content": "High-end fashion lookbook photo of [SUBJECT], studio lighting, ultra detailed fabric texture, editorial style."},
-            {"title": "ChatGPT JSON Character Structure", "desc": "Cấu trúc JSON quản lý nhân vật chính xác qua nhiều cảnh.", "cat": "banapro", "catLabel": "Banapro & GPT", "free": false, "content": "{\"character\": {\"name\": \"[NAME]\", \"appearance\": \"[APPEARANCE]\"}, \"scenes\": []}"},
-            {"title": "Flow / Veo 3 Product Motion", "desc": "Video ngắn quay cận cảnh sản phẩm mượt mà.", "cat": "flow", "catLabel": "Flow / Veo 3", "free": true, "content": "Smooth macro product video of [PRODUCT], slow cinematic rotation, soft studio light, shallow depth of field."}
-        ];
-        // PROMPTS-DATA-END
-        let PROMPTS = loadPrompts();
-        let editingIndex = -1;
-
-        function defHash() { return PROMPTS_DEFAULT.length + ':' + JSON.stringify(PROMPTS_DEFAULT).length; }
-        function loadPrompts() {
-            try {
-                const sv = JSON.parse(localStorage.getItem('mapmeai_prompts') || 'null');
-                if (sv && sv.hash === defHash() && Array.isArray(sv.data)) return sv.data;
-            } catch (e) {}
-            return JSON.parse(JSON.stringify(PROMPTS_DEFAULT));
-        }
-        function savePrompts() {
-            try { localStorage.setItem('mapmeai_prompts', JSON.stringify({ hash: defHash(), data: PROMPTS })); } catch (e) {}
-        }
-        function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
-
-
-        // ===== BẢNG QUẢN TRỊ =====
-        function openAdminPanel() { if (!ADMIN_ENABLED) return; renderAdminList(); showAdminTab('list'); document.getElementById('adminPanel').classList.add('active'); }
-        function closeAdminPanel() { document.getElementById('adminPanel').classList.remove('active'); }
-        function showAdminTab(t) {
-            document.getElementById('adminTabList').style.display = t === 'list' ? '' : 'none';
-            document.getElementById('adminTabAdd').style.display = t === 'add' ? '' : 'none';
-            document.getElementById('tabListBtn').classList.toggle('active', t === 'list');
-            document.getElementById('tabAddBtn').classList.toggle('active', t === 'add');
-        }
-        // Deep-link từ landing: ?format=anh | video -> tự lọc kho prompt
+                // Deep-link từ landing: ?format=anh | video -> tự lọc kho prompt
         (function(){
             try{
                 var q = new URLSearchParams(location.search).get('format');
@@ -1843,74 +1709,6 @@ function openCourseModal(k){
                 if(btn) updateActiveUI('formatFilter', btn);
             }catch(e){}
         })();
-
-        function renderAdminList() {
-            const box = document.getElementById('adminPromptList');
-            if (!box) return;
-            box.innerHTML = '';
-            PROMPTS.forEach((pr, i) => {
-                const row = document.createElement('div');
-                row.className = 'admin-row';
-                row.innerHTML = '<div><div class="t">' + esc(pr.title) + '</div><div class="c">' + esc(pr.catLabel) + ' • ' + (pr.free ? 'Free' : 'VIP') + '</div></div>'
-                    + '<div><button class="admin-mini-btn" onclick="editPrompt(' + i + ')">Sửa</button>'
-                    + '<button class="admin-mini-btn del" onclick="delPrompt(' + i + ')">Xóa</button></div>';
-                box.appendChild(row);
-            });
-        }
-        function clearForm() {
-            editingIndex = -1;
-            ['fTitle', 'fDesc', 'fContent'].forEach(id => document.getElementById(id).value = '');
-            document.getElementById('fCat').value = 'flow';
-            document.getElementById('fFree').value = '1';
-            document.getElementById('savePromptBtn').innerHTML = 'Thêm prompt';
-        }
-        function addPrompt() {
-            const title = document.getElementById('fTitle').value.trim();
-            const desc = document.getElementById('fDesc').value.trim();
-            const content = document.getElementById('fContent').value.trim();
-            if (!title) { alert('Nhập tiêu đề prompt!'); return; }
-            const cat = document.getElementById('fCat').value;
-            const pr = { title: title, desc: desc || '...', cat: cat, catLabel: cat === 'flow' ? 'Flow / Veo 3' : 'Banapro & GPT', free: document.getElementById('fFree').value === '1', content: content };
-            if (editingIndex >= 0) { PROMPTS[editingIndex] = pr; alert('Đã lưu thay đổi! ✅'); }
-            else { PROMPTS.push(pr); alert('Đã thêm prompt mới! 🎉'); }
-            savePrompts(); renderPrompts(); clearForm(); showAdminTab('list');
-        }
-        function editPrompt(i) {
-            const pr = PROMPTS[i];
-            document.getElementById('fTitle').value = pr.title;
-            document.getElementById('fDesc').value = pr.desc;
-            document.getElementById('fContent').value = pr.content || '';
-            document.getElementById('fCat').value = pr.cat;
-            document.getElementById('fFree').value = pr.free ? '1' : '0';
-            editingIndex = i;
-            document.getElementById('savePromptBtn').innerHTML = 'Lưu thay đổi';
-            showAdminTab('add');
-        }
-        function delPrompt(i) {
-            if (!confirm('Xóa prompt "' + PROMPTS[i].title + '"?')) return;
-            PROMPTS.splice(i, 1); savePrompts(); renderPrompts();
-        }
-        function resetPrompts() {
-            if (!confirm('Reset về 4 prompt mặc định?')) return;
-            PROMPTS = JSON.parse(JSON.stringify(PROMPTS_DEFAULT));
-            savePrompts(); renderPrompts(); clearForm();
-        }
-        function exportHTML() {
-            const data = JSON.stringify(PROMPTS, null, 2);
-            let html = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
-            const re = /\/\/ PROMPTS-DATA-START[\s\S]*?\/\/ PROMPTS-DATA-END/;
-            if (!re.test(html)) { alert('Không tìm thấy vùng dữ liệu prompt!'); return; }
-            html = html.replace(re, '// PROMPTS-DATA-START\nconst PROMPTS_DEFAULT = ' + data + ';\n// PROMPTS-DATA-END');
-            html = html.replace(/modal-overlay active/g, 'modal-overlay');
-            html = html.replace(/admin-pin-overlay active/g, 'admin-pin-overlay');
-            html = html.replace(/admin-panel-overlay active/g, 'admin-panel-overlay');
-            const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
-            const a = document.createElement('a');
-            a.href = URL.createObjectURL(blob);
-            a.download = 'index-6.html';
-            document.body.appendChild(a); a.click(); a.remove();
-            alert('Đã xuất file! Gửi file này cho nhóc để up lên web chính nghen. 📦');
-        }
 
         // Modal bảng giá VIP
         function openLoginModal() {
@@ -1966,35 +1764,6 @@ function openCourseModal(k){
     </script>
     <!-- MODAL XEM CHI TIẾT VÀ COPY PROMPT (GIỐNG HỆT ẢNH MẪU) -->
     
-    <!-- BẢNG QUẢN TRỊ PROMPT -->
-    <div class="admin-panel-overlay" id="adminPanel">
-        <div class="admin-panel-box">
-            <div class="admin-panel-head">
-                <h2>🛠️ Quản Trị Prompt</h2>
-                <button class="close-btn" onclick="closeAdminPanel()">&times;</button>
-            </div>
-            <div style="display:flex;gap:8px;margin-bottom:14px;">
-                <button class="admin-tab active" id="tabListBtn" onclick="showAdminTab('list')">📋 Danh sách</button>
-                <button class="admin-tab" id="tabAddBtn" onclick="showAdminTab('add')">＋ Thêm mới</button>
-            </div>
-            <div id="adminTabList">
-                <div id="adminPromptList"></div>
-                <div style="display:flex;gap:10px;margin-top:14px;">
-                    <button onclick="exportHTML()" class="btn-pink" style="flex:1;justify-content:center;padding:10px;">⬇ Xuất file HTML</button>
-                    <button onclick="resetPrompts()" style="padding:10px 14px;background:#22222c;color:#fff;border:1px solid var(--border-color);border-radius:10px;cursor:pointer;font-family:inherit;">↺ Reset</button>
-                </div>
-                <p class="admin-note">📌 Thêm/sửa/xóa xong → bấm <b>Xuất file HTML</b> → gửi file tải về cho nhóc để up lên web chính.<br>Thay đổi cũng được lưu tạm trên trình duyệt này.</p>
-            </div>
-            <div id="adminTabAdd" style="display:none;">
-                <div class="admin-field"><label>Tiêu đề *</label><input id="fTitle" placeholder="VD: Master Prompt Món Ăn"></div>
-                <div class="admin-field"><label>Mô tả ngắn</label><input id="fDesc" placeholder="VD: Tạo video món ăn 3x10s..."></div>
-                <div class="admin-field"><label>Phân loại</label><select id="fCat"><option value="flow">Flow / Veo 3</option><option value="banapro">Banapro & GPT</option></select></div>
-                <div class="admin-field"><label>Loại</label><select id="fFree"><option value="1">Free</option><option value="0">VIP</option></select></div>
-                <div class="admin-field"><label>Nội dung prompt (khách bấm Copy sẽ copy đoạn này)</label><textarea id="fContent" rows="6" placeholder="Dán nội dung prompt vào đây..."></textarea></div>
-                <button id="savePromptBtn" onclick="addPrompt()" class="btn-pink" style="width:100%;justify-content:center;padding:11px;">Thêm prompt</button>
-            </div>
-        </div>
-    </div>
     <!-- MODAL BẢNG GIÁ VIP HOÀN CHỈNH -->
     <div class="modal-overlay" id="vipPricingModal">
         <div class="modal-box" style="width: 800px; max-width: 95%; background: #141419; border: 2px solid #ffd166; padding: 40px; text-align: left; max-height: 90vh; overflow-y: auto; position: relative;">
@@ -2083,7 +1852,7 @@ function openCourseModal(k){
                             <h4 style="color: white; font-size: 16px; margin-bottom: 6px;">AI - dễ như ăn kẹo — Giá siêu ưu đãi</h4>
                             <p style="color: var(--text-muted); font-size: 12px; margin-bottom: 15px;">Mở khoá mức giá nội bộ riêng cho VIP — sở hữu tool rẻ hơn hẳn giá công khai, dùng ngay trong tháng VIP.</p>
                         </div>
-                        <a href="javascript:void(0)" onclick="closeVipPricingModal(); goSection('tools')" style="color: #ff3b3b; font-size: 12px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 5px;">Xem tool & giá ưu đãi →</a>
+                        <a href="#tools" onclick="closeVipPricingModal(); goSection(\'tools\'); return false;" style="color: #ff3b3b; font-size: 12px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 5px;">Xem tool & giá ưu đãi →</a>
                     </div>
 
                     <!-- Tool 2 -->
@@ -2096,7 +1865,7 @@ function openCourseModal(k){
                             <h4 style="color: white; font-size: 16px; margin-bottom: 6px;">AI - dễ như ăn kẹo — MIỄN PHÍ</h4>
                             <p style="color: var(--text-muted); font-size: 12px; margin-bottom: 15px;">Tặng kèm quyền dùng tool AI - dễ như ăn kẹo và mọi bản cập nhật trong thời gian tool còn được phát triển. Không tốn thêm một đồng.</p>
                         </div>
-                        <a href="javascript:void(0)" onclick="closeVipPricingModal(); goSection('tools')" style="color: #ff3b3b; font-size: 12px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 5px;">Nhận tool miễn phí →</a>
+                        <a href="#tools" onclick="closeVipPricingModal(); goSection(\'tools\'); return false;" style="color: #ff3b3b; font-size: 12px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 5px;">Nhận tool miễn phí →</a>
                     </div>
 
                 </div>
@@ -2117,7 +1886,7 @@ function openCourseModal(k){
                         <span id="detailTagType" class="tag-free">Free</span>
                         <span id="detailSubCat" style="font-size: 12px; color: var(--text-muted);">Video</span>
                     </div>
-                    <h1 id="detailTitle" style="font-size: 28px; font-weight: 800; color: white; margin-bottom: 10px;">Tiêu đề prompt</h1>
+                    <h2 id="detailTitle" style="font-size: 28px; font-weight: 800; color: white; margin-bottom: 10px;">Tiêu đề prompt</h2>
                     <p id="detailDesc" style="font-size: 14px; color: var(--text-muted); margin-bottom: 25px; line-height: 1.6;">Mô tả chi tiết...</p>
                     <div id="detailDemoFrame" style="width: 100%; height: 380px; background: #14121a; border: 1px solid var(--border-color); border-radius: 20px; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 14px; margin-bottom: 30px; overflow: hidden;">
                         [ Khung Video / Ảnh Demo Thực Tế Của Prompt ]
@@ -2253,7 +2022,7 @@ function heroSlide(wrap,idx){
     const others=wraps.filter(x=>x!==w).map(x=>x._hidx);
     heroSlide(w,heroPick(others));
     cur=(cur+1)%wraps.length;
-  },2600);
+  },6000);
 })();
 /* ===== BẾP AI: slide bìa tự chạy ===== */
 (function(){
@@ -2264,7 +2033,7 @@ function heroSlide(wrap,idx){
   dots.forEach((d,j)=>d.onclick=()=>go(j));
   setInterval(()=>go(ki+1),4000);
 })();
-</script></script>
+</script>
 
 <!-- Kinh Nghiệm Modal -->
 <div id="expModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.75);align-items:center;justify-content:center;padding:20px;" onclick="if(event.target===this)this.style.display='none'">
@@ -2416,11 +2185,12 @@ var KITCHEN_PUBLISHING = '<h2 style="margin-bottom:12px;">📤 Quy trình đăng
             const code = document.getElementById('affCode').value.trim();
             if (AFF_CODES.includes(code) || AFF_CODES.includes(code.toUpperCase())) {
                 document.getElementById('affModal').style.display = 'none';
-                window.open(affTargetUrl, '_blank');
+                window.open(affTargetUrl, '_blank', 'noopener,noreferrer');
             } else {
                 document.getElementById('affError').style.display = 'block';
             }
         }
     </script>
+<script>if(location.hash==='#dieu-khoan'&&typeof openTermsModal==='function')openTermsModal();</script>
 </body>
 </html>
