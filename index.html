@@ -920,10 +920,12 @@
             const frame = document.getElementById('detailDemoFrame');
             if (demoVideo) {
                 frame.style.display = 'flex';
-                frame.innerHTML = '<video src="' + escHtml(demoVideo) + '" style="width:100%;height:100%;object-fit:contain;background:#000;" controls autoplay loop muted playsinline></video>';
+                frame.innerHTML = (demo ? '<img src="' + escHtml(demo) + '" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(26px) brightness(0.5);transform:scale(1.15);">' : '')
+                    + '<video src="' + escHtml(demoVideo) + '" style="position:relative;z-index:1;width:100%;height:100%;object-fit:contain;" controls autoplay loop muted playsinline></video>';
             } else if (demo) {
                 frame.style.display = 'flex';
-                frame.innerHTML = '<img src="' + escHtml(demo) + '" style="width:100%;height:100%;object-fit:contain;background:#0b0a10;" alt="">';
+                frame.innerHTML = '<img src="' + escHtml(demo) + '" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(26px) brightness(0.5);transform:scale(1.15);">'
+                    + '<img src="' + escHtml(demo) + '" style="position:relative;z-index:1;width:100%;height:100%;object-fit:contain;" alt="">';
             } else {
                 frame.style.display = 'none';
                 frame.innerHTML = '';
@@ -1800,7 +1802,7 @@ function openCourseModal(k){
             <button onclick="goBackHome()" style="background: var(--card-bg); border: 1px solid var(--border-color); color: white; padding: 10px 18px; border-radius: 12px; font-weight: 700; cursor: pointer; margin-bottom: 25px; display: inline-flex; align-items: center; gap: 8px;">
                 <i class="fa-solid fa-arrow-left"></i> Quay lại kho prompt
             </button>
-            <div id="detailDemoFrame" style="width: 100%; height: min(74vh, 700px); background: #14121a; border: 1px solid var(--border-color); border-radius: 20px; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 14px; margin-bottom: 30px; overflow: hidden;">
+            <div id="detailDemoFrame" style="position: relative; width: 100%; height: min(74vh, 700px); background: #14121a; border: 1px solid var(--border-color); border-radius: 20px; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 14px; margin-bottom: 30px; overflow: hidden;">
                         [ Khung Video / Ảnh Demo Thực Tế Của Prompt ]
                     </div>
             <div class="detail-grid" style="display: grid; grid-template-columns: 2fr 1fr; gap: 30px; align-items: start;">
