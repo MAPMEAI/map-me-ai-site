@@ -1387,16 +1387,24 @@ function openCourseModal(k){
             </div>
         </div>
         <p style="color:var(--text-muted);font-size:14px;margin:-8px 0 18px;" data-en="From one portrait photo + full name + birth date, the AI builds a complete physiognomy profile poster: traditional face reading of the five features, 4 Pythagorean numerology numbers and feng-shui colors by element — every reading grounded in researched reference tables, never made up." data-vi="Chỉ cần một ảnh chân dung + họ tên + ngày sinh, AI dựng cho bạn một poster hồ sơ nhân tướng học hoàn chỉnh: luận ngũ quan theo tướng pháp truyền thống, tính 4 chỉ số thần số học Pythagoras và chọn màu hợp mệnh theo ngũ hành — mọi luận giải bám bảng tra cứu chuẩn, không phán bừa.">Chỉ cần một ảnh chân dung + họ tên + ngày sinh, AI dựng cho bạn một poster hồ sơ nhân tướng học hoàn chỉnh: luận ngũ quan theo tướng pháp truyền thống, tính 4 chỉ số thần số học Pythagoras và chọn màu hợp mệnh theo ngũ hành — mọi luận giải bám bảng tra cứu chuẩn, không phán bừa.</p>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-bottom:22px;">
-            <figure style="margin:0;text-align:center;">
-                <img src="poster-demo-nu-pham-ngoc-lan.webp" alt="Poster hồ sơ nhân tướng học mẫu — nữ" loading="lazy" style="width:100%;border-radius:14px;box-shadow:0 16px 40px rgba(0,0,0,.5);border:1px solid var(--border-color);">
-                <figcaption style="color:var(--text-muted);font-size:13px;margin-top:8px;" data-en="Sample poster — illustrated character" data-vi="Poster mẫu — nhân vật minh họa">Poster mẫu — nhân vật minh họa</figcaption>
-            </figure>
-            <figure style="margin:0;text-align:center;">
-                <img src="poster-demo-nam-le-hoang-nam.webp" alt="Poster hồ sơ nhân tướng học mẫu — nam" loading="lazy" style="width:100%;border-radius:14px;box-shadow:0 16px 40px rgba(0,0,0,.5);border:1px solid var(--border-color);">
-                <figcaption style="color:var(--text-muted);font-size:13px;margin-top:8px;" data-en="Sample poster — illustrated character" data-vi="Poster mẫu — nhân vật minh họa">Poster mẫu — nhân vật minh họa</figcaption>
-            </figure>
+        <div style="position:relative;max-width:430px;margin:0 auto 22px;">
+            <div style="position:absolute;inset:4% -8%;background:radial-gradient(closest-side,rgba(255,209,102,.30),transparent);filter:blur(12px);pointer-events:none;"></div>
+            <div style="position:relative;border-radius:16px;overflow:hidden;border:1px solid rgba(255,209,102,.5);box-shadow:0 30px 60px rgba(0,0,0,.65);">
+                <img id="nthImgA" src="poster-demo-nu-pham-ngoc-lan.webp" alt="Poster hồ sơ nhân tướng học mẫu — nữ" loading="lazy" style="width:100%;display:block;">
+                <img id="nthImgB" src="poster-demo-nam-le-hoang-nam.webp" alt="Poster hồ sơ nhân tướng học mẫu — nam" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.1s ease;">
+                <div style="position:absolute;top:12px;left:12px;background:rgba(0,0,0,.68);color:#ffd166;font-size:12px;font-weight:800;letter-spacing:1.5px;padding:6px 12px;border-radius:999px;border:1px solid rgba(255,209,102,.6);">POSTER MẪU</div>
+            </div>
+            <div style="display:flex;justify-content:center;gap:8px;margin-top:14px;">
+                <span id="nthDot0" style="width:22px;height:8px;border-radius:99px;background:#ffd166;transition:all .4s;"></span>
+                <span id="nthDot1" style="width:8px;height:8px;border-radius:99px;background:#4a4a55;transition:all .4s;"></span>
+            </div>
+            <p id="nthCap" style="text-align:center;color:var(--text-muted);font-size:13px;margin-top:8px;">Poster mẫu — hồ sơ nữ</p>
         </div>
+        <script>
+        (function(){ var b=document.getElementById('nthImgB'), cap=document.getElementById('nthCap'), d0=document.getElementById('nthDot0'), d1=document.getElementById('nthDot1'); if(!b) return; var showNam=false;
+        setInterval(function(){ showNam=!showNam; b.style.opacity=showNam?'1':'0'; cap.textContent=showNam?'Poster mẫu — hồ sơ nam':'Poster mẫu — hồ sơ nữ';
+        d0.style.background=showNam?'#4a4a55':'#ffd166'; d0.style.width=showNam?'8px':'22px'; d1.style.background=showNam?'#ffd166':'#4a4a55'; d1.style.width=showNam?'22px':'8px'; }, 4500); })();
+        </script>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-bottom:22px;">
             <div style="background:#15131e;border:1px solid var(--border-color);border-radius:14px;padding:18px;">
                 <h3 style="margin:0 0 8px;" data-en="👁️ What the Five Features Reveal" data-vi="👁️ Ngũ Quan Xem Gì">👁️ Ngũ Quan Xem Gì</h3>
@@ -1412,8 +1420,8 @@ function openCourseModal(k){
             </div>
         </div>
         <div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-bottom:8px;">
-            <a href="#prompts" onclick="goSection(\'prompts\');return false;" class="btn-vip" style="text-decoration:none;padding:12px 22px;border-radius:10px;font-weight:700;display:inline-block;" data-en="👑 Stuck Doing It Alone? Go VIP — Hands-On Coaching Until You Nail It" data-vi="👑 Tự Học Hoài Không Được? Mở VIP — Cầm Tay Chỉ Việc Tới Khi Làm Ra">👑 Tự Học Hoài Không Được? Mở VIP — Cầm Tay Chỉ Việc Tới Khi Làm Ra</a>
-            <a href="https://zalo.me/g/krzepmsmx5m5gkhv8xku" target="_blank" rel="noopener" style="background:#0068ff;color:#fff;text-decoration:none;padding:12px 22px;border-radius:10px;font-weight:700;display:inline-block;box-shadow:0 0 12px rgba(0,104,255,.4);" data-en="💬 Stuck On Your Own? Join the Zalo Group Now" data-vi="💬 Tự Mò Hoài Không Ra? Join Group Zalo Ngay">💬 Tự Mò Hoài Không Ra? Join Group Zalo Ngay</a>
+            <a href="#prompts" onclick="goSection(\'prompts\');return false;" class="btn-vip" style="text-decoration:none;padding:12px 22px;border-radius:10px;font-weight:700;display:inline-block;" data-en="👑 Go VIP — Hands-On Coaching Until You Can Do It" data-vi="👑 Mở VIP — Cầm Tay Chỉ Việc Đến Khi Làm Được">👑 Mở VIP — Cầm Tay Chỉ Việc Đến Khi Làm Được</a>
+            <a href="https://zalo.me/g/krzepmsmx5m5gkhv8xku" target="_blank" rel="noopener" style="background:#0068ff;color:#fff;text-decoration:none;padding:12px 22px;border-radius:10px;font-weight:700;display:inline-block;box-shadow:0 0 12px rgba(0,104,255,.4);" data-en="💬 Join the Zalo Group — Ask Anything, Get Guided" data-vi="💬 Join Group Zalo Ngay — Hỏi Là Có Người Chỉ">💬 Join Group Zalo Ngay — Hỏi Là Có Người Chỉ</a>
         </div>
         <p style="text-align:center;color:var(--text-muted);font-size:12px;margin:0;" data-en="The “Physiognomy Poster” Master Prompt lives in the Prompt Vault — a VIP membership unlocks the full text. Content is for reference, based on traditional physiognomy and numerology — not scientific prediction." data-vi="Master Prompt “Poster Nhân Tướng Học” nằm trong Mâm Đồ Nghề — mở khóa VIP mới xem và sao chép được toàn văn. Nội dung tham khảo theo nhân tướng học và thần số học truyền thống, không phải dự đoán khoa học.">Master Prompt “Poster Nhân Tướng Học” nằm trong Mâm Đồ Nghề — mở khóa VIP mới xem và sao chép được toàn văn. Nội dung tham khảo theo nhân tướng học và thần số học truyền thống, không phải dự đoán khoa học.</p>
     </div>
