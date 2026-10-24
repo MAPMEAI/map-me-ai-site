@@ -12,15 +12,15 @@
     "locked": false
   },
   {
-    "title": "ChatGPT JSON Character Structure",
-    "desc": "Cấu trúc JSON quản lý nhân vật chính xác qua nhiều cảnh.",
-    "category": "Text",
+    "title": "Thư Mời Họp Phụ Huynh Cuối Năm — 3D Cartoon",
+    "desc": "Thư mời họp phụ huynh cuối năm phong cách 3D cartoon cao cấp, logo trường tự đổi màu, chữ Việt chuẩn dấu, tỉ lệ 3:4.",
+    "category": "Ảnh",
     "type": "Free",
-    "subCat": "Marketing",
-    "demo": null,
+    "subCat": "Ảnh",
+    "demo": "https://mapmeai.com/demo-thu-moi-hop-phu-huynh.webp",
     "demoVideo": null,
-    "content": "JSON schema for maintaining consistent character traits across multi-scene generation.",
-    "slug": "chatgpt-json-character-structure",
+    "content": "Prompt tạo thư mời phong cách 3D cartoon\nTHÔNG TIN ĐẦU VÀO (EDITABLE CONTENT)\n==================================================\n\n[TÊN TRƯỜNG: ...........] \n\n[LỚP: Mầm nhỏ] \n\n[TÊN GVCN: ..........i] \n\n[THỜI GIAN: ...........................] \n\n==================================================\nMASTER PROMPT — GIẤY MỜI HỌP PHỤ HUYNH CUỐI NĂM\nPHONG CÁCH 3D ILLUSTRATION CAO CẤP\n==================================================\n\nCreate a premium Vietnamese year-end parent meeting invitation poster in adorable 3D illustration style, designed for kindergarten or primary school environment.\n\nIMPORTANT DESIGN MOOD:\n- cute\n- warm\n- elegant\n- friendly\n- educational\n- emotionally meaningful\n- clean composition\n- premium modern school branding\n- simple but luxurious\n- youthful and cheerful\n- soft realistic lighting\n- high-end 3D illustration aesthetic\n\n==================================================\nLOGO & COLOR ADAPTATION (VERY IMPORTANT)\n==================================================\n\nUse the uploaded school logo as the official school identity element.\n\nAnalyze the uploaded logo carefully and automatically adapt the ENTIRE DESIGN COLOR PALETTE based on the logo colors.\n\nIMPORTANT:\nThe overall colors must feel:\n- bright\n- soft\n- clean\n- fresh\n- natural\n- playful\n- harmonious\n- elegant\n\nThe final artwork should:\n- match the logo palette naturally\n- look modern and premium\n- feel emotionally warm\n- avoid dark dramatic tones\n- avoid overly saturated colors\n- avoid harsh cinematic lighting\n- avoid random unrelated colors\n\n==================================================\nLAYOUT & COMPOSITION\n==================================================\n\nCreate a vertical premium invitation poster layout.\n\nPlace the uploaded school logo elegantly at the TOP CENTER of the design.\n\nTypography hierarchy:\n- school name large and elegant\n- class information soft and cute\n- homeroom teacher information balanced and readable\n- meeting time clearly highlighted\n- Vietnamese typography must be accurate with proper dấu\n\nUse:\n- rounded composition\n- clean spacing\n- premium editorial balance\n- luxury minimalist layout\n- soft depth and shadows\n- elegant decorative details\n\n==================================================\nMAIN VISUAL STYLE\n==================================================\n\nCreate a charming 3D school-themed illustration scene with:\n- cute children in school uniforms\n- friendly female teacher\n- books\n- notebooks\n- pencils\n- flowers\n- school elements\n- soft classroom or schoolyard atmosphere\n- warm educational environment\n\nCharacter style:\n- adorable 3D illustration\n- natural expressions\n- lively poses\n- soft textures\n- premium animation-movie feeling\n- cute but not exaggerated\n- expressive eyes\n- joyful interaction\n\n==================================================\nBACKGROUND & DECORATION\n==================================================\n\nBackground should feel:\n- airy\n- bright\n- soft\n- dreamy\n- premium\n\nInclude:\n- subtle clouds\n- soft leaves\n- tiny flowers\n- educational doodles\n- gentle sunlight ambience\n- layered paper-cut decoration\n- rounded floating elements\n\nAvoid:\n- cluttered composition\n- excessive details\n- dark shadows\n- AI-looking plastic textures\n- stiff character poses\n\n==================================================\nFIXED VIETNAMESE CONTENT (MUST KEEP)\n==================================================\n\nDisplay this Vietnamese paragraph beautifully inside the invitation:\n\n“Kính mời Quý phụ huynh đến tham dự buổi họp phụ huynh cuối năm, để cùng nhìn lại hành trình học tập và sự trưởng thành của các em học sinh. Sự hiện diện của Quý phụ huynh là niềm vinh dự của nhà trường.”\n\nTypography style:\n- elegant Vietnamese font\n- easy to read\n- emotional and warm\n- premium school invitation feeling\n\n==================================================\nTEXT INFORMATION TO DISPLAY\n==================================================\n\nDisplay these editable contents clearly:\n\n- [TÊN TRƯỜNG]\n- [LỚP]\n- [TÊN GVCN]\n- [THỜI GIAN]\n\n==================================================\nLIGHTING & RENDERING\n==================================================\n\nLighting:\n- soft daylight\n- clean studio-like rendering\n- bright atmosphere\n- soft shadow gradients\n- no yellow color cast\n- no dark cinematic lighting\n\nRendering quality:\n- ultra detailed\n- premium 3D illustration\n- polished textures\n- realistic materials\n- smooth composition\n- highly aesthetic educational poster\n\n==================================================\nFINAL OUTPUT\n==================================================\n\nAspect ratio: 3:4\n\nStyle keywords:\npremium 3D illustration, school invitation design, kindergarten aesthetic, educational poster, modern cute luxury, soft pastel palette, warm emotional atmosphere, elegant Vietnamese typography, high-end school branding",
+    "slug": "thu-moi-hop-phu-huynh-cuoi-nam-3d-cartoon",
     "locked": false
   },
   {
@@ -48,15 +48,15 @@
     "locked": false
   },
   {
-    "title": "SaaS Landing Page UI Wireframe",
-    "desc": "Tạo giao diện UI layout trang web SaaS hiện đại bằng prompt.",
+    "title": "Poster Ngành Nghề — Julie Huỳnh, AI Creator",
+    "desc": "Poster chân dung double exposure editorial cho AI Creator: trái chữ 60%, phải chân dung 40%, trong silhouette hiện lớp học, laptop, giao diện AI, chữ Việt, tỉ lệ 4:5.",
     "category": "Ảnh",
     "type": "Free",
-    "subCat": "UI & Graphic",
-    "demo": null,
+    "subCat": "Ảnh",
+    "demo": "https://mapmeai.com/demo-poster-nganh-nghe.webp",
     "demoVideo": null,
-    "content": "Modern dark mode SaaS landing page UI design, clean typography, glowing gradients.",
-    "slug": "saas-landing-page-ui-wireframe",
+    "content": "[UPLOAD IMAGE REFERENCE FIRST]\nCreate a high-end editorial cinematic double exposure poster using the EXACT same person from the reference image.\nSTRICT IDENTITY LOCK:\nsame person, identical face, no variation, preserve 100% facial features, realistic skin texture, natural proportions\nLAYOUT (LOCKED COMPOSITION):\nleft side: typography (60%)\nright side: portrait (40%)\ndouble exposure appears inside the right side of face and upper body only\nclean editorial grid, balanced spacing, premium magazine style\nMAIN SUBJECT:\nJulie Huỳnh, a AI Creator & AI Coach\nstyle: AI creator, wellness expert in learning, business leader in AI education\nexpression: calm, confident, inspiring\noutfit: minimal, professional, modern white blazer\nCAMERA & LIGHTING:\n85mm lens, shallow depth of field, soft cinematic lighting\nHDR, high detail, photorealistic, 4K–8K quality\nDOUBLE EXPOSURE (SYSTEM STORY – VERY IMPORTANT):\ninside silhouette shows a complete ecosystem of their work:\n- Đào tạo & Khai vấn AI (AI Coaching) – teaching a class\n- Sáng tạo nội dung số (Digital Creator) – working on laptop with AI interface\n- Xây dựng cộng đồng công nghệ – collaborating with learners\n- Tool / Product: laptop, AI dashboard, classroom screen\n- Community / Impact: learners growing with AI\nENVIRONMENT:\nstudio / classroom / coaching space\ndepth layering: foreground, midground, background\nCOLOR STYLE:\ndark navy blue + warm orange light streaks\nclean highlight edges, subtle glow, soft particles or light streaks\nBACKGROUND:\nminimalist gradient (dark navy blue), lots of negative space\n--------------------------------\nTYPOGRAPHY (VIETNAMESE – CLEAN & PREMIUM)\n--------------------------------\nPROGRAM:\n\"CHƯƠNG TRÌNH CO-CREATOR & COACHING\"\nTITLE:\n\"BỨT PHÁ TƯ DUY AI\"\nSUBTITLE:\n\"Định hình tương lai sáng tạo\"\nQUOTE:\n\"AI không thay thế bạn, nhưng những người làm chủ AI sẽ dẫn đầu. Hãy biến công nghệ thành cộng sự đắc lực nhất.\"\nSUPPORT TEXT:\n\"Đào tạo & Khai vấn AI (AI Coaching)\"\n\"Sáng tạo nội dung số (Digital Creator)\"\n\"Xây dựng cộng đồng công nghệ\"\nNAME (signature style):\n\"JULIE HUYNH\"\nROLE DESCRIPTION:\n\"AI Creator & AI Coaching\"\nFOOTER:\n\"Đồng hành cùng bạn trên hành trình chinh phục kỷ nguyên số.\"\nBRANDING:\nminimal logo at bottom corner: MẬP MÊ AI\n--------------------------------\nFINAL STYLE:\npremium editorial, cinematic, clean, inspiring\nsmooth double exposure blending\nno text distortion, no artifacts\nASPECT RATIO:\n4:5 (Instagram)",
+    "slug": "poster-nganh-nghe-julie-huynh-ai-creator",
     "locked": false
   },
   {
@@ -744,16 +744,16 @@
     "locked": false
   },
   {
-    "title": "Master Prompt Tạo Poster Infographic",
-    "desc": "Khuôn tạo poster infographic: phân tích ảnh mẫu rồi tái dựng bố cục, màu sắc, font chữ và khung hình.",
+    "title": "Poster Quảng Cáo Đồ Ăn — Bánh Mì Thịt Nướng",
+    "desc": "Poster đồ ăn tách lớp, texture giòn/mềm/chảy, hơi nóng, ánh sáng ấm, chữ tiếng Việt, tỉ lệ 4:5.",
     "category": "Ảnh",
-    "type": "VIP",
-    "subCat": "Ảnh",
-    "demo": null,
-    "demoVideo": "",
-    "content": "Analyze the uploaded reference poster and replicate its visual design with maximum fidelity.\n\nDO NOT redesign.\nDO NOT change the layout.\nDO NOT simplify the design.\n\nKeep exactly the same:\n\n• Overall composition\n• Section arrangement\n• Typography hie",
-    "slug": "master-prompt-tao-poster-infographic",
-    "locked": true
+    "type": "Free",
+    "subCat": "Ẩm thực",
+    "demo": "https://mapmeai.com/demo-poster-do-an-banh-mi.webp",
+    "demoVideo": null,
+    "content": "Tạo poster quảng cáo đồ ăn cao cấp với sản phẩm ở trung tâm: Bánh Mì Thịt Nướng.\nBố cục tách lớp:\nMón ăn được tách thành nhiều lớp bay lơ lửng (nguyên liệu chính, topping, rau, nước sốt…), xếp chồng tự nhiên.\n\nNhấn mạnh texture:\nHiệu ứng giòn, mềm, chảy, béo, hoặc nóng hổi tùy món.\n\nChuyển động:\nNguyên liệu bay (thịt, rau, gia vị), nước sốt bắn nhẹ, vụn giòn, gia vị rơi.\n\nThêm hơi nóng:\nCó steam nhẹ bay lên tạo cảm giác vừa nấu xong.\n\nÁnh sáng:\nÁnh sáng ấm, hơi tương phản, làm nổi bật độ ngon và độ bóng của món ăn.\n\nBackground:\nNền gradient ấm (đỏ, cam, nâu), sạch, kích thích vị giác.\n\nThêm độ sâu trường ảnh và bóng đổ nhẹ.\n\nChữ trên poster (100% tiếng Việt):\n“Bán chạy nhất”\n“Ngon khó cưỡng”\n“Đậm đà hương vị”\n“Bánh Mì Thịt Nướng”\n\nPhong cách:\nảnh quảng cáo đồ ăn, siêu chi tiết, texture rõ, ánh sáng điện ảnh, hấp dẫn, 4K\n\nTỉ lệ: 4:5\n\nNhấn mạnh: độ ngon, texture, cảm giác nóng hổi",
+    "slug": "poster-quang-cao-do-an-banh-mi-thit-nuong",
+    "locked": false
   },
   {
     "title": "Chân Dung Điện Ảnh 8K",
@@ -828,15 +828,15 @@
     "locked": false
   },
   {
-    "title": "Thiết kế infographic nanobanana",
-    "desc": "Thiết kế infographic kỹ thuật cho sản phẩm bằng NanoBanana: sơ đồ cấu tạo và chú thích rõ ràng.",
+    "title": "Poster Ngành Ăn Uống — Sinh Tố Dâu",
+    "desc": "Poster đồ uống tách lớp 3-4 tầng, splash nước, dâu cắt lát giữa các lớp, nền gradient match nguyên liệu, chữ tiếng Việt, tỉ lệ 4:5.",
     "category": "Ảnh",
     "type": "Free",
-    "subCat": "Ảnh",
-    "demo": null,
-    "demoVideo": "",
-    "content": "Nanobanana Pro Thiết Kế Infographic Trực Quan Kết Hợp Yếu Tố Đời Thực\n\nCreate an infographic image of [OBJECT], combining a realistic photograph or photorealistic render of the object with technical annotation overlays placed directly on top. Use black ink–style line drawings and text (technical pen / architectural sketch look) on a pure white studio background. Include: •Key component labels •Internal cutaway or exploded-view outlines (where relevant) •Measurements, dimensions, and scale markers •Material callouts and quantities",
-    "slug": "thiet-ke-infographic-nanobanana",
+    "subCat": "Ẩm thực",
+    "demo": "https://mapmeai.com/demo-poster-do-uong-sinh-to-dau.webp",
+    "demoVideo": null,
+    "content": "Poster ngành ăn uống, đồ uống tách lớp rõ ràng:\nLy Sinh Tố Dâu được chia thành 3–4 phần riêng biệt theo chiều dọc:\n- Lớp trên: kem / topping / foam\n- Lớp giữa: phần nước chính\n- Lớp dưới: phần đáy ly\n\nCác lớp tách rời hoàn toàn, bay lơ lửng theo trục dọc, khoảng cách đều nhau, căn giữa.\n\nGiữa các lớp:\nThêm lát dâu cắt ngang, splash nước dâu bắn ra tự nhiên giữa các lớp.\n\nChuyển động:\nSplash mạnh, nước bắn, giọt nước bay, hiệu ứng chuyển động rõ ràng nhưng vẫn sạch và cao cấp.\n\nXung quanh sản phẩm:\nDâu nguyên quả, lá bạc hà, topping bay xung quanh với motion blur nhẹ.\n\nÁnh sáng:\nÁnh sáng studio sáng, bóng đẹp, làm nổi bật độ trong, độ tươi và texture của nước.\n\nBackground:\nNền gradient đỏ / hồng đồng màu với dâu, có hiệu ứng glow nhẹ phía sau sản phẩm để tạo điểm nhấn.\n\nTypography (100% tiếng Việt):\nTiêu đề lớn, nổi bật:\n“SINH TỐ DÂU”\n\nText phụ:\n“Tươi nguyên 100%”\n“Thêm topping miễn phí”\n“Thanh mát – Giải nhiệt”\n\nFont bo tròn, trẻ trung, dễ đọc, màu sắc nổi bật nhưng hài hoà với nền.\n\nBố cục chữ:\n- Tiêu đề phía trên\n- Text phụ đặt hai bên, có mũi tên chỉ vào sản phẩm\n\nThêm:\nBóng đổ nhẹ bên dưới ly\nĐộ sâu trường ảnh (depth of field)\n\nPhong cách:\nảnh quảng cáo đồ uống, tươi, hiện đại, màu sắc rực rỡ, splash rõ, 3D render, ánh sáng điện ảnh, siêu chân thực, 4K\n\nTỉ lệ: 4:5\n\nNhấn mạnh:\n- Tách lớp rõ ràng\n- Dâu cắt lát nằm giữa các lớp\n- Splash nước sống động\n- Màu nền match nguyên liệu. Hiệu ứng ánh sáng phát ra phía sau sản phẩm, tạo cảm giác nổi bật và thu hút như quảng cáo chuyên nghiệp",
+    "slug": "poster-nganh-an-uong-sinh-to-dau",
     "locked": false
   },
   {
