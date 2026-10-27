@@ -1230,7 +1230,11 @@ function filterPrompts(type, val, evt) { if (type) currentPage = 1; const btnEl 
                 <p>Học từ người đang làm thật, kiếm tiền thật với AI — không lý thuyết suông. Mỗi khóa đều có sản phẩm thực tế để bạn mang về.</p>
             </div>
         </div>
-        <div class="grid-cards">
+        <!-- Poster định hướng khóa học — hiển thị đầu tab KHÓA HỌC, trước các thẻ khóa học; bấm poster cuộn xuống các thẻ khóa học -->
+        <div style="max-width:560px;margin:0 auto 24px;text-align:center;">
+            <a href="#course-cards" style="display:block;cursor:pointer;" title="Xem các khóa học"><img src="https://mapmeai.com/poster-khoa-hoc-ai.png" alt="Khóa học MẬP MÊ AI — Học AI, bước tiếp cùng thời đại" loading="lazy" style="width:100%;height:auto;display:block;border-radius:16px;box-shadow:0 24px 50px rgba(0,0,0,.45);border:1px solid rgba(255,209,102,.35);"></a>
+        </div>
+        <div class="grid-cards" id="course-cards" style="scroll-margin-top:20px;">
             <div class="card" style="cursor:pointer;" onclick="openCourseModal('video')">
                 <div class="card-thumb" style="background:linear-gradient(135deg,#7c2d12,#f59e0b);display:flex;align-items:center;justify-content:center;min-height:150px;"><svg width="92" height="92" viewBox="0 0 96 96" fill="none" style="filter:drop-shadow(0 6px 18px rgba(0,0,0,.45));"><rect x="10" y="18" width="76" height="60" rx="9" fill="#1b1626" stroke="#ffd166" stroke-width="2.5"/><path d="M10 30h76M10 66h76" stroke="#ffd166" stroke-width="2" opacity=".55"/><path d="M17 21v6M28 21v6M39 21v6M50 21v6M61 21v6M72 21v6M17 69v6M28 69v6M39 69v6M50 69v6M61 69v6M72 69v6" stroke="#ffd166" stroke-width="2.4"/><circle cx="48" cy="48" r="14.5" fill="#ff4d6d"/><path d="M43.5 40.5 57 48l-13.5 7.5z" fill="#fff"/></svg><span class="thumb-badge" style="background:#f5af19;color:#000;">Bán chạy</span></div>
                 <div>
@@ -1969,7 +1973,8 @@ const HERO_VIDS=[
  {src:'https://raw.githubusercontent.com/MAPMEAI/map-me-ai-site/main/banh%20trang%20tron.mp4',vi:'Bánh Tráng Trộn',en:'Rice Paper Salad'},
  {src:'https://raw.githubusercontent.com/MAPMEAI/map-me-ai-site/main/l%E1%BA%A9u%20n%E1%BA%A5m.mp4',vi:'Lẩu Nấm',en:'Mushroom Hotpot'},
  {src:'https://raw.githubusercontent.com/MAPMEAI/map-me-ai-site/main/goi%20xoai%20c%C3%A1%20loc.mp4',vi:'Gỏi Xoài Cá Lóc',en:'Mango Fish Salad'},
- {src:'https://raw.githubusercontent.com/MAPMEAI/map-me-ai-site/main/chim%20quang%20cao%20bep.mp4',vi:'Vẹt Chiên Trứng',en:'Parrot Chef'}
+ {src:'https://raw.githubusercontent.com/MAPMEAI/map-me-ai-site/main/chim%20quang%20cao%20bep.mp4',vi:'Vẹt Chiên Trứng',en:'Parrot Chef'},
+ {src:'https://mapmeai.com/videos/brand-qc-mapmeai.mp4',vi:'MẬP MÊ AI — Quảng Cáo Thương Hiệu',en:'MẬP MÊ AI — Brand Ad',grp:'brand'}
 ];
 function heroPick(exclude){const grps=exclude.map(i=>(HERO_VIDS[i]||{}).grp).filter(Boolean);const noDup=HERO_VIDS.map((_,i)=>i).filter(i=>!exclude.includes(i));const noGrp=noDup.filter(i=>{const g=(HERO_VIDS[i]||{}).grp;return !g||!grps.includes(g);});const arr=noGrp.length?noGrp:(noDup.length?noDup:HERO_VIDS.map((_,i)=>i));return arr[Math.floor(Math.random()*arr.length)];}
 function heroSet(wrap,idx){
@@ -1993,13 +1998,17 @@ function heroSlide(wrap,idx){
 (function(){
   const wraps=[...document.querySelectorAll('.hv-wrap')];if(!wraps.length)return;
   const used=[];
-  wraps.forEach(w=>{const i=heroPick(used);used.push(i);heroSet(w,i);});
-  let cur=0;
+  const brandIdx=HERO_VIDS.findIndex(e=>e.grp==='brand');
+  if(brandIdx>=0){heroSet(wraps[0],brandIdx);used.push(brandIdx);}
+  wraps.forEach(w=>{if(w._hidx!==undefined)return;const i=heroPick(used);used.push(i);heroSet(w,i);});
+  let cur=0;let heroTurn=0;
   setInterval(()=>{
-    const w=wraps[cur];
+    heroTurn++;
+    const isBrandTurn=brandIdx>=0&&heroTurn%4===0;
+    const w=isBrandTurn?(wraps.find(x=>x._hidx!==brandIdx)||wraps[cur]):wraps[cur];
+    if(!isBrandTurn)cur=(cur+1)%wraps.length;
     const others=wraps.filter(x=>x!==w).map(x=>x._hidx);
-    heroSlide(w,heroPick(others));
-    cur=(cur+1)%wraps.length;
+    heroSlide(w,isBrandTurn?brandIdx:heroPick(others));
   },6000);
 })();
 /* ===== BẾP AI: slide bìa tự chạy ===== */
