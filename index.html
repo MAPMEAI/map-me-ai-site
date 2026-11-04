@@ -139,7 +139,7 @@
         nav ul {
             display: flex;
             list-style: none;
-            gap: 15px;
+            gap: 10px;
             align-items: center;
         }
 
@@ -149,7 +149,8 @@
             font-weight: 600;
             text-transform: uppercase;
             font-size: 13px;
-            padding: 6px 14px;
+            white-space: nowrap;
+            padding: 6px 10px;
             border-radius: 20px;
             transition: all 0.3s ease;
             display: inline-flex;
@@ -167,6 +168,7 @@
         .tab-tools { color: #00f2fe !important; }
         .tab-master { color: #ff6584 !important; }
         .tab-kitchen { color: #a066ff !important; }
+        .tab-shop { color: #ffb347 !important; }
         .tab-voice { color: #4ade80 !important; }
 .tab-nhantuong { color: #f5af19 !important; }
 .tab-kinhnghiem { color: #fb923c !important; }
@@ -670,6 +672,13 @@
         .thumb-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:rgba(0,0,0,.55);color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;pointer-events:none;backdrop-filter:blur(4px);border:1.5px solid rgba(255,255,255,.35)}
 
         /* ===== Responsive bổ sung ===== */
+        /* Màn hình vừa: menu 9 mục xuống hàng riêng, căn giữa, luôn 1 dòng không gãy chữ */
+        @media (max-width: 1600px) {
+            header { flex-wrap: wrap; row-gap: 8px; }
+            header nav { order: 3; flex: 1 1 100%; }
+            header nav ul { justify-content: center; flex-wrap: nowrap; }
+            header nav ul li a { font-size: 12px; padding: 6px 8px; }
+        }
         @media (max-width: 900px) {
             header { flex-wrap: wrap; gap: 10px; height: auto; padding: 10px 14px; }
             header nav { order: 3; width: 100%; overflow-x: auto; }
@@ -711,6 +720,20 @@
     }
     :focus-visible{outline:2px solid #ff6584;outline-offset:2px}
     </style>
+<!-- MAPMEAI-ANALYTICS-2026-11-01 -->
+<meta name="google-site-verification" content="XBYw0LHkcBEtiKWIb4sDtJiHp7yifprJ_FX63Zd3t90">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DC96Y9R3Z2"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-DC96Y9R3Z2');
+</script>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","z6pntvsgmt");
+</script>
 </head>
 <body>
 
@@ -730,6 +753,7 @@
                 <li><a href="#courses" onclick="goSection(\'courses\');return false;" class="tab-tools" data-en="Courses" data-vi="KHÓA HỌC">KHÓA HỌC</a></li>
                 <li><a href="#master" onclick="goSection(\'master\');return false;" class="tab-master" data-en="Master Prompt" data-vi="MASTER PROMPT">MASTER PROMPT</a></li>
                 <li><a href="#kitchen" onclick="goSection(\'kitchen\');return false;" class="tab-kitchen" data-en="AI Kitchen" data-vi="BẾP AI">BẾP AI</a></li>
+                <li><a href="#shop" onclick="goSection(\'shop\');return false;" class="tab-shop" data-en="Shop On Air" data-vi="SHOP LÊN SÓNG">SHOP LÊN SÓNG</a></li>
                 <li><a href="#nhantuong" onclick="goSection(\'nhantuong\');return false;" class="tab-nhantuong" data-en="Physiognomy" data-vi="NHÂN TƯỚNG HỌC">NHÂN TƯỚNG HỌC</a></li>
                 <li><a href="#kinhnghiem" onclick="goSection(\'kinhnghiem\');return false;" class="tab-kinhnghiem" data-en="Whispered Tips" data-vi="THÌ THẦM MẸO HAY">THÌ THẦM MẸO HAY</a></li>
                 <li><a href="#voice" onclick="goSection(\'voice\');return false;" class="tab-voice" data-en="AI Dubbing" data-vi="LỒNG TIẾNG AI">LỒNG TIẾNG AI</a></li>
@@ -748,7 +772,7 @@
             <div class="hero-text">
                 <p class="hl-slogan" data-en="LOVE <span class='ai-w'>AI</span> LIKE YOU LOVE YOUR SOULMATE ❤️" data-vi="MÊ <span class='ai-w'>AI</span> NHƯ MÊ NGƯỜI YÊU ❤️">MÊ <span class="ai-w">AI</span> NHƯ MÊ NGƯỜI YÊU ❤️</p>
                 <h1 data-en="Create <em>images, videos</em> & AI voiceovers <em>that sell</em> — in minutes" data-vi="Tạo <em>ảnh, video</em> & lồng tiếng AI <em>chuẩn quảng cáo</em> — trong vài phút">Tạo <em>ảnh, video</em> & lồng tiếng AI <em>chuẩn quảng cáo</em> — trong vài phút</h1>
-                <p data-en="90+ battle-tested prompts for Flow / Veo 3, Banapro & ChatGPT. Copy, paste, cash in." data-vi="90+ prompt thực chiến cho Flow / Veo 3, Banapro & ChatGPT. Copy là xài, ra đơn liền tay.">90+ prompt thực chiến cho Flow / Veo 3, Banapro & ChatGPT. Copy là xài, ra đơn liền tay.</p>
+                <p data-en="143+ battle-tested prompts for Flow / Veo 3, Banapro & ChatGPT. Copy, paste, cash in." data-vi="134+ prompt thực chiến cho Flow / Veo 3, Banapro & ChatGPT. Copy là xài, ra đơn liền tay.">134+ prompt thực chiến cho Flow / Veo 3, Banapro & ChatGPT. Copy là xài, ra đơn liền tay.</p>
                 <div class="hero-actions">
                     <button onclick="openVipPricingModal()" class="btn-pink">Bắt Đầu Ngay →</button>
                     <button class="btn-outline" onclick="openPromptDetail('Video Quy Trình Nấu Phở Bò Điện Ảnh', 'Chuỗi cảnh nấu phở bò chuẩn vị: nguyên liệu, nướng gừng hành, nước dùng trong, trụng bánh, chan thịt bò bốc khói.', 'Video', true)">Xem Thử Miễn Phí</button>
@@ -774,7 +798,7 @@
     <!-- Kho Lệnh Prompt Thực Chiến - Động 100% -->
     <div class="container" id="prompts">
         <div style="margin-bottom: 25px;">
-            <h2 style="font-size: 24px; font-weight: 800; color: white; margin-bottom: 4px;">Kho Lệnh Prompt Thực Chiến <span style="background:linear-gradient(135deg,#f5af19,#f27121);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-size:30px;">90+</span></h2>
+            <h2 style="font-size: 24px; font-weight: 800; color: white; margin-bottom: 4px;">Kho Lệnh Prompt Thực Chiến <span style="background:linear-gradient(135deg,#f5af19,#f27121);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-size:30px;">143+</span></h2>
             <p style="color: var(--text-muted); font-size: 13px;">Tập trung chuyên sâu cho Flow, Midjourney, ChatGPT và Banapro. <a href="prompt/" style="color:#ff6584;text-decoration:underline">Xem toàn bộ dạng danh sách</a></p>
         </div>
 
@@ -787,7 +811,6 @@
                     <button class="filter-btn active-filter" onclick="filterPrompts('format', 'all', event)" style="background: #ffffff; color: #0b0b0e; border: none; padding: 7px 16px; border-radius: 20px; font-size: 12px; font-weight: 700; cursor: pointer;">Tất cả định dạng (<span id="countFormatAll">0</span>)</button>
                     <button class="filter-btn" onclick="filterPrompts('format', 'Ảnh', event)" style="background: #1c1a24; color: var(--text-muted); border: 1px solid var(--border-color); padding: 7px 16px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">Prompt Ảnh (<span id="countFormatAnh">0</span>)</button>
                     <button class="filter-btn" onclick="filterPrompts('format', 'Video', event)" style="background: #1c1a24; color: var(--text-muted); border: 1px solid var(--border-color); padding: 7px 16px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">Prompt Video (<span id="countFormatVideo">0</span>)</button>
-                    <button class="filter-btn" onclick="filterPrompts('format', 'Text', event)" style="background: #1c1a24; color: var(--text-muted); border: 1px solid var(--border-color); padding: 7px 16px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">Prompt Text (<span id="countFormatText">0</span>)</button>
                 </div>
                 <!-- Nút Sắp Xếp có Dropdown Menu -->
                 <div style="position: relative; display: inline-block;">
@@ -816,6 +839,7 @@
                 <button class="cat-btn" onclick="filterPrompts('cat', 'Marketing', event)" style="background: #1c1a24; color: var(--text-muted); border: 1px solid var(--border-color); padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">Marketing (<span id="count-Marketing">0</span>)</button>
                 <button class="cat-btn" onclick="filterPrompts('cat', 'Product', event)" style="background: #1c1a24; color: var(--text-muted); border: 1px solid var(--border-color); padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">Product (<span id="count-Product">0</span>)</button>
                 <button class="cat-btn" onclick="filterPrompts('cat', 'Fashion', event)" style="background: #1c1a24; color: var(--text-muted); border: 1px solid var(--border-color); padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">Fashion (<span id="count-Fashion">0</span>)</button>
+                <button class="cat-btn" onclick="filterPrompts('cat', 'Portrait', event)" style="background: #1c1a24; color: var(--text-muted); border: 1px solid var(--border-color); padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">Portrait (<span id="count-Portrait">0</span>)</button>
                 <button class="cat-btn" onclick="filterPrompts('cat', 'Anime', event)" style="background: #1c1a24; color: var(--text-muted); border: 1px solid var(--border-color); padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">Anime (<span id="count-Anime">0</span>)</button>
                 <button class="cat-btn" onclick="filterPrompts('cat', 'UI & Graphic', event)" style="background: #1c1a24; color: var(--text-muted); border: 1px solid var(--border-color); padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">UI & Graphic (<span id="count-UI">0</span>)</button>
                 <button class="cat-btn" onclick="filterPrompts('cat', 'Ẩm thực', event)" style="background: #1c1a24; color: var(--text-muted); border: 1px solid var(--border-color); padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">Ẩm thực (<span id="count-AmThuc">0</span>)</button>
@@ -987,6 +1011,12 @@
         }
 
         
+        function openMasterDetail(mi) {
+            const item = (window._masterList || [])[mi];
+            if (!item) return;
+            openPromptDetail(item.title, item.desc, item.category, false);
+        }
+
         function closeDetailIfOpen() {
             var dv = document.getElementById('detailView');
             if (dv && dv.style.display !== 'none') { dv.style.display = 'none'; }
@@ -1042,7 +1072,7 @@
             } else { fallbackCopy(); }
         }
 
-        function escHtml(v) { return String(v == null ? '' : v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+        function escHtml(v) { return String(v == null ? '' : v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
 
         
         // ===== CẬP NHẬT SỐ ĐẾM TRÊN CÁC NÚT LỌC =====
@@ -1056,7 +1086,6 @@
             set('countFormatAll', total);
             set('countFormatAnh', anh);
             set('countFormatVideo', video);
-            set('countFormatText', promptsData.filter(p => p.category === 'Text').length);
             set('countTypeAll', total);
             set('countTypeFree', free);
             set('countTypeVip', vip);
@@ -1067,7 +1096,8 @@
             const mg = document.getElementById('masterGrid');
             if (!mg || !promptsData.length) return;
             const masters = promptsData.filter(p => /master/i.test(p.title));
-            mg.innerHTML = masters.map(item => {
+            window._masterList = masters;
+            mg.innerHTML = masters.map((item, mi) => {
                 const badgeCls = item.type === 'VIP' ? 'tag-vip' : 'tag-free';
                 let thumb = '';
                 if (item.demoVideo) {
@@ -1076,7 +1106,7 @@
                     thumb = `<div class="card-thumb"><img src="${escHtml(item.demo)}" alt="${escHtml(item.title)}" loading="lazy" onerror="this.closest('.card-thumb').style.display='none'"><span class="thumb-badge ${badgeCls}">${escHtml(item.type)}</span></div>`;
                 }
                 return `
-                <div class="card" role="button" tabindex="0" onclick="openPromptDetail('${escHtml(item.title).replace(/'/g, "\'")}', '${escHtml(item.desc).replace(/'/g, "\'")}', '${escHtml(item.category)}', false)">
+                <div class="card" role="button" tabindex="0" onclick="openMasterDetail(${mi})" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openMasterDetail(${mi})}">
                     ${thumb}
                     <div>
                         <div class="card-top"><span style="font-size:11px; color:var(--text-muted);">${escHtml(item.subCat)}</span></div>
@@ -1106,6 +1136,7 @@
             document.getElementById('count-Marketing').innerText = promptsData.filter(i => i.subCat === 'Marketing').length;
             document.getElementById('count-Product').innerText = promptsData.filter(i => i.subCat === 'Product').length;
             document.getElementById('count-Fashion').innerText = promptsData.filter(i => i.subCat === 'Fashion').length;
+            document.getElementById('count-Portrait').innerText = promptsData.filter(i => i.subCat === 'Portrait').length;
             document.getElementById('count-Anime').innerText = promptsData.filter(i => i.subCat === 'Anime').length;
             document.getElementById('count-UI').innerText = promptsData.filter(i => i.subCat === 'UI & Graphic').length; document.getElementById('count-AmThuc').innerText = promptsData.filter(i => i.subCat === 'Ẩm thực').length; document.getElementById('count-Storyboard').innerText = promptsData.filter(i => i.subCat === 'Storyboard & Nhân vật').length;
 
@@ -1236,7 +1267,7 @@ function filterPrompts(type, val, evt) { if (type) currentPage = 1; const btnEl 
         </div>
         <div class="grid-cards" id="course-cards" style="scroll-margin-top:20px;">
             <div class="card" style="cursor:pointer;" onclick="openCourseModal('video')">
-                <div class="card-thumb" style="background:linear-gradient(135deg,#7c2d12,#f59e0b);display:flex;align-items:center;justify-content:center;min-height:150px;"><svg width="92" height="92" viewBox="0 0 96 96" fill="none" style="filter:drop-shadow(0 6px 18px rgba(0,0,0,.45));"><rect x="10" y="18" width="76" height="60" rx="9" fill="#1b1626" stroke="#ffd166" stroke-width="2.5"/><path d="M10 30h76M10 66h76" stroke="#ffd166" stroke-width="2" opacity=".55"/><path d="M17 21v6M28 21v6M39 21v6M50 21v6M61 21v6M72 21v6M17 69v6M28 69v6M39 69v6M50 69v6M61 69v6M72 69v6" stroke="#ffd166" stroke-width="2.4"/><circle cx="48" cy="48" r="14.5" fill="#ff4d6d"/><path d="M43.5 40.5 57 48l-13.5 7.5z" fill="#fff"/></svg><span class="thumb-badge" style="background:#f5af19;color:#000;">Bán chạy</span></div>
+                <div class="card-thumb" style="background:linear-gradient(135deg,#7c2d12,#f59e0b);display:flex;align-items:center;justify-content:center;min-height:150px;"><video src="https://mapmeai.com/videos/course-lam-video-ai.mp4" muted loop autoplay playsinline preload="metadata" style="background:transparent;"></video><span class="thumb-badge" style="background:#f5af19;color:#000;">Bán chạy</span></div>
                 <div>
                     <h3>Làm Video AI Chuẩn Điện Ảnh</h3>
                     <p>Từ con số 0 đến video triệu view — prompt cinematic, storyboard 8 khung, kỹ thuật gen chuẩn Hollywood với Flow / Veo 3.</p>
@@ -1248,7 +1279,7 @@ function filterPrompts(type, val, evt) { if (type) currentPage = 1; const btnEl 
                 </div>
             </div>
             <div class="card" style="cursor:pointer;" onclick="openCourseModal('image')">
-                <div class="card-thumb" style="background:linear-gradient(135deg,#1e3a8a,#7c3aed);display:flex;align-items:center;justify-content:center;min-height:150px;"><svg width="92" height="92" viewBox="0 0 96 96" fill="none" style="filter:drop-shadow(0 6px 18px rgba(0,0,0,.45));"><rect x="16" y="10" width="64" height="76" rx="8" fill="#171233" stroke="#c4b5fd" stroke-width="2.5"/><circle cx="48" cy="38" r="11" fill="#f0abfc"/><path d="M29 78c2.5-11 9.5-16.5 19-16.5S64.5 67 67 78" fill="#f0abfc"/><path d="M71 15l1.7 4 4 1.7-4 1.7L71 26.4l-1.7-4-4-1.7 4-1.7z" fill="#ffd166"/><path d="M24 60l1.2 2.9 2.9 1.2-2.9 1.2L24 68.2l-1.2-2.9-2.9-1.2 2.9-1.2z" fill="#ffd166"/></svg></div>
+                <div class="card-thumb" style="background:linear-gradient(135deg,#1e3a8a,#7c3aed);display:flex;align-items:center;justify-content:center;min-height:150px;"><img src="https://mapmeai.com/course-prompt-anh.jpg" alt="Prompt Ảnh AI" loading="lazy"></div>
                 <div>
                     <h3>Prompt Ảnh AI Nâng Cao</h3>
                     <p>Khóa mặt nhân vật 1:1, phong cách đồng nhất như studio — ảnh nào ra cũng đẹp, cũng "có hồn". Banapro & Midjourney.</p>
@@ -1260,7 +1291,7 @@ function filterPrompts(type, val, evt) { if (type) currentPage = 1; const btnEl 
                 </div>
             </div>
             <div class="card" style="cursor:pointer;" onclick="openCourseModal('writing')">
-                <div class="card-thumb" style="background:linear-gradient(135deg,#14532d,#22c55e);display:flex;align-items:center;justify-content:center;min-height:150px;"><svg width="92" height="92" viewBox="0 0 96 96" fill="none" style="filter:drop-shadow(0 6px 18px rgba(0,0,0,.45));"><path d="M48 24C41 17.5 29.5 15 18 17.5V74c11.5-2.5 23-.5 30 6 7-6.5 18.5-8.5 30-6V17.5C66.5 15 55 17.5 48 24z" fill="#0f2417" stroke="#86efac" stroke-width="2.5"/><path d="M48 24v56" stroke="#86efac" stroke-width="2" opacity=".6"/><path d="M25 30c5-1 10-.8 14 .8M25 40c5-1 10-.8 14 .8M25 50c5-1 10-.8 14 .8M57 30.8c4-1.6 9-1.8 14-.8M57 40.8c4-1.6 9-1.8 14-.8" stroke="#bbf7d0" stroke-width="2.2" stroke-linecap="round"/><path d="M66 62 82 46l4.5 4.5L70.5 66.5 63 69.5z" fill="#ffd166" stroke="#b45309" stroke-width="1.6"/></svg></div>
+                <div class="card-thumb" style="background:linear-gradient(135deg,#14532d,#22c55e);display:flex;align-items:center;justify-content:center;min-height:150px;"><img src="https://mapmeai.com/course-viet-truyen-ai.png" alt="Viết Truyện Bằng AI" loading="lazy"></div>
                 <div>
                     <h3>Viết Truyện Bằng AI</h3>
                     <p>Quy trình 7 bước từ ý tưởng đến truyện hoàn chỉnh đăng Wattpad — đã kiểm chứng với truyện thật, độc giả thật.</p>
@@ -1272,7 +1303,7 @@ function filterPrompts(type, val, evt) { if (type) currentPage = 1; const btnEl 
                 </div>
             </div>
             <div class="card" style="cursor:pointer;" onclick="openCourseModal('voice')">
-                <div class="card-thumb" style="background:linear-gradient(135deg,#831843,#ec4899);display:flex;align-items:center;justify-content:center;min-height:150px;"><svg width="92" height="92" viewBox="0 0 96 96" fill="none" style="filter:drop-shadow(0 6px 18px rgba(0,0,0,.45));"><rect x="40" y="10" width="16" height="34" rx="8" fill="#f9a8d4" stroke="#fbcfe8" stroke-width="2"/><path d="M30 40a18 18 0 0 0 36 0" stroke="#f9a8d4" stroke-width="3" stroke-linecap="round"/><path d="M48 58v12M36 84h24M48 70v14" stroke="#f9a8d4" stroke-width="3" stroke-linecap="round"/><path d="M20 34v14M76 34v14M12 40v6M84 40v6" stroke="#ffd166" stroke-width="3.4" stroke-linecap="round"/></svg></div>
+                <div class="card-thumb" style="background:linear-gradient(135deg,#831843,#ec4899);display:flex;align-items:center;justify-content:center;min-height:150px;"><img src="https://mapmeai.com/course-long-tieng-ai.png" alt="Lồng Tiếng AI" loading="lazy"></div>
                 <div>
                     <h3>Lồng Tiếng AI Chuyên Nghiệp</h3>
                     <p>Giọng đọc AI tự nhiên như người thật — cho video, truyện audio, quảng cáo. Giọng miền Nam chuẩn, cảm xúc đầy đủ.</p>
@@ -1323,6 +1354,8 @@ function openCourseModal(k){
             </div>
         </div>
         <p style="color:var(--text-muted);font-size:14px;margin:-8px 0 18px;" data-en="Short stories cooked from prompts: read stories, learn the AI writing workflow, and the publishing workflow." data-vi="Góc truyện ngắn 'nấu' từ prompt: đọc truyện, học quy trình viết truyện bằng AI, và quy trình đăng truyện lên mọi nền tảng.">Góc truyện ngắn 'nấu' từ prompt: đọc truyện, học quy trình viết truyện bằng AI, và quy trình đăng truyện lên mọi nền tảng.</p>
+        <div class="kitchen-wrap">
+            <button class="kitchen-nav prev" onclick="kitchenNav(-1)" aria-label="Bìa trước">‹</button>
         <div class="kitchen-track" id="kitchenTrack">
             <div class="kitchen-slide" onclick="openAffiliateGate('https://www.wattpad.com/story/417598065','Cưa Đổ Tình Địch')"><img src="covers/cover-cua-do-tinh-dich.jpeg" alt="Cưa Đổ Tình Địch" loading="lazy"><p>Cưa Đổ Tình Địch</p></div>
             <div class="kitchen-slide" data-story-lang="vi" onclick="openAffiliateGate('https://www.wattpad.com/story/417450998','Thập Hồn Lệnh')"><img src="covers/cover-thap-hon-lenh.jpeg" alt="Thập Hồn Lệnh" loading="lazy"><p>Thập Hồn Lệnh</p></div>
@@ -1333,8 +1366,16 @@ function openCourseModal(k){
             <div class="kitchen-slide" data-story-lang="en" onclick="openAffiliateGate('https://www.wattpad.com/story/417511418','Soul-Gathering Order (EN)')"><img src="covers/cover-soul-gathering-order.jpeg" alt="Soul-Gathering Order" loading="lazy"><p>Soul-Gathering Order (EN)</p></div>
             <div class="kitchen-slide" onclick="openAffiliateGate('https://www.wattpad.com/story/417698276','Kẻ Thù Chung Giường')"><img src="covers/cover-ke-thu-chung-giuong.jpeg" alt="Kẻ Thù Chung Giường" loading="lazy"><p>Kẻ Thù Chung Giường</p></div>
             <div class="kitchen-slide" onclick="openAffiliateGate('https://www.wattpad.com/story/417701234','Kẻ Phá Đám')"><img src="covers/cover-ke-pha-dam.jpeg" alt="Kẻ Phá Đám" loading="lazy"><p>Kẻ Phá Đám</p></div>
+            <div class="kitchen-slide" data-story-lang="vi" onclick="openAffiliateGate('https://www.wattpad.com/story/417993239','Bạch Vũ Kiếp')"><img src="covers/cover-bach-vu-kiep.jpeg" alt="Bạch Vũ Kiếp" loading="lazy"><p>Bạch Vũ Kiếp</p></div>
+            <div class="kitchen-slide" data-story-lang="vi" onclick="openAffiliateGate('https://www.wattpad.com/story/418180776','Thất Mảnh Phượng Tâm')"><img src="covers/cover-that-manh-phuong-tam.jpeg" alt="Thất Mảnh Phượng Tâm" loading="lazy"><p>Thất Mảnh Phượng Tâm</p></div>
+            <div class="kitchen-slide" data-story-lang="vi" onclick="openAffiliateGate('https://www.wattpad.com/story/418061617','Án Mạng Trên Chuyến Tàu Tuyết')"><img src="covers/cover-an-mang-tren-tau-tuyet.jpeg" alt="Án Mạng Trên Chuyến Tàu Tuyết" loading="lazy"><p>Án Mạng Trên Chuyến Tàu Tuyết</p></div>
+            <div class="kitchen-slide" data-story-lang="vi" onclick="openAffiliateGate('https://www.wattpad.com/story/418112204','Mưa Qua Trường Cũ')"><img src="covers/cover-mua-qua-truong-cu.jpeg" alt="Mưa Qua Trường Cũ" loading="lazy"><p>Mưa Qua Trường Cũ</p></div>
+            <div class="kitchen-slide" data-story-lang="vi" onclick="openAffiliateGate('https://www.wattpad.com/story/417895580','Thư Chưa Gửi')"><img src="covers/cover-thu-chua-gui.jpeg" alt="Thư Chưa Gửi" loading="lazy"><p>Thư Chưa Gửi</p></div>
+            <div class="kitchen-slide" data-story-lang="vi" onclick="openAffiliateGate('https://www.wattpad.com/story/417889055','Kẻ Sa Ngã')"><img src="covers/cover-ke-sa-nga.jpeg" alt="Kẻ Sa Ngã" loading="lazy"><p>Kẻ Sa Ngã</p></div>
         </div>
-        <div class="kitchen-dots" id="kitchenDots"><span class="on"></span><span></span><span></span><span></span></div>
+            <button class="kitchen-nav next" onclick="kitchenNav(1)" aria-label="Bìa tiếp theo">›</button>
+        </div>
+        <div class="kitchen-dots" id="kitchenDots"></div>
         <div class="grid-cards" style="margin-top:22px;">
             <div class="card" style="text-align:center;padding:24px;cursor:pointer;" onclick="openKitchenModal('library')">
                 <div style="font-size:30px;margin-bottom:8px;">📚</div>
@@ -1357,7 +1398,99 @@ function openCourseModal(k){
                 <button class="btn-pink" style="margin-top:12px;padding:8px 22px;font-size:13px;">Xem quy trình →</button>
             </div>
         </div>
+        <div class="custom-section" style="margin-top:26px;">
+            <h3 data-en="Custom Orders — Need a Custom Tool or Agent?" data-vi="Đặt Hàng Riêng — Cần Tool Hoặc Agent Theo Quy Trình Riêng?">Đặt Hàng Riêng — Cần Tool Hoặc Agent Theo Quy Trình Riêng?</h3>
+            <p data-en="Have a specific workflow? Send your requirements to Map Me AI: we build custom tools or agents matching your exact team process." data-vi="Đồ có sẵn chưa khớp việc của anh em? Gửi yêu cầu cho Mập Mê AI: nhận làm tool riêng hoặc dựng agent chạy đúng quy trình team đang làm.">Đồ có sẵn chưa khớp việc của anh em? Gửi yêu cầu cho Mập Mê AI: nhận làm tool riêng hoặc dựng agent chạy đúng quy trình team đang làm.</p>
+            <div class="custom-btns">
+                <button onclick="openModal('Đặt Hàng Tool / Prompt Riêng Theo Yêu Cầu', 'CUSTOM', 'vip')" class="btn-pink" data-en="Order Now 🚀" data-vi="Order Liền Tay 🚀">Order Liền Tay 🚀</button>
+                <button onclick="openModal('Mời Tác Giả Ly Trà Sữa 🧋', 'TRA SUA', 'tea')" class="btn-outline" data-en="Buy Me a Bubble Tea 🧋" data-vi="Mời Trà Sữa 🧋">Mời Trà Sữa 🧋</button>
+            </div>
+        </div>
     </div>
+
+    <div class="container" id="shop">
+        <div class="section-header">
+            <div>
+                <h2 data-en="🛍️ Shop On Air — sample websites that put your shop on air and selling" data-vi="🛍️ Shop Lên Sóng — web mẫu đưa quán & shop của bạn lên sóng bán hàng">🛍️ Shop Lên Sóng — web mẫu đưa quán & shop của bạn lên sóng bán hàng</h2>
+            </div>
+        </div>
+        <p style="color:var(--text-muted);font-size:14px;margin:-8px 0 18px;" data-en="A growing gallery of sample websites by industry — tap any sample to view it live. Pick a style you like and we build yours in that style." data-vi="Kho web mẫu theo ngành, thêm mẫu mới liên tục — bấm vào từng mẫu để xem trực tiếp. Ưng phong cách nào, MẬP MÊ AI làm cho quán của bạn theo đúng phong cách đó.">Kho web mẫu theo ngành, thêm mẫu mới liên tục — bấm vào từng mẫu để xem trực tiếp. Ưng phong cách nào, MẬP MÊ AI làm cho quán của bạn theo đúng phong cách đó.</p>
+        <div class="shop-wrap">
+            <button class="kitchen-nav prev" onclick="shopNav(-1)" aria-label="Mẫu trước">‹</button>
+            <div class="shop-track" id="shopTrack"><p style="color:var(--text-muted);padding:18px;">Đang tải kho mẫu…</p></div>
+            <button class="kitchen-nav next" onclick="shopNav(1)" aria-label="Mẫu tiếp theo">›</button>
+        </div>
+        <div class="kitchen-dots" id="shopDots"></div>
+        <div class="shop-poster">
+            <div class="pin">
+                <div class="over">Dịch vụ thiết kế web cho quán &amp; shop nhỏ</div>
+                <h3>Website cho quán của bạn<br><span>từ 2.990.000đ</span></h3>
+                <p class="psub">Chọn phong cách mẫu ở băng trên, MẬP MÊ AI dựng y hệt cho quán của bạn — có menu, giá, nút gọi &amp; Zalo, bản đồ chỉ đường.</p>
+                <p style="margin:-6px 0 24px;"><a href="demo-shop/bao-gia.html" target="_blank" rel="noopener" style="display:inline-block;background:#fff;color:#7a2d12;font-weight:800;font-size:16.5px;padding:14px 30px;border-radius:999px;text-decoration:none;box-shadow:0 10px 26px rgba(0,0,0,.4);">📄 XEM TRỌN BÁO GIÁ CHI TIẾT →</a></p>
+                <div class="shop-prices">
+                    <div class="sp-card" onclick="window.open('demo-shop/bao-gia.html','_blank')" title="Bấm để xem báo giá chi tiết">
+                        <img src="demo-shop/pkg-starter.webp" alt="Gói STARTER — web menu cho quán" loading="lazy">
+                        
+                        <div class="pr">2.990.000đ</div>
+                        
+                    </div>
+                    <div class="sp-card hot" onclick="window.open('demo-shop/bao-gia.html','_blank')" title="Bấm để xem báo giá chi tiết">
+                        <img src="demo-shop/pkg-business.webp" alt="Gói BUSINESS — web quán đầy đủ" loading="lazy">
+                        <span class="sp-badge">ĐƯỢC CHỌN NHIỀU NHẤT</span>
+                        
+                        <div class="pr">3.990.000đ</div>
+                        
+                    </div>
+                    <div class="sp-card" onclick="window.open('demo-shop/bao-gia.html','_blank')" title="Bấm để xem báo giá chi tiết">
+                        <img src="demo-shop/pkg-premium.webp" alt="Gói PREMIUM — web quán cao cấp" loading="lazy">
+                        
+                        <div class="pr">6.990.000đ</div>
+                        
+                    </div>
+                </div>
+                <p class="pnote">👉 Bấm vào thẻ gói hoặc nút Xem trọn báo giá để coi chi tiết từng gói.<br>Giá trên là công thiết kế. Tên miền + hosting khách đứng tên chính chủ (MẬP MÊ AI đăng ký hộ, khoảng 750.000đ năm đầu). Phí chăm sóc web 490.000đ/năm: sửa giá/món, sao lưu, hỗ trợ khi cần.</p>
+                <div class="pbtns">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdh5GTnKT7914Jl-WTUNgEGdYoKjjConE74FEyIQXwnI3IjLw/viewform" target="_blank" rel="noopener" style="background:linear-gradient(92deg,#ffb347,#ff6584);color:#fff;text-decoration:none;padding:13px 26px;border-radius:10px;font-weight:800;font-size:14px;">📝 Điền phiếu khảo sát làm web</a>
+                    <a href="https://zalo.me/g/krzepmsmx5m5gkhv8xku" target="_blank" rel="noopener" style="background:#0068ff;color:#fff;text-decoration:none;padding:13px 26px;border-radius:10px;font-weight:700;font-size:14px;">💬 Hỏi thêm qua Zalo</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+    .shop-wrap{position:relative}
+    .shop-track{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:12px 4px;scrollbar-width:none}
+    .shop-track::-webkit-scrollbar{display:none}
+    .shop-slide{flex:0 0 272px;scroll-snap-align:start;cursor:pointer;transition:transform .3s;background:rgba(255,255,255,.03);border:1px solid var(--border-color);border-radius:16px;overflow:hidden}
+    .shop-slide:hover{transform:translateY(-6px)}
+    .shop-slide img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+    .shop-slide .sb{padding:13px 15px 15px}
+    .shop-slide h3{font-size:15px;line-height:1.35;margin-bottom:7px}
+    .shop-chip{display:inline-block;font-size:11px;font-weight:700;background:rgba(255,179,71,.16);color:#ffb347;border:1px solid rgba(255,179,71,.4);padding:3px 9px;border-radius:999px;margin-bottom:7px}
+    .shop-tag{float:right;font-size:11px;font-weight:800;color:#ff8fab}
+    .shop-slide p{font-size:12.5px;color:var(--text-muted);line-height:1.45}
+
+    .shop-poster{margin-top:26px;border-radius:22px;overflow:hidden;position:relative;background:url('demo-shop/covers/cover-3mau.webp') center/cover no-repeat;border:1px solid var(--border-color)}
+    .shop-poster:before{content:'';position:absolute;inset:0;background:linear-gradient(120deg,rgba(12,10,16,.93) 30%,rgba(12,10,16,.74) 65%,rgba(12,10,16,.58))}
+    .shop-poster .pin{position:relative;padding:34px 30px 30px;text-align:center}
+    .shop-poster .over{letter-spacing:3px;font-size:11.5px;font-weight:800;color:#ffb347;text-transform:uppercase}
+    .shop-poster h3{font-family:'Baloo 2','Be Vietnam Pro',sans-serif;font-size:clamp(26px,4.4vw,40px);line-height:1.15;margin:10px 0 8px;color:#fff}
+    .shop-poster h3 span{background:linear-gradient(92deg,#ffb347,#ff6584);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .shop-poster .psub{color:#e8e2d4;font-size:14px;max-width:640px;margin:0 auto 24px}
+    .shop-prices{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;text-align:left}
+    .sp-card{cursor:pointer;transition:transform .25s, box-shadow .25s;background:rgba(16,14,22,.8);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:20px;position:relative}
+    .sp-card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(0,0,0,.45)}
+    .sp-card.hot{border-color:#ffb347;box-shadow:0 10px 30px rgba(255,179,71,.28)}
+    .sp-card img{width:100%;height:172px;object-fit:contain;background:#150e24;border-radius:12px;display:block;margin-bottom:13px}
+    .sp-card .nm{font-weight:800;font-size:15px;color:#fff}
+    .sp-card .pr{font-family:'Baloo 2','Be Vietnam Pro',sans-serif;font-size:27px;font-weight:800;color:#ffb347;margin:6px 0}
+    .sp-card.hot .pr{background:linear-gradient(92deg,#ffb347,#ff6584);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .sp-card p{font-size:12.5px;color:#cfc9ba;line-height:1.5}
+    .sp-badge{position:absolute;top:-11px;right:14px;background:linear-gradient(92deg,#ffb347,#ff6584);color:#fff;font-size:10.5px;font-weight:800;padding:4px 10px;border-radius:999px}
+    .shop-poster .pnote{margin-top:18px;font-size:12.5px;color:#d8d2c2}
+    .shop-poster .pbtns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+    @media(max-width:760px){.shop-prices{grid-template-columns:1fr}.shop-poster .pin{padding:26px 18px 24px}}
+    </style>
 
     <style>
     .kitchen-track{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:12px 4px;scrollbar-width:none}
@@ -1372,6 +1505,11 @@ function openCourseModal(k){
 .kitchen-slide:nth-child(6n+5) p{background-image:linear-gradient(92deg,#ffb347,#ffd166)}
 .kitchen-slide:nth-child(6n+6) p{background-image:linear-gradient(92deg,#ff8fab,#ffd166)}
 .kitchen-slide:hover p{filter:drop-shadow(0 2px 14px rgba(255,209,102,.65)) brightness(1.15)}
+    .kitchen-wrap{position:relative}
+    .kitchen-nav{position:absolute;top:36%;transform:translateY(-50%);z-index:6;width:44px;height:44px;border-radius:50%;border:1px solid #2a2735;background:rgba(21,19,30,.85);color:#fff;font-size:26px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,.45)}
+    .kitchen-nav:hover{background:linear-gradient(135deg,#ff6584,#a066ff)}
+    .kitchen-nav.prev{left:8px}
+    .kitchen-nav.next{right:8px}
     .kitchen-dots{text-align:center;margin-top:6px}
     .kitchen-dots span{display:inline-block;width:8px;height:8px;border-radius:50%;background:#444;margin:0 4px;cursor:pointer}
     .kitchen-dots span.on{background:linear-gradient(90deg,#ffd166,#ff6584);width:18px;border-radius:99px}
@@ -1432,18 +1570,67 @@ function openCourseModal(k){
                 <p class="section-sub" data-en="Practical tips and heartfelt stories from my AI journey" data-vi="Mẹo thực tế và câu chuyện từ hành trình làm AI của mình">Mẹo thực tế và câu chuyện từ hành trình làm AI của mình</p>
             </div>
         </div>
+        <div id="tipChips" style="display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 4px;">
+            <button class="tip-chip" data-cat="all" onclick="filterTips('all')" style="background:#ffffff;color:#0b0b0e;border:none;padding:7px 16px;border-radius:20px;font-size:12px;font-weight:700;cursor:pointer;">Tất cả (9)</button>
+            <button class="tip-chip" data-cat="anh" onclick="filterTips('anh')" style="background:#1c1a24;color:var(--text-muted);border:1px solid var(--border-color);padding:7px 16px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;">📸 Ảnh (6)</button>
+            <button class="tip-chip" data-cat="video" onclick="filterTips('video')" style="background:#1c1a24;color:var(--text-muted);border:1px solid var(--border-color);padding:7px 16px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;">🎬 Video (1)</button>
+            <button class="tip-chip" data-cat="chat" onclick="filterTips('chat')" style="background:#1c1a24;color:var(--text-muted);border:1px solid var(--border-color);padding:7px 16px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;">💬 Chat AI (1)</button>
+            <button class="tip-chip" data-cat="kinhnghiem" onclick="filterTips('kinhnghiem')" style="background:#1c1a24;color:var(--text-muted);border:1px solid var(--border-color);padding:7px 16px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;">🌱 Kinh nghiệm (1)</button>
+        </div>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:8px;">
-            <div onclick="openExpModal('gemini')" style="background:#15131e;border:1px solid #2a2735;border-radius:18px;padding:26px;cursor:pointer;transition:transform .2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
-                <div style="font-size:34px;margin-bottom:10px;">📸</div>
+            <div data-tip="anh" onclick="openExpModal('gemini')" style="background:#15131e;border:1px solid #2a2735;border-radius:18px;padding:26px;cursor:pointer;transition:transform .2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
+                <img src="https://mapmeai.com/poster-meo-gemini-tao-anh.jpg" alt="Tạo ảnh AI giống mình nhất bằng Gemini" loading="lazy" style="width:100%;height:auto;display:block;border-radius:12px;margin-bottom:14px;">
                 <h3 style="font-size:17px;margin-bottom:8px;color:#fff;">Tạo ảnh AI giống mình nhất bằng Gemini</h3>
                 <p style="color:#8f8aa3;font-size:14px;line-height:1.6;margin-bottom:14px;">Bí quyết chọn ảnh reference + câu prompt giữ nguyên 100% khuôn mặt.</p>
                 <button class="btn-pink" style="padding:8px 22px;font-size:13px;">Đọc mẹo →</button>
             </div>
-            <div onclick="openExpModal('hummingbird')" style="background:#15131e;border:1px solid #2a2735;border-radius:18px;padding:26px;cursor:pointer;transition:transform .2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
-                <div style="font-size:34px;margin-bottom:10px;">💜</div>
+            <div data-tip="kinhnghiem" onclick="openExpModal('hummingbird')" style="background:#15131e;border:1px solid #2a2735;border-radius:18px;padding:26px;cursor:pointer;transition:transform .2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
+                <img src="https://mapmeai.com/poster-meo-tam-su-hanh-trinh.jpg" alt="Tâm sự: Hành trình làm video AI" loading="lazy" style="width:100%;height:auto;display:block;border-radius:12px;margin-bottom:14px;">
                 <h3 style="font-size:17px;margin-bottom:8px;color:#fff;">Tâm sự: Hành trình làm video AI</h3>
                 <p style="color:#8f8aa3;font-size:14px;line-height:1.6;margin-bottom:14px;">Những đêm thức đến 1–2 giờ sáng vì một video vài chục giây…</p>
                 <button class="btn-pink" style="padding:8px 22px;font-size:13px;">Đọc tâm sự →</button>
+            </div>
+            <div data-tip="anh" onclick="openExpModal('anh-that')" style="background:#15131e;border:1px solid #2a2735;border-radius:18px;padding:26px;cursor:pointer;transition:transform .2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
+                <img src="https://mapmeai.com/poster-meo-7-meo-anh-that.jpg" alt="7 mẹo nhỏ khiến ảnh AI nhìn thật như chụp bằng máy ảnh" loading="lazy" style="width:100%;height:auto;display:block;border-radius:12px;margin-bottom:14px;">
+                <h3 style="font-size:17px;margin-bottom:8px;color:#fff;">7 mẹo nhỏ khiến ảnh AI nhìn thật như chụp bằng máy ảnh</h3>
+                <p style="color:#8f8aa3;font-size:14px;line-height:1.6;margin-bottom:14px;">Sửa 1 dòng trong prompt là thấy khác liền — ống kính, ánh sáng, da thật… làm được trên tool free.</p>
+                <button class="btn-pink" style="padding:8px 22px;font-size:13px;">Đọc mẹo →</button>
+            </div>
+            <div data-tip="anh" onclick="openExpModal('meo-phong-cach')" style="background:#15131e;border:1px solid #2a2735;border-radius:18px;padding:26px;cursor:pointer;transition:transform .2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
+                <img src="https://mapmeai.com/poster-meo-1-anh-phong-cach.jpg" alt="1 ảnh gốc, ra cả bộ ảnh phong cách" loading="lazy" style="width:100%;height:auto;display:block;border-radius:12px;margin-bottom:14px;">
+                <h3 style="font-size:17px;margin-bottom:8px;color:#fff;">1 ảnh gốc, ra cả bộ ảnh phong cách</h3>
+                <p style="color:#8f8aa3;font-size:14px;line-height:1.6;margin-bottom:14px;">Ảnh gốc rõ mặt, giữ nguyên mặt, mỗi phong cách 1 câu lệnh ngắn — làm 5 phong cách là có cả bộ.</p>
+                <button class="btn-pink" style="padding:8px 22px;font-size:13px;">Đọc mẹo →</button>
+            </div>
+            <div data-tip="anh" onclick="openExpModal('meo-tinh-yeu')" style="background:#15131e;border:1px solid #2a2735;border-radius:18px;padding:26px;cursor:pointer;transition:transform .2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
+                <img src="https://mapmeai.com/poster-meo-tinh-yeu-5-canh.jpg" alt="Kể chuyện tình yêu bằng 5 cảnh" loading="lazy" style="width:100%;height:auto;display:block;border-radius:12px;margin-bottom:14px;">
+                <h3 style="font-size:17px;margin-bottom:8px;color:#fff;">Kể chuyện tình yêu bằng 5 cảnh</h3>
+                <p style="color:#8f8aa3;font-size:14px;line-height:1.6;margin-bottom:14px;">Dùng chung 2 ảnh gốc, xếp cảnh đúng thứ tự thời gian, giữ màu tương đồng, kết bằng cảnh hoàng hôn ấm nhất.</p>
+                <button class="btn-pink" style="padding:8px 22px;font-size:13px;">Đọc mẹo →</button>
+            </div>
+            <div data-tip="anh" onclick="openExpModal('meo-cap-doi')" style="background:#15131e;border:1px solid #2a2735;border-radius:18px;padding:26px;cursor:pointer;transition:transform .2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
+                <img src="https://mapmeai.com/poster-meo-cap-doi-selfie.jpg" alt="Ảnh cặp đôi kiểu tự sướng" loading="lazy" style="width:100%;height:auto;display:block;border-radius:12px;margin-bottom:14px;">
+                <h3 style="font-size:17px;margin-bottom:8px;color:#fff;">Ảnh cặp đôi kiểu tự sướng</h3>
+                <p style="color:#8f8aa3;font-size:14px;line-height:1.6;margin-bottom:14px;">Chụp chung mặt gần máy, soi gương, ôm sau lưng, hoàng hôn ngược sáng — giữ nguyên cả 2 khuôn mặt.</p>
+                <button class="btn-pink" style="padding:8px 22px;font-size:13px;">Đọc mẹo →</button>
+            </div>
+            <div data-tip="anh" onclick="openExpModal('meo-hieu-ung')" style="background:#15131e;border:1px solid #2a2735;border-radius:18px;padding:26px;cursor:pointer;transition:transform .2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
+                <img src="https://mapmeai.com/poster-meo-hieu-ung-la.jpg" alt="3 hiệu ứng lạ cho ảnh khỏi nhàm" loading="lazy" style="width:100%;height:auto;display:block;border-radius:12px;margin-bottom:14px;">
+                <h3 style="font-size:17px;margin-bottom:8px;color:#fff;">3 hiệu ứng lạ cho ảnh khỏi nhàm</h3>
+                <p style="color:#8f8aa3;font-size:14px;line-height:1.6;margin-bottom:14px;">Bóng ma, vệt tốc độ, chồng lớp — mỗi ảnh chỉ dùng 1 hiệu ứng, dùng khi ảnh thường đã chán.</p>
+                <button class="btn-pink" style="padding:8px 22px;font-size:13px;">Đọc mẹo →</button>
+            </div>
+            <div data-tip="video" onclick="openExpModal('meo-video')" style="background:#15131e;border:1px solid #2a2735;border-radius:18px;padding:26px;cursor:pointer;transition:transform .2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
+                <img src="https://mapmeai.com/poster-meo-video-chuyen-dong-may-quay.jpg" alt="Biến ảnh tĩnh thành video bằng chuyển động máy quay" loading="lazy" style="width:100%;height:auto;display:block;border-radius:12px;margin-bottom:14px;">
+                <h3 style="font-size:17px;margin-bottom:8px;color:#fff;">Biến ảnh tĩnh thành video bằng chuyển động máy quay</h3>
+                <p style="color:#8f8aa3;font-size:14px;line-height:1.6;margin-bottom:14px;">Đẩy chậm vào, xoay quanh, lùi xa, bay FPV — mỗi video 8-10 giây chỉ dùng 1 chuyển động.</p>
+                <button class="btn-pink" style="padding:8px 22px;font-size:13px;">Đọc mẹo →</button>
+            </div>
+            <div data-tip="chat" onclick="window.open('https://mapmeai.com/slides-claude-8h/','_blank')" style="background:#15131e;border:1px solid #2a2735;border-radius:18px;padding:26px;cursor:pointer;transition:transform .2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
+                <img src="https://mapmeai.com/poster-meo-claude-8h.png" alt="Cách dùng Claude 8 tiếng mỗi ngày mà không bị giới hạn lượt" loading="lazy" style="width:100%;height:auto;display:block;border-radius:12px;margin-bottom:14px;">
+                <h3 style="font-size:17px;margin-bottom:8px;color:#fff;">Cách dùng Claude 8 tiếng mỗi ngày mà không bị giới hạn lượt</h3>
+                <p style="color:#8f8aa3;font-size:14px;line-height:1.6;margin-bottom:14px;">Sửa prompt thay vì follow-up dồn, chọn đúng model, mở chat mới đúng lúc — xem trọn bộ slide.</p>
+                <button class="btn-pink" style="padding:8px 22px;font-size:13px;">Xem slide →</button>
             </div>
         </div>
     </div>
@@ -1513,8 +1700,8 @@ function openCourseModal(k){
                 </details>
                 </div>
                 <div class="card-footer-info">
-                    <span onclick="window.open('http://vbee.vn', '_blank')" style="cursor:pointer;" title="Mở http://vbee.vn">TTS tiếng Việt</span>
-                    <a href="http://vbee.vn" target="_blank" rel="noopener" class="btn-view" style="text-decoration:none;" data-en="Visit →" data-vi="Truy cập →">Truy cập →</a>
+                    <span onclick="window.open('https://vbee.vn', '_blank')" style="cursor:pointer;" title="Mở https://vbee.vn">TTS tiếng Việt</span>
+                    <a href="https://vbee.vn" target="_blank" rel="noopener" class="btn-view" style="text-decoration:none;" data-en="Visit →" data-vi="Truy cập →">Truy cập →</a>
                 </div>
             </div>
             <div class="card">
@@ -1727,7 +1914,7 @@ function openCourseModal(k){
             updateVipBadge();
         }
         function authMsg(txt, ok) { const m = document.getElementById('authMsg'); if (m) { m.innerText = txt; m.style.color = ok ? '#2ecc71' : '#ff3b3b'; } }
-        const AUTH_ERR = { email_invalid: 'Email chưa đúng định dạng.', password_short: 'Mật khẩu tối thiểu 6 ký tự.', email_exists: 'Email này đã có tài khoản — hãy đăng nhập.', login_failed: 'Sai email hoặc mật khẩu.', login_required: 'Cần đăng nhập trước.', code_invalid: 'Mã không đúng hoặc đã bị thu hồi.', code_used: 'Mã này đã được dùng rồi.', code_empty: 'Chưa nhập mã.' };
+        const AUTH_ERR = { email_invalid: 'Email chưa đúng định dạng.', password_short: 'Mật khẩu tối thiểu 8 ký tự.', email_exists: 'Email này đã có tài khoản — hãy đăng nhập.', login_failed: 'Sai email hoặc mật khẩu.', login_required: 'Cần đăng nhập trước.', code_invalid: 'Mã không đúng hoặc đã bị thu hồi.', code_used: 'Mã này đã được dùng rồi.', code_empty: 'Chưa nhập mã.', rate_limited: 'Thử quá nhiều lần — đợi ít phút rồi thử lại.', already_lifetime: 'Tài khoản đã có VIP Vĩnh Viễn — mã này chưa bị dùng, hãy giữ lại.', server_error: 'Lỗi hệ thống, thử lại sau ít phút.' };
         async function submitAuth(mode) {
             if (mode === 'register') { const ag = document.getElementById('authAgree'); if (ag && !ag.checked) { authMsg('Bạn cần tick ô đồng ý Điều khoản & Chính sách bảo mật để đăng ký.', false); return; } }
             if (!apiAvailable) { authMsg('Bản web này chưa nối máy chủ — vui lòng vào web chính mapmeai.com để đăng nhập.', false); return; }
@@ -1776,7 +1963,7 @@ function openCourseModal(k){
                     <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-bottom: 6px;">
                         <input id="authName" placeholder="Tên (không bắt buộc)" style="padding: 10px 14px; border-radius: 10px; border: 1px solid var(--border-color); background: #0b0b0e; color: white; font-size: 14px; width: 180px;">
                         <input id="authEmail" placeholder="Email" style="padding: 10px 14px; border-radius: 10px; border: 1px solid var(--border-color); background: #0b0b0e; color: white; font-size: 14px; width: 200px;">
-                        <input id="authPass" type="password" placeholder="Mật khẩu (≥ 6 ký tự)" style="padding: 10px 14px; border-radius: 10px; border: 1px solid var(--border-color); background: #0b0b0e; color: white; font-size: 14px; width: 180px;">
+                        <input id="authPass" type="password" placeholder="Mật khẩu (≥ 8 ký tự)" style="padding: 10px 14px; border-radius: 10px; border: 1px solid var(--border-color); background: #0b0b0e; color: white; font-size: 14px; width: 180px;">
                     </div>
                     <label style="display:flex;gap:8px;justify-content:center;align-items:flex-start;font-size:13px;color:var(--text-muted);margin:0 auto 10px;max-width:560px;text-align:left"><input type="checkbox" id="authAgree" style="margin-top:3px"><span>Tôi đồng ý với <a href="https://mapmeai.com/#dieu-khoan" style="color:#ff6584">Điều khoản sử dụng</a> và <a href="https://mapmeai.com/chinh-sach-bao-mat.html" style="color:#ff6584">Chính sách bảo mật</a> (chỉ bắt buộc khi đăng ký).</span></label>
                     <div style="display: flex; gap: 8px; justify-content: center;">
@@ -2011,14 +2198,44 @@ function heroSlide(wrap,idx){
     heroSlide(w,isBrandTurn?brandIdx:heroPick(others));
   },6000);
 })();
-/* ===== BẾP AI: slide bìa tự chạy ===== */
+/* ===== BẾP AI: slide bìa — mũi tên + chấm theo đúng số bìa đang hiện ===== */
+function kitchenNav(dir){
+  var track=document.getElementById('kitchenTrack'); if(!track) return;
+  var vis=[...track.children].filter(function(el){return el.style.display!=='none';});
+  if(!vis.length) return;
+  var cur=0,best=1e18;
+  vis.forEach(function(s,i){var d=Math.abs((s.offsetLeft-track.offsetLeft)-track.scrollLeft); if(d<best){best=d;cur=i;}});
+  var nx=(cur+dir+vis.length)%vis.length;
+  track.scrollTo({left:vis[nx].offsetLeft-track.offsetLeft,behavior:'smooth'});
+}
 (function(){
   const track=document.getElementById('kitchenTrack');if(!track)return;
-  const dots=[...document.querySelectorAll('#kitchenDots span')];
-  let ki=0;const n=4;
-  const go=i=>{ki=(i+n)%n;const s=track.children[ki];track.scrollTo({left:s.offsetLeft-track.offsetLeft,behavior:'smooth'});dots.forEach((d,j)=>d.classList.toggle('on',j===ki));};
-  dots.forEach((d,j)=>d.onclick=()=>go(j));
-  setInterval(()=>go(ki+1),4000);
+  const dotsBox=document.getElementById('kitchenDots');
+  const vis=()=>[...track.children].filter(el=>el.style.display!=='none');
+  let timer=null;
+  function buildDots(){
+    if(!dotsBox) return;
+    dotsBox.innerHTML='';
+    vis().forEach((s)=>{ const d=document.createElement('span'); d.onclick=()=>{ stop(); track.scrollTo({left:s.offsetLeft-track.offsetLeft,behavior:'smooth'}); }; dotsBox.appendChild(d); });
+    sync();
+  }
+  function sync(){
+    if(!dotsBox) return;
+    const v=vis(); if(!v.length) return;
+    let cur=0,best=1e18;
+    v.forEach((s,i)=>{const d=Math.abs((s.offsetLeft-track.offsetLeft)-track.scrollLeft); if(d<best){best=d;cur=i;}});
+    [...dotsBox.children].forEach((d,j)=>d.classList.toggle('on', j===cur));
+  }
+  let tick=false;
+  track.addEventListener('scroll',()=>{ if(!tick){ tick=true; requestAnimationFrame(()=>{ sync(); tick=false; }); } });
+  track.addEventListener('wheel',e=>{ if(Math.abs(e.deltaY)>Math.abs(e.deltaX)){ track.scrollLeft+=e.deltaY; e.preventDefault(); } },{passive:false});
+  function start(){ stop(); timer=setInterval(()=>kitchenNav(1),4000); }
+  function stop(){ if(timer) clearInterval(timer); timer=null; }
+  track.addEventListener('mouseenter',stop);
+  track.addEventListener('mouseleave',start);
+  track.addEventListener('touchstart',stop,{passive:true});
+  buildDots(); start();
+  new MutationObserver(()=>buildDots()).observe(track,{attributes:true,subtree:true,attributeFilter:['style']});
 })();
 </script>
 
@@ -2039,10 +2256,22 @@ function heroSlide(wrap,idx){
 function closeKitchenModal(){
   document.getElementById('kitchenModal').style.display='none';
 }
+function filterTips(cat){
+  document.querySelectorAll('#kinhnghiem [data-tip]').forEach(function(c){ c.style.display = (cat==='all' || c.getAttribute('data-tip')===cat) ? '' : 'none'; });
+  document.querySelectorAll('#tipChips .tip-chip').forEach(function(b){
+    var on = b.getAttribute('data-cat')===cat;
+    b.style.background = on ? '#ffffff' : '#1c1a24';
+    b.style.color = on ? '#0b0b0e' : '#8f8aa3';
+    b.style.border = on ? 'none' : '1px solid var(--border-color)';
+    b.style.fontWeight = on ? '700' : '600';
+  });
+}
 function openExpModal(tab){
   var body = document.getElementById('expModalBody');
   var html = '';
-  if(tab==='gemini'){
+  if(tab==='anh-that'){
+    html = "<h2 style=\"margin-bottom:14px;\">📸 7 MẸO NHỎ KHIẾN ẢNH AI NHÌN THẬT NHƯ CHỤP BẰNG MÁY ẢNH</h2><p style=\"color:#c9c4d8;line-height:1.8;margin-bottom:8px;\">Ảnh AI của bạn nhìn \"giả\" không phải do tool dở, mà do câu lệnh quá chung chung. Viết \"làm cho thật vào\" là AI phải đoán mò — thế là da nhựa, sáng lóa, cái gì cũng hoàn hảo quá mức. Ảnh thật ngoài đời có bao giờ hoàn hảo đâu.</p><p style=\"color:#c9c4d8;line-height:1.8;margin-bottom:8px;\">1. Kể rõ ống kính — đừng chỉ viết \"realistic\". Viết như thợ chụp ảnh thật: máy full-frame, ống 50mm, khẩu f/2, đứng xa 2 mét, ngang tầm mắt. Prompt mẫu: \"Photorealistic portrait of [...]. Shot on a full-frame camera, 50mm lens at f/2, eye-level angle, subject 2 meters away. Natural skin texture, shallow depth of field with softly blurred background, true-to-life colors, candid professional photography, no beauty filter.\"</p><p style=\"color:#c9c4d8;line-height:1.8;margin-bottom:8px;\">2. Chọn 1 nguồn sáng và giữ nguyên suốt ảnh. Lỗi lộ nhất của ảnh AI là sáng sai hướng. Prompt mẫu: \"Soft natural window light from the left, gentle shadows falling to the right of the face. Realistic soft shadows under the nose and chin, balanced exposure, no blown-out highlights, natural skin tones. Same light direction and warmth on the person, clothes and background.\"</p><p style=\"color:#c9c4d8;line-height:1.8;margin-bottom:8px;\">3. Khóa khuôn mặt. AI hay lén đổi mắt, mũi, cằm, màu da. Tải 1 ảnh chân dung rõ lên và dặn: \"Use the uploaded photo as the identity reference. Keep the person's face shape, eyes, nose, lips, jawline, natural skin tone and hairstyle exactly the same. Do not beautify, slim, reshape or age the face. Change only the outfit and background as described.\"</p><p style=\"color:#c9c4d8;line-height:1.8;margin-bottom:8px;\">4. Xin da thật, đừng xin da mịn. Da nhựa bóng loáng là dấu hiệu \"ảnh AI\" rõ nhất. Prompt mẫu: \"Natural human skin texture with visible pores and fine details, soft natural highlights, matte finish with light natural shine. No plastic or waxy skin, no excessive smoothing, no beauty filter.\" (Mẹo này dành cho ảnh muốn giống ảnh chụp thật; ảnh nàng thơ mơ mộng thì cứ giữ da mịn đẹp.)</p><p style=\"color:#c9c4d8;line-height:1.8;margin-bottom:8px;\">5. Nền phải \"chịu\" người. Bóng đổ, độ ấm màu và góc máy của người và cảnh phải khớp nhau. Prompt mẫu: \"Place the person naturally in [...]. Match the lighting, shadow direction and color warmth of the person to the room. Eye-level camera angle, soft blurred background, natural contact shadows where the person touches surfaces.\"</p><p style=\"color:#c9c4d8;line-height:1.8;margin-bottom:8px;\">6. Dặn AI cả những thứ không được làm (negative prompt). Prompt mẫu: \"Avoid: cartoon look, 3D render, plastic waxy skin, distorted face, asymmetrical eyes, unnatural hands, extra fingers, oversaturated colors, harsh HDR, double shadows, watermark, text, logo.\"</p><p style=\"color:#c9c4d8;line-height:1.8;margin-bottom:8px;\">7. Thêm vài khuyết điểm nhỏ cho thật. Prompt mẫu: \"Add subtle real-camera imperfections: a few flyaway hairs, very light film grain, slight natural asymmetry, soft edges of the frame. Keep it subtle — a real candid photo, not a perfect studio render.\"</p><p style=\"color:#c9c4d8;line-height:1.8;margin-bottom:8px;\">Tất cả 7 mẹo làm được trên tool free (ChatGPT, Gemini). Mỗi mẹo chỉ cần sửa 1 dòng trong prompt là thấy khác liền.</p><h3 style=\"color:#ff6584;margin:16px 0 8px;\">English version</h3><h2 style=\"margin-bottom:14px;\">📸 7 SMALL TRICKS TO MAKE AI IMAGES LOOK AS REAL AS CAMERA PHOTOS</h2><p style=\"color:#c9c4d8;line-height:1.8;margin-bottom:8px;\">Your AI image looks \"fake\" not because the tool is bad, but because your prompt is too vague. Writing \"make it realistic\" forces the AI to guess — so you get plastic skin, blown-out light, everything overly perfect. Real photos are never perfect.</p><p style=\"color:#c9c4d8;line-height:1.8;margin-bottom:8px;\">1. Describe the lens — don't just write \"realistic\". Write like a real photographer: full-frame camera, 50mm lens, f/2, 2 meters away, eye level. Sample prompt: \"Photorealistic portrait of [...]. Shot on a full-frame camera, 50mm lens at f/2, eye-level angle, subject 2 meters away. Natural skin texture, shallow depth of field with softly blurred background, true-to-life colors, candid professional photography, no beauty filter.\"</p><p style=\"color:#c9c4d8;line-height:1.8;margin-bottom:8px;\">2. Pick one light source and keep it consistent. The most revealing AI mistake is wrong lighting direction. Sample prompt: \"Soft natural window light from the left, gentle shadows falling to the right of the face. Realistic soft shadows under the nose and chin, balanced exposure, no blown-out highlights, natural skin tones. Same light direction and warmth on the person, clothes and background.\"</p><p style=\"color:#c9c4d8;line-height:1.8;margin-bottom:8px;\">3. Lock the face. AI loves to quietly change eyes, nose, jaw and skin tone. Upload a clear portrait and instruct: \"Use the uploaded photo as the identity reference. Keep the person's face shape, eyes, nose, lips, jawline, natural skin tone and hairstyle exactly the same. Do not beautify, slim, reshape or age the face. Change only the outfit and background as described.\"</p><p style=\"color:#c9c4d8;line-height:1.8;margin-bottom:8px;\">4. Ask for real skin, not smooth skin. Plastic glossy skin is the clearest \"AI image\" giveaway. Sample prompt: \"Natural human skin texture with visible pores and fine details, soft natural highlights, matte finish with light natural shine. No plastic or waxy skin, no excessive smoothing, no beauty filter.\" (Use this for photos meant to look like real shots; dreamy muse-style portraits can keep smooth beautiful skin.)</p><p style=\"color:#c9c4d8;line-height:1.8;margin-bottom:8px;\">5. Make the background agree with the person. Shadows, color warmth and camera angle must match between subject and scene. Sample prompt: \"Place the person naturally in [...]. Match the lighting, shadow direction and color warmth of the person to the room. Eye-level camera angle, soft blurred background, natural contact shadows where the person touches surfaces.\"</p><p style=\"color:#c9c4d8;line-height:1.8;margin-bottom:8px;\">6. Tell the AI what to avoid (negative prompt). Sample prompt: \"Avoid: cartoon look, 3D render, plastic waxy skin, distorted face, asymmetrical eyes, unnatural hands, extra fingers, oversaturated colors, harsh HDR, double shadows, watermark, text, logo.\"</p><p style=\"color:#c9c4d8;line-height:1.8;margin-bottom:8px;\">7. Add small imperfections for realism. Sample prompt: \"Add subtle real-camera imperfections: a few flyaway hairs, very light film grain, slight natural asymmetry, soft edges of the frame. Keep it subtle — a real candid photo, not a perfect studio render.\"</p><p style=\"color:#c9c4d8;line-height:1.8;margin-bottom:8px;\">All 7 tricks work on free tools (ChatGPT, Gemini). Each one needs just one line changed in your prompt to see the difference.</p>";
+  } else if(tab==='gemini'){
     html = '<h2 style="margin-bottom:14px;">📸 Tạo ảnh AI giống mình nhất bằng Gemini</h2>'
     + '<h3 style="color:#ff6584;margin:16px 0 8px;">✅ 1. Chọn ảnh reference thật chuẩn</h3>'
     + '<p style="color:#c9c4d8;line-height:1.8;margin-bottom:8px;">Nên dùng ảnh chân dung <b>cận mặt, chụp trực diện</b> của chính bạn — càng rõ, càng nét càng tốt.<br>📸 Cứ chụp bằng camera thường là được.<br>⚠️ Đừng chỉnh qua app quá tay! Vì đưa ảnh vào AI, Gemini còn tiếp tục xử lý. Chỉnh càng nhiều thì AI "nhận nhầm" và làm mặt khác đi càng cao.</p>'
@@ -2053,6 +2282,26 @@ function openExpModal(tab){
     + '<p style="color:#c9c4d8;line-height:1.8;margin-bottom:8px;">📌 <b>Nói ngắn gọn nhất: GIỮ NGUYÊN 100% KHUÔN MẶT ẢNH UPLOAD.</b><br>👉 Điều này ép Gemini phải lấy chính khuôn mặt trong ảnh bạn upload làm reference, không tự tạo gương mặt mới.</p>'
     + '<h3 style="color:#ff6584;margin:16px 0 8px;">💡 Bí quyết</h3>'
     + '<p style="color:#c9c4d8;line-height:1.8;">Nếu tạo lần đầu chưa giống hoặc chưa đẹp, mình thường <b>thoát hẳn app rồi vào lại</b> và tạo lại. Có khi lần sau AI cho kết quả tốt hơn hẳn. 😆</p>';
+  } else if(tab==='meo-phong-cach'){
+    html = '<h2 style="margin-bottom:14px;">1 ảnh gốc, ra cả bộ ảnh phong cách</h2>'
+    + '<img src="https://mapmeai.com/poster-meo-1-anh-phong-cach.jpg" alt="1 ảnh gốc, ra cả bộ ảnh phong cách" style="width:100%;height:auto;display:block;border-radius:12px;margin-bottom:14px;">'
+    + '<p style="color:#c9c4d8;line-height:1.8;margin-bottom:8px;">Ảnh gốc rõ mặt, giữ nguyên mặt, mỗi phong cách 1 câu lệnh ngắn — làm 5 phong cách là có cả bộ.</p>';
+  } else if(tab==='meo-tinh-yeu'){
+    html = '<h2 style="margin-bottom:14px;">Kể chuyện tình yêu bằng 5 cảnh</h2>'
+    + '<img src="https://mapmeai.com/poster-meo-tinh-yeu-5-canh.jpg" alt="Kể chuyện tình yêu bằng 5 cảnh" style="width:100%;height:auto;display:block;border-radius:12px;margin-bottom:14px;">'
+    + '<p style="color:#c9c4d8;line-height:1.8;margin-bottom:8px;">Dùng chung 2 ảnh gốc, xếp cảnh đúng thứ tự thời gian, giữ màu tương đồng, kết bằng cảnh hoàng hôn ấm nhất.</p>';
+  } else if(tab==='meo-cap-doi'){
+    html = '<h2 style="margin-bottom:14px;">Ảnh cặp đôi kiểu tự sướng</h2>'
+    + '<img src="https://mapmeai.com/poster-meo-cap-doi-selfie.jpg" alt="Ảnh cặp đôi kiểu tự sướng" style="width:100%;height:auto;display:block;border-radius:12px;margin-bottom:14px;">'
+    + '<p style="color:#c9c4d8;line-height:1.8;margin-bottom:8px;">Chụp chung mặt gần máy, soi gương, ôm sau lưng, hoàng hôn ngược sáng — giữ nguyên cả 2 khuôn mặt.</p>';
+  } else if(tab==='meo-hieu-ung'){
+    html = '<h2 style="margin-bottom:14px;">3 hiệu ứng lạ cho ảnh khỏi nhàm</h2>'
+    + '<img src="https://mapmeai.com/poster-meo-hieu-ung-la.jpg" alt="3 hiệu ứng lạ cho ảnh khỏi nhàm" style="width:100%;height:auto;display:block;border-radius:12px;margin-bottom:14px;">'
+    + '<p style="color:#c9c4d8;line-height:1.8;margin-bottom:8px;">Bóng ma, vệt tốc độ, chồng lớp — mỗi ảnh chỉ dùng 1 hiệu ứng, dùng khi ảnh thường đã chán.</p>';
+  } else if(tab==='meo-video'){
+    html = '<h2 style="margin-bottom:14px;">Biến ảnh tĩnh thành video bằng chuyển động máy quay</h2>'
+    + '<img src="https://mapmeai.com/poster-meo-video-chuyen-dong-may-quay.jpg" alt="Biến ảnh tĩnh thành video bằng chuyển động máy quay" style="width:100%;height:auto;display:block;border-radius:12px;margin-bottom:14px;">'
+    + '<p style="color:#c9c4d8;line-height:1.8;margin-bottom:8px;">Đẩy chậm vào, xoay quanh, lùi xa, bay FPV — mỗi video 8-10 giây chỉ dùng 1 chuyển động, nhồi nhiều chuyển động sẽ giật cục.</p>';
   } else {
     html = '<h2 style="margin-bottom:14px;">💜 Tâm sự: Hành trình làm video AI</h2>'
     + '<p style="color:#c9c4d8;line-height:1.9;margin-bottom:12px;">Có một chuyện ít ai biết về hành trình mình làm video AI…</p>'
@@ -2071,6 +2320,13 @@ function openExpModal(tab){
 function closeExpModal(){
   document.getElementById('expModal').style.display='none';
 }
+function loadKitchenTab(tab, body){
+  body.innerHTML = '<p style="color:#8f8aa3;font-size:14px;text-align:center;padding:26px 0;">Đang tải nội dung VIP…</p>';
+  fetch('/api/kitchen.php?tab=' + encodeURIComponent(tab), { credentials: 'same-origin' })
+    .then(function(r){ return r.json(); })
+    .then(function(d){ body.innerHTML = (d && d.ok && d.html) ? d.html : '<p style="color:#ff6584;font-size:14px;text-align:center;padding:26px 0;">Không tải được nội dung — thử lại sau ít phút.</p>'; })
+    .catch(function(){ body.innerHTML = '<p style="color:#ff6584;font-size:14px;text-align:center;padding:26px 0;">Không tải được nội dung — thử lại sau ít phút.</p>'; });
+}
 function openKitchenModal(tab){
   var body = document.getElementById('kitchenModalBody');
   var vip = (typeof isVipActive === 'function') ? isVipActive() : false;
@@ -2081,7 +2337,7 @@ function openKitchenModal(tab){
     + '<button class="btn" style="background:linear-gradient(135deg,#ff6584,#ff8fb3);color:#fff;border:0;border-radius:12px;padding:12px 28px;font-weight:700;cursor:pointer;" onclick="closeKitchenModal();openVipPricingModal()">Xem gói VIP</button></div>';
   if(tab==='library'){
     body.innerHTML = '<h2 style="margin-bottom:4px;">📚 Truyện ngắn đã xuất bản</h2>'
-    + '<p style="color:#8f8aa3;font-size:13px;margin-bottom:12px;">Bấm vào truyện để bắt đầu đọc · <span id="libCount">9 truyện</span></p>'
+    + '<p style="color:#8f8aa3;font-size:13px;margin-bottom:12px;">Bấm vào truyện để bắt đầu đọc · <span id="libCount">15 truyện</span></p>'
     + '<input id="libSearch" oninput="filterLibrary(this.value)" placeholder="🔎 Tìm truyện theo tên..." style="width:100%;box-sizing:border-box;padding:10px 12px;border-radius:10px;border:1px solid #2a2735;background:#12101c;color:#fff;font-size:14px;margin-bottom:8px;">'
     + '<div id="libList">'
     + kitchenStoryRow('Cưa Đổ Tình Địch','covers/cover-cua-do-tinh-dich.jpeg','https://www.wattpad.com/story/417598065')
@@ -2093,13 +2349,21 @@ function openKitchenModal(tab){
     + kitchenStoryRow('Soul-Gathering Order (EN)','covers/cover-soul-gathering-order.jpeg','https://www.wattpad.com/story/417511418','en')
     + kitchenStoryRow('Kẻ Thù Chung Giường','covers/cover-ke-thu-chung-giuong.jpeg','https://www.wattpad.com/story/417698276')
     + kitchenStoryRow('Kẻ Phá Đám','covers/cover-ke-pha-dam.jpeg','https://www.wattpad.com/story/417701234')
+    + kitchenStoryRow('Bạch Vũ Kiếp','covers/cover-bach-vu-kiep.jpeg','https://www.wattpad.com/story/417993239','vi')
+    + kitchenStoryRow('Thất Mảnh Phượng Tâm','covers/cover-that-manh-phuong-tam.jpeg','https://www.wattpad.com/story/418180776','vi')
+    + kitchenStoryRow('Án Mạng Trên Chuyến Tàu Tuyết','covers/cover-an-mang-tren-tau-tuyet.jpeg','https://www.wattpad.com/story/418061617','vi')
+    + kitchenStoryRow('Mưa Qua Trường Cũ','covers/cover-mua-qua-truong-cu.jpeg','https://www.wattpad.com/story/418112204','vi')
+    + kitchenStoryRow('Thư Chưa Gửi','covers/cover-thu-chua-gui.jpeg','https://www.wattpad.com/story/417895580','vi')
+    + kitchenStoryRow('Kẻ Sa Ngã','covers/cover-ke-sa-nga.jpeg','https://www.wattpad.com/story/417889055','vi')
     + '</div>'
-    + '<p id="libEmpty" style="display:none;color:#8f8aa3;font-size:13px;text-align:center;padding:14px 0;">Không tìm thấy truyện nào khớp.</p>';
+    + '<p id="libEmpty" style="display:none;color:#8f8aa3;font-size:13px;text-align:center;padding:14px 0;">Không tìm thấy truyện nào khớp.</p>'
+    + '<div style="margin-top:18px;background:#1c1a24;border:1px solid #2a2735;border-radius:14px;padding:18px;text-align:center;"><h3 style="font-size:16px;margin-bottom:6px;color:#fff;">Đặt Hàng Riêng — Cần Tool Hoặc Agent Theo Quy Trình Riêng?</h3><p style="color:#8f8aa3;font-size:13px;margin-bottom:12px;">Đồ có sẵn chưa khớp việc của anh em? Gửi yêu cầu cho Mập Mê AI.</p><button class="btn-pink" style="padding:9px 22px;font-size:13px;margin-right:8px;" onclick="closeKitchenModal();openModal(\'Đặt Hàng Tool / Prompt Riêng Theo Yêu Cầu\', \'CUSTOM\', \'vip\')">Order Liền Tay 🚀</button><button class="btn-outline" style="padding:9px 22px;font-size:13px;" onclick="closeKitchenModal();openModal(\'Mời Tác Giả Ly Trà Sữa 🧋\', \'TRA SUA\', \'tea\')">Mời Trà Sữa 🧋</button></div>'
+    ;
     filterLibrary('');
   } else if(tab==='writing'){
-    body.innerHTML = vip ? KITCHEN_WRITING : lockHtml;
+    if (vip) { loadKitchenTab('writing', body); } else { body.innerHTML = lockHtml; }
   } else if(tab==='publishing'){
-    body.innerHTML = vip ? KITCHEN_PUBLISHING : lockHtml;
+    if (vip) { loadKitchenTab('publishing', body); } else { body.innerHTML = lockHtml; }
   }
   document.getElementById('kitchenModal').style.display='flex';
 }
@@ -2123,52 +2387,105 @@ function filterLibrary(q){
   var e = document.getElementById('libEmpty'); if(e) e.style.display = shown ? 'none' : 'block';
   var c = document.getElementById('libCount'); if(c) c.textContent = shown + ' truyện';
 }
-var KITCHEN_WRITING = '<h2 style="margin-bottom:12px;">✍️ Quy trình viết truyện ngắn bằng AI</h2>'
-+ '<div style="font-size:14px;line-height:1.8;color:#d8d5e5;">'
-+ '<p><b>G0 — Nhận yêu cầu:</b> chốt thể loại, số chương, ngôn ngữ. Thiếu thì hỏi gộp tối đa 3 câu.</p>'
-+ '<p><b>G1 — Khảo sát xu hướng:</b> tìm trope hot trên Wattpad quốc tế, trình 3–5 lựa chọn kèm bằng chứng.</p>'
-+ '<p><b>G2 — Phân tích văn phong:</b> rút nhịp câu, cách mở chương, móc câu từ 2–3 truyện hot cùng đề tài.</p>'
-+ '<p><b>G3 — Kịch bản:</b> đưa 2–3 hướng kết (HE/OE/BE), KHÓA 1 kết + dàn ý chi tiết từng chương. Mỗi chương: sự kiện, chuyển biến cảm xúc, móc câu.</p>'
-+ '<p><b>G4 — Poster + trailer:</b> poster THẤY RÕ MẶT nhân vật chính; trailer 3 cổng duyệt (kịch bản → storyboard → prompt video).</p>'
-+ '<p><b>G5 — Viết:</b> từng chương đúng dàn ý, 2000–2700 từ/chương, chương 1 mở bằng cảnh gay cấn nhất.</p>'
-+ '<p><b>G6 — Tự check:</b> timeline, động cơ, văn phong, từ miền Bắc lọt, từ ngữ AI, số từ — trước khi giao.</p>'
-+ '<p><b>G7 — Đăng:</b> đăng 1 lần sau khi chốt toàn truyện. Cấm QR/thanh toán trong chương.</p>'
-+ '<p style="color:#8f8aa3;font-size:13px;margin-top:10px;">⚠️ Sau mỗi giai đoạn DỪNG chờ duyệt mới sang tiếp. Không viết trước rồi mới hỏi.</p></div>';
-var KITCHEN_PUBLISHING = '<h2 style="margin-bottom:12px;">📤 Quy trình đăng truyện</h2>'
-+ '<div style="font-size:14px;line-height:1.8;color:#d8d5e5;">'
-+ '<p><b>1. Wattpad:</b> đăng 1 lần duy nhất sau khi chốt toàn truyện — tiêu đề, blurb, tag, thể loại. <b>Cấm</b> QR/thanh toán trong nội dung chương (bị flag).</p>'
-+ '<p><b>2. dammy.cc:</b> tài khoản tác giả đã duyệt; truyện mặc định ở trạng thái ẨN — nhớ nhấn <b>Hiển thị truyện</b> để công khai.</p>'
-+ '<p><b>3. EPUB:</b> mỗi truyện hoàn chỉnh → 1 file EPUB (bìa + mục lục + full chương) để share cho độc giả đọc trên điện thoại.</p>'
-+ '<p><b>4. Gói bản quyền:</b> truyện full + dàn ý/tóm tắt + poster + file THÔNG-TIN (story ID, link, số liệu) → zip lưu Drive.</p>'
-+ '<p><b>5. Bút danh:</b> mọi nền tảng đều ghi <b>Âm Dương Song Ảnh</b>.</p></div>';
+var KITCHEN_WRITING = ''; var KITCHEN_PUBLISHING = ''; // Nội dung VIP đã chuyển lên server: /api/kitchen.php
 </script>
 
-    <!-- MODAL AFFILIATE GATE: xem link affiliate -> nhập mã -> mở Wattpad -->
+    <!-- MODAL AFFILIATE GATE: bấm link Shopee -> quay lại -> mở Wattpad -->
     <div id="affModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.8);align-items:center;justify-content:center;padding:20px">
         <div style="background:#15131e;border:1px solid #322d45;border-radius:18px;max-width:440px;width:100%;padding:28px;text-align:center">
             <h3 id="affTitle" style="color:#fff;margin-bottom:8px"></h3>
-            <p style="color:#a2a0b2;font-size:14px;margin-bottom:16px">👉 Bấm link bên dưới xem ưu đãi từ nhãn hàng, xong quay lại bấm Mở Truyện nhé</p>
-            <a id="affLink" href="#" target="_blank" style="display:inline-block;background:linear-gradient(135deg,#ffd166,#ff6584);color:#000;font-weight:700;padding:12px 28px;border-radius:25px;text-decoration:none;margin-bottom:16px">Xem Ưu Đãi Ngay →</a>
-            <button onclick="openAffTarget()" style="width:100%;background:linear-gradient(135deg,#ff6584,#a066ff);color:#fff;font-weight:700;padding:12px;border:none;border-radius:12px;cursor:pointer;font-size:15px">Mở Truyện 📖</button>
+            <p style="color:#a2a0b2;font-size:14px;margin-bottom:16px">👉 Bấm Mở Truyện sẽ ghé xem ưu đãi Shopee trước, quay lại bấm lần nữa là vào truyện nhé</p>
+            <a id="affLink" href="#" target="_blank" rel="noopener" style="display:inline-block;background:linear-gradient(135deg,#ffd166,#ff6584);color:#000;font-weight:700;padding:12px 28px;border-radius:25px;text-decoration:none;margin-bottom:16px">Xem Ưu Đãi Ngay →</a>
+            <button id="affOpenBtn" onclick="openAffTarget()" style="width:100%;background:linear-gradient(135deg,#ff6584,#a066ff);color:#fff;font-weight:700;padding:12px;border:none;border-radius:12px;cursor:pointer;font-size:15px">Mở Truyện 📖</button>
             <button onclick="document.getElementById('affModal').style.display='none'" style="margin-top:10px;background:none;border:none;color:#a2a0b2;cursor:pointer;font-size:13px">Đóng</button>
             <p id="affError" style="color:#ff6584;font-size:13px;margin-top:8px;display:none">Mã chưa đúng, kiểm tra lại nhé!</p>
         </div>
     </div>
     <script>
         let affTargetUrl = '';
+        let affVisited = false;
+        const AFF_SHOP_LINK = 'https://collshp.com/nhulienhuynh?view=storefront';
+        function refreshAffBtn() {
+            var b = document.getElementById('affOpenBtn');
+            if (b && affVisited) b.innerText = 'Vào Truyện Ngay 📖';
+        }
         function openAffiliateGate(wattpadUrl, title) {
             affTargetUrl = wattpadUrl;
+            affVisited = false;
             document.getElementById('affTitle').innerText = '📖 ' + title;
-            // Link affiliate — tỷ thay link thật vào đây
-            document.getElementById('affLink').href = 'https://collshp.com/nhulienhuynh?view=storefront';
+            document.getElementById('affLink').href = AFF_SHOP_LINK;
+            document.getElementById('affOpenBtn').innerText = 'Mở Truyện 📖';
             document.getElementById('affError').style.display = 'none';
             document.getElementById('affModal').style.display = 'flex';
         }
         function openAffTarget() {
+            if (!affVisited) {
+                affVisited = true;
+                window.open(AFF_SHOP_LINK, '_blank', 'noopener');
+                var e = document.getElementById('affError');
+                e.innerText = 'Đang mở Shopee cho bạn — xem xong quay lại bấm nút này lần nữa là vào truyện nhé 👇';
+                e.style.color = '#ffd166';
+                e.style.display = 'block';
+                return;
+            }
             document.getElementById('affModal').style.display = 'none';
             if (affTargetUrl) window.open(affTargetUrl, '_blank', 'noopener,noreferrer');
         }
+        (function(){
+            var l = document.getElementById('affLink');
+            if (l) l.addEventListener('click', function() { affVisited = true; });
+            window.addEventListener('focus', refreshAffBtn);
+            document.addEventListener('visibilitychange', function() { if (!document.hidden) refreshAffBtn(); });
+        })();
     </script>
 <script>if(location.hash==='#dieu-khoan'&&typeof openTermsModal==='function')openTermsModal();</script>
+
+
+
+<script>
+function shopNav(dir){
+  var track=document.getElementById('shopTrack'); if(!track||!track.children.length) return;
+  var vis=[...track.children];
+  var cur=0,best=1e18;
+  vis.forEach(function(sl,i){var d=Math.abs((sl.offsetLeft-track.offsetLeft)-track.scrollLeft); if(d<best){best=d;cur=i;}});
+  var nx=(cur+dir+vis.length)%vis.length;
+  track.scrollTo({left:vis[nx].offsetLeft-track.offsetLeft,behavior:'smooth'});
+}
+(function(){
+  var track=document.getElementById('shopTrack'); if(!track) return;
+  var dotsBox=document.getElementById('shopDots');
+  function buildDots(){
+    if(!dotsBox) return; dotsBox.innerHTML='';
+    [...track.children].forEach(function(sl){ var d=document.createElement('span'); d.onclick=function(){ stop(); track.scrollTo({left:sl.offsetLeft-track.offsetLeft,behavior:'smooth'}); }; dotsBox.appendChild(d); });
+    sync();
+  }
+  function sync(){
+    if(!dotsBox) return; var v=[...track.children]; if(!v.length) return;
+    var cur=0,best=1e18;
+    v.forEach(function(sl,i){var dd=Math.abs((sl.offsetLeft-track.offsetLeft)-track.scrollLeft); if(dd<best){best=dd;cur=i;}});
+    [...dotsBox.children].forEach(function(d,j){ d.classList.toggle('on', j===cur); });
+  }
+  var tick=false;
+  track.addEventListener('scroll',function(){ if(!tick){ tick=true; requestAnimationFrame(function(){ sync(); tick=false; }); } });
+  track.addEventListener('wheel',function(e){ if(Math.abs(e.deltaY)>Math.abs(e.deltaX)){ track.scrollLeft+=e.deltaY; e.preventDefault(); } },{passive:false});
+  var timer=null;
+  function stop(){ if(timer){ clearInterval(timer); timer=null; } }
+  function start(){ stop(); timer=setInterval(function(){ shopNav(1); },4500); }
+  ['pointerdown','touchstart'].forEach(function(ev){ track.addEventListener(ev, stop, {passive:true}); });
+
+  function shopRender(list){
+    track.innerHTML='';
+    list.forEach(function(d){
+      var el=document.createElement('div'); el.className='shop-slide';
+      el.onclick=function(){ window.open(d.file,'_blank'); };
+      el.innerHTML='<img src="'+d.cover+'" alt="'+d.title+'" loading="lazy"><div class="sb"><span class="shop-tag">'+(d.tag||'')+'</span><span class="shop-chip">'+d.industry+'</span><h3>'+d.title+'</h3><p>'+d.style+'</p></div>';
+      track.appendChild(el);
+    });
+    buildDots(); start();
+  }
+  var SHOP_FALLBACK=[{"id":"bo-3-mau","title":"Bộ 3 Mẫu — Cafe · Trà Sữa · Tea Break","industry":"Cafe / Trà sữa / Tea break","style":"3 phong cách trong 1 link, bấm là chuyển mẫu","cover":"demo-shop/covers/cover-3mau.webp","file":"demo-shop/demo-3-mau-quan.html","tag":"Dễ chọn nhất"},{"id":"nha-hang-editorial","title":"Nhà Hàng Gió Quê — Phong Cách Tạp Chí","industry":"Nhà hàng / Quán ăn","style":"Bố cục editorial: chữ serif lớn, menu chấm nối giá, không dùng thẻ","cover":"demo-shop/covers/cover-editorial.webp","file":"demo-shop/demo-nha-hang-editorial.html","tag":"Mới"},{"id":"cafe-fullbleed","title":"Cafe Đồi Thông — Ảnh Phủ Toàn Màn","industry":"Cafe","style":"Hero ảnh toàn màn hình, dải chữ chạy, menu trượt ngang, gallery lệch","cover":"demo-shop/covers/cover-fullbleed.webp","file":"demo-shop/demo-cafe-fullbleed.html","tag":"Mới"},{"id":"shop-mypham","title":"Lá Xanh Cosmetics — Shop Bán Hàng","industry":"Shop mỹ phẩm / bán lẻ","style":"Lưới sản phẩm có giá + nút mua Zalo, banner khuyến mãi, đánh giá khách","cover":"demo-shop/covers/cover-mypham.webp","file":"demo-shop/demo-shop-mypham.html","tag":"Mới"},{"id":"cafe-phin-la","title":"Phin & Lá — Cafe Sân Vườn (Bản Đầy Đủ)","industry":"Cafe","style":"Bản đầy đủ: menu theo nhóm, không gian, bản đồ, đặt bàn","cover":"demo-shop/covers/cover-phin-la.webp","file":"demo-shop/demo-cafe-phin-la.html","tag":"Đầy đủ"},{"id":"pho-ba-nam","title":"Phở Bà Năm — Quán Ăn (Bản Đầy Đủ)","industry":"Quán ăn","style":"Bản đầy đủ: món ăn, không gian quán, bản đồ, gọi món","cover":"demo-shop/covers/cover-pho-ba-nam.webp","file":"demo-shop/demo-quan-an-pho-ba-nam.html","tag":"Đầy đủ"},{"id":"nail-xinh","title":"Nail Xinh Studio — Nail & Spa (Bản Đầy Đủ)","industry":"Nail / Spa / Làm đẹp","style":"Bản đầy đủ: bảng dịch vụ, mẫu nail, đặt lịch qua Zalo","cover":"demo-shop/covers/cover-nail.webp","file":"demo-shop/demo-nail-xinh.html","tag":"Đầy đủ"}];
+  fetch('demo-shop/demos.json').then(function(r){ if(!r.ok) throw new Error('http'); return r.json(); }).then(function(list){ shopRender(list); }).catch(function(){ shopRender(SHOP_FALLBACK); });
+})();
+</script>
 </body>
 </html>
