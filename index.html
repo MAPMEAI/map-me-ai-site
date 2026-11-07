@@ -974,7 +974,7 @@ gtag('config', 'G-DC96Y9R3Z2');
             if (demoVideo) {
                 frame.style.display = 'flex';
                 frame.innerHTML = (demo ? '<img src="' + escHtml(demo) + '" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(26px) brightness(0.5);transform:scale(1.15);">' : '')
-                    + '<video src="' + escHtml(demoVideo) + '" style="position:relative;z-index:1;width:100%;height:100%;object-fit:contain;" controls autoplay loop muted playsinline></video>';
+                    + '<video src="' + escHtml(demoVideo) + '" style="position:relative;z-index:1;width:100%;height:100%;object-fit:contain;" controls loop muted playsinline></video>';
             } else if (demo) {
                 frame.style.display = 'flex';
                 frame.innerHTML = '<img src="' + escHtml(demo) + '" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(26px) brightness(0.5);transform:scale(1.15);">'
@@ -1102,7 +1102,7 @@ gtag('config', 'G-DC96Y9R3Z2');
                 const badgeCls = item.type === 'VIP' ? 'tag-vip' : 'tag-free';
                 let thumb = '';
                 if (item.demoVideo) {
-                    thumb = `<div class="card-thumb"><video src="${escHtml(item.demoVideo)}" muted loop playsinline preload="metadata" onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0"></video><span class="thumb-play">▶</span><span class="thumb-badge ${badgeCls}">${escHtml(item.type)}</span></div>`;
+                    thumb = `<div class="card-thumb"><video src="${escHtml(item.demoVideo)}" muted loop playsinline preload="metadata" onmouseover="if(window.matchMedia('(hover:hover) and (pointer:fine)').matches)this.play()" onmouseout="this.pause();this.currentTime=0"></video><span class="thumb-play">▶</span><span class="thumb-badge ${badgeCls}">${escHtml(item.type)}</span></div>`;
                 } else if (item.demo) {
                     thumb = `<div class="card-thumb"><img src="${escHtml(item.demo)}" alt="${escHtml(item.title)}" loading="lazy" onerror="this.closest('.card-thumb').style.display='none'"><span class="thumb-badge ${badgeCls}">${escHtml(item.type)}</span></div>`;
                 }
@@ -1152,7 +1152,7 @@ gtag('config', 'G-DC96Y9R3Z2');
                 const badgeCls = item.type === 'VIP' ? 'tag-vip' : 'tag-free';
                 let thumb = '';
                 if (item.demoVideo) {
-                    thumb = `<div class="card-thumb"><video src="${escHtml(item.demoVideo)}" muted loop playsinline preload="metadata" onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0"></video><span class="thumb-play">▶</span><span class="thumb-badge ${badgeCls}">${escHtml(item.type)}</span></div>`;
+                    thumb = `<div class="card-thumb"><video src="${escHtml(item.demoVideo)}" muted loop playsinline preload="metadata" onmouseover="if(window.matchMedia('(hover:hover) and (pointer:fine)').matches)this.play()" onmouseout="this.pause();this.currentTime=0"></video><span class="thumb-play">▶</span><span class="thumb-badge ${badgeCls}">${escHtml(item.type)}</span></div>`;
                 } else if (item.demo) {
                     thumb = `<div class="card-thumb"><img src="${escHtml(item.demo)}" alt="${escHtml(item.title)}" loading="lazy" onerror="this.closest('.card-thumb').style.display='none'"><span class="thumb-badge ${badgeCls}">${escHtml(item.type)}</span></div>`;
                 }
@@ -1268,7 +1268,7 @@ function filterPrompts(type, val, evt) { if (type) currentPage = 1; const btnEl 
         </div>
         <div class="grid-cards" id="course-cards" style="scroll-margin-top:20px;">
             <div class="card" style="cursor:pointer;" onclick="openCourseModal('video')">
-                <div class="card-thumb" style="background:linear-gradient(135deg,#7c2d12,#f59e0b);display:flex;align-items:center;justify-content:center;min-height:150px;"><video src="https://mapmeai.com/videos/course-lam-video-ai.mp4" muted loop autoplay playsinline preload="metadata" style="background:transparent;"></video><span class="thumb-badge" style="background:#f5af19;color:#000;">Bán chạy</span></div>
+                <div class="card-thumb" style="background:linear-gradient(135deg,#7c2d12,#f59e0b);display:flex;align-items:center;justify-content:center;min-height:150px;"><video src="https://mapmeai.com/videos/course-lam-video-ai.mp4" muted loop playsinline preload="metadata" style="background:transparent;"></video><span class="thumb-badge" style="background:#f5af19;color:#000;">Bán chạy</span></div>
                 <div>
                     <h3>Làm Video AI Chuẩn Điện Ảnh</h3>
                     <p>Từ con số 0 đến video triệu view — prompt cinematic, storyboard 8 khung, kỹ thuật gen chuẩn Hollywood với Flow / Veo 3.</p>
@@ -2165,13 +2165,15 @@ const HERO_VIDS=[
  {src:'https://mapmeai.com/videos/brand-qc-mapmeai.mp4',vi:'MẬP MÊ AI — Quảng Cáo Thương Hiệu',en:'MẬP MÊ AI — Brand Ad',grp:'brand'}
 ];
 function heroPick(exclude){const grps=exclude.map(i=>(HERO_VIDS[i]||{}).grp).filter(Boolean);const noDup=HERO_VIDS.map((_,i)=>i).filter(i=>!exclude.includes(i));const noGrp=noDup.filter(i=>{const g=(HERO_VIDS[i]||{}).grp;return !g||!grps.includes(g);});const arr=noGrp.length?noGrp:(noDup.length?noDup:HERO_VIDS.map((_,i)=>i));return arr[Math.floor(Math.random()*arr.length)];}
+var heroVisible=true; /* FIX 07/11: hero chi chay khi dang hien tren man hinh + tab dang mo */
+function heroPauseAll(){document.querySelectorAll('.hv-wrap video').forEach(function(v){v.pause();});}
 function heroSet(wrap,idx){
   const e=HERO_VIDS[idx],v=wrap.querySelector('video'),tag=wrap.querySelector('.hv-tag');
   wrap._hidx=idx;
   tag.setAttribute('data-vi',e.vi);tag.setAttribute('data-en',e.en);
   tag.textContent=(document.documentElement.lang==='en')?e.en:e.vi;
   if(v.getAttribute('src')!==e.src)v.src=e.src;
-  v.play().catch(()=>{});
+  if(heroVisible&&!document.hidden)v.play().catch(()=>{});
 }
 function heroSlide(wrap,idx){
   const slider=wrap.querySelector('.hv-slide');
@@ -2189,15 +2191,31 @@ function heroSlide(wrap,idx){
   const brandIdx=HERO_VIDS.findIndex(e=>e.grp==='brand');
   if(brandIdx>=0){heroSet(wraps[0],brandIdx);used.push(brandIdx);}
   wraps.forEach(w=>{if(w._hidx!==undefined)return;const i=heroPick(used);used.push(i);heroSet(w,i);});
-  let cur=0;let heroTurn=0;
-  setInterval(()=>{
+  let cur=0;let heroTurn=0;let heroTimer=null;
+  function heroTick(){
     heroTurn++;
     const isBrandTurn=brandIdx>=0&&heroTurn%4===0;
     const w=isBrandTurn?(wraps.find(x=>x._hidx!==brandIdx)||wraps[cur]):wraps[cur];
     if(!isBrandTurn)cur=(cur+1)%wraps.length;
     const others=wraps.filter(x=>x!==w).map(x=>x._hidx);
     heroSlide(w,isBrandTurn?brandIdx:heroPick(others));
-  },6000);
+  }
+  function heroStart(){ if(heroTimer)return; heroTimer=setInterval(heroTick,6000); }
+  function heroStop(){ if(heroTimer){clearInterval(heroTimer);heroTimer=null;} heroPauseAll(); }
+  /* Roi khoi man hinh / doi tab / tat man hinh la dung xoay + dung video han */
+  var heroBox=document.querySelector('.hero-visual');
+  if('IntersectionObserver' in window&&heroBox){
+    new IntersectionObserver(function(es){ es.forEach(function(en){
+      heroVisible=en.isIntersecting;
+      if(heroVisible&&!document.hidden){ heroStart(); wraps.forEach(function(w){ var v=w.querySelector('video'); if(v&&v.getAttribute('src'))v.play().catch(function(){}); }); }
+      else heroStop();
+    }); },{threshold:0.1}).observe(heroBox);
+  }
+  document.addEventListener('visibilitychange',function(){
+    if(document.hidden){ heroVisible=false; heroStop(); }
+    else if(heroBox){ var r=heroBox.getBoundingClientRect(); heroVisible=r.bottom>0&&r.top<window.innerHeight; if(heroVisible)heroStart(); }
+  });
+  heroStart();
 })();
 /* ===== BẾP AI: slide bìa — mũi tên + chấm theo đúng số bìa đang hiện ===== */
 function kitchenNav(dir){
@@ -2235,7 +2253,10 @@ function kitchenNav(dir){
   track.addEventListener('mouseenter',stop);
   track.addEventListener('mouseleave',start);
   track.addEventListener('touchstart',stop,{passive:true});
-  buildDots(); start();
+  buildDots();
+  if('IntersectionObserver' in window){ new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting&&!document.hidden) start(); else stop(); }); },{threshold:0.05}).observe(track); }
+  else start();
+  document.addEventListener('visibilitychange',function(){ if(document.hidden) stop(); });
   new MutationObserver(()=>buildDots()).observe(track,{attributes:true,subtree:true,attributeFilter:['style']});
 })();
 </script>
@@ -2482,7 +2503,11 @@ function shopNav(dir){
       el.innerHTML='<img src="'+d.cover+'" alt="'+d.title+'" loading="lazy"><div class="sb"><span class="shop-tag">'+(d.tag||'')+'</span><span class="shop-chip">'+d.industry+'</span><h3>'+d.title+'</h3><p>'+d.style+'</p></div>';
       track.appendChild(el);
     });
-    buildDots(); start();
+    buildDots();
+    if('IntersectionObserver' in window){
+      if(!track._shopObs){ track._shopObs=new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting&&!document.hidden) start(); else stop(); }); },{threshold:0.05}); track._shopObs.observe(track); }
+    } else start();
+    if(!track._shopVis){ track._shopVis=true; document.addEventListener('visibilitychange',function(){ if(document.hidden) stop(); }); }
   }
   var SHOP_FALLBACK=[{"id":"bo-3-mau","title":"Bộ 3 Mẫu — Cafe · Trà Sữa · Tea Break","industry":"Cafe / Trà sữa / Tea break","style":"3 phong cách trong 1 link, bấm là chuyển mẫu","cover":"demo-shop/covers/cover-3mau.webp","file":"demo-shop/demo-3-mau-quan.html","tag":"Dễ chọn nhất"},{"id":"nha-hang-editorial","title":"Nhà Hàng Gió Quê — Phong Cách Tạp Chí","industry":"Nhà hàng / Quán ăn","style":"Bố cục editorial: chữ serif lớn, menu chấm nối giá, không dùng thẻ","cover":"demo-shop/covers/cover-editorial.webp","file":"demo-shop/demo-nha-hang-editorial.html","tag":"Mới"},{"id":"cafe-fullbleed","title":"Cafe Đồi Thông — Ảnh Phủ Toàn Màn","industry":"Cafe","style":"Hero ảnh toàn màn hình, dải chữ chạy, menu trượt ngang, gallery lệch","cover":"demo-shop/covers/cover-fullbleed.webp","file":"demo-shop/demo-cafe-fullbleed.html","tag":"Mới"},{"id":"shop-mypham","title":"Lá Xanh Cosmetics — Shop Bán Hàng","industry":"Shop mỹ phẩm / bán lẻ","style":"Lưới sản phẩm có giá + nút mua Zalo, banner khuyến mãi, đánh giá khách","cover":"demo-shop/covers/cover-mypham.webp","file":"demo-shop/demo-shop-mypham.html","tag":"Mới"},{"id":"cafe-phin-la","title":"Phin & Lá — Cafe Sân Vườn (Bản Đầy Đủ)","industry":"Cafe","style":"Bản đầy đủ: menu theo nhóm, không gian, bản đồ, đặt bàn","cover":"demo-shop/covers/cover-phin-la.webp","file":"demo-shop/demo-cafe-phin-la.html","tag":"Đầy đủ"},{"id":"pho-ba-nam","title":"Phở Bà Năm — Quán Ăn (Bản Đầy Đủ)","industry":"Quán ăn","style":"Bản đầy đủ: món ăn, không gian quán, bản đồ, gọi món","cover":"demo-shop/covers/cover-pho-ba-nam.webp","file":"demo-shop/demo-quan-an-pho-ba-nam.html","tag":"Đầy đủ"},{"id":"nail-xinh","title":"Nail Xinh Studio — Nail & Spa (Bản Đầy Đủ)","industry":"Nail / Spa / Làm đẹp","style":"Bản đầy đủ: bảng dịch vụ, mẫu nail, đặt lịch qua Zalo","cover":"demo-shop/covers/cover-nail.webp","file":"demo-shop/demo-nail-xinh.html","tag":"Đầy đủ"}];
   fetch('demo-shop/demos.json').then(function(r){ if(!r.ok) throw new Error('http'); return r.json(); }).then(function(list){ shopRender(list); }).catch(function(){ shopRender(SHOP_FALLBACK); });
