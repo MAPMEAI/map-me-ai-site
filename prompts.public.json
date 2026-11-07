@@ -1,5 +1,60 @@
 [
   {
+    "title": "Rainbow Gown Fantasy Portrait",
+    "slug": "rainbow-gown-fantasy-portrait",
+    "category": "Ảnh",
+    "type": "Free",
+    "subCat": "Portrait",
+    "desc": "Chân dung fantasy váy lụa cầu vồng trong vườn hoa phép thuật, giữ nguyên khuôn mặt ảnh tham chiếu, khổ dọc 9:16.",
+    "content": "Use the uploaded original photo as the primary facial identity reference. Preserve the woman's exact facial identity, facial proportions, eyes, nose, lips, smile, skin tone, and distinctive features. She must remain clearly recognizable as the same person in the original photograph.\n\nTransform her into an elegant, ethereal fantasy woman in a magical enchanted flower garden, rendered in a luxurious combination of fantasy digital painting, dreamy watercolor illustration, and whimsical fashion art.\n\n**CHARACTER & APPEARANCE:**\nA beautiful, graceful woman with a gentle natural smile, wearing elegant eyeglasses similar to the original photo. Her pink-purple highlighted hair is styled in a soft, romantic, loosely twisted updo, with delicate wispy strands flowing naturally in the breeze. Decorate her hair with tiny colorful flowers and sparkling botanical ornaments. Add delicate crystal floral earrings.\n\n**DRESS & FABRIC:**\nShe wears an exquisite, flowing, off-shoulder fantasy couture gown made of multiple layers of translucent silk and chiffon. The dress features spectacular flowing ribbons of rainbow colors, blending harmoniously from golden yellow, coral orange, rose pink, magenta, violet, turquoise, emerald green to deep sapphire blue. The enormous silk fabric swirls gracefully around her body, creating elegant waves and mesmerizing curves, as if floating in a magical breeze. Delicate flowers and tiny botanical details are woven into the fabric.\n\n**POSE & COMPOSITION:**\nThree-quarter portrait, her upper body gently turned at an elegant angle, shoulders relaxed, face slightly tilted toward the camera. Her expression is warm, feminine, confident and enchanting. The flowing rainbow gown occupies the lower half of the composition, forming dramatic sweeping curves. Her face remains the main focal point, beautifully illuminated and clearly visible.\n\n**MAGICAL BACKGROUND:**\nAn abundant enchanted garden filled with oversized blooming flowers in vivid pink, purple, magenta, golden yellow, coral and blue. Delicate leaves, tiny blossoms and floating petals surround her. Soft creamy ivory and warm champagne watercolor background with subtle golden light, dreamy bokeh, delicate botanical branches and magical sparkling particles.\n\n**ARTISTIC STYLE:**\nEthereal fantasy art, whimsical floral fashion illustration, romantic fairytale aesthetic, luxurious digital watercolor painting, painterly oil-brush textures, fluid silk movement, intricate floral details, luminous pastel highlights, vibrant jewel-tone colors, sophisticated color blending, soft glowing atmosphere, exquisite artistic craftsmanship, magical and dreamlike elegance.\n\n**LIGHTING & QUALITY:**\nSoft radiant backlighting, delicate golden rim light around her hair and shoulders, luminous skin, beautifully blended shadows, high detail, rich textures, elegant highlights, professional fine-art illustration, visually captivating, masterpiece quality.\n\n**OUTPUT:**\nVertical 9:16 composition, full detailed portrait, subject centered, face unobstructed, beautifully balanced floral framing, no text, no watermark, no logo.\n\n**IMPORTANT:** Maintain the original person's facial identity. Do not replace her face with a generic AI-generated face. Preserve her recognizable facial characteristics while artistically transforming the hairstyle, clothing, pose and environment.",
+    "demo": "demo-rainbow-gown-fantasy-portrait.jpg",
+    "demoVideo": "videos/rainbow-gown-fantasy-portrait.mp4"
+  },
+  {
+    "title": "Poster Dâu Tây Khổng Lồ",
+    "slug": "poster-dau-tay-khong-lo",
+    "category": "Ảnh",
+    "type": "Free",
+    "subCat": "Ẩm thực",
+    "desc": "Poster thông tin dâu tây khổng lồ phong cách miniature: người tí hon leo núi trên quả dâu, nhãn STRAWBERRY / SWEET SEEDS. Bản tách từ Master Prompt Poster Rau Củ.",
+    "content": "Create a photographic information poster introducing strawberry as one spring fruit. Use a monumental megalithic scenarization: the produce’s main form fills both sides and the depth of the frame at close range, with bold cropping that creates a foreground porch, layered background, and traversable natural space. Show a giant strawberry in a low-angle view, its seed-studded red surface like a cliff face, with the green calyx leaves arching overhead as a canopy and a second berry softly blurred in the background. Preserve crisp material texture, edge thickness, tiny water droplets, translucent highlights, and side or back light passing through the produce. Add tiny scale cues derived from strawberry near the bottom, such as miniature climbers with ropes on the red slope and a tiny picker with a basket, with a shallow water or highly reflective surface that subtly mirrors the produce, scale cues, and shadows. Keep the background dark, clean, and softly layered, separate foreground and background with shallow depth of field, and extract bright controlled colors from the produce’s own material. Use a large area of clean strawberry red, dark structure shadows, and small high-brightness accents at scale cues or information nodes. Add concise high-contrast information typography about strawberry in a clean font with ample whitespace, placed in the upper right, slightly separated from the main form to create a three-layer reading path: photographic subject, miniature scale, and typographic information. Make this one distinct slide in a ten-slide spring produce series, varying layout from the other slides while retaining a clear knowledge logic and a memorable golden-sentence message. Keep the image bright, clear, moist, lively, and free of dusty, old, or smoky treatment. Use exactly two short factual labels: “STRAWBERRY” and “SWEET SEEDS”. Keep typography fully inside the frame with comfortable margins. All miniature props are original and unbranded.",
+    "demo": "demo-poster-dau-tay-khong-lo.webp",
+    "demoVideo": ""
+  },
+  {
+    "title": "Master Prompt Poster Rau Củ Khổng Lồ",
+    "slug": "master-prompt-poster-rau-cu-khong-lo",
+    "category": "Ảnh",
+    "type": "VIP",
+    "subCat": "Marketing",
+    "desc": "Master prompt khuôn trống [ ] làm poster rau/củ/quả khổng lồ phong cách miniature, kèm bảng hướng dẫn điền biến và bảng tra 25 mẫu đã điền sẵn (file đầy đủ kèm trong thư mục Drive của đợt).",
+    "content": "",
+    "demo": "demo-master-prompt-poster-rau-cu-khong-lo.webp",
+    "demoVideo": ""
+  },
+  {
+    "title": "Video Menu Nhà Hàng Nhật – Hàn Sang Trọng",
+    "slug": "video-menu-nha-hang-nhat-han-sang-trong",
+    "category": "Video",
+    "type": "VIP",
+    "subCat": "Ẩm thực",
+    "desc": "Video 10s dọc catalogue 8 món Nhật–Hàn, mỗi món 1 shot với huy hiệu vàng đánh số + tên món serif trắng. Đã làm sạch: mục ENDING đổi thành [logo + tagline thương hiệu của bạn] theo chuẩn khuôn trống; giữ nguyên lỗi gốc 'KOREAN KOREAN FRIED CHICKEN' ở Shot 7 để khớp demo.",
+    "content": "",
+    "demo": "demo-video-menu-nhat-han.jpg",
+    "demoVideo": "videos/video-menu-nha-hang-nhat-han-sang-trong.mp4"
+  },
+  {
+    "title": "Video Menu Món Việt Sang Trọng",
+    "slug": "video-menu-mon-viet-sang-trong",
+    "category": "Video",
+    "type": "VIP",
+    "subCat": "Ẩm thực",
+    "desc": "Video 10s dọc catalogue 8 món Việt (Phở Bò, Bún Chả, Bánh Mì, Bánh Xèo, Gỏi Cuốn, Cơm Tấm, Bún Bò Huế, Chè Ba Màu), huy hiệu vàng đánh số + tên món serif trắng. Đã làm sạch: mục ENDING đổi thành [logo + tagline thương hiệu của bạn] theo chuẩn khuôn trống.",
+    "content": "",
+    "demo": "demo-video-menu-mon-viet.jpg",
+    "demoVideo": "videos/video-menu-mon-viet-sang-trong.mp4"
+  },
+  {
     "title": "Banapro High-End Lookbook",
     "desc": "Tạo ảnh thời trang lookbook sắc nét, chi tiết cao.",
     "category": "Ảnh",
