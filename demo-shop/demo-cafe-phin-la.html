@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phin & Lá — Cafe Sân Vườn | Thảo Điền, TP.HCM (WEB MẪU HOÀN CHỈNH)</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;900&family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:'Be Vietnam Pro',Arial,sans-serif; background:#14100b; color:#f1e7d3; }
+  .tag { background:#000; color:#c9a45c; text-align:center; font-size:11px; letter-spacing:3px; padding:7px; }
+  nav { position:sticky; top:0; z-index:10; background:rgba(20,16,11,.94); backdrop-filter:blur(8px); display:flex; justify-content:space-between; align-items:center; padding:13px 26px; border-bottom:1px solid rgba(201,164,92,.3); flex-wrap:wrap; gap:8px; }
+  .logo { font-family:'Playfair Display',serif; font-size:22px; font-weight:900; color:#dfba72; }
+  .logo span { color:#f1e7d3; font-weight:500; font-size:11px; letter-spacing:2.5px; display:block; font-family:'Be Vietnam Pro',sans-serif; }
+  .links a { color:#e8dcc2; text-decoration:none; font-size:14px; margin:0 10px; font-weight:500; }
+  .links a:hover { color:#dfba72; }
+  nav a.zalo { background:#0068ff; color:#fff; padding:10px 18px; border-radius:30px; text-decoration:none; font-weight:700; font-size:14px; }
+  .hero { position:relative; min-height:82vh; display:flex; align-items:flex-end; background:url('hero-cafe.webp') center/cover no-repeat; }
+  .hero::after { content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(12,8,4,.2) 30%, rgba(12,8,4,.88) 88%); }
+  .hero-in { position:relative; z-index:2; max-width:900px; margin:0 auto; padding:0 24px 54px; text-align:center; width:100%; }
+  .kicker { color:#dfba72; letter-spacing:3px; font-size:12px; font-weight:600; margin-bottom:14px; }
+  .hero h1 { font-family:'Playfair Display',serif; font-size:clamp(34px,6vw,58px); font-weight:900; line-height:1.12; margin-bottom:14px; }
+  .hero p { color:#eadfc6; font-size:16px; max-width:560px; margin:0 auto 26px; line-height:1.65; }
+  .btns a { display:inline-block; margin:4px; padding:14px 28px; border-radius:30px; text-decoration:none; font-weight:700; font-size:15px; }
+  .btn-gold { background:linear-gradient(135deg,#dfba72,#b98d45); color:#221806; box-shadow:0 8px 22px rgba(201,164,92,.35); }
+  .btn-ghost { border:1.5px solid rgba(241,231,211,.75); color:#f1e7d3; }
+  .strip { display:flex; justify-content:center; gap:34px; flex-wrap:wrap; padding:20px; background:#1c150d; border-bottom:1px solid rgba(201,164,92,.22); font-size:13.5px; color:#d3bf96; text-align:center; }
+  .strip b { color:#dfba72; display:block; font-size:17px; font-family:'Playfair Display',serif; }
+  section { max-width:920px; margin:0 auto; padding:54px 24px 8px; }
+  .sec-k { text-align:center; color:#c9a45c; letter-spacing:3px; font-size:11.5px; font-weight:600; }
+  h2 { font-family:'Playfair Display',serif; font-size:32px; text-align:center; margin:8px 0 26px; color:#f7efdb; }
+  .about { display:grid; grid-template-columns:1fr; gap:22px; align-items:center; }
+  @media (min-width:760px){ .about{ grid-template-columns:1.1fr 1fr; } }
+  .about img { width:100%; border-radius:18px; border:1px solid rgba(201,164,92,.3); }
+  .about p { line-height:1.85; color:#e0d0ab; font-size:15.5px; }
+  .feats { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:14px; margin-top:24px; }
+  .card { background:rgba(255,250,238,.045); border:1px solid rgba(201,164,92,.22); border-radius:16px; padding:20px; font-size:14px; line-height:1.65; color:#e0d0ab; }
+  .card h3 { color:#dfba72; font-size:16px; margin-bottom:8px; }
+  .card .st { color:#dfba72; letter-spacing:2px; margin-bottom:8px; }
+  .cat { color:#dfba72; font-family:'Playfair Display',serif; font-size:21px; margin:26px 0 4px; }
+  .menu { background:rgba(255,250,238,.04); border:1px solid rgba(201,164,92,.28); border-radius:18px; padding:8px 26px; }
+  .mi { display:flex; justify-content:space-between; gap:14px; padding:12px 0; border-bottom:1px dashed rgba(201,164,92,.3); }
+  .mi:last-child { border-bottom:none; }
+  .mi .n { font-weight:600; font-size:15.5px; }
+  .mi .d { color:#b3a077; font-size:13px; margin-top:3px; line-height:1.5; }
+  .mi .p { font-family:'Playfair Display',serif; color:#dfba72; font-size:17px; font-weight:700; white-space:nowrap; }
+  .combo { margin-top:30px; background:linear-gradient(135deg,#4a3110,#6b4a1f); border:1px solid rgba(223,186,114,.5); border-radius:18px; padding:26px; text-align:center; }
+  .combo h3 { font-family:'Playfair Display',serif; font-size:24px; color:#f7e8c9; margin-bottom:8px; }
+  .combo p { color:#efdfba; line-height:1.7; font-size:15px; }
+  .combo b { color:#ffe9a8; font-size:19px; }
+  .gal { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:12px; }
+  .gal img { width:100%; height:210px; object-fit:cover; border-radius:14px; border:1px solid rgba(201,164,92,.25); }
+  .rev { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; }
+  details { background:rgba(255,250,238,.045); border:1px solid rgba(201,164,92,.22); border-radius:14px; padding:16px 20px; margin-bottom:10px; }
+  summary { cursor:pointer; font-weight:600; color:#f7efdb; font-size:15px; }
+  details p { color:#c4b28a; line-height:1.7; font-size:14px; margin-top:8px; }
+  .info { text-align:center; line-height:2.05; font-size:15.5px; color:#eadfc6; }
+  .info b { color:#dfba72; }
+  .map { border-radius:16px; overflow:hidden; border:1px solid rgba(201,164,92,.3); margin-top:18px; }
+  .map iframe { width:100%; height:300px; border:0; display:block; }
+  .cta { text-align:center; padding:44px 24px 8px; }
+  footer { text-align:center; padding:36px 16px 96px; font-size:12.5px; color:#8d7c58; line-height:1.7; }
+  .float-zalo { position:fixed; left:50%; transform:translateX(-50%); bottom:16px; z-index:20; background:#0068ff; color:#fff; font-weight:800; padding:14px 30px; border-radius:40px; text-decoration:none; box-shadow:0 10px 26px rgba(0,0,0,.5); font-size:15px; }
+  @media (min-width:760px){ .float-zalo{ display:none; } footer{ padding-bottom:44px; } }
+  @media (max-width:759px){ .links{ display:none; } }
+</style>
+<!-- MAPMEAI-ANALYTICS-2026-11-01 -->
+<meta name="google-site-verification" content="XBYw0LHkcBEtiKWIb4sDtJiHp7yifprJ_FX63Zd3t90">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DC96Y9R3Z2"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-DC96Y9R3Z2');
+</script>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","z6pntvsgmt");
+</script>
+<meta name="robots" content="noindex,follow">
+</head>
+<body>
+<div class="tag">WEB MẪU HOÀN CHỈNH — MẬP MÊ AI PORTFOLIO</div>
+<nav>
+  <div class="logo">PHIN &amp; LÁ <span>CAFE SÂN VƯỜN • THẢO ĐIỀN</span></div>
+  <div class="links">
+    <a href="#gioithieu">Giới thiệu</a><a href="#menu">Menu</a><a href="#khonggian">Không gian</a><a href="#danhgia">Đánh giá</a><a href="#lienhe">Liên hệ</a>
+  </div>
+  <a class="zalo" href="https://zalo.me/0901234567" target="_blank">💬 Chat Zalo</a>
+</nav>
+<div class="hero">
+  <div class="hero-in">
+    <div class="kicker">CAFE PHIN TRUYỀN THỐNG — RANG XAY TẠI QUÁN</div>
+    <h1>Một Góc Yên Giữa<br>Thảo Điền Náo Nhiệt</h1>
+    <p>Cafe phin nhỏ giọt chậm, sân vườn đầy nắng sáng và góc làm việc yên tĩnh cả ngày. Ghé một lần là có chỗ quen.</p>
+    <div class="btns">
+      <a class="btn-gold" href="#menu">Xem Menu</a>
+      <a class="btn-ghost" href="#khonggian">Xem Không Gian</a>
+    </div>
+  </div>
+</div>
+<div class="strip">
+  <div><b>4.9 ★</b>620+ đánh giá Google</div>
+  <div><b>Mở mỗi ngày</b>7:00 – 22:00</div>
+  <div><b>Wifi + ổ cắm</b>mọi bàn</div>
+  <div><b>Thú cưng</b>được chào đón</div>
+</div>
+<section id="gioithieu">
+  <div class="sec-k">GIỚI THIỆU</div>
+  <h2>Cafe Chậm, Sống Chậm</h2>
+  <div class="about">
+    <img src="assets-cafe/space.webp" alt="Không gian gỗ mộc tại Phin & Lá">
+    <p>Phin &amp; Lá mở từ 2019 trong một căn nhà gỗ cũ ở Thảo Điền. Quán giữ cách pha phin truyền thống — hạt robusta Cầu Đất rang vừa, nhỏ giọt 5 phút — và một khu vườn nhỏ để khách ngồi dưới tán cây cả buổi.<br><br>Ban ngày là góc làm việc yên tĩnh của dân freelancer khu vực; cuối tuần là chỗ hẹn của các gia đình và hội bạn thân.</p>
+  </div>
+  <div class="feats">
+    <div class="card"><h3>☕ Hạt rang tại quán</h3>Rang mẻ nhỏ mỗi tuần, xay tới đâu pha tới đó — ly cafe nào cũng thơm nức.</div>
+    <div class="card"><h3>🌿 Sân vườn 200m²</h3>Bàn gỗ dưới tán cây, nắng sáng dịu — chỗ check-in được khách yêu thích nhất.</div>
+    <div class="card"><h3>💻 Góc làm việc riêng</h3>Khu trong nhà yên tĩnh, wifi mạnh, ổ cắm từng bàn, không giới hạn giờ ngồi.</div>
+  </div>
+</section>
+<section id="menu">
+  <div class="sec-k">MENU</div>
+  <h2>Đồ Uống &amp; Bánh</h2>
+  <div class="cat">Cafe Phin Truyền Thống</div>
+  <div class="menu">
+    <div class="mi"><div><div class="n">Cafe Phin Sữa</div><div class="d">Robusta Cầu Đất, sữa đặc, nhỏ giọt 5 phút</div></div><div class="p">29.000đ</div></div>
+    <div class="mi"><div><div class="n">Cafe Phin Đen</div><div class="d">Đậm, hậu ngọt tự nhiên</div></div><div class="p">25.000đ</div></div>
+    <div class="mi"><div><div class="n">Bạc Xỉu</div><div class="d">Nhiều sữa, ít cafe — nhẹ nhàng buổi sáng</div></div><div class="p">32.000đ</div></div>
+    <div class="mi"><div><div class="n">Cafe Trứng</div><div class="d">Lớp kem trứng béo mịn kiểu Hà Nội</div></div><div class="p">39.000đ</div></div>
+  </div>
+  <div class="cat">Espresso &amp; Đồ Uống Khác</div>
+  <div class="menu">
+    <div class="mi"><div><div class="n">Latte / Cappuccino</div><div class="d">Sữa tươi Đà Lạt, art theo yêu cầu</div></div><div class="p">45.000đ</div></div>
+    <div class="mi"><div><div class="n">Matcha Latte</div><div class="d">Matcha Nhật, ít ngọt</div></div><div class="p">49.000đ</div></div>
+    <div class="mi"><div><div class="n">Trà Đào Cam Sả</div><div class="d">Trái cây tươi mỗi ngày</div></div><div class="p">42.000đ</div></div>
+    <div class="mi"><div><div class="n">Sinh Tố Bơ</div><div class="d">Bơ sáp Đắk Lắk theo mùa</div></div><div class="p">45.000đ</div></div>
+  </div>
+  <div class="cat">Bánh &amp; Ăn Nhẹ</div>
+  <div class="menu">
+    <div class="mi"><div><div class="n">Croissant Bơ</div><div class="d">Nướng mới mỗi sáng tại quán</div></div><div class="p">35.000đ</div></div>
+    <div class="mi"><div><div class="n">Bánh Mì Thịt Nướng</div><div class="d">Ổ nhỏ ăn kèm cafe sáng</div></div><div class="p">30.000đ</div></div>
+    <div class="mi"><div><div class="n">Tiramisu</div><div class="d">Làm thủ công, bán trong ngày</div></div><div class="p">55.000đ</div></div>
+  </div>
+  <div class="combo">
+    <h3>🌅 Combo Sáng — <b>59.000đ</b></h3>
+    <p>1 cafe phin sữa + 1 croissant bơ, áp dụng 7:00–10:00 mỗi ngày. Đặt trước qua Zalo, tới quán là có bàn đẹp ngoài vườn.</p>
+  </div>
+</section>
+<section id="khonggian">
+  <div class="sec-k">KHÔNG GIAN</div>
+  <h2>Góc Nào Cũng Có Ảnh Đẹp</h2>
+  <div class="gal">
+    <img src="assets-cafe/hero-cafe.webp" alt="Cafe phin và bánh mì trên bàn gỗ">
+    <img src="assets-cafe/space.webp" alt="Không gian trong nhà ấm cúng">
+  </div>
+</section>
+<section id="danhgia">
+  <div class="sec-k">ĐÁNH GIÁ</div>
+  <h2>Khách Nói Gì Về Quán</h2>
+  <div class="rev">
+    <div class="card"><div class="st">★★★★★</div>"Ngồi làm việc cả ngày không ai làm phiền, cafe phin thì đúng chuẩn gu mình."<br><b>— Anh Khoa, freelancer</b></div>
+    <div class="card"><div class="st">★★★★★</div>"Vườn xinh, sáng cuối tuần dẫn bé và cún ra ngồi rất thích. Giá lại mềm so với khu Thảo Điền."<br><b>— Chị Linh, khách cuối tuần</b></div>
+    <div class="card"><div class="st">★★★★★</div>"Cafe trứng ngon bất ngờ. Nhân viên nhớ cả món quen của khách — điểm cộng lớn."<br><b>— Bạn An, đánh giá Google</b></div>
+  </div>
+</section>
+<section>
+  <div class="sec-k">HỎI ĐÁP</div>
+  <h2>Câu Hỏi Thường Gặp</h2>
+  <details><summary>Quán có cho mang thú cưng không?</summary><p>Có, khu vực sân vườn chào đón thú cưng. Quán có sẵn bát nước và góc riêng cho các bé.</p></details>
+  <details><summary>Có đặt bàn tổ chức sinh nhật/họp nhóm không?</summary><p>Có. Nhóm 8–20 người nhắn Zalo trước 2 ngày, quán chuẩn bị khu riêng và menu combo theo ngân sách.</p></details>
+  <details><summary>Có bán hạt cafe mang về không?</summary><p>Có. Hạt robusta Cầu Đất rang tại quán đóng gói 250g/500g, mua tại quầy hoặc đặt qua Zalo giao trong ngày.</p></details>
+</section>
+<section id="lienhe">
+  <div class="sec-k">LIÊN HỆ</div>
+  <h2>Ghé Quán Hoặc Đặt Bàn Trước</h2>
+  <p class="info">
+    📍 <b>78 Xuân Thủy, Thảo Điền, TP. Thủ Đức, TP.HCM</b><br>
+    🕘 Mở mỗi ngày <b>7:00 – 22:00</b><br>
+    📞 <b>0901 234 567</b> — gọi hoặc nhắn Zalo đặt bàn/đặt bánh
+  </p>
+  <div class="map"><iframe loading="lazy" src="https://maps.google.com/maps?q=Xu%C3%A2n%20Th%E1%BB%A7y%2C%20Th%E1%BA%A3o%20%C4%90i%E1%BB%81n%2C%20Th%E1%BB%A7%20%C4%90%E1%BB%A9c&t=&z=16&ie=UTF8&iwloc=&output=embed"></iframe></div>
+  <div class="cta"><a class="btn-gold" style="display:inline-block;padding:14px 30px;border-radius:30px;text-decoration:none;font-weight:700;" href="https://zalo.me/0901234567" target="_blank">💬 Nhắn Zalo Đặt Bàn Ngay</a></div>
+</section>
+<a class="float-zalo" href="https://zalo.me/0901234567" target="_blank">💬 Chat Zalo Với Quán</a>
+<footer>© Phin &amp; Lá — Web mẫu hoàn chỉnh do MẬP MÊ AI thực hiện (dữ liệu mẫu).<br>Bản chính thức dùng menu, hình ảnh, địa chỉ và số Zalo thật của quán.</footer>
+</body>
+</html>

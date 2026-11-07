@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nail Xinh Studio | Phú Nhuận, TP.HCM (WEB MẪU HOÀN CHỈNH)</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;900&family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:'Be Vietnam Pro',Arial,sans-serif; background:#fbf6f2; color:#43302c; }
+  .tag { background:#43302c; color:#eec9b8; text-align:center; font-size:11px; letter-spacing:3px; padding:7px; }
+  nav { position:sticky; top:0; z-index:10; background:rgba(251,246,242,.95); backdrop-filter:blur(8px); display:flex; justify-content:space-between; align-items:center; padding:13px 26px; border-bottom:1px solid #ecd9cf; flex-wrap:wrap; gap:8px; }
+  .logo { font-family:'Playfair Display',serif; font-size:21px; font-weight:900; color:#96585c; }
+  .logo span { display:block; font-family:'Be Vietnam Pro',sans-serif; font-weight:500; font-size:11px; letter-spacing:2.5px; color:#a5837c; }
+  .links a { color:#6d4a44; text-decoration:none; font-size:14px; margin:0 10px; font-weight:500; }
+  .links a:hover { color:#96585c; }
+  nav a.zalo { background:#0068ff; color:#fff; padding:10px 18px; border-radius:30px; text-decoration:none; font-weight:700; font-size:14px; }
+  .hero { position:relative; min-height:82vh; display:flex; align-items:flex-end; background:url('hero.webp') center/cover no-repeat; }
+  .hero::after { content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(67,40,36,.1) 35%, rgba(67,40,36,.74) 90%); }
+  .hero-in { position:relative; z-index:2; max-width:900px; margin:0 auto; padding:0 24px 54px; text-align:center; width:100%; color:#fdf3ec; }
+  .kicker { color:#f4cfc0; letter-spacing:3px; font-size:12px; font-weight:600; margin-bottom:14px; }
+  .hero h1 { font-family:'Playfair Display',serif; font-size:clamp(34px,6vw,56px); font-weight:900; line-height:1.12; margin-bottom:14px; }
+  .hero p { color:#f7e4da; font-size:16px; max-width:540px; margin:0 auto 26px; line-height:1.65; }
+  .btns a { display:inline-block; margin:4px; padding:14px 28px; border-radius:30px; text-decoration:none; font-weight:700; font-size:15px; }
+  .btn-rose { background:linear-gradient(135deg,#c97e82,#96585c); color:#fff; box-shadow:0 8px 22px rgba(90,40,45,.4); }
+  .btn-ghost { border:1.5px solid rgba(253,243,236,.8); color:#fdf3ec; }
+  .strip { display:flex; justify-content:center; gap:34px; flex-wrap:wrap; padding:20px; background:#fff; border-bottom:1px solid #ecd9cf; font-size:13.5px; color:#96766e; text-align:center; }
+  .strip b { color:#96585c; display:block; font-size:17px; font-family:'Playfair Display',serif; }
+  section { max-width:920px; margin:0 auto; padding:54px 24px 8px; }
+  .sec-k { text-align:center; color:#b96e72; letter-spacing:3px; font-size:11.5px; font-weight:600; }
+  h2 { font-family:'Playfair Display',serif; font-size:32px; text-align:center; margin:8px 0 26px; color:#54332f; }
+  .about { display:grid; grid-template-columns:1fr; gap:22px; align-items:center; }
+  @media (min-width:760px){ .about{ grid-template-columns:1fr 1.1fr; } }
+  .about img { width:100%; border-radius:18px; border:1px solid #ecd9cf; }
+  .about p { line-height:1.85; color:#6d4a44; font-size:15.5px; }
+  .feats { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:14px; margin-top:24px; }
+  .card { background:#fff; border:1px solid #ecd9cf; border-radius:16px; padding:20px; font-size:14px; line-height:1.65; color:#6d4a44; box-shadow:0 10px 26px rgba(150,88,92,.06); }
+  .card h3 { color:#96585c; font-size:16px; margin-bottom:8px; }
+  .card .st { color:#c9906a; letter-spacing:2px; margin-bottom:8px; }
+  .cat { color:#96585c; font-family:'Playfair Display',serif; font-size:21px; margin:26px 0 4px; }
+  .menu { background:#fff; border:1px solid #ecd9cf; border-radius:18px; padding:8px 26px; box-shadow:0 12px 34px rgba(150,88,92,.08); }
+  .mi { display:flex; justify-content:space-between; gap:14px; padding:12px 0; border-bottom:1px dashed #e3c6ba; }
+  .mi:last-child { border-bottom:none; }
+  .mi .n { font-weight:600; font-size:15.5px; }
+  .mi .d { color:#a5837c; font-size:13px; margin-top:3px; line-height:1.5; }
+  .mi .p { font-family:'Playfair Display',serif; color:#96585c; font-size:17px; font-weight:700; white-space:nowrap; }
+  .combo { margin-top:30px; background:linear-gradient(135deg,#96585c,#b96e72); border-radius:18px; padding:26px; text-align:center; color:#fdf3ec; }
+  .combo h3 { font-family:'Playfair Display',serif; font-size:24px; margin-bottom:8px; }
+  .combo p { line-height:1.7; font-size:15px; color:#f7e0d4; }
+  .combo b { color:#ffe1b8; font-size:19px; }
+  .steps { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px; }
+  .step { text-align:center; background:#fff; border:1px solid #ecd9cf; border-radius:16px; padding:22px 16px; }
+  .step .num { font-family:'Playfair Display',serif; font-size:30px; color:#c97e82; font-weight:900; }
+  .step h3 { font-size:15px; color:#54332f; margin:6px 0; }
+  .step p { font-size:13.5px; color:#96766e; line-height:1.6; }
+  .gal { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:12px; }
+  .gal img { width:100%; height:210px; object-fit:cover; border-radius:14px; border:1px solid #ecd9cf; }
+  .rev { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; }
+  details { background:#fff; border:1px solid #ecd9cf; border-radius:14px; padding:16px 20px; margin-bottom:10px; }
+  summary { cursor:pointer; font-weight:600; color:#54332f; font-size:15px; }
+  details p { color:#7a5c58; line-height:1.7; font-size:14px; margin-top:8px; }
+  .info { text-align:center; line-height:2.05; font-size:15.5px; }
+  .info b { color:#96585c; }
+  .map { border-radius:16px; overflow:hidden; border:1px solid #ecd9cf; margin-top:18px; }
+  .map iframe { width:100%; height:300px; border:0; display:block; }
+  .cta { text-align:center; padding:44px 24px 8px; }
+  footer { text-align:center; padding:36px 16px 96px; font-size:12.5px; color:#b0948c; line-height:1.7; }
+  .float-zalo { position:fixed; left:50%; transform:translateX(-50%); bottom:16px; z-index:20; background:#0068ff; color:#fff; font-weight:800; padding:14px 30px; border-radius:40px; text-decoration:none; box-shadow:0 10px 26px rgba(0,40,90,.35); font-size:15px; }
+  @media (min-width:760px){ .float-zalo{ display:none; } footer{ padding-bottom:44px; } }
+  @media (max-width:759px){ .links{ display:none; } }
+</style>
+<!-- MAPMEAI-ANALYTICS-2026-11-01 -->
+<meta name="google-site-verification" content="XBYw0LHkcBEtiKWIb4sDtJiHp7yifprJ_FX63Zd3t90">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DC96Y9R3Z2"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-DC96Y9R3Z2');
+</script>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","z6pntvsgmt");
+</script>
+<meta name="robots" content="noindex,follow">
+</head>
+<body>
+<div class="tag">WEB MẪU HOÀN CHỈNH — MẬP MÊ AI PORTFOLIO</div>
+<nav>
+  <div class="logo">NAIL XINH <span>STUDIO • PHÚ NHUẬN</span></div>
+  <div class="links">
+    <a href="#gioithieu">Giới thiệu</a><a href="#dichvu">Dịch vụ</a><a href="#mau">Mẫu móng</a><a href="#danhgia">Đánh giá</a><a href="#lienhe">Liên hệ</a>
+  </div>
+  <a class="zalo" href="https://zalo.me/0901234567" target="_blank">💬 Đặt Lịch Zalo</a>
+</nav>
+<div class="hero">
+  <div class="hero-in">
+    <div class="kicker">TIỆM NAIL ĐƯỢC YÊU THÍCH Ở PHÚ NHUẬN</div>
+    <h1>Móng Đẹp Chuẩn Hàn,<br>Giá Rõ Ràng Từ Đầu</h1>
+    <p>Thợ tay nghề cao, dụng cụ tiệt trùng từng bộ, sơn chính hãng. Nhắn Zalo đặt lịch là giữ chỗ — tới nơi làm liền, khỏi chờ.</p>
+    <div class="btns">
+      <a class="btn-rose" href="#dichvu">Bảng Giá Dịch Vụ</a>
+      <a class="btn-ghost" href="#mau">Xem Mẫu Móng</a>
+    </div>
+  </div>
+</div>
+<div class="strip">
+  <div><b>4.9 ★</b>350+ đánh giá Google</div>
+  <div><b>Mở mỗi ngày</b>9:00 – 20:00</div>
+  <div><b>Tiệt trùng</b>dụng cụ từng khách</div>
+  <div><b>Bảo hành</b>bong tróc 7 ngày</div>
+</div>
+<section id="gioithieu">
+  <div class="sec-k">GIỚI THIỆU</div>
+  <h2>Xinh Từ Bộ Móng, Yên Tâm Từ Cách Làm</h2>
+  <div class="about">
+    <img src="assets-nail/nails.webp" alt="Các mẫu móng tại Nail Xinh Studio">
+    <p>Nail Xinh Studio tin rằng một bộ móng đẹp bắt đầu từ sự sạch sẽ và tỉ mỉ. Mỗi khách dùng một bộ dụng cụ đã tiệt trùng riêng, sơn gel chính hãng nhập trực tiếp, và thợ chỉ nhận tối đa số khách vừa đủ để không ai bị làm vội.<br><br>Không gian tiệm thơm nhẹ, ghế êm, có trà và wifi — ghé làm móng cũng là ghé thư giãn.</p>
+  </div>
+  <div class="feats">
+    <div class="card"><h3>🧼 Tiệt trùng chuẩn spa</h3>Dụng cụ hấp tiệt trùng, đóng túi riêng từng bộ, mở trước mặt khách.</div>
+    <div class="card"><h3>🎨 300+ màu sơn chính hãng</h3>Cập nhật màu hot mỗi tháng, có bảng màu thử trực tiếp tại tiệm.</div>
+    <div class="card"><h3>🛡️ Bảo hành 7 ngày</h3>Bong, tróc, gãy trong 7 ngày — sửa lại miễn phí, không hỏi lý do.</div>
+  </div>
+</section>
+<section id="dichvu">
+  <div class="sec-k">DỊCH VỤ</div>
+  <h2>Bảng Giá Rõ Ràng — Không Phát Sinh</h2>
+  <div class="cat">Chăm Sóc Tay</div>
+  <div class="menu">
+    <div class="mi"><div><div class="n">Cắt Da + Sơn Thường</div><div class="d">Cắt da sạch, dũa form, sơn OPI</div></div><div class="p">99.000đ</div></div>
+    <div class="mi"><div><div class="n">Sơn Gel Tay</div><div class="d">Bền 3–4 tuần, hơn 300 màu lựa chọn</div></div><div class="p">199.000đ</div></div>
+    <div class="mi"><div><div class="n">Sơn Gel Mắt Mèo / Tráng Gương</div><div class="d">Hiệu ứng hot trend Hàn Quốc</div></div><div class="p">249.000đ</div></div>
+  </div>
+  <div class="cat">Chăm Sóc Chân</div>
+  <div class="menu">
+    <div class="mi"><div><div class="n">Chà Gót + Massage Chân</div><div class="d">Ngâm thảo dược, tẩy tế bào chết, massage thư giãn 20 phút</div></div><div class="p">249.000đ</div></div>
+    <div class="mi"><div><div class="n">Sơn Gel Chân</div><div class="d">Kèm cắt da và dũa form</div></div><div class="p">179.000đ</div></div>
+    <div class="mi"><div><div class="n">Combo Tay + Chân Gel</div><div class="d">Tiết kiệm hơn khi làm cùng lúc</div></div><div class="p">349.000đ</div></div>
+  </div>
+  <div class="cat">Nối Móng &amp; Nghệ Thuật</div>
+  <div class="menu">
+    <div class="mi"><div><div class="n">Úp Móng + Sơn Gel</div><div class="d">Nhanh gọn, hợp cô dâu và dự tiệc</div></div><div class="p">349.000đ</div></div>
+    <div class="mi"><div><div class="n">Đắp Bột / Nối Móng</div><div class="d">Form dài tự nhiên, chắc khỏe</div></div><div class="p">399.000đ</div></div>
+    <div class="mi"><div><div class="n">Vẽ Móng Nghệ Thuật</div><div class="d">Vẽ tay theo mẫu khách mang tới, tính theo độ khó</div></div><div class="p">từ 50.000đ</div></div>
+    <div class="mi"><div><div class="n">Đính Đá / Charm</div><div class="d">Đá Swarovski và charm Hàn</div></div><div class="p">từ 10.000đ/viên</div></div>
+  </div>
+  <div class="combo">
+    <h3>💅 Ưu Đãi Khách Mới — Giảm 20% Sơn Gel</h3>
+    <p>Đặt lịch qua Zalo lần đầu, giảm ngay 20% dịch vụ sơn gel tay. Nhóm 2 người đi cùng giảm thêm <b>10%</b> tổng hóa đơn.</p>
+  </div>
+</section>
+<section>
+  <div class="sec-k">QUY TRÌNH</div>
+  <h2>Đặt Lịch Trong 4 Bước</h2>
+  <div class="steps">
+    <div class="step"><div class="num">1</div><h3>Nhắn Zalo</h3><p>Gởi mẫu móng chị thích + giờ muốn tới.</p></div>
+    <div class="step"><div class="num">2</div><h3>Tiệm xác nhận</h3><p>Báo giá chính xác và thợ phụ trách trong 5 phút.</p></div>
+    <div class="step"><div class="num">3</div><h3>Tới làm móng</h3><p>Ghế đã giữ sẵn, dụng cụ tiệt trùng mở trước mặt.</p></div>
+    <div class="step"><div class="num">4</div><h3>Bảo hành 7 ngày</h3><p>Bong tróc cứ nhắn Zalo, tiệm sửa miễn phí.</p></div>
+  </div>
+</section>
+<section id="mau">
+  <div class="sec-k">MẪU MÓNG</div>
+  <h2>Bộ Sưu Tập Tại Tiệm</h2>
+  <div class="gal">
+    <img src="assets-nail/hero.webp" alt="Mẫu móng nude sang trọng">
+    <img src="assets-nail/nails.webp" alt="Bốn mẫu móng: french, đỏ, vàng ánh kim, vẽ hoa">
+  </div>
+</section>
+<section id="danhgia">
+  <div class="sec-k">ĐÁNH GIÁ</div>
+  <h2>Khách Nói Gì Về Tiệm</h2>
+  <div class="rev">
+    <div class="card"><div class="st">★★★★★</div>"Đặt Zalo trước nên tới là làm liền. Bộ gel của mình 4 tuần vẫn bóng như mới."<br><b>— Chị Phương, Phú Nhuận</b></div>
+    <div class="card"><div class="st">★★★★★</div>"Tiệm sạch nhất khu này, dụng cụ mở túi mới trước mặt mình luôn. Rất yên tâm."<br><b>— Bạn Vy, sinh viên</b></div>
+    <div class="card"><div class="st">★★★★★</div>"Giá ghi rõ từ đầu, không vẽ vời thêm dịch vụ. Thợ vẽ hoa tay cực khéo."<br><b>— Chị Trâm, khách quen</b></div>
+  </div>
+</section>
+<section>
+  <div class="sec-k">HỎI ĐÁP</div>
+  <h2>Câu Hỏi Thường Gặp</h2>
+  <details><summary>Không đặt lịch trước có làm được không?</summary><p>Được, tiệm vẫn nhận khách vãng lai. Nhưng cuối tuần thường kín ghế — nhắn Zalo trước 1–2 tiếng là chắc chắn có chỗ và đúng thợ chị thích.</p></details>
+  <details><summary>Làm một bộ gel mất bao lâu?</summary><p>Sơn gel tay khoảng 45–60 phút, combo tay chân khoảng 90 phút. Tiệm báo thời gian chính xác khi xác nhận lịch.</p></details>
+  <details><summary>Có nhận làm theo mẫu trên mạng không?</summary><p>Có. Chị cứ gởi mẫu qua Zalo, tiệm báo trước làm được tới đâu và giá bao nhiêu — ưng mới đặt lịch.</p></details>
+</section>
+<section id="lienhe">
+  <div class="sec-k">LIÊN HỆ</div>
+  <h2>Ghé Tiệm Hoặc Đặt Lịch Trước</h2>
+  <p class="info">
+    📍 <b>45 Phan Xích Long, Phường 2, Phú Nhuận, TP.HCM</b><br>
+    🕘 Mở mỗi ngày <b>9:00 – 20:00</b><br>
+    📞 <b>0901 234 567</b> — nhắn Zalo đặt lịch để giữ ghế
+  </p>
+  <div class="map"><iframe loading="lazy" src="https://maps.google.com/maps?q=Phan%20X%C3%ADch%20Long%2C%20Ph%C3%BA%20Nhu%E1%BA%ADn%2C%20H%E1%BB%93%20Ch%C3%AD%20Minh&t=&z=16&ie=UTF8&iwloc=&output=embed"></iframe></div>
+  <div class="cta"><a style="display:inline-block;padding:14px 30px;border-radius:30px;text-decoration:none;font-weight:700;background:#0068ff;color:#fff;" href="https://zalo.me/0901234567" target="_blank">💬 Nhắn Zalo Đặt Lịch Ngay</a></div>
+</section>
+<a class="float-zalo" href="https://zalo.me/0901234567" target="_blank">💬 Đặt Lịch Qua Zalo</a>
+<footer>© Nail Xinh Studio — Web mẫu hoàn chỉnh do MẬP MÊ AI thực hiện (dữ liệu mẫu).<br>Bản chính thức dùng bảng giá, hình ảnh, địa chỉ và số Zalo thật của tiệm.</footer>
+</body>
+</html>

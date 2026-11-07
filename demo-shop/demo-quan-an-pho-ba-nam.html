@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phở Bà Năm — Quán Ăn Gia Đình | Quận 3, TP.HCM (WEB MẪU HOÀN CHỈNH)</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;900&family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:'Be Vietnam Pro',Arial,sans-serif; background:#0e0b08; color:#f3ead9; }
+  .tag { background:#000; color:#c9a45c; text-align:center; font-size:11px; letter-spacing:3px; padding:7px; }
+  nav { position:sticky; top:0; z-index:10; background:rgba(14,11,8,.94); backdrop-filter:blur(8px); display:flex; justify-content:space-between; align-items:center; padding:13px 26px; border-bottom:1px solid rgba(201,164,92,.35); flex-wrap:wrap; gap:8px; }
+  .logo { font-family:'Playfair Display',serif; font-size:22px; font-weight:900; color:#e9c979; }
+  .logo span { color:#f3ead9; font-weight:500; font-size:11px; letter-spacing:2.5px; display:block; font-family:'Be Vietnam Pro',sans-serif; }
+  .links a { color:#e8dcc2; text-decoration:none; font-size:14px; margin:0 10px; font-weight:500; }
+  .links a:hover { color:#e9c979; }
+  nav a.zalo { background:#0068ff; color:#fff; padding:10px 18px; border-radius:30px; text-decoration:none; font-weight:700; font-size:14px; }
+  .hero { position:relative; min-height:82vh; display:flex; align-items:flex-end; background:url('hero.webp') center/cover no-repeat; }
+  .hero::after { content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(10,6,3,.22) 30%, rgba(10,6,3,.9) 88%); }
+  .hero-in { position:relative; z-index:2; max-width:900px; margin:0 auto; padding:0 24px 54px; text-align:center; width:100%; }
+  .kicker { color:#e9c979; letter-spacing:3px; font-size:12px; font-weight:600; margin-bottom:14px; }
+  .hero h1 { font-family:'Playfair Display',serif; font-size:clamp(36px,6vw,60px); font-weight:900; line-height:1.12; margin-bottom:14px; }
+  .hero p { color:#e8dcc2; font-size:16px; max-width:580px; margin:0 auto 26px; line-height:1.65; }
+  .btns a { display:inline-block; margin:4px; padding:14px 28px; border-radius:30px; text-decoration:none; font-weight:700; font-size:15px; }
+  .btn-gold { background:linear-gradient(135deg,#e9c979,#c9a45c); color:#221806; box-shadow:0 8px 22px rgba(201,164,92,.4); }
+  .btn-ghost { border:1.5px solid rgba(243,234,217,.75); color:#f3ead9; }
+  .strip { display:flex; justify-content:center; gap:34px; flex-wrap:wrap; padding:20px; background:#171208; border-bottom:1px solid rgba(201,164,92,.25); font-size:13.5px; color:#d8c9a3; text-align:center; }
+  .strip b { color:#e9c979; display:block; font-size:17px; font-family:'Playfair Display',serif; }
+  section { max-width:920px; margin:0 auto; padding:54px 24px 8px; }
+  .sec-k { text-align:center; color:#c9a45c; letter-spacing:3px; font-size:11.5px; font-weight:600; }
+  h2 { font-family:'Playfair Display',serif; font-size:32px; text-align:center; margin:8px 0 26px; color:#f7efdb; }
+  .about { display:grid; grid-template-columns:1fr; gap:22px; align-items:center; }
+  @media (min-width:760px){ .about{ grid-template-columns:1.1fr 1fr; } }
+  .about img { width:100%; border-radius:18px; border:1px solid rgba(201,164,92,.3); }
+  .about p { line-height:1.85; color:#e2d5b8; font-size:15.5px; }
+  .feats { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:14px; margin-top:24px; }
+  .card { background:rgba(255,250,238,.045); border:1px solid rgba(201,164,92,.22); border-radius:16px; padding:20px; font-size:14px; line-height:1.65; color:#e2d5b8; }
+  .card h3 { color:#e9c979; font-size:16px; margin-bottom:8px; }
+  .card .st { color:#e9c979; letter-spacing:2px; margin-bottom:8px; }
+  .cat { color:#e9c979; font-family:'Playfair Display',serif; font-size:21px; margin:26px 0 4px; }
+  .menu { background:rgba(255,250,238,.04); border:1px solid rgba(201,164,92,.28); border-radius:18px; padding:8px 26px; }
+  .mi { display:flex; justify-content:space-between; gap:14px; padding:12px 0; border-bottom:1px dashed rgba(201,164,92,.3); }
+  .mi:last-child { border-bottom:none; }
+  .mi .n { font-weight:600; font-size:15.5px; }
+  .mi .d { color:#bfae8d; font-size:13px; margin-top:3px; line-height:1.5; }
+  .mi .p { font-family:'Playfair Display',serif; color:#e9c979; font-size:17px; font-weight:700; white-space:nowrap; }
+  .combo { margin-top:30px; background:linear-gradient(135deg,#7a1f1f,#93392a); border:1px solid rgba(233,201,121,.5); border-radius:18px; padding:26px; text-align:center; }
+  .combo h3 { font-family:'Playfair Display',serif; font-size:24px; color:#f7e8c9; margin-bottom:8px; }
+  .combo p { color:#f0dfba; line-height:1.7; font-size:15px; }
+  .combo b { color:#ffe9a8; font-size:19px; }
+  .gal { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:12px; }
+  .gal img { width:100%; height:210px; object-fit:cover; border-radius:14px; border:1px solid rgba(201,164,92,.25); }
+  .rev { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; }
+  details { background:rgba(255,250,238,.045); border:1px solid rgba(201,164,92,.22); border-radius:14px; padding:16px 20px; margin-bottom:10px; }
+  summary { cursor:pointer; font-weight:600; color:#f7efdb; font-size:15px; }
+  details p { color:#cbbd97; line-height:1.7; font-size:14px; margin-top:8px; }
+  .info { text-align:center; line-height:2.05; font-size:15.5px; color:#e8dcc2; }
+  .info b { color:#e9c979; }
+  .map { border-radius:16px; overflow:hidden; border:1px solid rgba(201,164,92,.3); margin-top:18px; }
+  .map iframe { width:100%; height:300px; border:0; display:block; }
+  .cta { text-align:center; padding:44px 24px 8px; }
+  footer { text-align:center; padding:36px 16px 96px; font-size:12.5px; color:#8d7c58; line-height:1.7; }
+  .float-zalo { position:fixed; left:50%; transform:translateX(-50%); bottom:16px; z-index:20; background:#0068ff; color:#fff; font-weight:800; padding:14px 30px; border-radius:40px; text-decoration:none; box-shadow:0 10px 26px rgba(0,0,0,.5); font-size:15px; }
+  @media (min-width:760px){ .float-zalo{ display:none; } footer{ padding-bottom:44px; } .links{ display:block; } }
+  @media (max-width:759px){ .links{ display:none; } }
+</style>
+<!-- MAPMEAI-ANALYTICS-2026-11-01 -->
+<meta name="google-site-verification" content="XBYw0LHkcBEtiKWIb4sDtJiHp7yifprJ_FX63Zd3t90">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DC96Y9R3Z2"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-DC96Y9R3Z2');
+</script>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","z6pntvsgmt");
+</script>
+<meta name="robots" content="noindex,follow">
+</head>
+<body>
+<div class="tag">WEB MẪU HOÀN CHỈNH — MẬP MÊ AI PORTFOLIO</div>
+<nav>
+  <div class="logo">PHỞ BÀ NĂM <span>QUÁN ĂN GIA ĐÌNH • QUẬN 3</span></div>
+  <div class="links">
+    <a href="#gioithieu">Giới thiệu</a><a href="#thucdon">Thực đơn</a><a href="#hinhanh">Hình ảnh</a><a href="#danhgia">Đánh giá</a><a href="#lienhe">Liên hệ</a>
+  </div>
+  <a class="zalo" href="https://zalo.me/0901234567" target="_blank">💬 Chat Zalo</a>
+</nav>
+<div class="hero">
+  <div class="hero-in">
+    <div class="kicker">NƯỚC DÙNG NINH 12 TIẾNG — RAU THƠM MỚI MỖI SÁNG</div>
+    <h1>Phở Ngon Chuẩn Vị,<br>Giá Bình Dân Quận 3</h1>
+    <p>Quán gia đình hơn 15 năm giữa lòng Sài Gòn — phở bò, bún bò Huế, cơm tấm nướng than. Nhắn Zalo đặt trước, tới là có món nóng hổi.</p>
+    <div class="btns">
+      <a class="btn-gold" href="#thucdon">Xem Thực Đơn</a>
+      <a class="btn-ghost" href="#lienhe">Địa Chỉ &amp; Giờ Mở Cửa</a>
+    </div>
+  </div>
+</div>
+<div class="strip">
+  <div><b>4.8 ★</b>480+ đánh giá Google</div>
+  <div><b>15+ năm</b>quán gia đình</div>
+  <div><b>Mở mỗi ngày</b>6:00 – 21:00</div>
+  <div><b>Giao tận nơi</b>bán kính 3km</div>
+</div>
+<section id="gioithieu">
+  <div class="sec-k">GIỚI THIỆU</div>
+  <h2>Câu Chuyện Của Quán</h2>
+  <div class="about">
+    <img src="assets-quan-an/interior.webp" alt="Không gian quán Phở Bà Năm">
+    <p>Phở Bà Năm bắt đầu từ một gánh phở nhỏ năm 2009. Hơn 15 năm, quán vẫn giữ đúng một công thức: xương bò ninh đủ 12 tiếng, không mì chính thay thế, rau thơm lấy mới mỗi sáng ở chợ đầu mối.<br><br>Không gian quán ấm cúng, sạch sẽ, có máy lạnh — hợp cho bữa trưa gia đình, tiếp khách hay đơn giản là một tô phở ngon đầu ngày.</p>
+  </div>
+  <div class="feats">
+    <div class="card"><h3>🍲 Nước dùng ninh 12 tiếng</h3>Ninh xương ống và xương sườn nguyên đêm, vớt bọt tay — nước trong, ngọt thanh tự nhiên.</div>
+    <div class="card"><h3>🌿 Nguyên liệu mới mỗi ngày</h3>Thịt bò chọn buổi sáng, rau thơm và giá trụng tại chỗ khi khách gọi món.</div>
+    <div class="card"><h3>⚡ Lên món nhanh 5–7 phút</h3>Đặt trước qua Zalo, tới nơi là có món — không phải chờ giờ cao điểm.</div>
+  </div>
+</section>
+<section id="thucdon">
+  <div class="sec-k">THỰC ĐƠN</div>
+  <h2>Đầy Đủ Món &amp; Giá</h2>
+  <div class="cat">Phở &amp; Bún</div>
+  <div class="menu">
+    <div class="mi"><div><div class="n">Phở Đặc Biệt</div><div class="d">Tái, nạm, gầu, bò viên — tô lớn đầy đặn</div></div><div class="p">55.000đ</div></div>
+    <div class="mi"><div><div class="n">Phở Tái Nạm</div><div class="d">Thịt tái mềm, nạm giòn nhẹ</div></div><div class="p">50.000đ</div></div>
+    <div class="mi"><div><div class="n">Phở Gà</div><div class="d">Gà ta xé phay, nước dùng trong</div></div><div class="p">48.000đ</div></div>
+    <div class="mi"><div><div class="n">Bún Bò Huế</div><div class="d">Cay thơm sả ruốc, giò heo, chả cua</div></div><div class="p">60.000đ</div></div>
+    <div class="mi"><div><div class="n">Bún Chả Cá</div><div class="d">Chả cá chiên dai, nước dùng cá thanh ngọt</div></div><div class="p">50.000đ</div></div>
+  </div>
+  <div class="cat">Cơm &amp; Bánh Mì</div>
+  <div class="menu">
+    <div class="mi"><div><div class="n">Cơm Tấm Sườn Bì Chả</div><div class="d">Sườn nướng than, nước mắm nhà làm</div></div><div class="p">45.000đ</div></div>
+    <div class="mi"><div><div class="n">Cơm Gà Xối Mỡ</div><div class="d">Đùi gà da giòn, cơm nấu nước gà</div></div><div class="p">45.000đ</div></div>
+    <div class="mi"><div><div class="n">Bánh Mì Thịt Nướng</div><div class="d">Thịt nướng sả, pate, đồ chua giòn</div></div><div class="p">25.000đ</div></div>
+    <div class="mi"><div><div class="n">Bánh Mì Chả Cá</div><div class="d">Chả cá nóng, rau răm, sốt ớt nhà làm</div></div><div class="p">25.000đ</div></div>
+  </div>
+  <div class="cat">Ăn Kèm &amp; Đồ Uống</div>
+  <div class="menu">
+    <div class="mi"><div><div class="n">Chả Giò (4 cuốn)</div><div class="d">Giòn rụm, chấm nước mắm chua ngọt</div></div><div class="p">40.000đ</div></div>
+    <div class="mi"><div><div class="n">Gỏi Cuốn Tôm Thịt (2 cuốn)</div><div class="d">Tương đậu phộng béo thơm</div></div><div class="p">30.000đ</div></div>
+    <div class="mi"><div><div class="n">Cà Phê Sữa Đá</div><div class="d">Phin truyền thống, đậm vị</div></div><div class="p">20.000đ</div></div>
+    <div class="mi"><div><div class="n">Trà Tắc / Nước Sâm</div><div class="d">Giải nhiệt, nấu mỗi ngày</div></div><div class="p">15.000đ</div></div>
+  </div>
+  <div class="combo">
+    <h3>🍱 Combo Gia Đình 4 Người — <b>199.000đ</b></h3>
+    <p>2 phở đặc biệt + 1 bún bò Huế + 1 cơm tấm + chả giò + 4 nước sâm. Đặt qua Zalo trước 30 phút, giảm thêm 10% cho lần đặt đầu tiên.</p>
+  </div>
+</section>
+<section id="hinhanh">
+  <div class="sec-k">HÌNH ẢNH</div>
+  <h2>Món Ngon &amp; Không Gian Quán</h2>
+  <div class="gal">
+    <img src="assets-quan-an/hero.webp" alt="Tô phở đặc biệt bốc khói">
+    <img src="assets-quan-an/food.webp" alt="Mâm món ăn gia đình">
+    <img src="assets-quan-an/interior.webp" alt="Không gian quán ấm cúng">
+  </div>
+</section>
+<section id="danhgia">
+  <div class="sec-k">ĐÁNH GIÁ</div>
+  <h2>Khách Nói Gì Về Quán</h2>
+  <div class="rev">
+    <div class="card"><div class="st">★★★★★</div>"Nước phở trong mà ngọt sâu, ăn là biết ninh thật. Trưa nào công ty tôi cũng ghé."<br><b>— Anh Tuấn, khách quen</b></div>
+    <div class="card"><div class="st">★★★★★</div>"Đặt Zalo trước, tới nơi có món liền. Cơm tấm sườn nướng thơm, giá quá hợp lý ở Quận 3."<br><b>— Chị Hằng, dân văn phòng</b></div>
+    <div class="card"><div class="st">★★★★★</div>"Quán sạch, có máy lạnh, nhân viên dễ thương. Dẫn ba mẹ tới ăn ai cũng khen."<br><b>— Bạn Minh, đánh giá Google</b></div>
+  </div>
+</section>
+<section>
+  <div class="sec-k">HỎI ĐÁP</div>
+  <h2>Câu Hỏi Thường Gặp</h2>
+  <details><summary>Quán có giao hàng không?</summary><p>Có. Quán giao trong bán kính 3km qua điện thoại/Zalo (phí ship 10–15k tùy khu vực), hoặc đặt qua ShopeeFood và GrabFood tìm "Phở Bà Năm".</p></details>
+  <details><summary>Có chỗ giữ xe và phòng máy lạnh không?</summary><p>Có bãi giữ xe ngay trước quán (miễn phí cho khách) và khu vực trong nhà có máy lạnh, sức chứa khoảng 40 khách.</p></details>
+  <details><summary>Đặt tiệc/bàn đông người được không?</summary><p>Được. Nhóm từ 10 người nhắn Zalo trước 1 ngày, quán chuẩn bị combo riêng và giữ bàn khu vực yên tĩnh.</p></details>
+</section>
+<section id="lienhe">
+  <div class="sec-k">LIÊN HỆ</div>
+  <h2>Ghé Quán Hoặc Đặt Trước</h2>
+  <p class="info">
+    📍 <b>123 Nguyễn Đình Chiểu, Phường 6, Quận 3, TP.HCM</b><br>
+    🕘 Mở mỗi ngày <b>6:00 – 21:00</b><br>
+    📞 <b>0901 234 567</b> — gọi hoặc nhắn Zalo đặt món/đặt bàn
+  </p>
+  <div class="map"><iframe loading="lazy" src="https://maps.google.com/maps?q=Nguy%E1%BB%85n%20%C4%90%C3%ACnh%20Chi%E1%BB%83u%2C%20Qu%E1%BA%ADn%203%2C%20H%E1%BB%93%20Ch%C3%AD%20Minh&t=&z=16&ie=UTF8&iwloc=&output=embed"></iframe></div>
+  <div class="cta"><a class="btn-gold" style="display:inline-block;padding:14px 30px;border-radius:30px;text-decoration:none;font-weight:700;" href="https://zalo.me/0901234567" target="_blank">💬 Nhắn Zalo Đặt Món Ngay</a></div>
+</section>
+<a class="float-zalo" href="https://zalo.me/0901234567" target="_blank">💬 Chat Zalo Đặt Món</a>
+<footer>© Phở Bà Năm — Web mẫu hoàn chỉnh do MẬP MÊ AI thực hiện (dữ liệu mẫu).<br>Bản chính thức dùng thực đơn, hình ảnh, địa chỉ và số Zalo thật của quán.</footer>
+</body>
+</html>
