@@ -1,5 +1,16 @@
 [
   {
+    "title": "Video Quảng Cáo: Nguyên Liệu Tự Lắp Ráp Thành Sản Phẩm",
+    "slug": "video-quang-cao-nguyen-lieu-lap-rap-thanh-san-pham",
+    "category": "Video",
+    "type": "Free",
+    "subCat": "Marketing",
+    "desc": "Video 10s: nguyên liệu thật của sản phẩm xoay trong không gian 3D rồi tự lắp ráp thành sản phẩm hoàn chỉnh, chia shot theo giây 0–10s. Khuôn mẫu áp cho mọi sản phẩm (nạp ảnh sản phẩm làm chuẩn). Chưa có demo video — cần tỷ gen.",
+    "content": "Product image/reference is the only source of truth for final form, packaging, logo, and text. Raw elements used in the buildup must be visually/thematically relevant to the actual product's ingredients or materials — do not invent unrelated elements.\n\nConcept: Raw natural elements connected to the product (citrus, botanicals, water, metal, fabric fibers, grain, etc., matched to the actual product) swirl through 3D space and assemble into the finished product, with lighting shifting from raw/natural to polished/commercial as it forms.\n\nShot-by-Shot Timing\n\n0–2s | Elements in Motion — Raw, relevant elements (chosen based on the real product) swirl and drift through a dark or softly lit void, camera drifting slowly among them, natural/moody lighting.\n2–4s | Convergence Begins — Elements begin accelerating and pulling toward a central point, camera pulls back to reveal the silhouette of the product beginning to take shape from the swirling material.\n4–6s | Assembly — Elements snap/flow into place rapidly, forming the exact product — packaging, label, and color detail resolving as the last elements lock in. Camera orbits during this assembly for dimensionality.\n6–8s | Lighting Shift — As assembly completes, lighting transitions from raw/natural (moody, directional) to clean commercial studio lighting. Camera pushes into a 3/4 hero angle, reflections and surface detail sharpen.\n8–10s | Final Hero Shot — Camera settles on a polished, premium hero composition. Logo and original text appear cleanly, exact wording preserved. End on a still, high-impact ad frame.\n\nVisual Style: Photorealistic particle/element simulation, dramatic directional lighting during buildup transitioning to soft premium studio lighting at reveal, smooth continuous camera movement, physically believable material behavior (no cartoon physics), cinematic depth and atmosphere.\n\nHard Constraints: Elements used must be relevant to the real product (no random/unrelated objects), no invented packaging or features, no altered text/numbers/claims, no jump cuts, transformation must look physically grounded even if stylized.",
+    "demo": "demo-video-quang-cao-nguyen-lieu-lap-rap.jpg",
+    "demoVideo": "videos/video-quang-cao-nguyen-lieu-lap-rap-thanh-san-pham.mp4"
+  },
+  {
     "title": "Rainbow Gown Fantasy Portrait",
     "slug": "rainbow-gown-fantasy-portrait",
     "category": "Ảnh",
