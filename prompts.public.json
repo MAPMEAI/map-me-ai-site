@@ -321,7 +321,7 @@
     "subCat": "Marketing",
     "demo": "demo-08-luxury-poster.webp",
     "demoVideo": null,
-    "content": "use gpt image 2.5 sunburst high 4:5 2k to make the image:\n\nCreate an ultra-premium commercial poster for a brand/subject called {PRODUCT_NAME} — a {PRODUCT_CATEGORY} — designed as a Cannes-level advertising key visual with one hyper-realistic {PRODUC",
+    "content": "",
     "slug": "poster-quang-cao-san-pham-cao-cap",
     "locked": true
   },
@@ -333,7 +333,7 @@
     "subCat": "Video",
     "demo": "demo-09-megalodon.webp",
     "demoVideo": "videos/Shark_swims_out_of_screen_20261016182633.mp4",
-    "content": "CÁ MẬP 3D - THE SHARK JUST SWAM OUT OF THE SCREEN\n\nGOOGLE FLOW — GENERATED AI VIDEO\n\n10 seconds | 9:16 | Photorealistic viral 4D cinema experience\n\nCreate a 10-second continuous viral phone recording from the perspective of a rear-row audience member",
+    "content": "",
     "slug": "ca-map-megalodon-chui-ra-khoi-man-hinh",
     "locked": true
   },
@@ -345,7 +345,7 @@
     "subCat": "Video",
     "demo": "demo-10-sea-creature.webp",
     "demoVideo": "videos/quai-vat-bien-5.mp4",
-    "content": "MASTER PROMPT\n\nCreate an ultra-realistic, cinematic wildlife documentary video featuring a majestic [OCEAN ANIMAL] moving through a vast, mysterious ocean environment.\n\nFORMAT: Vertical 9:16, 4K, 24fps, 8–10 seconds, photorealistic, premium cinematic",
+    "content": "",
     "slug": "sinh-vat-bien-dien-anh",
     "locked": true
   },
@@ -405,7 +405,7 @@
     "subCat": "Video",
     "demo": null,
     "demoVideo": "videos/Hand_lifting_constellation_from_…_20261017181449.mp4",
-    "content": "1. First Frame Image Prompt:\nAn open notebook resting on a wooden desk, featuring a detailed, childlike colored-pencil illustration of a constellation taking up most of the visible page. The drawing shows small white and pale-yellow dots representing",
+    "content": "",
     "slug": "constellation-2d-to-3d",
     "locked": true
   },
@@ -441,7 +441,7 @@
     "subCat": "Ẩm thực",
     "demo": "demo-12.webp",
     "demoVideo": null,
-    "content": "2x2 grid, do this for 4 famous cuisines: function dish(AA){\n<instruction>\nInput A is a Famous Dish / Culinary Tradition / Signature Dessert / Regional Specialty.\n\nAnalyze:\n- ingredient hierarchy, cooking method, plating logic\n- origin region, histori",
+    "content": "",
     "slug": "diorama-am-thuc-tinh-te",
     "locked": true
   },
@@ -453,7 +453,7 @@
     "subCat": "UI & Graphic",
     "demo": "demo-13.webp",
     "demoVideo": null,
-    "content": "Analyze the palm image I provide using traditional palmistry and create ONE complete 9:16 vertical infographic poster.\nACCURACY:\n- Analyze only palm lines and features clearly visible in the image.\n- Never invent, assume, or hallucinate any lines or",
+    "content": "",
     "slug": "poster-phong-thuy-xem-chi-tay",
     "locked": true
   },
@@ -513,7 +513,7 @@
     "subCat": "Fashion",
     "demo": "demo-19.webp",
     "demoVideo": null,
-    "content": "Create a cinematic 9:16 portrait using the uploaded image as the ONLY identity reference.\nIDENTITY LOCK:\nPreserve 100% of the woman’s facial identity from the uploaded reference image — no glasses, exact face shape, facial proportions, eyes, eyebrows",
+    "content": "",
     "slug": "cinematic-portrait-identity-lock",
     "locked": true
   },
@@ -537,7 +537,7 @@
     "subCat": "Ẩm thực",
     "demo": null,
     "demoVideo": "videos/Beverage_advertisement_menu_vide…_20261018162524.mp4",
-    "content": "OPTION 1 — 3D HOLOGRAM DISH MENU (POV):\nUpload images of your product, replace the dish order with yours and tag the appropriate reference images.\nCreate a 15-second ultra-photorealistic cinematic POV video inside a luxurious fine-dining restaurant a",
+    "content": "",
     "slug": "luxury-menu-video",
     "locked": true
   },
@@ -549,7 +549,7 @@
     "subCat": "Ẩm thực",
     "demo": null,
     "demoVideo": "videos/tiny cake 2.mp4",
-    "content": "Create a 10-second vertical 9:16 ultra-realistic cinematic miniature food video. Show a luxurious tiny crystal/glass kitchen with miniature stove, cookware and utensils. A realistic human hand prepares [FOOD] step-by-step. Use only cookware and ingre",
+    "content": "",
     "slug": "miniature-food-video",
     "locked": true
   },
@@ -561,7 +561,7 @@
     "subCat": "Video",
     "demo": null,
     "demoVideo": "videos/Woman_creating_video_with_rose_20261016183056.mp4",
-    "content": "Create a 10-second vertical 9:16 cinematic AI video using the uploaded image as the EXACT visual reference.\n\nACTION:\n- 0–2s: She looks directly into the camera with a gentle smile. A soft breeze suddenly lifts her pink hair strands and the lace ribbo",
+    "content": "",
     "slug": "nang-tho-buom-xanh",
     "locked": true
   },
@@ -633,7 +633,7 @@
     "subCat": "Storyboard & Nhân vật",
     "demo": "2aOboR6asyrQ5iw1m57kV1d2ftRoWlLU5LxXUj7Q.jpg",
     "demoVideo": null,
-    "content": "Để tạo được bảng tham chiếu như dưới đây, chỉ cần làm theo 2 bước:\n👉 Bước 1: Mô tả thông tin nhân vậy bạn muốn tạo vào các mục {...} trong prompt.\n👉 Bước 2: Dán prompt vào ChatGPT và tạo ảnh -  PROMPT TẠO STORYBOARD HOẠT HÌNH 3D HOÀN CHỈNH THEO TỪNG ",
+    "content": "",
     "slug": "master-prompt-storyboard-8-khung",
     "locked": true
   },
@@ -681,7 +681,7 @@
     "subCat": "Video",
     "demo": null,
     "demoVideo": "videos/Woman_quieting_lion_1080p_20261017183711.mp4",
-    "content": "First Frame Image Prompt:\nA tight medium close-up profile shot of a male lion on the left and a calm, poised woman on the right, facing each other with their noses almost touching. The lion has tawny fur, prominent whiskers, and a dark mane visible a",
+    "content": "",
     "slug": "thuan-hoa-su-tu-bang-su-diem-tinh",
     "locked": true
   },
@@ -705,7 +705,7 @@
     "subCat": "Video",
     "demo": null,
     "demoVideo": "videos/Woman_ascends_bamboo_poles_acros…_20261017181411.mp4",
-    "content": "First Frame Image Prompt:\nA vertical cinematic shot of a woman in a traditional navy blue martial arts uniform with bright yellow shoes, hair tied in a topknot, balanced in a deep squat on a single horizontal bamboo pole. Her arms are extended forwar",
+    "content": "",
     "slug": "nu-hiep-leo-cot-tre",
     "locked": true
   },
@@ -801,7 +801,7 @@
     "subCat": "Video",
     "demo": null,
     "demoVideo": "videos/Helicopter_reveals_giant_product…_20261019132828.mp4",
-    "content": "Brand Reveal.\nCreate an exactly 10-second, ultra-photorealistic, vertical 9:16 video as ONE continuous shot, with a completely static camera directly overhead, looking straight down at 90 degrees.\nUse the supplied STARTING FRAME as the exact beginnin",
+    "content": "",
     "slug": "brand-reveal-icebreaker",
     "locked": true
   },
@@ -813,7 +813,7 @@
     "subCat": "Video",
     "demo": null,
     "demoVideo": "videos/Woman_flying_on_broomstick_20261018230212.mp4",
-    "content": "VIDEO PROMPT — THE FLYING BROOMSTICK IN NEW YORK CITY\nDURATION: 10 seconds\nFORMAT: Vertical 9:16\nSTYLE: Photorealistic live-action cinematography with subtle urban-fantasy VFX.\nCHARACTER 1 — MAIN CHARACTER\nUse the uploaded male character photo as the",
+    "content": "",
     "slug": "flying-broomstick-nyc",
     "locked": true
   },
@@ -1293,7 +1293,7 @@
     "subCat": "UI & Graphic",
     "demo": "poster-demo-nu-pham-ngoc-lan.webp",
     "demoVideo": null,
-    "content": "Bạn là chuyên gia nhân tướng học + thần số học, đồng thời là designer infographic cao cấp. Nhiệm vụ: từ ẢNH CHÂN DUNG tôi đính kèm và 3 thông tin [HỌ TÊN ĐẦY ĐỦ], [NGÀY SINH dd/mm/yyyy], [GIỚI TÍNH], hãy tạo MỘT POSTER INFOGRAPHIC dọc tỉ lệ 2:3 mang",
+    "content": "",
     "slug": "master-prompt-poster-nhan-tuong-hoc",
     "locked": true
   },
@@ -1329,7 +1329,7 @@
     "subCat": "Ẩm thực",
     "demo": "demo-menu-popup-3d.webp",
     "demoVideo": "videos/menu-giay-bat-thanh-mon-3d.mp4",
-    "content": "IMAGE-TO-VIDEO PROMPT 10S — POP-UP FOOD MENU (dọc 9:16)\nUse the uploaded photo of YOUR restaurant menu as the first frame.\nSCENE: The camera glides smoothly over the printed menu lying on a warm wooden table; one by one, the flat 2D food photos MORPH",
+    "content": "",
     "slug": "menu-giay-bat-thanh-mon-3d",
     "locked": true
   },
@@ -1413,7 +1413,7 @@
     "subCat": "Marketing",
     "demo": "demo-kho-ca-loc.webp",
     "demoVideo": null,
-    "content": "# MASTER PROMPT — AI CINEMATIC PRODUCT POSTER WITH VISIBLE BRANDING\n\n## 1. VAI TRÒ\n\nBạn là chuyên gia sáng tạo poster quảng cáo sản phẩm, giám đốc nghệ thuật thương mại và chuyên gia tạo hình ảnh bằng AI.\n\n**Đầu vào duy nhất:**\n- Tên sản phẩm: [NHẬP",
+    "content": "",
     "slug": "master-prompt-poster-quang-cao-san-pham-co-thuong-hieu",
     "locked": true
   },
