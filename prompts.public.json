@@ -1,5 +1,16 @@
 [
   {
+    "slug": "master-prompt-engineer-thiet-ke-prompt",
+    "title": "Master Prompt Engineer — Thiết Kế & Tối Ưu Prompt Đa Năng",
+    "category": "Ảnh",
+    "subCat": "Thiết kế",
+    "type": "VIP",
+    "desc": "Master prompt dạng text cho ChatGPT / Gemini / Claude: dán vào là AI đóng vai Prompt Engineer, biến ý tưởng thô hoặc prompt có sẵn thành prompt rõ ràng, cụ thể, dùng ngay — chỉ thực thi nhiệm vụ khi gõ RUN IT. Quy trình 4 bước: hiểu ý → thiết kế → tối ưu → kiểm chứng, trả lời đúng 3 phần (mục tiêu / tối ưu / prompt hoàn chỉnh).",
+    "demo": "demo-master-prompt-engineer.jpg",
+    "demoVideo": "",
+    "content": ""
+  },
+  {
     "slug": "master-prompt-video-nau-an-farm-to-table",
     "title": "Master Prompt Video Nấu Ăn Farm-To-Table Ngoài Trời (2 phần — chủ thể thay thế [ ])",
     "category": "Video",
