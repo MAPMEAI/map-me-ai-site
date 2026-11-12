@@ -1,0 +1,3 @@
+1. Đăng nhập cPanel của mapmeai.com, vào File Manager > public_html, upload file MAPMEAI-FIX-DUT-DIEM-2026-11-12.zip này lên.
+2. Chọn Extract, giải nén ĐÈ ngay trong public_html (file phải nằm ngay trong public_html, không lồng thêm thư mục con nào).
+3. Extract xong: mở mapmeai.com, nhấn Ctrl+F5 (tải lại bỏ cache) rồi nhắn đệ. Đệ kiểm live lại toàn bộ: kho 191 prompt, trang Master Prompt Engineer, nút Đọc mẹo ở mục Mẹo Hay, poster Nhân Tướng + bìa Bếp AI, và trang từng bị 403.

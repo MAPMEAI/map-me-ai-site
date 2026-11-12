@@ -1,0 +1,65 @@
+[
+ {
+  "id": "bo-3-mau",
+  "title": "Bộ 3 Mẫu — Cafe · Trà Sữa · Tea Break",
+  "industry": "Cafe / Trà sữa / Tea break",
+  "style": "3 phong cách trong 1 link, bấm là chuyển mẫu",
+  "cover": "demo-shop/covers/cover-3mau.webp",
+  "file": "demo-shop/demo-3-mau-quan.html",
+  "tag": "Dễ chọn nhất"
+ },
+ {
+  "id": "nha-hang-editorial",
+  "title": "Nhà Hàng Gió Quê — Phong Cách Tạp Chí",
+  "industry": "Nhà hàng / Quán ăn",
+  "style": "Bố cục editorial: chữ serif lớn, menu chấm nối giá, không dùng thẻ",
+  "cover": "demo-shop/covers/cover-editorial.webp",
+  "file": "demo-shop/demo-nha-hang-editorial.html",
+  "tag": "Mới"
+ },
+ {
+  "id": "cafe-fullbleed",
+  "title": "Cafe Đồi Thông — Ảnh Phủ Toàn Màn",
+  "industry": "Cafe",
+  "style": "Hero ảnh toàn màn hình, dải chữ chạy, menu trượt ngang, gallery lệch",
+  "cover": "demo-shop/covers/cover-fullbleed.webp",
+  "file": "demo-shop/demo-cafe-fullbleed.html",
+  "tag": "Mới"
+ },
+ {
+  "id": "shop-mypham",
+  "title": "Lá Xanh Cosmetics — Shop Bán Hàng",
+  "industry": "Shop mỹ phẩm / bán lẻ",
+  "style": "Lưới sản phẩm có giá + nút mua Zalo, banner khuyến mãi, đánh giá khách",
+  "cover": "demo-shop/covers/cover-mypham.webp",
+  "file": "demo-shop/demo-shop-mypham.html",
+  "tag": "Mới"
+ },
+ {
+  "id": "cafe-phin-la",
+  "title": "Phin & Lá — Cafe Sân Vườn (Bản Đầy Đủ)",
+  "industry": "Cafe",
+  "style": "Bản đầy đủ: menu theo nhóm, không gian, bản đồ, đặt bàn",
+  "cover": "demo-shop/covers/cover-phin-la.webp",
+  "file": "demo-shop/demo-cafe-phin-la.html",
+  "tag": "Đầy đủ"
+ },
+ {
+  "id": "pho-ba-nam",
+  "title": "Phở Bà Năm — Quán Ăn (Bản Đầy Đủ)",
+  "industry": "Quán ăn",
+  "style": "Bản đầy đủ: món ăn, không gian quán, bản đồ, gọi món",
+  "cover": "demo-shop/covers/cover-pho-ba-nam.webp",
+  "file": "demo-shop/demo-quan-an-pho-ba-nam.html",
+  "tag": "Đầy đủ"
+ },
+ {
+  "id": "nail-xinh",
+  "title": "Nail Xinh Studio — Nail & Spa (Bản Đầy Đủ)",
+  "industry": "Nail / Spa / Làm đẹp",
+  "style": "Bản đầy đủ: bảng dịch vụ, mẫu nail, đặt lịch qua Zalo",
+  "cover": "demo-shop/covers/cover-nail.webp",
+  "file": "demo-shop/demo-nail-xinh.html",
+  "tag": "Đầy đủ"
+ }
+]
