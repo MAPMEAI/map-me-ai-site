@@ -1510,8 +1510,10 @@ function openCourseModal(k){
     </style>
 
     <style>
-    .kitchen-track{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:12px 4px;scrollbar-width:none}
-    .kitchen-track::-webkit-scrollbar{display:none}
+    .kitchen-track{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:12px 4px 16px;scrollbar-width:thin;scrollbar-color:rgba(255,209,102,.55) rgba(255,255,255,.07)}
+    .kitchen-track::-webkit-scrollbar{height:8px}
+    .kitchen-track::-webkit-scrollbar-track{background:rgba(255,255,255,.07);border-radius:99px}
+    .kitchen-track::-webkit-scrollbar-thumb{background:rgba(255,209,102,.55);border-radius:99px}
     .kitchen-slide{flex:0 0 200px;scroll-snap-align:start;cursor:pointer;transition:transform .3s}
     .kitchen-slide:hover{transform:translateY(-6px)}
     .kitchen-slide img{width:100%;aspect-ratio:9/16;object-fit:contain;background:#0e0c16;border-radius:14px;box-shadow:0 16px 40px rgba(0,0,0,.5);border:1px solid var(--border-color)}
