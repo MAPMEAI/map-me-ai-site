@@ -1389,6 +1389,7 @@ function openCourseModal(k){
             <div class="kitchen-slide" data-story-lang="vi" onclick="openAffiliateGate('https://www.wattpad.com/story/418112204','Mưa Qua Trường Cũ')"><img src="covers/cover-mua-qua-truong-cu.jpeg" alt="Mưa Qua Trường Cũ" loading="lazy"><p>Mưa Qua Trường Cũ</p></div>
             <div class="kitchen-slide" data-story-lang="vi" onclick="openAffiliateGate('https://www.wattpad.com/story/417895580','Thư Chưa Gửi')"><img src="covers/cover-thu-chua-gui.jpeg" alt="Thư Chưa Gửi" loading="lazy"><p>Thư Chưa Gửi</p></div>
             <div class="kitchen-slide" data-story-lang="vi" onclick="openAffiliateGate('https://www.wattpad.com/story/417889055','Kẻ Sa Ngã')"><img src="covers/cover-ke-sa-nga.jpeg" alt="Kẻ Sa Ngã" loading="lazy"><p>Kẻ Sa Ngã</p></div>
+            <div class="kitchen-slide" data-story-lang="vi" onclick="openAffiliateGate('https://www.wattpad.com/story/418809017','Lời Thề Dưới Máu')"><img src="covers/cover-loi-the-duoi-mau.jpeg" alt="Lời Thề Dưới Máu" loading="lazy"><p>Lời Thề Dưới Máu</p></div>
         </div>
             <button class="kitchen-nav next" onclick="kitchenNav(1)" aria-label="Bìa tiếp theo">›</button>
         </div>
@@ -2443,7 +2444,7 @@ function openKitchenModal(tab){
     + '<button class="btn" style="background:linear-gradient(135deg,#ff6584,#ff8fb3);color:#fff;border:0;border-radius:12px;padding:12px 28px;font-weight:700;cursor:pointer;" onclick="closeKitchenModal();openVipPricingModal()">Xem gói VIP</button></div>';
   if(tab==='library'){
     body.innerHTML = '<h2 style="margin-bottom:4px;">📚 Truyện ngắn đã xuất bản</h2>'
-    + '<p style="color:#8f8aa3;font-size:13px;margin-bottom:12px;">Bấm vào truyện để bắt đầu đọc · <span id="libCount">15 truyện</span></p>'
+    + '<p style="color:#8f8aa3;font-size:13px;margin-bottom:12px;">Bấm vào truyện để bắt đầu đọc · <span id="libCount">16 truyện</span></p>'
     + '<input id="libSearch" oninput="filterLibrary(this.value)" placeholder="🔎 Tìm truyện theo tên..." style="width:100%;box-sizing:border-box;padding:10px 12px;border-radius:10px;border:1px solid #2a2735;background:#12101c;color:#fff;font-size:14px;margin-bottom:8px;">'
     + '<div id="libList">'
     + kitchenStoryRow('Cưa Đổ Tình Địch','covers/cover-cua-do-tinh-dich.jpeg','https://www.wattpad.com/story/417598065')
@@ -2461,6 +2462,7 @@ function openKitchenModal(tab){
     + kitchenStoryRow('Mưa Qua Trường Cũ','covers/cover-mua-qua-truong-cu.jpeg','https://www.wattpad.com/story/418112204','vi')
     + kitchenStoryRow('Thư Chưa Gửi','covers/cover-thu-chua-gui.jpeg','https://www.wattpad.com/story/417895580','vi')
     + kitchenStoryRow('Kẻ Sa Ngã','covers/cover-ke-sa-nga.jpeg','https://www.wattpad.com/story/417889055','vi')
+    + kitchenStoryRow('Lời Thề Dưới Máu','covers/cover-loi-the-duoi-mau.jpeg','https://www.wattpad.com/story/418809017','vi')
     + '</div>'
     + '<p id="libEmpty" style="display:none;color:#8f8aa3;font-size:13px;text-align:center;padding:14px 0;">Không tìm thấy truyện nào khớp.</p>'
     + '<div style="margin-top:18px;background:#1c1a24;border:1px solid #2a2735;border-radius:14px;padding:18px;text-align:center;"><h3 style="font-size:16px;margin-bottom:6px;color:#fff;">Đặt Hàng Riêng — Cần Tool Hoặc Agent Theo Quy Trình Riêng?</h3><p style="color:#8f8aa3;font-size:13px;margin-bottom:12px;">Đồ có sẵn chưa khớp việc của anh em? Gửi yêu cầu cho Mập Mê AI.</p><button class="btn-pink" style="padding:9px 22px;font-size:13px;margin-right:8px;" onclick="closeKitchenModal();openModal(\'Đặt Hàng Tool / Prompt Riêng Theo Yêu Cầu\', \'CUSTOM\', \'vip\')">Order Liền Tay 🚀</button><button class="btn-outline" style="padding:9px 22px;font-size:13px;" onclick="closeKitchenModal();openModal(\'Mời Tác Giả Ly Trà Sữa 🧋\', \'TRA SUA\', \'tea\')">Mời Trà Sữa 🧋</button></div>'
